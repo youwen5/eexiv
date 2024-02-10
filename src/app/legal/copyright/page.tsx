@@ -1,7 +1,7 @@
 import Link from 'next/link'
 export default function Page() {
   return (
-    <div className='content'>
+    <div className='content text-slate-800'>
       <p>
         All content on this site is licensed under the{' '}
         <a href='https://creativecommons.org/licenses/by-sa/4.0/'>

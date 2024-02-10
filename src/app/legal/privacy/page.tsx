@@ -1,6 +1,6 @@
 export default function Page() {
   return (
-    <div className='content'>
+    <div className='content text-slate-800'>
       <p>
         {`User privacy is important to us. Just kidding. We don't collect any
         personal information. We only use it to help us improve eeXiv. Your

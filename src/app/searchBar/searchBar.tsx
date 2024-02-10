@@ -5,7 +5,7 @@ export default function SearchBar() {
     <div className={styles.search}>
       <input
         type='text'
-        className={styles.searchBox}
+        className={[styles.searchBox, 'text-slate-800'].join(' ')}
         name='q'
         placeholder='Search...'
       />

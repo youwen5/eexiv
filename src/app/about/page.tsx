@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Page() {
   return (
-    <div className='content'>
+    <div className='content text-slate-800'>
       <p>
         {`eeXiv is a project hosted by Team 1280 EECS ("Electrical Engineering and
         Computer Science"), independent of the department of the same name at`}{' '}

@@ -3,8 +3,19 @@ import { Inter, Zilla_Slab } from 'next/font/google'
 import './globals.css'
 import styles from './home.module.css'
 import Link from 'next/link'
-import SearchBar from './searchBar/searchBar'
+import SearchBar from './searchBar/SearchBar'
+import Container from './container/Container'
 
+/* The default font is Inter. If you want to use Zilla Slab (or any other Google Font, 
+  which are pre-provided by Next.js in the 'next/font/google' module), you need to 
+  import it, as is done here with Zilla Slab, and then execute a CSS exploit by assigning 
+  the tag className={zillaSlab.className} to set the font family of an element to your desired font.
+  DO NOT directly set the font family in CSS using font-family. You will break EVERYTHING!
+
+  To set multiple classes, you can use an advanced exploit using an array of
+  your desired classNames (eg. [styles.title, zillaSlab.className]) and join them with a space
+  like so: className={[styles.title, zillaSlab.className].join(' ')}
+*/
 const inter = Inter({ subsets: ['latin'] })
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500', '700'] })
 
@@ -43,7 +54,7 @@ export default function RootLayout({
           </h1>
           <SearchBar />
         </div>
-        {children}
+        <Container>{children}</Container>
         <footer>
           <div className={styles.footerContent}>
             <ul>

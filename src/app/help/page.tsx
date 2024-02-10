@@ -1,6 +1,6 @@
 export default function Page() {
   return (
-    <div className='content'>
+    <div className='content text-slate-800'>
       <p>
         We are always looking for contributors to help us improve eeXiv. If you
         are interested in helping, whether as a peer reviewer, external

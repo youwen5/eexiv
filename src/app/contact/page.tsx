@@ -1,6 +1,6 @@
 export default function Page() {
   return (
-    <div className='content'>
+    <div className='content text-slate-800'>
       <p>
         You can contact a team representative directly at{' '}
         <a href='mailto:sanramonvalleyrobotics@gmail.com'>

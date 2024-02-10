@@ -1,6 +1,6 @@
 export default function Page() {
   return (
-    <div className='content'>
+    <div className='content text-slate-800'>
       <p>
         We currently do not have the technical support to implement mailing
         lists in eeXiv. Check <a href='../'>status</a> frequently for updates.
