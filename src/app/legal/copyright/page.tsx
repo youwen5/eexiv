@@ -1,9 +1,7 @@
 import Link from 'next/link'
-import standardStyles from '../../styles/standard.module.css'
-
 export default function Page() {
   return (
-    <div className={standardStyles.content}>
+    <div className='content'>
       <p>
         All content on this site is licensed under the{' '}
         <a href='https://creativecommons.org/licenses/by-sa/4.0/'>

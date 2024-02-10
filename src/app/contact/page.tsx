@@ -1,8 +1,6 @@
-import standardStyles from '../styles/standard.module.css'
-
 export default function Page() {
   return (
-    <div className={standardStyles.content}>
+    <div className='content'>
       <p>
         You can contact a team representative directly at{' '}
         <a href='mailto:sanramonvalleyrobotics@gmail.com'>

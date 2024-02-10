@@ -1,9 +1,8 @@
 import Link from 'next/link'
-import standardStyles from '../styles/standard.module.css'
 
 export default function Page() {
   return (
-    <div className={standardStyles.content}>
+    <div className='content'>
       <p>
         {`eeXiv is a project hosted by Team 1280 EECS ("Electrical Engineering and
         Computer Science"), independent of the department of the same name at`}{' '}

@@ -26,39 +26,6 @@
   cursor: pointer;
 }
 
-.search {
-  position: absolute;
-  top: 175px;
-  left: 50%;
-  width: 40vw;
-}
-
-.searchBox,
-.searchButton {
-  display: inline;
-}
-
-.searchBox {
-  height: 45px;
-  border: 3px solid #0c5198;
-  border-radius: 10px;
-  padding: 22px;
-}
-
-.searchButton {
-  background-color: #0c5198;
-  color: white;
-  border: 3px solid white;
-  padding: 10px;
-  border-radius: 10px;
-  margin-left: 10px;
-}
-
-.searchButton:hover {
-  background-color: white;
-  color: #0c5198;
-}
-
 .wordmark {
   float: left;
   height: 100px;

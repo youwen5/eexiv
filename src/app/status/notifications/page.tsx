@@ -1,8 +1,6 @@
-import standardStyles from '../../styles/standard.module.css'
-
 export default function Page() {
   return (
-    <div className={standardStyles.content}>
+    <div className='content'>
       <p>
         We currently do not have the technical support to implement mailing
         lists in eeXiv. Check <a href='../'>status</a> frequently for updates.

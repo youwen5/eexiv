@@ -3,6 +3,7 @@ import { Inter, Zilla_Slab } from 'next/font/google'
 import './globals.css'
 import styles from './home.module.css'
 import Link from 'next/link'
+import SearchBar from './searchBar/searchBar'
 
 const inter = Inter({ subsets: ['latin'] })
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500', '700'] })
@@ -25,32 +26,22 @@ export default function RootLayout({
           <p className={styles.contributions}>
             We gratefully acknowledge support from our volunteer peer reviewers,
             member institutions, and all{' '}
-            <Link
+            <a
               href='https://github.com/Team-1280/eeXiv/graphs/contributors'
               target='_blank'
             >
               open-source contributors
-            </Link>
+            </a>
             .
           </p>
         </div>
         <div className={styles.banner}>
           <h1 className={[styles.title, zillaSlab.className].join(' ')}>
-            <Link href='./'>
+            <Link href='/' className='no-link-style'>
               eeXiv<sup>2</sup>
             </Link>
           </h1>
-          <div className={styles.search}>
-            <input
-              type='text'
-              className={styles.searchBox}
-              name='q'
-              placeholder='Search...'
-            />
-            <button type='submit' className={styles.searchButton}>
-              Search
-            </button>
-          </div>
+          <SearchBar />
         </div>
         {children}
         <footer>

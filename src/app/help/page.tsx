@@ -1,8 +1,6 @@
-import standardStyles from '../styles/standard.module.css'
-
 export default function Page() {
   return (
-    <div className={standardStyles.content}>
+    <div className='content'>
       <p>
         We are always looking for contributors to help us improve eeXiv. If you
         are interested in helping, whether as a peer reviewer, external
