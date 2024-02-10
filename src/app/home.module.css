@@ -1,6 +1,4 @@
-/* main stylesheet for eeXiv */
-
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Roboto:wght@700&family=Zilla+Slab:wght@400;500;700&display=swap");
+/* stylesheet for the eexiv UI and the base layout (search, logo, header, footer) */
 
 .header {
   width: 100%;
@@ -30,7 +28,7 @@
 
 .search {
   position: absolute;
-  top: 200px;
+  top: 175px;
   left: 50%;
   width: 40vw;
 }
@@ -44,6 +42,7 @@
   height: 45px;
   border: 3px solid #0c5198;
   border-radius: 10px;
+  padding: 22px;
 }
 
 .searchButton {
@@ -52,6 +51,7 @@
   border: 3px solid white;
   padding: 10px;
   border-radius: 10px;
+  margin-left: 10px;
 }
 
 .searchButton:hover {
@@ -84,7 +84,6 @@
   height: fit-content;
   padding-top: 20px;
   padding-bottom: 20px;
-  font-family: "Inter", sans-serif;
 }
 
 .footerContent a {
