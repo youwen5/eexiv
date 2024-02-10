@@ -29,7 +29,7 @@
 .wordmark {
   float: left;
   height: 100px;
-  margin-top: 25px;
+  margin-top: -25px;
 }
 
 .contributions {

@@ -1,3 +1,4 @@
+'use client'
 import styles from './searchBar.module.css'
 
 export default function SearchBar() {
@@ -5,7 +6,7 @@ export default function SearchBar() {
     <div className={styles.search}>
       <input
         type='text'
-        className={[styles.searchBox, 'text-slate-800'].join(' ')}
+        className={`${styles.searchBox} text-slate-800`}
         name='q'
         placeholder='Search...'
       />

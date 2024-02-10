@@ -11,10 +11,6 @@ import Container from './container/Container'
   import it, as is done here with Zilla Slab, and then execute a CSS exploit by assigning 
   the tag className={zillaSlab.className} to set the font family of an element to your desired font.
   DO NOT directly set the font family in CSS using font-family. You will break EVERYTHING!
-
-  To set multiple classes, you can use an advanced exploit using an array of
-  your desired classNames (eg. [styles.title, zillaSlab.className]) and join them with a space
-  like so: className={[styles.title, zillaSlab.className].join(' ')}
 */
 const inter = Inter({ subsets: ['latin'] })
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500', '700'] })
@@ -33,61 +29,69 @@ export default function RootLayout({
     <html lang='en'>
       <body className={inter.className}>
         <div className={styles.header}>
-          <img className={styles.wordmark} src='/eecs-wordmark.png' />
-          <p className={styles.contributions}>
-            We gratefully acknowledge support from our volunteer peer reviewers,
-            member institutions, and all{' '}
-            <a
-              href='https://github.com/Team-1280/eeXiv/graphs/contributors'
-              target='_blank'
-            >
-              open-source contributors
-            </a>
-            .
-          </p>
+          <Container width='1200px'>
+            <img className={styles.wordmark} src='/eecs-wordmark.png' />
+            <p className={styles.contributions}>
+              We gratefully acknowledge support from our volunteer peer
+              reviewers, member institutions, and all{' '}
+              <a
+                href='https://github.com/Team-1280/eeXiv/graphs/contributors'
+                target='_blank'
+              >
+                open-source contributors
+              </a>
+              .
+            </p>
+          </Container>
         </div>
         <div className={styles.banner}>
-          <h1 className={[styles.title, zillaSlab.className].join(' ')}>
-            <Link href='/' className='no-link-style'>
-              eeXiv<sup>2</sup>
-            </Link>
-          </h1>
+          <Container width='1200px'>
+            <h1 className={`${styles.title} ${zillaSlab.className}`}>
+              <Link href='/' className='no-link-style'>
+                eeXiv<sup>2</sup>
+              </Link>
+            </h1>
+          </Container>
           <SearchBar />
         </div>
-        <Container>{children}</Container>
+        <Container width='1200px' fill>
+          {children}
+        </Container>
         <footer>
           <div className={styles.footerContent}>
-            <ul>
-              <li>
-                <Link href='/about'>About</Link>
-              </li>
-              <li>
-                <Link href='/help'>Help</Link>
-              </li>
-              <li>
-                <Link href='/contact'>Contact</Link>
-              </li>
-              <li>
-                <Link href='/subscribe'>Subscribe</Link>
-              </li>
-              <li>
-                <Link href='/legal/copyright'>Copyright</Link>
-              </li>
-              <li>
-                <Link href='/legal/privacy'>Privacy Policy</Link>
-              </li>
-              <li>
-                <Link href='/help/accessibility'>Accessibility</Link>
-              </li>
-              <li>
-                <Link href='/status'>eeXiv status</Link>
-              </li>
-              <li>
-                <Link href='/status/notifications'>
-                  Get status notifications
-                </Link>
-              </li>
-            </ul>
+            <Container width='1200px'>
+              <ul>
+                <li>
+                  <Link href='/about'>About</Link>
+                </li>
+                <li>
+                  <Link href='/help'>Help</Link>
+                </li>
+                <li>
+                  <Link href='/contact'>Contact</Link>
+                </li>
+                <li>
+                  <Link href='/subscribe'>Subscribe</Link>
+                </li>
+                <li>
+                  <Link href='/legal/copyright'>Copyright</Link>
+                </li>
+                <li>
+                  <Link href='/legal/privacy'>Privacy Policy</Link>
+                </li>
+                <li>
+                  <Link href='/help/accessibility'>Accessibility</Link>
+                </li>
+                <li>
+                  <Link href='/status'>eeXiv status</Link>
+                </li>
+                <li>
+                  <Link href='/status/notifications'>
+                    Get status notifications
+                  </Link>
+                </li>
+              </ul>
+            </Container>
           </div>
         </footer>
       </body>
