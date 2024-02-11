@@ -41,12 +41,12 @@ export default function Page({
       <>
         <span className='font-bold'>Topics: </span>
         {topics.map((t: string, i) => (
-          <>
+          <Fragment key={t}>
             <Link href={topicList[t].wiki} target='_blank'>
               {topicList[t].name}
             </Link>
             {i !== topics.length - 1 ? ', ' : null}
-          </>
+          </Fragment>
         ))}
       </>
     )
@@ -74,40 +74,49 @@ export default function Page({
     return (
       <>
         {authors.map((a: string, i) => (
-          <>
+          <Fragment key={a}>
             <Link href={`/author/${a}`} target='_blank'>
               {authorList[a].name.first} {authorList[a].name.last}
             </Link>
             {i !== authors.length - 1 && authors.length > 2 ? ', ' : null}
             {i === authors.length - 2 ? ' and ' : null}
-          </>
+          </Fragment>
         ))}
       </>
     )
   }
 
   const generateItemBadge = (itemName: DocumentType) => {
-    let itemStyle: string = 'px-3 py-1.5 rounded inline-block w-fit mr-2 mt-4 '
+    let text = ''
+    let itemStyle: string =
+      'px-3 py-1.5 rounded inline-block w-fit mr-2 mt-4 text-slate-50 border-2 '
     switch (itemName) {
       case 'report':
-        itemStyle += 'bg-green-400 text-slate-50'
+        itemStyle += 'bg-green-500 border-green-500'
+        text = 'Report'
         break
       case 'presentation':
-        itemStyle += `bg-blue-400 text-slate-50`
+        text = 'Presentation'
+        itemStyle += `bg-blue-500 border-blue-500`
         break
       case 'white paper':
-        itemStyle += `bg-fuchsia-700 text-slate-50`
+        text = 'White Paper'
+        itemStyle += `bg-fuchsia-700 border-fuchsia-700`
+        break
+      case 'datasheet':
+        text = 'Datasheet'
+        itemStyle += 'bg-amber-600 border-amber-600'
+        break
+      case 'dwm':
+        text = 'DWM'
+        itemStyle += 'bg-rose-950 border-rose-950'
         break
       case 'other':
-        itemStyle += `bg-gray-400 text-slate-50`
+        text = 'Other'
+        itemStyle += `bg-gray-400 border-gray-400`
         break
     }
-    return (
-      <p className={itemStyle}>
-        {itemName.charAt(0).toUpperCase()}
-        {itemName.slice(1)}
-      </p>
-    )
+    return <span className={itemStyle}>{text}</span>
   }
 
   return (
@@ -115,7 +124,7 @@ export default function Page({
       <div>
         <h1
           className={`
-            text-slate-800 font-bold text-5xl mb-8
+            text-slate-800 font-bold text-5xl mb-4
             ${zillaSlab.className}
           `}
         >
@@ -129,7 +138,7 @@ export default function Page({
           </span>
         </p>
         {generateItemBadge(type)}
-        <p className='inline-block border-gray-200 border-2 rounded px-2 py-1'>
+        <p className='inline-block border-gray-200 border-2 rounded px-2 py-1.5'>
           Revision {latest}
         </p>
         <hr className='my-4' />

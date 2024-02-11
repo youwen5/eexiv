@@ -21,7 +21,13 @@ documents {
 }
 */
 export type FileType = 'pdf' | 'docx' | 'pptx' | 'tar.gz' | 'other'
-export type DocumentType = 'presentation' | 'report' | 'white paper' | 'other'
+export type DocumentType =
+  | 'presentation'
+  | 'report'
+  | 'white paper'
+  | 'dwm'
+  | 'datasheet'
+  | 'other'
 export interface DocumentDB {
   [key: string]: {
     manifest: {
@@ -66,7 +72,7 @@ export const documents: DocumentDB = {
       authors: ['mbohsali', 'avenkatesh', 'ywu'],
       topics: ['frc', 'eecs'],
       dates: [1706080618],
-      type: 'report',
+      type: 'dwm',
       latest: 1,
       keywords: [
         'team 1280/identity and branding',
