@@ -115,7 +115,11 @@ export default function Page({
     const { demonym, flag } = nationalityData
     return (
       <div className='flex items-center'>
-        <img src={flag} className='w-10 border-2 border-slate-200' />
+        <img
+          src={flag}
+          className='w-10 border-2 border-slate-200'
+          alt={`${demonym} flag`}
+        />
         <span className='mx-3 font-semibold'>{demonym}</span>
       </div>
     )
@@ -138,7 +142,7 @@ export default function Page({
       <div className='grid grid-cols-1 md:grid-cols-2 items-center max-w-3xl mx-auto'>
         <div className='aspect-square w-[60vw] md:w-[30vw] lg:w-[20vw] 2xl:w-[15vw] overflow-hidden mx-auto mb-4'>
           <img
-            alt='profile picture'
+            alt='profile'
             className='rounded-full mx-auto object-cover w-full h-full border-slate-800 border-4'
             src={image}
           />
