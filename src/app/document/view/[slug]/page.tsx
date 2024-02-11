@@ -151,7 +151,7 @@ export default function Page({
           download={`${params.slug}-rev-${latest}.pdf`}
           target='_blank'
         >
-          <button className='bg-blue-600 text-slate-100 hover:bg-blue-400 font-semibold rounded py-2 px-4 my-2'>
+          <button className='button-default'>
             Download{' '}
             {(() => {
               switch (file) {

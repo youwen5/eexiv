@@ -1,6 +1,4 @@
 'use client'
-import styles from './searchBar.module.css'
-
 export default function SearchBar() {
   return (
     <div className='width-[40vw]'>
@@ -10,7 +8,10 @@ export default function SearchBar() {
         name='q'
         placeholder='Search...'
       />
-      <button type='submit' className='p-2.5 mx-4 border-2 rounded-xl bg-'>
+      <button
+        type='submit'
+        className='p-2.5 mx-4 border-2 rounded-xl hover:bg-blue-300'
+      >
         Search
       </button>
     </div>

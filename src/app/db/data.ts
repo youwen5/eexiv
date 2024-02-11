@@ -248,7 +248,7 @@ export const authors: Authors = {
       last: 'Hasan',
     },
     affiliation: ['Undergraduate@usc-viterbi'],
-    formerAffiliations: ['Lead Mechanical Engineer @1280-mech'],
+    formerAffiliations: ['Lead Mechanical Engineer@1280-mech'],
     image: 'https://team-1280.vercel.app/assets/img/gallery6.jpg',
     nationality: ['pak', 'usa'],
   },
@@ -305,6 +305,7 @@ export interface Affiliations {
     name: string
     short: string
     image: string
+    description: string
   }
 }
 
@@ -314,36 +315,90 @@ export const affiliations: Affiliations = {
     short: '1280 Mech',
     image:
       'https://raw.githubusercontent.com/Team-1280/identity/main/assets/img/figurehead/figurehead-primary.png',
+    description: `The mechanical subteam is the backbone of Team 1280, focusing on the physical design, construction, and mechanical integrity of their robots. This subteam is where concepts and designs become tangible, transforming ideas into the moving parts and structural components that give the robots their form and function. The Mechanical subteam's work encompasses a broad range of activities, from drafting initial sketches and CAD modeling to machining parts and assembling complex mechanical systems.
+[linebreak]
+Members of the Mechanical subteam are adept in applying principles of mechanical engineering to solve practical problems, ensuring that the robot is not only capable of performing the tasks required by the competition but is also robust, efficient, and adaptable to the dynamic environment of a FIRST Robotics match. They work closely with materials, tools, and manufacturing processes, gaining hands-on experience in fabrication techniques such as welding, 3D printing, and CNC machining.
+[linebreak]
+Collaboration is key within the Mechanical subteam, as its members must coordinate closely with the EECS subteam to integrate mechanical and electrical components seamlessly. This interdisciplinary approach ensures that the robot's design is holistic, with each system working harmoniously to achieve optimal performance.
+[linebreak]
+The Mechanical subteam fosters a culture of creativity, innovation, and excellence, encouraging its members to push the boundaries of what is possible. Through their participation in the FIRST Robotics Competition, students develop not only technical skills in mechanical design and engineering but also soft skills such as teamwork, problem-solving, and project management. With access to advanced tools and guided by mentors from various engineering fields, the Mechanical subteam of Team 1280 is a place where future mechanical engineers are nurtured, ready to make their mark in the world of robotics and beyond.`,
   },
   '1280-eecs': {
     name: "Team 1280, the Ragin' C Biscuits, Electrical Engineering and Computer Science Subteam",
     short: '1280 EECS',
     image:
       'https://raw.githubusercontent.com/Team-1280/identity/main/assets/img/eecs/eecs.png',
+    description: `The Team 1280 EECS (Electrical Engineering and Computer Science) subteam is an autonomous organization within Team 1280, specializing in the design, programming, and electrical systems that bring their robots to life. As the nerve center of Team 1280, the EECS subteam combines the disciplines of electrical engineering and computer science to develop sophisticated control systems, autonomous functionalities, and robust electrical infrastructures that enable their robots to perform complex tasks and maneuvers in the competitive arena.
+[linebreak]
+Team 1280 EECS is composed of highly skilled and passionate students who are keen on applying theoretical knowledge to practical challenges. They are responsible for everything from circuit design and sensor integration to software development and debugging, ensuring that the robot can effectively communicate, navigate, and interact with its environment.
+[linebreak]
+Team 1280 EECS benefits from mentorship by experienced professionals and alumni, access to state-of-the-art tools and technologies, and a culture that encourages creativity, experimentation, and continuous improvement. As a result, the EECS subteam plays a crucial role in driving Team 1280's success in competitions and inspiring the next generation of engineers and computer scientists.`,
   },
   '1280-programming': {
     name: "Team 1280, the Ragin' C Biscuits, Programming Subteam (now defunct)",
     short: '1280 Programming',
     image:
       'https://raw.githubusercontent.com/Team-1280/identity/main/assets/img/eecs/eecs.png',
+    description: 'placeholder',
   },
   'usc-viterbi': {
     name: 'University of Southern California, Viterbi School of Engineering',
     short: 'USC Viterbi',
     image:
       'https://pbs.twimg.com/profile_images/1006996145212551169/HaqpwHNY_400x400.jpg',
+    description: `The University of Southern California (USC) Viterbi School of
+          Engineering is a cornerstone of innovation and excellence in the
+          engineering field. Established in 1905, it has grown into a leading
+          institution recognized globally for its pioneering research,
+          distinguished faculty, and diverse, talented student body.
+          [linebreak]
+          Named after Andrew J. Viterbi, co-founder of Qualcomm Inc. and
+          inventor of the Viterbi Algorithm, the school underscores its
+          commitment to advancing technology for societal benefits. USC Viterbi
+          offers a wide range of undergraduate, graduate, and doctoral programs
+          covering various engineering disciplines, including aerospace,
+          biomedical, chemical, civil, computer science, electrical, and
+          environmental engineering, among others. It is renowned for its
+          cutting-edge research in areas such as artificial intelligence,
+          cybersecurity, energy sustainability, and health systems.
+          [linebreak]
+          Located in Los Angeles, California, USC Viterbi benefits from its
+          proximity to leading tech companies, providing ample opportunities for
+          internships, collaborations, and employment for its graduates. With
+          its strong emphasis on innovation, entrepreneurship, and global
+          impact, USC Viterbi continues to shape the future of engineering,
+          making significant contributions to both the academic community and
+          the wider world.`,
   },
   '1280-business': {
     name: "Team 1280, the Ragin' C Biscuits, Business Subteam",
     short: '1280 Business',
     image:
       'https://raw.githubusercontent.com/Team-1280/identity/main/assets/img/figurehead/figurehead-primary.png',
+    description: `The Business subteam of Team 1280 plays a crucial role in ensuring the team's operational success and sustainability. Unlike the engineering-focused subteams, the Business subteam focuses on the financial, organizational, and community aspects of the team's operations. They are responsible for fundraising, sponsorship outreach, budget management, and public relations, ensuring that the team has the necessary resources and support to thrive in their endeavors.
+[linebreak]
+Members of the Business subteam develop and execute strategies to engage with corporate sponsors, local businesses, and individual donors, crafting compelling sponsorship proposals and maintaining ongoing relationships with stakeholders. They also manage the team's finances, meticulously planning and tracking expenditures to ensure that resources are allocated efficiently and effectively.
+[linebreak]
+In addition to financial management, the Business subteam plays a key role in promoting Team 1280's achievements and activities. They handle all aspects of communication, from social media management and website content to press releases and community outreach events. Their efforts not only raise the team's profile but also foster a positive image of STEM education and robotics within the broader community.
+[linebreak]
+Through their work, the Business subteam members gain valuable experience in business administration, marketing, and communication, skills that are highly transferable and beneficial in any career path. They learn the importance of leadership, teamwork, and strategic planning, all while contributing to the success of Team 1280 in a meaningful way.
+[linebreak]
+By bridging the gap between engineering innovation and business acumen, the Business subteam ensures that Team 1280 is not only competitive in robotics challenges but also sustainable and impactful in its mission to inspire and educate future generations in STEM fields.`,
   },
   'raid-zero': {
     name: 'Team 4253 - Raid Zero',
     short: 'Raid 0',
     image:
       'https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/299113446_475020107964742_4855015622304877578_n.png?_nc_cat=101&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=f-tZdWsVEzQAX_9HeIZ&_nc_ht=scontent-sjc3-1.xx&oh=00_AfDRrS-nRH8uMBH9tpG7g8RNEO1AEtNso5EQMgJ5NaneaQ&oe=65CD858E',
+    description: `Team 4253, Raid Zero, hailing from Taipei American School in Taipei, Taipei Special Municipality, Chinese Taipei, has been a formidable presence in the world of robotics since its rookie year in 2012. As a participant in the international FIRST Robotics Competition, Raid Zero exemplifies innovation, teamwork, and the pursuit of excellence in science, technology, engineering, and mathematics (STEM).
+[linebreak]
+Since its inception, Raid Zero has dedicated itself to designing, building, and programming competitive robots that can perform complex tasks and compete at high levels. The team's journey through the FIRST Robotics Competition has been marked by continuous learning, adaptation, and growth, reflecting their commitment to not only compete but also to embody the ideals of gracious professionalism and cooperation.
+[linebreak]
+Beyond the technical skills gained through robotics design and competition, Team 4253 is deeply committed to spreading the excitement and appreciation for STEM within their local community and beyond. Through outreach programs, workshops, and participation in events, Raid Zero aims to inspire younger students and peers, encouraging them to explore their interests in technology and engineering.
+[linebreak]
+Operating within the vibrant educational environment of Taipei American School, Team 4253 benefits from a supportive network of mentors, educators, and alumni who provide guidance and support. This nurturing ecosystem fosters creativity, critical thinking, and problem-solving skills among team members, preparing them for future challenges and opportunities in STEM fields.
+[linebreak]
+Raid Zero's influence extends beyond the technical achievements in robotics competitions. The team's efforts to promote STEM education, engage with the community, and develop sustainable practices demonstrate a holistic approach to their mission. As Team 4253 continues to evolve and impact the world of robotics and STEM education, Raid Zero remains a beacon of innovation and inspiration for students and enthusiasts around the globe.`,
   },
 }
 

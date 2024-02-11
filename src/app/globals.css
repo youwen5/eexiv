@@ -25,3 +25,7 @@ a:hover {
   padding: 35px;
   border-radius: 15px;
 }
+
+.button-default {
+  @apply bg-blue-600 text-slate-100 hover:bg-blue-400 font-semibold rounded py-2 px-4 my-2;
+}
