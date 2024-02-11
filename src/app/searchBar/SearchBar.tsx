@@ -1,5 +1,9 @@
 'use client'
+import { toast } from 'react-toastify'
 export default function SearchBar() {
+  const handleClick = () => {
+    toast.warn('This feature is currently under active development!')
+  }
   return (
     <div className='width-[40vw]'>
       <input
@@ -11,6 +15,7 @@ export default function SearchBar() {
       <button
         type='submit'
         className='p-2.5 mx-4 border-2 rounded-xl hover:bg-blue-300'
+        onClick={handleClick}
       >
         Search
       </button>

@@ -5,6 +5,10 @@ import styles from './home.module.css'
 import Link from 'next/link'
 import SearchBar from './searchBar/SearchBar'
 import Container from './container/Container'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import { Suspense } from 'react'
+import LoadingBar from './components/Loading'
 
 /* The default font is Inter. If you want to use Zilla Slab (or any other Google Font, 
   which are pre-provided by Next.js in the 'next/font/google' module), you need to 
@@ -28,12 +32,14 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={inter.className}>
+        <ToastContainer />
         <div className={styles.header}>
           <div className='max-w-[1200px] flex flex-nowrap mx-auto justify-between items-center'>
             <Link href='/affiliation/1280-eecs'>
               <img
                 className='h-[100px] mt-4'
                 src='/eexiv-2/img/logos/eecs-wordmark.png'
+                alt='EECS'
               />
             </Link>
             <p className={`max-w-[600px] hidden md:inline`}>
@@ -61,9 +67,11 @@ export default function RootLayout({
             </div>
           </div>
         </div>
-        <Container width='1200px' fill>
-          {children}
-        </Container>
+        <Suspense fallback={<LoadingBar />}>
+          <Container width='1200px' fill>
+            {children}
+          </Container>
+        </Suspense>
         <footer>
           <div className={styles.footerContent}>
             <Container width='1200px'>

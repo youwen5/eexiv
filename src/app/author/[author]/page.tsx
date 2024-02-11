@@ -2,7 +2,7 @@ import { authors, affiliations, nationalities } from '../../db/data'
 import { Zilla_Slab } from 'next/font/google'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Fragment } from 'react'
+import { Fragment, Suspense } from 'react'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 

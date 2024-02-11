@@ -12,7 +12,7 @@ import { epoch2datestring } from '@/app/utils/epoch2datestring'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
-export function generateStaticParams () {
+export function generateStaticParams() {
   const documentsList = Object.keys(documents)
   return documentsList.map((slug) => ({ slug }))
 }
@@ -28,7 +28,7 @@ export default function Page({
   const { title, authors, topics, dates, references, code, type, latest } =
     doc.manifest
 
-  const generateTopics = () => {
+  const Topics = () => {
     return (
       <>
         <span className='font-bold'>Topics: </span>
@@ -44,7 +44,7 @@ export default function Page({
     )
   }
 
-  const generateCode = () => {
+  const Code = () => {
     if (code) {
       return (
         <>
@@ -62,7 +62,7 @@ export default function Page({
     }
   }
 
-  const generateAuthors = () => {
+  const Authors = () => {
     return (
       <>
         {authors.map((a: string, i) => (
@@ -78,7 +78,24 @@ export default function Page({
     )
   }
 
-  const generateItemBadge = (itemName: DocumentType) => {
+  const References = () => {
+    if (!references) return null
+    return (
+      <>
+        <span className='font-bold'>References: </span>
+        {references.map((r: string, i) => (
+          <Fragment key={r}>
+            <Link href={r} target='_blank'>
+              {r}
+            </Link>
+            {i !== references.length - 1 ? ', ' : null}
+          </Fragment>
+        ))}
+      </>
+    )
+  }
+
+  const ItemBadge = ({ itemName }: Readonly<{ itemName: DocumentType }>) => {
     let text = ''
     let itemStyle: string =
       'px-3 py-1.5 rounded inline-block w-fit mr-2 mt-4 text-slate-50 border-2 '
@@ -118,26 +135,38 @@ export default function Page({
           className={`
             text-slate-800 font-bold text-5xl mb-4
             ${zillaSlab.className}
+            text-wrap
           `}
         >
           {title}
         </h1>
-        <p className={`text-slate-800 mt-2`}>{generateAuthors()}</p>
+        <p className={`text-slate-800 mt-2`}>
+          <Authors />
+        </p>
         <p className='mt-4'>
           Latest revision published{' '}
           <span className='font-bold'>
             {epoch2datestring(dates[dates.length - 1])}
           </span>
         </p>
-        {generateItemBadge(type)}
+        <ItemBadge itemName={type as DocumentType} />
         <p className='inline-block border-gray-200 border-2 rounded px-2 py-1.5'>
           Revision {latest}
         </p>
         <hr className='my-4' />
         <h4 className='text-2xl mt-5 font-serif font-semibold'>Abstract</h4>
-        <p className='my-4 text-xl text-slate-600 font-serif  '>{abstract}</p>
-        <p className='my-2'>{generateTopics()}</p>
-        <p className='my-2'>{generateCode()}</p>
+        <p className='my-4 text-xl text-slate-600 font-serif text-balance'>
+          {abstract}
+        </p>
+        <p className='my-2'>
+          <Topics />
+        </p>
+        <p className='my-2'>
+          <Code />
+        </p>
+        <p className='my-2'>
+          <References />
+        </p>
         <Link
           href={`/download/${params.slug}/file${latest}.${file}`}
           download={`${params.slug}-rev-${latest}.pdf`}
