@@ -5,9 +5,9 @@ documents {
         manifest: {
             title: string
             authors: string[]
-            date: unix epoch integer[]
+            date: unix epoch integer[] -> if multiple revisions, put the earlier dates first
             type: presentation | report | white paper | other
-            latest: integer >= 1
+            latest: integer >= 1 -> the latest revision of the document (earliest = 1)
             keywords: string[]
             topics: string[]
             references: string[],

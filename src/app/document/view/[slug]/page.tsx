@@ -4,26 +4,13 @@ import {
   documents,
   topics as topicList,
   authors as authorList,
-} from '../../../db/data'
+} from '@/app/db/data'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Fragment } from 'react'
+import { epoch2datestring } from '@/app/utils/epoch2datestring'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
-
-function epoch2datestring(epoch: number): string {
-  // Create a new Date object from the epoch
-  const date = new Date(epoch * 1000)
-
-  // Format the date to the specified format
-  const formattedDate = date.toLocaleDateString('en-US', {
-    month: 'short', // abbreviated month name
-    day: '2-digit', // day as two digits
-    year: 'numeric', // four digit year
-  })
-
-  return formattedDate
-}
 
 export default function Page({
   params,
