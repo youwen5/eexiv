@@ -1,6 +1,7 @@
 import { authors, affiliations, nationalities } from '../../db/data'
 import { Zilla_Slab } from 'next/font/google'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import { Fragment } from 'react'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
@@ -13,7 +14,7 @@ export default function Page({
   const authorData = authors[params.author]
   // console.log(authorData)
   if (!authorData) {
-    return
+    notFound()
   }
 
   const { name, affiliation, image, nationality, formerAffiliations } =
@@ -32,7 +33,10 @@ export default function Page({
 
         {authorData.website ? (
           <div className='mt-2'>
-            Visit at: <a href={authorData.website}>{authorData.website}</a>
+            Visit at:{' '}
+            <a href={authorData.website} target='_blank'>
+              {authorData.website}
+            </a>
           </div>
         ) : null}
       </>

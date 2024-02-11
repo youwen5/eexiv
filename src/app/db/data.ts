@@ -265,6 +265,7 @@ export const authors: Authors = {
     image: 'https://cdn-icons-png.freepik.com/512/3177/3177440.png',
     nationality: ['ind', 'eth', 'usa'],
     bio: 'The king of jank.',
+    website: 'https://github.com/quantum9Innovation',
   },
   ywu: {
     name: {
