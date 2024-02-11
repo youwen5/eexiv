@@ -29,6 +29,12 @@ export default function Page({
         <Link href={`/affiliation/${mainAffiliationShort}`}>
           {mainAffiliation.name}
         </Link>
+
+        {authorData.website ? (
+          <div className='mt-2'>
+            Visit at: <a href={authorData.website}>{authorData.website}</a>
+          </div>
+        ) : null}
       </>
     )
   }
@@ -100,12 +106,6 @@ export default function Page({
     return (
       <>
         <h1 className='text-3xl md:my-6 my-4 font-serif'>Bio:</h1>
-        {authorData.website ? (
-          <h2 className='mb-4 text-lg'>
-            You can visit me at:{' '}
-            <a href={authorData.website}>{authorData.website}</a>
-          </h2>
-        ) : null}
         <p>{authorData.bio}</p>
       </>
     )
@@ -122,14 +122,14 @@ export default function Page({
           />
         </div>
         <div>
-          <div className='grid grid-cols-1 grid-rows-2 mx-auto gap-y-3 sm:max-w-[60vw]'>
+          <div>
             <span
               className={`${zillaSlab.className} font-bold text-5xl text-center md:text-left`}
             >
               {name.first}
               {name.nickname ? ` "${name.nickname}"` : null} {name.last}
             </span>
-            <div className='text-slate-600 text-md sm:text-lg'>
+            <div className='text-slate-600 text-md sm:text-lg mt-4'>
               <MainPosition />
             </div>
           </div>
