@@ -29,9 +29,9 @@ export default function RootLayout({
     <html lang='en'>
       <body className={inter.className}>
         <div className={styles.header}>
-          <Container width='1200px'>
-            <img className={styles.wordmark} src='/eecs-wordmark.png' />
-            <p className={styles.contributions}>
+          <div className='max-w-[1200px] flex flex-nowrap mx-auto justify-between items-center'>
+            <img className='h-[100px] mt-4' src='/eecs-wordmark.png' />
+            <p className={`max-w-[600px] hidden md:inline`}>
               We gratefully acknowledge support from our volunteer peer
               reviewers, member institutions, and all{' '}
               <a
@@ -42,17 +42,19 @@ export default function RootLayout({
               </a>
               .
             </p>
-          </Container>
+          </div>
         </div>
-        <div className={styles.banner}>
-          <Container width='1200px'>
-            <h1 className={`${styles.title} ${zillaSlab.className}`}>
+        <div className={`${styles.banner} w-full h-[100px] mb-[50px]`}>
+          <div className='max-w-[1200px] flex justify-between mx-auto items-center pt-3 flex-nowrap'>
+            <h1 className={`${styles.title} ${zillaSlab.className} mx-10`}>
               <Link href='/' className='no-link-style'>
                 eeXiv<sup>2</sup>
               </Link>
             </h1>
-          </Container>
-          <SearchBar />
+            <div className='hidden md:inline'>
+              <SearchBar />
+            </div>
+          </div>
         </div>
         <Container width='1200px' fill>
           {children}

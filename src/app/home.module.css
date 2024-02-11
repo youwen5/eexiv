@@ -9,20 +9,15 @@
 }
 
 .banner {
-  width: 100%;
-  height: 100px;
-  padding: 20px;
   background-color: #0c5198;
   color: white;
-  margin-bottom: 50px;
 }
 
 .title {
-  position: absolute;
-  top: 162.5px;
+  /* top: 162.5px; */
   color: white;
   font-size: 50px;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
   cursor: pointer;
 }
 
@@ -34,7 +29,6 @@
 
 .contributions {
   width: 40vw;
-  margin-top: 50px;
   margin-left: calc(100% - 40vw - 10px);
 }
 

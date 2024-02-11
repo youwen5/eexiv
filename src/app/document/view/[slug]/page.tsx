@@ -1,6 +1,4 @@
-import styles from './documentViewer.module.css'
 import { Zilla_Slab } from 'next/font/google'
-import { saveAs } from 'file-saver'
 import {
   DocumentType,
   documents,
@@ -9,6 +7,7 @@ import {
 } from '../../../db/data'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { Fragment } from 'react'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
@@ -32,18 +31,10 @@ export default function Page({
   const doc = documents[params.slug]
   if (!doc) {
     notFound()
-    return
   }
   const { abstract, file } = doc
   const { title, authors, topics, dates, references, code, type, latest } =
     doc.manifest
-
-  const handleDownloadLatest = () => {
-    saveAs(
-      `/download/${params.slug}/file${latest}.${file}`,
-      `${params.slug}-rev-${latest}.pdf`
-    )
-  }
 
   const generateTopics = () => {
     return (
@@ -67,12 +58,12 @@ export default function Page({
         <>
           <span className='font-bold'>Code: </span>
           {code.map((c: string, i) => (
-            <>
+            <Fragment key={c}>
               <Link href={c} target='_blank'>
                 {c}
               </Link>
               {i !== code.length - 1 ? ', ' : null}
-            </>
+            </Fragment>
           ))}
         </>
       )
@@ -122,15 +113,14 @@ export default function Page({
   return (
     <div>
       <div>
-        <h3
+        <h1
           className={`
-            ${styles.itemTitle}
-            text-slate-800
+            text-slate-800 font-bold text-5xl mb-8
             ${zillaSlab.className}
           `}
         >
           {title}
-        </h3>
+        </h1>
         <p className={`text-slate-800 mt-2`}>{generateAuthors()}</p>
         <p className='mt-4'>
           Latest revision published{' '}
