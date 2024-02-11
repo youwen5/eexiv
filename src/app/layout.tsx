@@ -61,31 +61,31 @@ export default function RootLayout({
           <div className={styles.footerContent}>
             <Container width='1200px'>
               <ul>
-                <li>
+                <li key='about'>
                   <Link href='/about'>About</Link>
                 </li>
-                <li>
+                <li key='help'>
                   <Link href='/help'>Help</Link>
                 </li>
-                <li>
+                <li key='contact'>
                   <Link href='/contact'>Contact</Link>
                 </li>
-                <li>
+                <li key='subscribe'>
                   <Link href='/subscribe'>Subscribe</Link>
                 </li>
-                <li>
+                <li key='copyright'>
                   <Link href='/legal/copyright'>Copyright</Link>
                 </li>
-                <li>
+                <li key='privacy'>
                   <Link href='/legal/privacy'>Privacy Policy</Link>
                 </li>
-                <li>
+                <li key='accessibility'>
                   <Link href='/help/accessibility'>Accessibility</Link>
                 </li>
-                <li>
+                <li key='status'>
                   <Link href='/status'>eeXiv status</Link>
                 </li>
-                <li>
+                <li key='notifications'>
                   <Link href='/status/notifications'>
                     Get status notifications
                   </Link>

@@ -1,7 +1,7 @@
 import { authors, affiliations, nationalities } from '../../db/data'
-import { navigate } from '../../actions'
 import { Zilla_Slab } from 'next/font/google'
 import Link from 'next/link'
+import { Fragment } from 'react'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
@@ -11,9 +11,8 @@ export default function Page({
   params: { author: string }
 }>) {
   const authorData = authors[params.author]
-  console.log(authorData)
+  // console.log(authorData)
   if (!authorData) {
-    navigate('/404')
     return
   }
 
@@ -43,14 +42,14 @@ export default function Page({
           const position = a.split('@')[0]
           const affiliation = affiliations[a.split('@')[1]].name
           return (
-            <>
+            <Fragment key={`${position}@${affiliation}`}>
               <span className='text-slate-500 text-lg'>
                 {position} at{' '}
                 <Link href={`/affiliation/${a.split('@')[1]}`}>
                   {affiliation}
                 </Link>
               </span>
-            </>
+            </Fragment>
           )
         })}
       </>
@@ -61,22 +60,20 @@ export default function Page({
     if (!formerAffiliations) return null
     return (
       <>
+        <h1 className='text-3xl md:my-6 my-4 font-serif'>Former Positions:</h1>
         {formerAffiliations?.map((a: string, i: number) => {
           const position = a.split('@')[0]
           const affiliation = affiliations[a.split('@')[1]].name
 
           return (
-            <>
-              <h1 className='text-3xl md:my-6 my-4 font-serif'>
-                Former Positions:
-              </h1>
+            <Fragment key={`${position}@${affiliation}`}>
               <span className='text-slate-500 text-lg'>
                 {position} at{' '}
                 <Link href={`/affiliation/${a.split('@')[1]}`}>
                   {affiliation}
                 </Link>
               </span>
-            </>
+            </Fragment>
           )
         })}
       </>
@@ -89,12 +86,10 @@ export default function Page({
     const nationalityData = nationalities[nationality]
     const { demonym, flag } = nationalityData
     return (
-      <>
-        <div className='flex items-center'>
-          <img src={flag} className='w-10 border-2 border-slate-200' />
-          <span className='mx-3 font-semibold'>{demonym}</span>
-        </div>
-      </>
+      <div className='flex items-center'>
+        <img src={flag} className='w-10 border-2 border-slate-200' />
+        <span className='mx-3 font-semibold'>{demonym}</span>
+      </div>
     )
   }
 
@@ -149,7 +144,9 @@ export default function Page({
         </h1>
         <div className='flex gap-2 flex-wrap'>
           {nationality.map((n: string) => (
-            <NationalityDisplay nationality={n} />
+            <Fragment key={n}>
+              <NationalityDisplay nationality={n} />
+            </Fragment>
           ))}
         </div>
         <Bio />
