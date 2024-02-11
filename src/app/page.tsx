@@ -6,6 +6,7 @@ import {
   affiliations,
 } from './db/data'
 import { epoch2datestring } from './utils/epoch2datestring'
+import News from './components/News'
 
 export default function Home() {
   const RandomDocs = (): React.ReactNode[] => {
@@ -88,8 +89,8 @@ export default function Home() {
   }
 
   return (
-    <div className='content text-slate-800 flex flex-wrap'>
-      <p className='font-serif text-lg max-w-lg mr-1'>
+    <div className='text-slate-800 flex flex-wrap'>
+      <p className='font-serif text-lg max-w-lg mr-1 text-balance'>
         eeXiv<sup>2</sup>, like arXiv, is a free distribution service and an
         open-access archive for nearly 2.4 million scholarly articles in the
         fields of physics, mathematics, computer science, quantitative biology,
@@ -104,21 +105,7 @@ export default function Home() {
         . Materials on this site may be published independently through other
         channels. Read more about us <Link href='/about'>here</Link>.
       </p>
-      <div className='bg-slate-800 rounded-lg p-6 w-full lg:max-w-lg md:max-w-md my-4 lg:my-0'>
-        <span className='text-3xl md:text-4xl text-slate-200'>
-          eeXiv<sup>2</sup> News
-        </span>
-        <br className='my-2' />
-        <span className='text-xl text-slate-400'>
-          Stay up to date with what is happening at eeXiv<sup>2</sup>.
-        </span>
-        <br className='my-2' />
-        <span className='text-lg text-slate-200'>Latest news</span>
-        <br className='my-4' />
-        <div className='text-slate-50'>
-          - eeXiv is currently under active development!
-        </div>
-      </div>
+      <News />
       <div className='grid grid-cols-1 space-y-2 mt-4'>
         <hr className='mx-auto w-full h-1 border-0 bg-slate-200 my-2 rounded-md' />
         <span className='font-serif text-xl'>

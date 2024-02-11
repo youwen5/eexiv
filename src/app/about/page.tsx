@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Page() {
   return (
-    <div className='content text-slate-600'>
+    <div className='text-slate-600'>
       <h1 className='text-3xl text-slate-800 mt-4 mb-1 font-serif'>About Us</h1>
       <p>
         eeXiv<sup>2</sup>{' '}
@@ -17,7 +17,7 @@ export default function Page() {
         </Link>{' '}
         under the GNU General Public License (GPL).
       </p>
-      <h1 className='text-2xl text-slate-800 mt-6 mb-1 font-serif'>
+      <h1 className='text-3xl text-slate-800 mt-6 mb-1 font-serif'>
         Frequently Asked Questions
       </h1>
       <ul className='list-disc'>
