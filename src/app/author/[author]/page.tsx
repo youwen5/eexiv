@@ -117,8 +117,8 @@ export default function Page({
 
   return (
     <div>
-      <div className='grid grid-cols-1 md:grid-cols-2 items-center max-w-3xl'>
-        <div className='aspect-square w-[60vw] md:w-[30vw] lg:w-[20vw] 2xl:w-[15vw] overflow-hidden mb-4'>
+      <div className='grid grid-cols-1 md:grid-cols-2 items-center max-w-3xl mx-auto'>
+        <div className='aspect-square w-[60vw] md:w-[30vw] lg:w-[20vw] 2xl:w-[15vw] overflow-hidden mx-auto mb-4'>
           <img
             alt='profile picture'
             className='rounded-full mx-auto object-cover w-full h-full border-slate-800 border-4'
