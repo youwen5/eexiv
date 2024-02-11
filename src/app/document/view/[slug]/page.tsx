@@ -1,4 +1,3 @@
-'use client'
 import styles from './documentViewer.module.css'
 import { Zilla_Slab } from 'next/font/google'
 import { saveAs } from 'file-saver'
@@ -8,8 +7,8 @@ import {
   topics as topicList,
   authors as authorList,
 } from '../../../db/data'
-import { navigate } from '../../../actions'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
@@ -32,7 +31,7 @@ export default function Page({
 }: Readonly<{ params: { slug: string } }>) {
   const doc = documents[params.slug]
   if (!doc) {
-    navigate('/404')
+    notFound()
     return
   }
   const { abstract, file } = doc
@@ -148,22 +147,25 @@ export default function Page({
         <p className='my-4 text-xl text-slate-600 font-serif  '>{abstract}</p>
         <p className='my-2'>{generateTopics()}</p>
         <p className='my-2'>{generateCode()}</p>
-        <button
-          className='bg-blue-600 text-slate-100 hover:bg-blue-400 font-semibold rounded py-2 px-4 my-2'
-          onClick={handleDownloadLatest}
+        <Link
+          href={`/download/${params.slug}/file${latest}.${file}`}
+          download={`${params.slug}-rev-${latest}.pdf`}
+          target='_blank'
         >
-          Download{' '}
-          {(() => {
-            switch (file) {
-              case 'other':
-                return <></>
-              case 'tar.gz':
-                return 'Tarball'
-              default:
-                return file.toUpperCase()
-            }
-          })()}
-        </button>
+          <button className='bg-blue-600 text-slate-100 hover:bg-blue-400 font-semibold rounded py-2 px-4 my-2'>
+            Download{' '}
+            {(() => {
+              switch (file) {
+                case 'other':
+                  return <></>
+                case 'tar.gz':
+                  return 'Tarball'
+                default:
+                  return file.toUpperCase()
+              }
+            })()}
+          </button>
+        </Link>
       </div>
     </div>
   )
