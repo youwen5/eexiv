@@ -1,4 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  output: 'export',
+  basePath: '/eexiv-2',
+  images: {
+    unoptimized: true,
+  },
+}
 
-export default nextConfig;
+export default nextConfig

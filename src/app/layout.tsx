@@ -33,7 +33,7 @@ export default function RootLayout({
             <Link href='/affiliation/1280-eecs'>
               <img
                 className='h-[100px] mt-4'
-                src='/img/logos/eecs-wordmark.png'
+                src='/eexiv-2/img/logos/eecs-wordmark.png'
               />
             </Link>
             <p className={`max-w-[600px] hidden md:inline`}>

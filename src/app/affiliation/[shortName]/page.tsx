@@ -4,6 +4,11 @@ import { Zilla_Slab } from 'next/font/google'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
+export function generateStaticParams() {
+  const affiliationsList = Object.keys(affiliations)
+  return affiliationsList.map((shortName) => ({ shortName }))
+}
+
 export default function Page({
   params,
 }: Readonly<{ params: { shortName: string } }>) {

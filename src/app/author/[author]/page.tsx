@@ -6,6 +6,11 @@ import { Fragment } from 'react'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
+export function generateStaticParams() {
+  const authorsList = Object.keys(authors)
+  return authorsList.map((author) => ({ author }))
+}
+
 export default function Page({
   params,
 }: Readonly<{

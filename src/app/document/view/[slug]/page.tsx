@@ -12,6 +12,11 @@ import { epoch2datestring } from '@/app/utils/epoch2datestring'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
+export function generateStaticParams () {
+  const documentsList = Object.keys(documents)
+  return documentsList.map((slug) => ({ slug }))
+}
+
 export default function Page({
   params,
 }: Readonly<{ params: { slug: string } }>) {
