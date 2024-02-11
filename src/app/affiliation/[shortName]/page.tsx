@@ -1,7 +1,6 @@
 import { affiliations } from '@/app/db/data'
 import { notFound } from 'next/navigation'
 import { Zilla_Slab } from 'next/font/google'
-import { Fragment } from 'react'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 

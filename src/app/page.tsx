@@ -6,7 +6,6 @@ import {
   affiliations,
 } from './db/data'
 import { epoch2datestring } from './utils/epoch2datestring'
-import { Fragment } from 'react'
 
 export default function Home() {
   const RandomDocs = (): React.ReactNode[] => {
@@ -90,19 +89,28 @@ export default function Home() {
 
   return (
     <div className='content text-slate-800 flex flex-wrap'>
-      <p className='font-serif text-lg max-w-lg'>
-        eeXiv<sup>2</sup> is a free distribution service and an open-access
-        archive for nearly 2.4 million scholarly articles in the fields of
-        physics, mathematics, computer science, quantitative biology,
+      <p className='font-serif text-lg max-w-lg mr-1'>
+        eeXiv<sup>2</sup>, like arXiv, is a free distribution service and an
+        open-access archive for nearly 2.4 million scholarly articles in the
+        fields of physics, mathematics, computer science, quantitative biology,
         quantitative finance, statistics, electrical engineering and systems
-        science, and economics. Materials on this site may be published
-        independently through other channels.
+        science, and economics, but mainly related to the{' '}
+        <Link
+          href='https://en.wikipedia.org/wiki/FIRST_Robotics_Competition'
+          target='_blank'
+        >
+          FIRST Robotics Competition (FRC)
+        </Link>
+        . Materials on this site may be published independently through other
+        channels. Read more about us <Link href='/about'>here</Link>.
       </p>
       <div className='bg-slate-800 rounded-lg p-6 w-full lg:max-w-lg md:max-w-md my-4 lg:my-0'>
-        <span className='text-3xl md:text-4xl text-slate-200'>eeXiv News</span>
+        <span className='text-3xl md:text-4xl text-slate-200'>
+          eeXiv<sup>2</sup> News
+        </span>
         <br className='my-2' />
         <span className='text-xl text-slate-400'>
-          Stay up to date with what is happening at eeXiv.
+          Stay up to date with what is happening at eeXiv<sup>2</sup>.
         </span>
         <br className='my-2' />
         <span className='text-lg text-slate-200'>Latest news</span>

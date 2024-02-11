@@ -17,7 +17,7 @@ const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500', '700'] })
 
 export const metadata: Metadata = {
   title: 'eeXiv^2',
-  description: 'eeXiv just got better',
+  description: 'arXiv just got better',
 }
 
 export default function RootLayout({
@@ -37,7 +37,7 @@ export default function RootLayout({
               We gratefully acknowledge support from our volunteer peer
               reviewers, member institutions, and all{' '}
               <a
-                href='https://github.com/Team-1280/eeXiv/graphs/contributors'
+                href='https://github.com/couscousdude/eeXiv-2/graphs/contributors'
                 target='_blank'
               >
                 open-source contributors

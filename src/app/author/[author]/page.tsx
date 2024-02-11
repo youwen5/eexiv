@@ -30,15 +30,29 @@ export default function Page({
         <Link href={`/affiliation/${mainAffiliationShort}`}>
           {mainAffiliation.name}
         </Link>
-
         {authorData.website ? (
           <div className='mt-2'>
-            Visit at:{' '}
+            Visit{' '}
+            {authorData.name.nickname
+              ? authorData.name.nickname
+              : authorData.name.first}{' '}
+            at:{' '}
             <a href={authorData.website} target='_blank'>
               {authorData.website}
             </a>
           </div>
         ) : null}
+        <div className='my-4 max-h-12 flex flex-wrap'>
+          {affiliation.map((a: string) => (
+            <Link key={a} href={`/affiliation/${a.split('@')[1]}`}>
+              <img
+                src={affiliations[a.split('@')[1]].image}
+                alt={affiliations[a.split('@')[1]].name}
+                className='h-12 mr-2'
+              />
+            </Link>
+          ))}
+        </div>
       </>
     )
   }
@@ -47,7 +61,9 @@ export default function Page({
     if (affiliation.length === 1) return
     return (
       <>
-        <h1 className='text-3xl md:my-6 my-4 font-serif'>Other Positions:</h1>
+        <h1 className='text-3xl md:mt-6 mt-4 mb-2 font-serif'>
+          Other Positions:
+        </h1>
         {affiliation.slice(1).map((a: string, i: number) => {
           const position = a.split('@')[0]
           const affiliation = affiliations[a.split('@')[1]].name
@@ -70,7 +86,9 @@ export default function Page({
     if (!formerAffiliations) return null
     return (
       <>
-        <h1 className='text-3xl md:my-6 my-4 font-serif'>Former Positions:</h1>
+        <h1 className='text-3xl md:mt-6 mt-4 mb-2 font-serif'>
+          Former Positions:
+        </h1>
         {formerAffiliations?.map((a: string, i: number) => {
           const position = a.split('@')[0]
           const affiliation = affiliations[a.split('@')[1]].name
@@ -109,7 +127,7 @@ export default function Page({
 
     return (
       <>
-        <h1 className='text-3xl md:my-6 my-4 font-serif'>Bio:</h1>
+        <h1 className='text-3xl md:mt-6 mt-4 mb-2 font-serif'>Bio:</h1>
         <p>{authorData.bio}</p>
       </>
     )

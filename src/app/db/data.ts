@@ -225,6 +225,30 @@ export const topics: Topics = {
   },
 }
 
+/* 
+Authors data format:
+authorName (as a slug): {
+  name: {
+    first: first name
+    last: last name
+    optional nickname: nickname
+  }
+
+  affiliation: an array of affiliation "slugs". this should correspond to affiliations in the affiliations data.
+  The first affiliation will be considered the primary affiliation
+
+  image: image url, can store in public/img/profiles or link to a web resource
+
+  nationality: an array of ISO 3 letter country codes corresponding to your nationalities or ethniciities
+
+  formerAffiliations: an array of former affiliation "slugs." they should also correspond to affiliations 
+  in the affiliations data
+  
+  bio: biography string
+
+  website: website url
+}
+*/
 export interface Authors {
   [key: string]: {
     name: {
@@ -240,7 +264,6 @@ export interface Authors {
     website?: string
   }
 }
-
 export const authors: Authors = {
   shasan: {
     name: {
@@ -248,8 +271,8 @@ export const authors: Authors = {
       last: 'Hasan',
     },
     affiliation: ['Undergraduate@usc-viterbi'],
-    formerAffiliations: ['Lead Mechanical Engineer@1280-mech'],
-    image: 'https://team-1280.vercel.app/assets/img/gallery6.jpg',
+    formerAffiliations: ['Lead Mechanical Engineer@1280-mech', 'Student@srvhs'],
+    image: '/img/profiles/shasan.jpg',
     nationality: ['pak', 'usa'],
   },
   mbohsali: {
@@ -257,8 +280,8 @@ export const authors: Authors = {
       first: 'Majd',
       last: 'Bohsali',
     },
-    affiliation: ['Lead Programming Engineer@1280-eecs'],
-    image: 'https://cdn-icons-png.freepik.com/512/3177/3177440.png',
+    affiliation: ['Lead Programming Engineer@1280-eecs', 'Student@srvhs'],
+    image: '/img/profiles/default.png',
     nationality: ['lbn', 'usa'],
   },
   avenkatesh: {
@@ -267,8 +290,8 @@ export const authors: Authors = {
       last: 'Venkatesh',
     },
     affiliation: ['Lead Controls Engineer@1280-eecs'],
-    formerAffiliations: ['Programming Lead @1280-programming'],
-    image: 'https://cdn-icons-png.freepik.com/512/3177/3177440.png',
+    formerAffiliations: ['Programming Lead@1280-programming'],
+    image: '/img/profiles/avenkatesh.png',
     nationality: ['ind', 'eth', 'usa'],
     bio: 'The king of jank.',
     website: 'https://github.com/quantum9Innovation',
@@ -281,6 +304,8 @@ export const authors: Authors = {
     affiliation: ['Artificial Intelligence Lead@1280-eecs'],
     image: '/img/profiles/ywu.webp',
     nationality: ['chn'],
+    bio: 'The kingpin of jank. Never before has so much jank been so distilled in one place.',
+    website: 'https://github.com/couscousdude',
   },
   wlin: {
     name: {
@@ -291,12 +316,24 @@ export const authors: Authors = {
     affiliation: [
       'Electrical Engineer@1280-eecs',
       'General Affairs@1280-business',
+      'Student@srvhs',
     ],
     image: '/img/profiles/wlin.jpg',
     nationality: ['twn', 'chn', 'usa'],
     formerAffiliations: ['Intern@raid-zero'],
     bio: 'Hi, I am Kaito or Warren. I am a Self-taught programmer and engineer. I go around doing dumb things such as my projects. I have a dream of building a community. I am currently part of many projects.',
     website: 'https://kaitotlex.carrd.co/',
+  },
+  gostler: {
+    name: {
+      first: 'Gavin',
+      last: 'Ostler',
+    },
+    affiliation: ['Vision Researcher@1280-eecs', 'Student@srvhs'],
+    image: '/img/profiles/gostler.jpg',
+    nationality: ['usa'],
+    website: 'https://github.com/gavinostler',
+    bio: `I'm Gavin, a high school student from the Bay Area. I am a fullstack developer and love making random things to fill my day. I'm interested in creating useful tools and software in the future.`,
   },
 }
 
@@ -313,8 +350,7 @@ export const affiliations: Affiliations = {
   '1280-mech': {
     name: "Team 1280, the Ragin' C Biscuits, Mechanical Subteam",
     short: '1280 Mech',
-    image:
-      'https://raw.githubusercontent.com/Team-1280/identity/main/assets/img/figurehead/figurehead-primary.png',
+    image: '/img/logos/1280-main.png',
     description: `The mechanical subteam is the backbone of Team 1280, focusing on the physical design, construction, and mechanical integrity of their robots. This subteam is where concepts and designs become tangible, transforming ideas into the moving parts and structural components that give the robots their form and function. The Mechanical subteam's work encompasses a broad range of activities, from drafting initial sketches and CAD modeling to machining parts and assembling complex mechanical systems.
 [linebreak]
 Members of the Mechanical subteam are adept in applying principles of mechanical engineering to solve practical problems, ensuring that the robot is not only capable of performing the tasks required by the competition but is also robust, efficient, and adaptable to the dynamic environment of a FIRST Robotics match. They work closely with materials, tools, and manufacturing processes, gaining hands-on experience in fabrication techniques such as welding, 3D printing, and CNC machining.
@@ -326,8 +362,7 @@ The Mechanical subteam fosters a culture of creativity, innovation, and excellen
   '1280-eecs': {
     name: "Team 1280, the Ragin' C Biscuits, Electrical Engineering and Computer Science Subteam",
     short: '1280 EECS',
-    image:
-      'https://raw.githubusercontent.com/Team-1280/identity/main/assets/img/eecs/eecs.png',
+    image: '/img/logos/eecs-wordmark.png',
     description: `The Team 1280 EECS (Electrical Engineering and Computer Science) subteam is an autonomous organization within Team 1280, specializing in the design, programming, and electrical systems that bring their robots to life. As the nerve center of Team 1280, the EECS subteam combines the disciplines of electrical engineering and computer science to develop sophisticated control systems, autonomous functionalities, and robust electrical infrastructures that enable their robots to perform complex tasks and maneuvers in the competitive arena.
 [linebreak]
 Team 1280 EECS is composed of highly skilled and passionate students who are keen on applying theoretical knowledge to practical challenges. They are responsible for everything from circuit design and sensor integration to software development and debugging, ensuring that the robot can effectively communicate, navigate, and interact with its environment.
@@ -337,15 +372,13 @@ Team 1280 EECS benefits from mentorship by experienced professionals and alumni,
   '1280-programming': {
     name: "Team 1280, the Ragin' C Biscuits, Programming Subteam (now defunct)",
     short: '1280 Programming',
-    image:
-      'https://raw.githubusercontent.com/Team-1280/identity/main/assets/img/eecs/eecs.png',
-    description: 'placeholder',
+    image: '/img/logos/1280-main.png',
+    description: `The former programming subteam of Team 1280, it combined with the Team 1280 electrical subteam in a historic merger to form Team 1280 EECS.`,
   },
   'usc-viterbi': {
     name: 'University of Southern California, Viterbi School of Engineering',
     short: 'USC Viterbi',
-    image:
-      'https://pbs.twimg.com/profile_images/1006996145212551169/HaqpwHNY_400x400.jpg',
+    image: '/img/logos/usc-viterbi.jpg',
     description: `The University of Southern California (USC) Viterbi School of
           Engineering is a cornerstone of innovation and excellence in the
           engineering field. Established in 1905, it has grown into a leading
@@ -373,8 +406,7 @@ Team 1280 EECS benefits from mentorship by experienced professionals and alumni,
   '1280-business': {
     name: "Team 1280, the Ragin' C Biscuits, Business Subteam",
     short: '1280 Business',
-    image:
-      'https://raw.githubusercontent.com/Team-1280/identity/main/assets/img/figurehead/figurehead-primary.png',
+    image: '/img/logos/1280-main.png',
     description: `The Business subteam of Team 1280 plays a crucial role in ensuring the team's operational success and sustainability. Unlike the engineering-focused subteams, the Business subteam focuses on the financial, organizational, and community aspects of the team's operations. They are responsible for fundraising, sponsorship outreach, budget management, and public relations, ensuring that the team has the necessary resources and support to thrive in their endeavors.
 [linebreak]
 Members of the Business subteam develop and execute strategies to engage with corporate sponsors, local businesses, and individual donors, crafting compelling sponsorship proposals and maintaining ongoing relationships with stakeholders. They also manage the team's finances, meticulously planning and tracking expenditures to ensure that resources are allocated efficiently and effectively.
@@ -388,8 +420,7 @@ By bridging the gap between engineering innovation and business acumen, the Busi
   'raid-zero': {
     name: 'Team 4253 - Raid Zero',
     short: 'Raid 0',
-    image:
-      'https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/299113446_475020107964742_4855015622304877578_n.png?_nc_cat=101&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=f-tZdWsVEzQAX_9HeIZ&_nc_ht=scontent-sjc3-1.xx&oh=00_AfDRrS-nRH8uMBH9tpG7g8RNEO1AEtNso5EQMgJ5NaneaQ&oe=65CD858E',
+    image: '/img/logos/raid-zero.png',
     description: `Team 4253, Raid Zero, hailing from Taipei American School in Taipei, Taipei Special Municipality, Chinese Taipei, has been a formidable presence in the world of robotics since its rookie year in 2012. As a participant in the international FIRST Robotics Competition, Raid Zero exemplifies innovation, teamwork, and the pursuit of excellence in science, technology, engineering, and mathematics (STEM).
 [linebreak]
 Since its inception, Raid Zero has dedicated itself to designing, building, and programming competitive robots that can perform complex tasks and compete at high levels. The team's journey through the FIRST Robotics Competition has been marked by continuous learning, adaptation, and growth, reflecting their commitment to not only compete but also to embody the ideals of gracious professionalism and cooperation.
@@ -399,6 +430,12 @@ Beyond the technical skills gained through robotics design and competition, Team
 Operating within the vibrant educational environment of Taipei American School, Team 4253 benefits from a supportive network of mentors, educators, and alumni who provide guidance and support. This nurturing ecosystem fosters creativity, critical thinking, and problem-solving skills among team members, preparing them for future challenges and opportunities in STEM fields.
 [linebreak]
 Raid Zero's influence extends beyond the technical achievements in robotics competitions. The team's efforts to promote STEM education, engage with the community, and develop sustainable practices demonstrate a holistic approach to their mission. As Team 4253 continues to evolve and impact the world of robotics and STEM education, Raid Zero remains a beacon of innovation and inspiration for students and enthusiasts around the globe.`,
+  },
+  srvhs: {
+    name: 'San Ramon Valley High School',
+    short: 'SRVHS',
+    image: '/img/logos/srvhs.jpg',
+    description: `A relatively average high school located in Danville, California. It has no standout features besides being the base of operations for Team 1280 and Team 1280 EECS.`,
   },
 }
 
