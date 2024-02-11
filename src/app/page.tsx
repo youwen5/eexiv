@@ -89,8 +89,8 @@ export default function Home() {
   }
 
   return (
-    <div className='text-slate-800 flex flex-wrap'>
-      <p className='font-serif text-lg max-w-lg mr-1 text-balance'>
+    <div className='text-slate-800 flex flex-wrap md:flex-row justify-center'>
+      <p className='font-serif text-lg basis-full md:basis-1/2 grow mr-1 text-balance'>
         eeXiv<sup>2</sup>, like arXiv, is a free distribution service and an
         open-access archive for nearly 2.4 million scholarly articles in the
         fields of physics, mathematics, computer science, quantitative biology,
@@ -106,7 +106,7 @@ export default function Home() {
         channels. Read more about us <Link href='/about'>here</Link>.
       </p>
       <News />
-      <div className='grid grid-cols-1 space-y-2 mt-4'>
+      <div className='grid grid-cols-1 space-y-2 mt-4 basis-full'>
         <hr className='mx-auto w-full h-1 border-0 bg-slate-200 my-2 rounded-md' />
         <span className='font-serif text-xl'>
           Selected documents in various disciplines

@@ -1,6 +1,6 @@
 export default function News() {
   return (
-    <div className='bg-slate-800 rounded-lg p-6 w-full lg:max-w-lg md:max-w-md my-4 lg:my-0'>
+    <div className='bg-slate-800 rounded-lg p-6 w-full basis-full md:basis-2/5 my-4 lg:my-0'>
       <span className='text-3xl md:text-4xl text-slate-200'>
         eeXiv<sup>2</sup> News
       </span>
