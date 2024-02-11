@@ -8,7 +8,7 @@ import {
   topics as topicList,
   authors as authorList,
 } from '../../../db/data'
-import { navigate } from './actions'
+import { navigate } from '../../../actions'
 import Link from 'next/link'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
@@ -41,7 +41,7 @@ export default function Page({
 
   const handleDownloadLatest = () => {
     saveAs(
-      `/download/${params.slug}/file${latest}.pdf`,
+      `/download/${params.slug}/file${latest}.${file}`,
       `${params.slug}-rev-${latest}.pdf`
     )
   }
@@ -97,7 +97,7 @@ export default function Page({
   }
 
   const generateItemBadge = (itemName: DocumentType) => {
-    let itemStyle: string = 'px-3 py-1 rounded inline-block w-fit mr-2 mt-4 '
+    let itemStyle: string = 'px-3 py-1.5 rounded inline-block w-fit mr-2 mt-4 '
     switch (itemName) {
       case 'report':
         itemStyle += 'bg-green-400 text-slate-50'
@@ -139,9 +139,11 @@ export default function Page({
             {epoch2datestring(dates[dates.length - 1])}
           </span>
         </p>
-        {generateItemBadge('report')}
-        <p className='inline-block'>Revision {latest}</p>
-        <hr className='w-10/12 my-4' />
+        {generateItemBadge(type)}
+        <p className='inline-block border-gray-200 border-2 rounded px-2 py-1'>
+          Revision {latest}
+        </p>
+        <hr className='my-4' />
         <h4 className='text-2xl mt-5 font-serif font-semibold'>Abstract</h4>
         <p className='my-4 text-xl text-slate-600 font-serif  '>{abstract}</p>
         <p className='my-2'>{generateTopics()}</p>
@@ -150,7 +152,17 @@ export default function Page({
           className='bg-blue-600 text-slate-100 hover:bg-blue-400 font-semibold rounded py-2 px-4 my-2'
           onClick={handleDownloadLatest}
         >
-          Download {file !== 'other' ? file.toUpperCase() : null}
+          Download{' '}
+          {(() => {
+            switch (file) {
+              case 'other':
+                return <></>
+              case 'tar.gz':
+                return 'Tarball'
+              default:
+                return file.toUpperCase()
+            }
+          })()}
         </button>
       </div>
     </div>
