@@ -19,7 +19,7 @@ const inter = Inter({ subsets: ['latin'] })
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500', '700'] })
 
 export const metadata: Metadata = {
-  title: 'eeXiv^2',
+  title: 'eeXiv',
   description: 'arXiv just got better',
 }
 
