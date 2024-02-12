@@ -17,6 +17,12 @@ documents {
         file: pdf | docx | pptx | targz | other, named file[rev].[ext]
         (eg. revision 1 = file1.pdf, revision 2 = file2.pdf, etc)
         the "latest" should be the latest revision
+        citation: a string that can be used to cite the document
+        reviewers: an array of reviewers, following the reviewer format. if you specify a local
+                  profile username, it will link to the author's profile, and take priority over the link
+        status: draft | under review | reviewed | published no review
+          note: published no review should be used for documents where peer review 
+          is not appropriate or unnecessary
     }
 }
 */
@@ -28,6 +34,18 @@ export type DocumentType =
   | 'dwm'
   | 'datasheet'
   | 'other'
+
+export type reviewer = {
+  first: string
+  last: string
+  profile?: string
+  url?: string
+}
+export type DocumentStatus =
+  | 'draft'
+  | 'under review'
+  | 'reviewed'
+  | 'published no review'
 export interface DocumentDB {
   [key: string]: {
     manifest: {
@@ -40,9 +58,12 @@ export interface DocumentDB {
       type: DocumentType
       latest: number
       keywords?: string[]
+      status: DocumentStatus
+      reviewers?: reviewer[]
     }
     abstract: string
     file: FileType
+    citation?: string
   }
 }
 export const documents: DocumentDB = {
@@ -61,6 +82,7 @@ export const documents: DocumentDB = {
         'driven torque',
         'power',
       ],
+      status: 'published no review',
     },
     abstract:
       'This guide to mechanical engineering covers gears and gear ratios, gear types, gear diagrams and measurements and sprockets and chains. It also introduces a discussion of power in the context of gears and mechanical engineering specific to FRC robotics.',
@@ -102,6 +124,7 @@ export const documents: DocumentDB = {
         'https://github.com/Team-1280/Jankboard',
         'https://github.com/Team-1280/identity',
       ],
+      status: 'published no review',
     },
     abstract:
       'This document outlines the first two weeks of prototyping conducted by the EECS subteam for Team 1280. Action items are presented in a doing/working/moving format to keep track of new developments related to EECS projects.',
@@ -140,6 +163,8 @@ export const documents: DocumentDB = {
       code: ['https://github.com/Team-1280/DeepBozo'],
       type: 'report',
       latest: 1,
+      status: 'reviewed',
+      reviewers: [{ first: 'Youwen', last: 'Wu', profile: 'ywu' }],
     },
     file: 'pdf',
     abstract:
@@ -178,6 +203,12 @@ export const documents: DocumentDB = {
       type: 'report',
       topics: ['frc', 'eecs', 'econ'],
       latest: 1,
+      status: 'reviewed',
+      reviewers: [
+        { first: 'Youwen', last: 'Wu', profile: 'ywu' },
+        { first: 'Youwen', last: 'Wu', profile: 'ywu' },
+        { first: 'Youwen', last: 'Wu', profile: 'ywu' },
+      ],
     },
     abstract:
       'The toughbook is a rugged, industrial computer intended for low-performance, scalable, and cheap computational operations. The robotics storage cabinet contained a Lenovo ThinkPad toughbook which was, at the time of its discovery, severely damaged, both internally (software) and externally (hardware). The programming team invested significant time, energy, resources, and capital into the revival of this storied piece of digital infrastructure, thus restoring the ThinkPad and, by extension, the robotics team, to its former glory.',
@@ -272,7 +303,7 @@ export const authors: Authors = {
     },
     affiliation: ['Undergraduate@usc-viterbi'],
     formerAffiliations: ['Lead Mechanical Engineer@1280-mech', 'Student@srvhs'],
-    image: '/eexiv-2/img/profiles/shasan.jpg',
+    image: '/img/profiles/shasan.jpg',
     nationality: ['pak', 'usa'],
   },
   mbohsali: {
@@ -281,7 +312,7 @@ export const authors: Authors = {
       last: 'Bohsali',
     },
     affiliation: ['Lead Programming Engineer@1280-eecs', 'Student@srvhs'],
-    image: '/eexiv-2/img/profiles/default.png',
+    image: '/img/profiles/default.png',
     nationality: ['lbn', 'usa'],
   },
   avenkatesh: {
@@ -291,7 +322,7 @@ export const authors: Authors = {
     },
     affiliation: ['Lead Controls Engineer@1280-eecs'],
     formerAffiliations: ['Programming Lead@1280-programming'],
-    image: '/eexiv-2/img/profiles/avenkatesh.png',
+    image: '/img/profiles/avenkatesh.png',
     nationality: ['ind', 'eth', 'usa'],
     bio: 'The king of jank.',
     website: 'https://github.com/quantum9Innovation',
@@ -302,7 +333,7 @@ export const authors: Authors = {
       last: 'Wu',
     },
     affiliation: ['Artificial Intelligence Lead@1280-eecs'],
-    image: '/eexiv-2/img/profiles/ywu.webp',
+    image: '/img/profiles/ywu.webp',
     nationality: ['chn'],
     bio: 'The kingpin of jank. Never before has so much jank been so distilled in one place.',
     website: 'https://github.com/couscousdude',
@@ -318,7 +349,7 @@ export const authors: Authors = {
       'General Affairs@1280-business',
       'Student@srvhs',
     ],
-    image: '/eexiv-2/img/profiles/wlin.jpg',
+    image: '/img/profiles/wlin.jpg',
     nationality: ['twn', 'chn', 'usa'],
     formerAffiliations: ['Intern@raid-zero'],
     bio: 'Hi, I am Kaito or Warren. I am a Self-taught programmer and engineer. I go around doing dumb things such as my projects. I have a dream of building a community. I am currently part of many projects.',
@@ -330,7 +361,7 @@ export const authors: Authors = {
       last: 'Ostler',
     },
     affiliation: ['Vision Researcher@1280-eecs', 'Student@srvhs'],
-    image: '/eexiv-2/img/profiles/gostler.jpg',
+    image: '/img/profiles/gostler.jpg',
     nationality: ['usa'],
     website: 'https://github.com/gavinostler',
     bio: `I'm Gavin, a high school student from the Bay Area. I am a fullstack developer and love making random things to fill my day. I'm interested in creating useful tools and software in the future.`,
@@ -350,7 +381,7 @@ export const affiliations: Affiliations = {
   '1280-mech': {
     name: "Team 1280, the Ragin' C Biscuits, Mechanical Subteam",
     short: '1280 Mech',
-    image: '/eexiv-2/img/logos/1280-main.png',
+    image: '/img/logos/1280-main.png',
     description: `The mechanical subteam is the backbone of Team 1280, focusing on the physical design, construction, and mechanical integrity of their robots. This subteam is where concepts and designs become tangible, transforming ideas into the moving parts and structural components that give the robots their form and function. The Mechanical subteam's work encompasses a broad range of activities, from drafting initial sketches and CAD modeling to machining parts and assembling complex mechanical systems.
 [linebreak]
 Members of the Mechanical subteam are adept in applying principles of mechanical engineering to solve practical problems, ensuring that the robot is not only capable of performing the tasks required by the competition but is also robust, efficient, and adaptable to the dynamic environment of a FIRST Robotics match. They work closely with materials, tools, and manufacturing processes, gaining hands-on experience in fabrication techniques such as welding, 3D printing, and CNC machining.
@@ -362,7 +393,7 @@ The Mechanical subteam fosters a culture of creativity, innovation, and excellen
   '1280-eecs': {
     name: "Team 1280, the Ragin' C Biscuits, Electrical Engineering and Computer Science Subteam",
     short: '1280 EECS',
-    image: '/eexiv-2/img/logos/eecs-wordmark.png',
+    image: '/img/logos/eecs-wordmark.png',
     description: `The Team 1280 EECS (Electrical Engineering and Computer Science) subteam is an autonomous organization within Team 1280, specializing in the design, programming, and electrical systems that bring their robots to life. As the nerve center of Team 1280, the EECS subteam combines the disciplines of electrical engineering and computer science to develop sophisticated control systems, autonomous functionalities, and robust electrical infrastructures that enable their robots to perform complex tasks and maneuvers in the competitive arena.
 [linebreak]
 Team 1280 EECS is composed of highly skilled and passionate students who are keen on applying theoretical knowledge to practical challenges. They are responsible for everything from circuit design and sensor integration to software development and debugging, ensuring that the robot can effectively communicate, navigate, and interact with its environment.
@@ -372,13 +403,13 @@ Team 1280 EECS benefits from mentorship by experienced professionals and alumni,
   '1280-programming': {
     name: "Team 1280, the Ragin' C Biscuits, Programming Subteam (now defunct)",
     short: '1280 Programming',
-    image: '/eexiv-2/img/logos/1280-main.png',
+    image: '/img/logos/1280-main.png',
     description: `The former programming subteam of Team 1280, it combined with the Team 1280 electrical subteam in a historic merger to form Team 1280 EECS.`,
   },
   'usc-viterbi': {
     name: 'University of Southern California, Viterbi School of Engineering',
     short: 'USC Viterbi',
-    image: '/eexiv-2/img/logos/usc-viterbi.jpg',
+    image: '/img/logos/usc-viterbi.jpg',
     description: `The University of Southern California (USC) Viterbi School of
           Engineering is a cornerstone of innovation and excellence in the
           engineering field. Established in 1905, it has grown into a leading
@@ -406,7 +437,7 @@ Team 1280 EECS benefits from mentorship by experienced professionals and alumni,
   '1280-business': {
     name: "Team 1280, the Ragin' C Biscuits, Business Subteam",
     short: '1280 Business',
-    image: '/eexiv-2/img/logos/1280-main.png',
+    image: '/img/logos/1280-main.png',
     description: `The Business subteam of Team 1280 plays a crucial role in ensuring the team's operational success and sustainability. Unlike the engineering-focused subteams, the Business subteam focuses on the financial, organizational, and community aspects of the team's operations. They are responsible for fundraising, sponsorship outreach, budget management, and public relations, ensuring that the team has the necessary resources and support to thrive in their endeavors.
 [linebreak]
 Members of the Business subteam develop and execute strategies to engage with corporate sponsors, local businesses, and individual donors, crafting compelling sponsorship proposals and maintaining ongoing relationships with stakeholders. They also manage the team's finances, meticulously planning and tracking expenditures to ensure that resources are allocated efficiently and effectively.
@@ -420,7 +451,7 @@ By bridging the gap between engineering innovation and business acumen, the Busi
   'raid-zero': {
     name: 'Team 4253 - Raid Zero',
     short: 'Raid 0',
-    image: '/eexiv-2/img/logos/raid-zero.png',
+    image: '/img/logos/raid-zero.png',
     description: `Team 4253, Raid Zero, hailing from Taipei American School in Taipei, Taipei Special Municipality, Chinese Taipei, has been a formidable presence in the world of robotics since its rookie year in 2012. As a participant in the international FIRST Robotics Competition, Raid Zero exemplifies innovation, teamwork, and the pursuit of excellence in science, technology, engineering, and mathematics (STEM).
 [linebreak]
 Since its inception, Raid Zero has dedicated itself to designing, building, and programming competitive robots that can perform complex tasks and compete at high levels. The team's journey through the FIRST Robotics Competition has been marked by continuous learning, adaptation, and growth, reflecting their commitment to not only compete but also to embody the ideals of gracious professionalism and cooperation.
@@ -434,7 +465,7 @@ Raid Zero's influence extends beyond the technical achievements in robotics comp
   srvhs: {
     name: 'San Ramon Valley High School',
     short: 'SRVHS',
-    image: '/eexiv-2/img/logos/srvhs.jpg',
+    image: '/img/logos/srvhs.jpg',
     description: `A relatively average high school located in Danville, California. It has no standout features besides being the base of operations for Team 1280 and Team 1280 EECS.`,
   },
 }

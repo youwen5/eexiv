@@ -7,8 +7,6 @@ import SearchBar from './searchBar/SearchBar'
 import Container from './container/Container'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { Suspense } from 'react'
-import LoadingBar from './components/Loading'
 
 /* The default font is Inter. If you want to use Zilla Slab (or any other Google Font, 
   which are pre-provided by Next.js in the 'next/font/google' module), you need to 
@@ -38,7 +36,7 @@ export default function RootLayout({
             <Link href='/affiliation/1280-eecs'>
               <img
                 className='h-[100px] mt-4'
-                src='/eexiv-2/img/logos/eecs-wordmark.png'
+                src='/img/logos/eecs-wordmark.png'
                 alt='EECS'
               />
             </Link>
@@ -67,46 +65,40 @@ export default function RootLayout({
             </div>
           </div>
         </div>
-        <Suspense fallback={<LoadingBar />}>
-          <Container width='1200px' fill>
-            {children}
-          </Container>
-        </Suspense>
+        <Container>{children}</Container>
         <footer>
           <div className={styles.footerContent}>
-            <Container width='1200px'>
-              <ul>
-                <li key='about'>
-                  <Link href='/about'>About</Link>
-                </li>
-                <li key='help'>
-                  <Link href='/help'>Help</Link>
-                </li>
-                <li key='contact'>
-                  <Link href='/contact'>Contact</Link>
-                </li>
-                <li key='subscribe'>
-                  <Link href='/subscribe'>Subscribe</Link>
-                </li>
-                <li key='copyright'>
-                  <Link href='/legal/copyright'>Copyright</Link>
-                </li>
-                <li key='privacy'>
-                  <Link href='/legal/privacy'>Privacy Policy</Link>
-                </li>
-                <li key='accessibility'>
-                  <Link href='/help/accessibility'>Accessibility</Link>
-                </li>
-                <li key='status'>
-                  <Link href='/status'>eeXiv status</Link>
-                </li>
-                <li key='notifications'>
-                  <Link href='/status/notifications'>
-                    Get status notifications
-                  </Link>
-                </li>
-              </ul>
-            </Container>
+            <ul>
+              <li key='about'>
+                <Link href='/about'>About</Link>
+              </li>
+              <li key='help'>
+                <Link href='/help'>Help</Link>
+              </li>
+              <li key='contact'>
+                <Link href='/contact'>Contact</Link>
+              </li>
+              <li key='subscribe'>
+                <Link href='/subscribe'>Subscribe</Link>
+              </li>
+              <li key='copyright'>
+                <Link href='/legal/copyright'>Copyright</Link>
+              </li>
+              <li key='privacy'>
+                <Link href='/legal/privacy'>Privacy Policy</Link>
+              </li>
+              <li key='accessibility'>
+                <Link href='/help/accessibility'>Accessibility</Link>
+              </li>
+              <li key='status'>
+                <Link href='/status'>eeXiv status</Link>
+              </li>
+              <li key='notifications'>
+                <Link href='/status/notifications'>
+                  Get status notifications
+                </Link>
+              </li>
+            </ul>
           </div>
         </footer>
       </body>

@@ -1,21 +1,20 @@
+'use client'
 import { Zilla_Slab } from 'next/font/google'
 import {
   DocumentType,
   documents,
   topics as topicList,
   authors as authorList,
+  DocumentStatus,
+  reviewer,
 } from '@/app/db/data'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Fragment } from 'react'
+import { Fragment, useEffect } from 'react'
 import { epoch2datestring } from '@/app/utils/epoch2datestring'
+import { toast } from 'react-toastify'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
-
-export function generateStaticParams() {
-  const documentsList = Object.keys(documents)
-  return documentsList.map((slug) => ({ slug }))
-}
 
 export default function Page({
   params,
@@ -25,8 +24,27 @@ export default function Page({
     notFound()
   }
   const { abstract, file } = doc
-  const { title, authors, topics, dates, references, code, type, latest } =
-    doc.manifest
+  const {
+    title,
+    authors,
+    topics,
+    dates,
+    references,
+    code,
+    type,
+    latest,
+    reviewers,
+    status,
+  } = doc.manifest
+
+  useEffect(() => {
+    if (status === 'reviewed' && !reviewers) {
+      toast.warn(
+        `This document is marked reviewed, but the author 
+        forgot to add a list of reviewers.`
+      )
+    }
+  }, [])
 
   const Topics = () => {
     return (
@@ -95,37 +113,102 @@ export default function Page({
     )
   }
 
+  const Status = ({ statusName }: Readonly<{ statusName: DocumentStatus }>) => {
+    let text = ''
+    let itemStyle: string = ''!
+    switch (statusName) {
+      case 'draft':
+        text = 'Draft'
+        itemStyle += 'badge-draft'
+        break
+      case 'published no review':
+        text = 'Published'
+        itemStyle += 'badge-published'
+        break
+      case 'reviewed':
+        text = 'Peer Reviewed'
+        itemStyle += 'badge-reviewed'
+        break
+      case 'under review':
+        text = 'Pending Review'
+        itemStyle = 'badge-under-review'
+        break
+    }
+    return <span className={itemStyle}>{text}</span>
+  }
+
   const ItemBadge = ({ itemName }: Readonly<{ itemName: DocumentType }>) => {
     let text = ''
-    let itemStyle: string =
-      'px-3 py-1.5 rounded inline-block w-fit mr-2 mt-4 text-slate-50 border-2 '
+    let itemStyle: string = ''!
     switch (itemName) {
       case 'report':
-        itemStyle += 'bg-green-500 border-green-500'
+        itemStyle = 'badge-report'
         text = 'Report'
         break
       case 'presentation':
         text = 'Presentation'
-        itemStyle += `bg-blue-500 border-blue-500`
+        itemStyle = 'badge-presentation'
         break
       case 'white paper':
         text = 'White Paper'
-        itemStyle += `bg-fuchsia-700 border-fuchsia-700`
+        itemStyle = 'badge-white-paper'
         break
       case 'datasheet':
         text = 'Datasheet'
-        itemStyle += 'bg-amber-600 border-amber-600'
+        itemStyle = 'badge-datasheet'
         break
       case 'dwm':
         text = 'DWM'
-        itemStyle += 'bg-rose-950 border-rose-950'
+        itemStyle = 'badge-dwm'
         break
       case 'other':
         text = 'Other'
-        itemStyle += `bg-gray-400 border-gray-400`
+        itemStyle = 'badge-other'
         break
     }
     return <span className={itemStyle}>{text}</span>
+  }
+
+  const Reviewers = () => {
+    if (!reviewers) return null
+    const ReviewerDisplay = ({ r }: Readonly<{ r: reviewer }>) => {
+      if (r.profile) {
+        return (
+          <>
+            <Link href={`/author/${r.profile}`} target='_blank'>
+              {r.first} {r.last}
+            </Link>
+          </>
+        )
+      }
+      if (r.url) {
+        return (
+          <>
+            <a href={r.url} target='_blank'>
+              {r.first} {r.last}
+            </a>
+          </>
+        )
+      }
+      return (
+        <span>
+          {r.first} {r.last}
+        </span>
+      )
+    }
+
+    return (
+      <>
+        <span className='font-bold'>Reviewers: </span>
+        {reviewers.map((r: reviewer, i) => (
+          <Fragment key={i}>
+            <ReviewerDisplay r={r} />
+            {i !== reviewers.length - 1 && reviewers.length > 2 ? ', ' : null}
+            {i === reviewers.length - 2 ? ' and ' : null}
+          </Fragment>
+        ))}
+      </>
+    )
   }
 
   return (
@@ -150,9 +233,10 @@ export default function Page({
           </span>
         </p>
         <ItemBadge itemName={type as DocumentType} />
-        <p className='inline-block border-gray-200 border-2 rounded px-2 py-1.5'>
+        <span className='inline-block border-gray-200 border-2 rounded px-2 py-1.5 mr-2'>
           Revision {latest}
-        </p>
+        </span>
+        <Status statusName={status} />
         <hr className='my-4' />
         <h4 className='text-2xl mt-5 font-serif font-semibold'>Abstract</h4>
         <p className='my-4 text-xl text-slate-600 font-serif text-balance'>
@@ -166,6 +250,9 @@ export default function Page({
         </p>
         <p className='my-2'>
           <References />
+        </p>
+        <p className='my-2'>
+          <Reviewers />
         </p>
         <Link
           href={`/download/${params.slug}/file${latest}.${file}`}
