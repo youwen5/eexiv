@@ -3,8 +3,9 @@ import { Inter, Zilla_Slab } from 'next/font/google'
 import './globals.css'
 import styles from './home.module.css'
 import Link from 'next/link'
-import SearchBar from './searchBar/SearchBar'
+import SearchBar from './components/SearchBar'
 import Container from './container/Container'
+import MobileMenu from './components/MobileMenu'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -62,6 +63,9 @@ export default function RootLayout({
             </h1>
             <div className='hidden md:inline'>
               <SearchBar />
+            </div>
+            <div className='md:hidden'>
+              <MobileMenu />
             </div>
           </div>
         </div>

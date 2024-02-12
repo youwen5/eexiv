@@ -25,7 +25,7 @@ a:hover {
 }
 
 .badge-base {
-  @apply px-3 py-1.5 rounded inline-block w-fit mr-2 mt-4 text-slate-50 border-2;
+  @apply px-3 py-1.5 rounded inline-block w-fit mr-2 my-1 text-slate-50 border-2;
 }
 
 .badge-draft {

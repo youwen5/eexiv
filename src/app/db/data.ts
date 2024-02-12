@@ -47,27 +47,26 @@ export type DocumentStatus =
   | 'under review'
   | 'reviewed'
   | 'published no review'
-export interface DocumentDB {
-  [key: string]: {
-    manifest: {
-      title: string
-      authors: string[]
-      topics: string[]
-      dates: number[]
-      references?: string[]
-      code?: string[]
-      type: DocumentType
-      latest: number
-      keywords?: string[]
-      status: DocumentStatus
-      reviewers?: reviewer[]
-    }
-    abstract: string
-    file: FileType
-    citation?: string
-  }
+export interface Document {
+  manifest: DocumentManifest
+  abstract: string
+  file: FileType
+  citation?: string
 }
-export const documents: DocumentDB = {
+export interface DocumentManifest {
+  title: string
+  authors: string[]
+  topics: string[]
+  dates: number[]
+  references?: string[]
+  code?: string[]
+  type: DocumentType
+  latest: number
+  keywords: string[]
+  status: DocumentStatus
+  reviewers?: reviewer[]
+}
+export const documents: { [key: string]: Document } = {
   'day-5-principles': {
     manifest: {
       title: 'Day 5 Principles',
@@ -486,6 +485,20 @@ export const authors: Authors = {
     nationality: ['chn', 'usa'],
     image: '/img/profiles/nluo.png',
   },
+  jchan: {
+    name: {
+      first: 'Jason',
+      last: 'Chan',
+    },
+    affiliation: [
+      'Chief Executive Officer@fia',
+      'Intern@1280-eecs',
+      'Student@srvhs',
+    ],
+    nationality: ['jpn', 'chn', 'usa'],
+    image: '/img/profiles/default.png',
+    website: 'https://futureinspireacademy.com',
+  },
 }
 
 export interface Affiliations {
@@ -636,6 +649,16 @@ Raid Zero's influence extends beyond the technical achievements in robotics comp
       [linebreak]
       Gonzaga University's School of Engineering and Applied Science stands out for its commitment to excellence, ethics, and the holistic development of its students. Graduates leave Gonzaga not only as skilled engineers but as compassionate leaders ready to make meaningful contributions to society.`,
   },
+  fia: {
+    name: 'Future Inspire Academy',
+    short: 'FIA',
+    image: '/img/logos/fia.jpg',
+    description: `
+      Future Inspire Academy (FIA) is a non-profit organization that strives to teach students how to apply their coding skills to game development in a fun and efficient way. Our mission is to create a platform to reward members who start their game development journey early. We give members all the resources to learn quickly and reward their efforts with points which can be used to upgrade their game jam prizes. Become a member today and reap all the benefits by joining our Discord Server!
+      [linebreak]
+      Our organization not only impacts our members from around the world but also our partners as we help promote their business and improve their products. Our new vision has been to help develop companies that would contribute to the future of game development and promote accessibility. Recently, we launched exclusive early access to Rosebud’s game maker platform for all of our members to try. In the future, we plan to host more exclusive events that revolve around our partners. 
+`,
+  },
 }
 
 export interface Nationalities {
@@ -685,5 +708,10 @@ export const nationalities: Nationalities = {
     name: 'Russian Federation',
     demonym: 'Russian',
     flag: 'https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/2560px-Flag_of_Russia.svg.png',
+  },
+  jpn: {
+    name: 'Japan',
+    demonym: 'Japanese',
+    flag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/1280px-Flag_of_Japan.svg.png',
   },
 }

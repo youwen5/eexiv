@@ -1,0 +1,16 @@
+.menu {
+  @apply w-[100vw] h-full overflow-x-hidden left-[0] top-[235px] z-10 absolute bg-slate-200;
+  @apply transition-transform duration-300 ease-in-out;
+}
+
+.search-bar {
+  @apply w-full flex justify-center z-10 px-4 py-2 bg-slate-300;
+}
+
+.search-bar button {
+  @apply border-slate-600 text-slate-600 bg-slate-200;
+}
+
+.menu-hidden {
+  @apply translate-y-[100vh] invisible;
+}

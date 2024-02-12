@@ -48,6 +48,9 @@ export default function Home() {
         case 'dwm':
           typeString = 'DWM'
           break
+        case 'guide':
+          typeString = 'guide'
+          break
         case 'other':
           typeString = 'document'
           break
