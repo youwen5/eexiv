@@ -68,10 +68,10 @@ export default function Page({
         </span>
       </p>
       <ItemBadge itemName={type as DocumentType} />
+      <Status statusName={status} />
       <span className='inline-block border-gray-200 border-2 rounded px-2 py-1.5 mr-2'>
         Revision {latest}
       </span>
-      <Status statusName={status} />
       <hr className='my-4' />
       <h4 className='text-2xl mt-5 font-serif font-semibold'>Abstract</h4>
       <p className='my-4 text-xl text-slate-600 font-serif text-balance'>
