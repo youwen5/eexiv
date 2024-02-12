@@ -58,7 +58,7 @@ export default function RootLayout({
           <div className='max-w-[1200px] flex justify-between mx-auto items-center pt-3 flex-nowrap'>
             <h1 className={`${styles.title} ${zillaSlab.className} mx-10`}>
               <Link href='/' className='no-link-style'>
-                eeXiv<sup>2</sup>
+                eeXiv
               </Link>
             </h1>
             <div className='hidden md:inline'>

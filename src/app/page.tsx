@@ -90,12 +90,11 @@ export default function Home() {
   return (
     <div className='text-slate-800 flex flex-wrap md:flex-row justify-center'>
       <p className='font-serif text-lg basis-full md:basis-1/2 grow mr-1 text-balance'>
-        eeXiv<sup>2</sup>, like arXiv, is a free distribution service and an
-        open-access archive for nearly {Object.keys(documents).length} scholarly
-        articles in the fields of physics, mathematics, computer science,
-        quantitative biology, quantitative finance, statistics, electrical
-        engineering and systems science, and economics, but mainly related to
-        the{' '}
+        eeXiv, like arXiv, is a free distribution service and an open-access
+        archive for nearly {Object.keys(documents).length} scholarly articles in
+        the fields of physics, mathematics, computer science, quantitative
+        biology, quantitative finance, statistics, electrical engineering and
+        systems science, and economics, but mainly related to the{' '}
         <Link
           href='https://en.wikipedia.org/wiki/FIRST_Robotics_Competition'
           target='_blank'
