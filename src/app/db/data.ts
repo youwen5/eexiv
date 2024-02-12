@@ -33,6 +33,7 @@ export type DocumentType =
   | 'white paper'
   | 'dwm'
   | 'datasheet'
+  | 'guide'
   | 'other'
 
 export type reviewer = {
@@ -92,7 +93,7 @@ export const documents: DocumentDB = {
     manifest: {
       title: '2024 Controls/Programming DWM',
       authors: ['mbohsali', 'avenkatesh', 'ywu'],
-      topics: ['frc', 'eecs'],
+      topics: ['eecs', 'frc'],
       dates: [1706080618],
       type: 'dwm',
       latest: 1,
@@ -158,7 +159,7 @@ export const documents: DocumentDB = {
         'grunt work',
         'vision',
       ],
-      topics: ['frc', 'eecs', 'ai'],
+      topics: ['ai', 'frc', 'eecs'],
       dates: [1706513504],
       code: ['https://github.com/Team-1280/DeepBozo'],
       type: 'report',
@@ -201,18 +202,84 @@ export const documents: DocumentDB = {
         'purchasing',
       ],
       type: 'report',
-      topics: ['frc', 'eecs', 'econ'],
+      topics: ['econ', 'frc', 'eecs'],
       latest: 1,
       status: 'reviewed',
       reviewers: [
         { first: 'Youwen', last: 'Wu', profile: 'ywu' },
-        { first: 'Youwen', last: 'Wu', profile: 'ywu' },
-        { first: 'Youwen', last: 'Wu', profile: 'ywu' },
+        { first: 'Warren', last: 'Lin', profile: 'wlin' },
       ],
     },
     abstract:
       'The toughbook is a rugged, industrial computer intended for low-performance, scalable, and cheap computational operations. The robotics storage cabinet contained a Lenovo ThinkPad toughbook which was, at the time of its discovery, severely damaged, both internally (software) and externally (hardware). The programming team invested significant time, energy, resources, and capital into the revival of this storied piece of digital infrastructure, thus restoring the ThinkPad and, by extension, the robotics team, to its former glory.',
     file: 'pdf',
+  },
+  'lidar-whitepaper': {
+    manifest: {
+      title: 'The LiDAR Whitepaper',
+      authors: ['ywu', 'avenkatesh'],
+      dates: [1707129199, 1707215599],
+      keywords: [
+        'lidar',
+        'programming team',
+        'eecs',
+        'whitepaper',
+        'white paper',
+        'engineering',
+        'design',
+        'electrical',
+        'mechanical',
+        'cad',
+        'project',
+        'bozovision',
+        'deepbozo',
+        'bozoassist',
+        'vision',
+        'sensors',
+        'sensing',
+        'collision',
+      ],
+      type: 'white paper',
+      topics: ['ai', 'frc', 'eecs'],
+      latest: 2,
+      status: 'under review',
+    },
+    file: 'pdf',
+    abstract: `Approximately 1 month ago, the Team 1280 Electrical Engineering and Computer Science 
+      Department (henceforth referred to as just EECS), an independent organ of the Team 1280 official
+      organization which operates extrajudicially and without congressional oversight, requisitioned a
+      LiDAR capable of generating a 3-D depth map of the area ahead in order to supplement and
+      enhance the BozoVision subroutine with additional sensory input. However, a SNAFU (or deliberately 
+      malicious incompetence) led to the acquisition of a 1-D LiDAR sensor manufactured by
+      garmin. This LiDAR acts as a glorified uss rangefinder, and has a resolution of just 1cm. This
+      LiDAR, out of the box, would not have been able to support anything approximating a depth
+      map that met EECS’s stringent specifications and standards. `,
+  },
+  '2023-ee-training': {
+    manifest: {
+      title: `2023 Team 1280 Electrical Training`,
+      authors: ['wlin'],
+      dates: [1702377199],
+      latest: 1,
+      type: 'guide',
+      topics: ['eecs', 'frc'],
+      status: 'published no review',
+      keywords: [
+        'electrical',
+        'electrical training',
+        'training',
+        'electrical book',
+        'brain damage',
+        'ee',
+        'ee guide',
+        'ee instruction',
+        'instructions',
+      ],
+    },
+    file: 'docx',
+    abstract: `This is the Electrical Sub team Training. Firstly, we discuss the requirements and suggestions, we require everyone to bring your own device/Chromebook, we also require students to join GitHub and join the GitHub organization. We recommend students bring their own tools such as a precision screwdriver set and a multimeter should cover everything from basic repairs and learning to use these devices.
+On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team in FRC is the cauldron between the Mechanical moving parts of CAD and the witchcraft that is programming. We will be talking about the serial busses used in the robot and basic Electrical knowledge needed to do basic repairs on daily items. On Day 2 we will discuss wiring the robot and prototyping (for people who want to do more)
+`,
   },
 }
 
@@ -366,6 +433,59 @@ export const authors: Authors = {
     website: 'https://github.com/gavinostler',
     bio: `I'm Gavin, a high school student from the Bay Area. I am a fullstack developer and love making random things to fill my day. I'm interested in creating useful tools and software in the future.`,
   },
+  edanko: {
+    name: {
+      first: 'Elliot',
+      last: 'Danko',
+    },
+    affiliation: [
+      'Undergraduate in Mechanical Engineering@cal-poly-slo',
+      'Member@cal-poly-space-systems',
+      'Mentor@team-1280',
+    ],
+    formerAffiliations: ['Captain@team-1280', 'Student@srvhs'],
+    nationality: ['usa'],
+    image: '/img/profiles/edanko.jpg',
+  },
+  arvenkatesh: {
+    name: {
+      first: 'Arvind',
+      last: 'Venkatesh',
+    },
+    affiliation: ['Intern@1280-eecs', 'Rookie@team-1280', 'Student@srvhs'],
+    nationality: ['ind', 'eth', 'usa'],
+    image: '/img/profiles/arvenkatesh.png',
+    website: 'https://github.com/Quantalabs',
+  },
+  mfletcher: {
+    name: {
+      first: 'Matthew',
+      last: 'Fletcher',
+    },
+    affiliation: ['Captain@team-1280', 'Student@srvhs'],
+    nationality: ['usa'],
+    image: '/img/profiles/default.png',
+  },
+  vkorneev: {
+    name: {
+      first: 'Vladislav',
+      last: 'Korneev',
+      nickname: 'Vlad',
+    },
+    affiliation: ['Undergraduate@gonzaga-university'],
+    formerAffiliations: ['Business Lead@1280-business'],
+    nationality: ['rus'],
+    image: '/img/profiles/vkorneev.jpg',
+  },
+  nluo: {
+    name: {
+      first: 'Nicholas',
+      last: 'Luo',
+    },
+    affiliation: ['Principal Software Engineer@1280-eecs', 'Student@srvhs'],
+    nationality: ['chn', 'usa'],
+    image: '/img/profiles/nluo.png',
+  },
 }
 
 export interface Affiliations {
@@ -468,6 +588,54 @@ Raid Zero's influence extends beyond the technical achievements in robotics comp
     image: '/img/logos/srvhs.jpg',
     description: `A relatively average high school located in Danville, California. It has no standout features besides being the base of operations for Team 1280 and Team 1280 EECS.`,
   },
+  'cal-poly-slo': {
+    name: 'California Polytechnic State University, San Luis Obispo',
+    short: 'Cal Poly SLO',
+    image: '/img/logos/cal-poly-slo.png',
+    description: `California Polytechnic State University, San Luis Obispo (Cal Poly SLO) is renowned for its learn-by-doing philosophy that stands at the core of its engineering education. Founded in 1901, Cal Poly SLO's College of Engineering is recognized as one of the premier engineering schools in the nation, offering a hands-on approach to education that prepares students for the practical challenges they will face in the workforce.
+                  [linebreak]
+                  With a wide array of undergraduate and graduate programs, the College of Engineering at Cal Poly SLO covers disciplines such as aerospace, biomedical, civil and environmental, computer science and software engineering, electrical, industrial and manufacturing, and mechanical engineering among others. This diversity ensures that students can find their niche and develop specialized skills in their chosen field.
+                  [linebreak]
+                  Cal Poly SLO prides itself on its state-of-the-art laboratories and facilities, which allow students to engage directly with the material they are learning. This hands-on experience is supplemented by a curriculum that encourages interdisciplinary collaboration, critical thinking, and problem-solving skills, ensuring that graduates are well-equipped to contribute to their fields effectively.
+                  [linebreak]
+                  The university's location in San Luis Obispo, a hub of technological innovation and natural beauty, offers students unique opportunities for internships, cooperative education, and employment with leading engineering firms and tech companies. Cal Poly SLO maintains strong connections with industry partners, enhancing the practical and relevant education that students receive.
+                  [linebreak]
+                  Beyond academics, Cal Poly SLO's College of Engineering is committed to fostering a diverse, inclusive community where all students can thrive. Through clubs, organizations, and leadership opportunities, students can engage with the community, develop soft skills, and prepare for leadership roles in their future careers.
+                  [linebreak]
+                  With its blend of rigorous academics, practical experience, and a supportive community, Cal Poly SLO stands out as a leader in engineering education, preparing the next generation of engineers to face global challenges with innovation and expertise.`,
+  },
+  'team-1280': {
+    name: `Team 1280, the Ragin' C Biscuits`,
+    short: 'Team 1280',
+    image: '/img/logos/1280-main.png',
+    description: `We are the San Ramon Valley High School Robotics Team (FRC Team 1280) and we have been competing in the FIRST Robotics Challenge for 16 years. With just 6 weeks to design, build, program, and fundraise for a robot, FRC teaches us teamwork, business, engineering, machinery, and computer design. This year’s challenge is “Deep Space” and we are eagerly awaiting the challenge release and season kickoff in January! We are team of 79 students with 1 full time mentor, 2 part time mentors, and 1 staff liason.
+      [linebreak]
+      Throughout our FRC career, we have won several regional events and numerous awards including: the Rookie Inspiration Award, both the Radio Shack and Rockwell Automation Innovation in Control Awards, the Imagery Award, the Engineering Excellence Award, and the Creativity Award. While we do focus on the competitive aspect of robotics, we also strive to spread the knowledge of STEM through our outreach programs to those who might not otherwise have access to these opportunities.
+      [linebreak]
+      We have impacted over 21,000 K-12 students alone through our assemblies and workshops.`,
+  },
+  'cal-poly-space-systems': {
+    name: `Cal Poly Space Systems`,
+    short: 'CPSS',
+    image: '/img/logos/cal-poly-space-systems.jpg',
+    description: `Cal Poly Space Systems (CPSS) is a dynamic club originally conceived as an Aerospace Engineering club, CPSS now welcomes students and volunteers from all majors, colleges and backgrounds. As our projects grow more complex and sophisticated, we continue to expand our pool of resources in order to design, build, launch and test to our limits. CPSS embraces Cal Poly’s “Learn by Doing” philosophy, and offers hands-on training in all areas of rocketry design including propulsion, structures, controls, and electronics. Members become familiar with how rockets work, how to build them, and use that knowledge to create more advanced club projects. `,
+  },
+  'gonzaga-university': {
+    name: 'Gonzaga University',
+    short: 'GU',
+    image: '/img/logos/gonzaga-university.jpg',
+    description: `Gonzaga University, nestled in the heart of Spokane, Washington, offers a distinctive engineering education that combines rigorous academics with a strong foundation in Jesuit values. The School of Engineering and Applied Science (SEAS) at Gonzaga is dedicated to developing innovative leaders who are committed to serving others and addressing global challenges through the lens of social justice and ethical responsibility.
+      [linebreak]
+      Established in 1934, SEAS provides a comprehensive education across various engineering disciplines, including civil, electrical, mechanical, computer science, and engineering management. The school emphasizes a holistic approach to engineering education, where students not only gain technical proficiency but also develop critical thinking, communication, and leadership skills.
+      [linebreak]
+      Gonzaga's engineering programs are characterized by small class sizes, which foster a close-knit community and individualized attention from faculty. This personalized approach ensures that students are not only seen as future engineers but as whole persons with unique talents and aspirations. The curriculum is designed to offer hands-on learning experiences from the very beginning, with students engaging in laboratory work, design projects, and research opportunities that apply classroom theory to real-world problems.
+      [linebreak]
+      A key feature of the Gonzaga engineering experience is the senior design project, which challenges students to work in teams to develop solutions for actual engineering problems, often in partnership with local industries, nonprofit organizations, and community groups. This capstone experience encapsulates the Gonzaga ethos of service and innovation, preparing students for the ethical and practical challenges they will face in their professional lives.
+      [linebreak]
+      Beyond academics, Gonzaga SEAS encourages students to engage with the world around them, offering study abroad programs, service-learning projects, and community engagement initiatives that enrich their educational experience. The school's location in Spokane provides ample opportunities for internships and collaborations with leading engineering firms and tech companies, enhancing students' readiness for the job market.
+      [linebreak]
+      Gonzaga University's School of Engineering and Applied Science stands out for its commitment to excellence, ethics, and the holistic development of its students. Graduates leave Gonzaga not only as skilled engineers but as compassionate leaders ready to make meaningful contributions to society.`,
+  },
 }
 
 export interface Nationalities {
@@ -512,5 +680,10 @@ export const nationalities: Nationalities = {
     name: 'Republic of China (Taiwan)',
     demonym: 'Taiwanese',
     flag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Flag_of_the_Republic_of_China.svg/1280px-Flag_of_the_Republic_of_China.svg.png',
+  },
+  rus: {
+    name: 'Russian Federation',
+    demonym: 'Russian',
+    flag: 'https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/2560px-Flag_of_Russia.svg.png',
   },
 }

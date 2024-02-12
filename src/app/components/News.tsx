@@ -1,6 +1,8 @@
+import Link from 'next/link'
+
 export default function News() {
   return (
-    <div className='bg-slate-800 rounded-lg p-6 w-full basis-full md:basis-2/5 my-4 lg:my-0'>
+    <div className='bg-slate-800 rounded-lg p-6 w-full basis-full md:basis-2/5 my-4 lg:my-0 max-h-[250px] overflow-y-auto'>
       <span className='text-3xl md:text-4xl text-slate-200'>
         eeXiv<sup>2</sup> News
       </span>
@@ -19,6 +21,11 @@ export default function News() {
           <a href='https://github.com/team-1280/eexiv-2/issues' target='_blank'>
             our issue tracker.
           </a>
+        </li>
+        <li key={3}>
+          Want to upload your documents or just make yourself a profile on
+          eeXiv? Check our <Link href='/about'>about page</Link> for more
+          information!
         </li>
       </ul>
     </div>

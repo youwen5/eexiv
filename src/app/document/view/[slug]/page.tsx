@@ -23,7 +23,7 @@ export default function Page({
   if (!doc) {
     notFound()
   }
-  const { abstract, file } = doc
+  const { abstract, file, citation } = doc
   const {
     title,
     authors,
@@ -161,6 +161,10 @@ export default function Page({
         text = 'DWM'
         itemStyle = 'badge-dwm'
         break
+      case 'guide':
+        text = 'Guide'
+        itemStyle = 'badge-guide'
+        break
       case 'other':
         text = 'Other'
         itemStyle = 'badge-other'
@@ -212,68 +216,70 @@ export default function Page({
   }
 
   return (
-    <div>
-      <div>
-        <h1
-          className={`
+    <div className='max-w-4xl lg:max-w-6xl mx-auto'>
+      <h1
+        className={`
             text-slate-800 font-bold text-5xl mb-4
             ${zillaSlab.className}
             text-wrap
           `}
-        >
-          {title}
-        </h1>
-        <p className={`text-slate-800 mt-2`}>
-          <Authors />
-        </p>
-        <p className='mt-4'>
-          Latest revision published{' '}
-          <span className='font-bold'>
-            {epoch2datestring(dates[dates.length - 1])}
-          </span>
-        </p>
-        <ItemBadge itemName={type as DocumentType} />
-        <span className='inline-block border-gray-200 border-2 rounded px-2 py-1.5 mr-2'>
-          Revision {latest}
+      >
+        {title}
+      </h1>
+      <p className={`text-slate-800 mt-2`}>
+        <Authors />
+      </p>
+      <p className='mt-4'>
+        Latest revision published{' '}
+        <span className='font-bold'>
+          {epoch2datestring(dates[dates.length - 1])}
         </span>
-        <Status statusName={status} />
-        <hr className='my-4' />
-        <h4 className='text-2xl mt-5 font-serif font-semibold'>Abstract</h4>
-        <p className='my-4 text-xl text-slate-600 font-serif text-balance'>
-          {abstract}
-        </p>
-        <p className='my-2'>
-          <Topics />
-        </p>
-        <p className='my-2'>
-          <Code />
-        </p>
-        <p className='my-2'>
-          <References />
-        </p>
-        <p className='my-2'>
-          <Reviewers />
-        </p>
-        <Link
-          href={`/download/${params.slug}/file${latest}.${file}`}
-          download={`${params.slug}-rev-${latest}.pdf`}
-          target='_blank'
-        >
-          <button className='button-default'>
-            Download{' '}
-            {(() => {
-              switch (file) {
-                case 'other':
-                  return <></>
-                case 'tar.gz':
-                  return 'Tarball'
-                default:
-                  return file.toUpperCase()
-              }
-            })()}
-          </button>
-        </Link>
-      </div>
+      </p>
+      <ItemBadge itemName={type as DocumentType} />
+      <span className='inline-block border-gray-200 border-2 rounded px-2 py-1.5 mr-2'>
+        Revision {latest}
+      </span>
+      <Status statusName={status} />
+      <hr className='my-4' />
+      <h4 className='text-2xl mt-5 font-serif font-semibold'>Abstract</h4>
+      <p className='my-4 text-xl text-slate-600 font-serif text-balance'>
+        {abstract}
+      </p>
+      <p className='my-2'>
+        <Topics />
+      </p>
+      <p className='my-2'>
+        <Code />
+      </p>
+      <p className='my-2'>
+        <References />
+      </p>
+      <p className='my-2'>
+        <Reviewers />
+      </p>
+      <p className='my-2'>
+        <span className='font-bold'>Cite as: </span>
+        {citation ? <>{citation}</> : <>eeXiv:{params.slug}</>}
+      </p>
+      <Link
+        href={`/download/${params.slug}/file${latest}${file === 'other' ? '' : `.${file}`}`}
+        download={`${params.slug}-rev-${latest}${file === 'other' ? '' : `.${file}`}`}
+        target='_blank'
+      >
+        <button className='button-default'>
+          Download{' '}
+          {(() => {
+            switch (file) {
+              case 'other':
+                return <></>
+              case 'tar.gz':
+                return 'Tarball'
+              default:
+                return file.toUpperCase()
+            }
+          })()}
+        </button>
+      </Link>
     </div>
   )
 }
