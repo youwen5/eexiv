@@ -17,7 +17,6 @@ export default function SearchBar() {
   const setSearchBarStore = useSearchBarStore((state) => state.setSearchInput)
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault()
     navigate(`/search?q=${searchBarStore.split(' ').join('+')}`)
   }
 
@@ -27,7 +26,6 @@ export default function SearchBar() {
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      e.preventDefault()
       navigate(`/search?q=${searchBarStore.split(' ').join('+')}`)
     }
   }
