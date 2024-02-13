@@ -19,6 +19,15 @@ const SearchResult = ({
   const { manifest, abstract, id } = result
   const { title, authors, topics, dates, status, type } = manifest
 
+  /* 
+  this is not a recommended design pattern for creating a clickable object,
+  as it's terrible for accessibility. we should add accessibility tags to make it
+  recognizable as a clickable item.
+  the reason we aren't simply wrapping the search result in a <Link> tag is because
+  React does not support nested <a> tags and it overrides the links displayed inside.
+  this click handling logic simply checks to see if the element clicked is a nested link
+  and fires a redirect if not, to avoid overriding links in the children
+  */
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     let target = event.target as HTMLElement
     while (target != null) {

@@ -66,7 +66,7 @@ export interface DocumentManifest {
   status: DocumentStatus
   reviewers?: reviewer[]
 }
-export const documents: { [key: string]: Document } = {
+export const documents: Readonly<{ [key: string]: Document }> = {
   'day-5-principles': {
     manifest: {
       title: 'Day 5 Principles',
@@ -316,7 +316,7 @@ export interface Topic {
   description: string
   wiki: string
 }
-export const topics: { [key: string]: Topic } = {
+export const topics: Readonly<{ [key: string]: Topic }> = {
   frc: {
     name: 'FIRST Robotics Competition',
     description:
@@ -386,7 +386,7 @@ export interface Author {
   bio?: string
   website?: string
 }
-export const authors: { [key: string]: Author } = {
+export const authors: Readonly<{ [key: string]: Author }> = {
   shasan: {
     name: {
       first: 'Saim',
@@ -533,7 +533,7 @@ export interface Affiliation {
   description: string
 }
 
-export const affiliations: { [key: string]: Affiliation } = {
+export const affiliations: Readonly<{ [key: string]: Affiliation }> = {
   '1280-mech': {
     name: "Team 1280, the Ragin' C Biscuits, Mechanical Subteam",
     short: '1280 Mech',
@@ -689,7 +689,7 @@ export interface Nationality {
   demonym: string
   flag: string
 }
-export const nationalities: { [key: string]: Nationality } = {
+export const nationalities: Readonly<{ [key: string]: Nationality }> = {
   pak: {
     name: 'Pakistan',
     demonym: 'Pakistani',
