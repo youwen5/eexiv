@@ -39,5 +39,5 @@ The dummies guide to maintaining a Next.js project:
   - Not sure whether you're in a client or server side component? If your component has the `'use client'` directive at the top of its file, then it's a client side component.
     Otherwise, by default, it should be a server side component.
   - Footnote: why don't I have to use the utilities in `db/loaders.ts` to asynchronously load the data in server side components?
-    - Next.js will automatically pre-render all server side components into static HTML, which means there will be no performance impact (and in fact performance loss at build time)
+    - Next.js will automatically pre-render all server side components into static HTML, which means there will be no performance impact (and in fact performance gain at build time)
       to loading the entire objects into memory.
