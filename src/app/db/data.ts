@@ -282,14 +282,12 @@ On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team 
   },
 }
 
-export interface Topics {
-  [key: string]: {
-    name: string
-    description: string
-    wiki: string
-  }
+export interface Topic {
+  name: string
+  description: string
+  wiki: string
 }
-export const topics: Topics = {
+export const topics: { [key: string]: Topic } = {
   frc: {
     name: 'FIRST Robotics Competition',
     description:
@@ -499,16 +497,14 @@ export const authors: { [key: string]: Author } = {
   },
 }
 
-export interface Affiliations {
-  [key: string]: {
-    name: string
-    short: string
-    image: string
-    description: string
-  }
+export interface Affiliation {
+  name: string
+  short: string
+  image: string
+  description: string
 }
 
-export const affiliations: Affiliations = {
+export const affiliations: { [key: string]: Affiliation } = {
   '1280-mech': {
     name: "Team 1280, the Ragin' C Biscuits, Mechanical Subteam",
     short: '1280 Mech',
@@ -659,14 +655,12 @@ Raid Zero's influence extends beyond the technical achievements in robotics comp
   },
 }
 
-export interface Nationalities {
-  [key: string]: {
-    name: string
-    demonym: string
-    flag: string
-  }
+export interface Nationality {
+  name: string
+  demonym: string
+  flag: string
 }
-export const nationalities: Nationalities = {
+export const nationalities: { [key: string]: Nationality } = {
   pak: {
     name: 'Pakistan',
     demonym: 'Pakistani',

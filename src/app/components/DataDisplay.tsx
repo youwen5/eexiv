@@ -1,10 +1,8 @@
 import { Fragment } from 'react'
 import Link from 'next/link'
-import {
-  topics as topicList,
-  authors as authorList,
-  reviewer,
-} from '@/app/db/data'
+import { reviewer } from '@/app/db/data'
+import { loadAllTopics, loadAllAuthors } from '@/app/db/loaders'
+import { useSuspenseQuery } from '@tanstack/react-query'
 
 export const Code = ({
   code,
@@ -54,6 +52,18 @@ export const Topics = ({
   topics,
   showTitle = true,
 }: Readonly<{ topics: string[]; showTitle?: boolean }>) => {
+  'use client'
+
+  const { data, error } = useSuspenseQuery({
+    queryKey: ['topics_all'],
+    queryFn: () => {
+      const data = loadAllTopics()
+      return data
+    },
+  })
+  if (error) throw error
+  const topicList = data
+
   return (
     <>
       {showTitle ? <span className='font-bold'>Topics: </span> : null}
@@ -72,6 +82,19 @@ export const Topics = ({
 export const Authors = ({
   authors,
 }: Readonly<{ authors: string[]; noLink?: boolean }>) => {
+  'use client'
+
+  const { data, error } = useSuspenseQuery({
+    queryKey: ['authors_all'],
+    queryFn: () => {
+      const data = loadAllAuthors()
+      return data
+    },
+  })
+  if (error) throw error
+
+  const authorList = data
+
   return (
     <>
       {authors.map((a: string, i) => (
@@ -95,20 +118,16 @@ export const Reviewers = ({
   const ReviewerDisplay = ({ r }: Readonly<{ r: reviewer }>) => {
     if (r.profile) {
       return (
-        <>
-          <Link href={`/author/${r.profile}`} target='_blank'>
-            {r.first} {r.last}
-          </Link>
-        </>
+        <Link href={`/author/${r.profile}`} target='_blank'>
+          {r.first} {r.last}
+        </Link>
       )
     }
     if (r.url) {
       return (
-        <>
-          <a href={r.url} target='_blank'>
-            {r.first} {r.last}
-          </a>
-        </>
+        <a href={r.url} target='_blank'>
+          {r.first} {r.last}
+        </a>
       )
     }
     return (
