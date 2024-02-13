@@ -13,7 +13,7 @@ import Link from 'next/link'
 import { useSuspenseQuery } from '@tanstack/react-query'
 import { loadDocument } from '@/app/db/loaders'
 
-const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500', '700'] })
+const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
 export default function DocumentViewer({ slug }: Readonly<{ slug: string }>) {
   const { data, error } = useSuspenseQuery({
@@ -44,7 +44,7 @@ export default function DocumentViewer({ slug }: Readonly<{ slug: string }>) {
     <div className='max-w-4xl lg:max-w-6xl mx-auto'>
       <h1
         className={`
-            text-slate-800 font-bold text-5xl mb-4
+            text-slate-800 text-5xl mb-4
             ${zillaSlab.className}
             text-wrap
           `}
