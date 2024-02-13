@@ -23,18 +23,11 @@ export default function MobileMenu() {
   const setIsOpen = useMobileMenuState((state) => state.setIsOpen)
 
   const handleClick = () => {
-    if (isOpen) {
-      document.body.style.overflow = 'auto'
-      setIsOpen(false)
-    } else {
-      document.body.style.overflow = 'hidden'
-      setIsOpen(true)
-    }
+    setIsOpen(!isOpen)
   }
 
   const handleSubmit = () => {
     setIsOpen(false)
-    document.body.style.overflow = 'auto'
   }
 
   return (
