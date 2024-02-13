@@ -33,6 +33,7 @@ export default function SearchBar({
         placeholder='Search...'
         onChange={handleInputChange}
         onKeyDown={handleKeyPress}
+        value={searchInput}
       />
       <button
         type='submit'
