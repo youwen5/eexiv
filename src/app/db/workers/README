@@ -1,0 +1,2 @@
+These worker files should not be touched unless you know what you are doing! They're simply utilities to be imported
+by the loaders library to launch asynchronous web worker threads.

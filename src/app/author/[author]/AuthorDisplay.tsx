@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { Fragment } from 'react'
 import { affiliations, nationalities, authors } from '../../db/data'
 import { Zilla_Slab } from 'next/font/google'
+import { notFound } from 'next/navigation'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
@@ -9,6 +10,10 @@ export default function AuthorDisplay({
   author,
 }: Readonly<{ author: string }>) {
   const data = authors[author]
+  if (!data) {
+    notFound()
+  }
+
   const { name, affiliation, image, nationality, formerAffiliations } = data
 
   const MainPosition = () => {

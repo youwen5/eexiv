@@ -1,32 +1,5 @@
-import MiniSearch, { SearchResult } from 'minisearch'
-import { documents, DocumentManifest } from '../db/data'
-
-const docs = Object.entries(documents).map(([key, value]) => ({
-  id: key,
-  keywords: value.manifest.keywords.join(' '),
-  abstract: value.abstract,
-  topics: value.manifest.topics.join(' '),
-  authors: value.manifest.authors.join(' '),
-  title: value.manifest.title,
-  manifest: value.manifest,
-  type: value.manifest.type,
-}))
-
-const miniSearch = new MiniSearch({
-  fields: ['abstract', 'keywords', 'topics', 'authors', 'title', 'type'],
-  storeFields: ['key', 'abstract', 'manifest'],
-  searchOptions: {
-    boost: {
-      title: 2,
-      keywords: 2,
-      topics: 1,
-      authors: 2,
-    },
-    fuzzy: 0.2,
-    prefix: true,
-  },
-})
-miniSearch.addAll(docs)
+import { SearchResult } from 'minisearch'
+import { DocumentManifest } from '../db/data'
 
 export interface CustomSearchResult extends SearchResult {
   manifest: DocumentManifest
@@ -36,6 +9,33 @@ export interface CustomSearchResult extends SearchResult {
 export default function searchDocs(
   query: string,
   limit = 10
-): CustomSearchResult[] {
-  return miniSearch.search(query).slice(0, limit) as CustomSearchResult[]
+): Promise<CustomSearchResult[]> {
+  return new Promise((resolve, reject) => {
+    if (typeof Worker !== 'undefined') {
+      const worker = new Worker(
+        new URL('./search.worker.ts', import.meta.url),
+        { type: 'module' }
+      )
+
+      worker.onmessage = (e: MessageEvent<CustomSearchResult[]>) => {
+        const data = e.data
+        resolve(data.slice(0, limit))
+        worker.terminate()
+      }
+
+      worker.onerror = (error) => {
+        reject(error)
+        worker.terminate()
+      }
+
+      worker.postMessage(query)
+    } else {
+      reject(
+        new Error(
+          `Web Workers are not supported in this environment. Please avoid using a prehistoric browser. 
+          If nothing else seems wrong, this error message is probably showing up due to ghosts in your browser.`
+        )
+      )
+    }
+  })
 }
