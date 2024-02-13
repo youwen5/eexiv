@@ -280,6 +280,35 @@ export const documents: { [key: string]: Document } = {
 On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team in FRC is the cauldron between the Mechanical moving parts of CAD and the witchcraft that is programming. We will be talking about the serial busses used in the robot and basic Electrical knowledge needed to do basic repairs on daily items. On Day 2 we will discuss wiring the robot and prototyping (for people who want to do more)
 `,
   },
+  'eexiv-white-paper': {
+    manifest: {
+      title: 'eeXiv White Paper',
+      authors: ['ywu', 'avenkatesh'],
+      topics: ['eecs', 'frc'],
+      dates: [1707811359],
+      type: 'white paper',
+      latest: 1,
+      status: 'draft',
+      keywords: [
+        'eexiv',
+        'white paper',
+        'paper repository',
+        'arxiv',
+        'proposal',
+        '1280',
+        'eecs',
+        'teachers',
+        'stipends',
+      ],
+      code: [
+        'https://github.com/team-1280/eexiv',
+        'https://github.com/team-1280/eexiv-2',
+        'https://github.com/couscousdude/eexiv-2',
+      ],
+    },
+    abstract: `In this paper, we present eeXiv, an open-source, open-access project hosted by Team 1280 EECS ("Electrical Engineering and Computer Science"), independent of the department of the same name at UC Berkeley. We aim to rival arXiv as the single largest open-source and open-access research paper repository and as the largest research paper repository on the West Coast, transforming San Ramon Valley High School into a tier-1 research institution. Similar to arXiv, we host electronic preprints and postprints (known as e-prints) approved for posting after a rigorous peer review process. Our repository consists of scientific papers in the fields of mathematics, physics, astronomy, electrical engineering, computer science, quantitative biology, statistics, mathematical finance, and economics, with a focus on papers specific to the FIRST Robotics Competition. eeXiv bypasses the traditional bureaucracy of research publication, which involves lengthy peer review proesses and journal approval, by enabling "libre" and "open" publication, dissemination, and consumption of research artifacts. `,
+    file: 'pdf',
+  },
 }
 
 export interface Topic {
