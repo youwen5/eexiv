@@ -50,7 +50,7 @@ const SearchResult = ({
       </div>
       <h2 className={`${zillaSlab.className} text-2xl`}>Abstract</h2>
       <p className='py-2 text-md text-slate-700 font-serif text-lg text-balance'>
-        {abstract}
+        {abstract.substring(0, 500) + (abstract.length > 500 ? '...' : '')}
       </p>
     </div>
   )
