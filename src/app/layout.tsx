@@ -8,6 +8,7 @@ import Container from './container/Container'
 import MobileMenu from './components/MobileMenu'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import Providers from './providers'
 
 /* The default font is Inter. If you want to use Zilla Slab (or any other Google Font, 
   which are pre-provided by Next.js in the 'next/font/google' module), you need to 
@@ -31,80 +32,82 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={inter.className}>
-        <ToastContainer />
-        <div className={styles.header}>
-          <div className='max-w-[1200px] flex flex-nowrap mx-auto justify-between items-center'>
-            <Link href='/affiliation/1280-eecs'>
-              <img
-                className='h-[100px] mt-4'
-                src='/img/logos/eecs-wordmark.png'
-                alt='EECS'
-              />
-            </Link>
-            <p className={`max-w-[600px] hidden md:inline`}>
-              We gratefully acknowledge support from our volunteer peer
-              reviewers, member institutions, and all{' '}
-              <a
-                href='https://github.com/couscousdude/eeXiv-2/graphs/contributors'
-                target='_blank'
-              >
-                open-source contributors
-              </a>
-              .
-            </p>
-          </div>
-        </div>
-        <div className={`${styles.banner} w-full h-[100px] mb-[50px]`}>
-          <div className='max-w-[1200px] flex justify-between mx-auto items-center pt-3 flex-nowrap'>
-            <h1 className={`${styles.title} ${zillaSlab.className} mx-10`}>
-              <Link href='/' className='no-link-style'>
-                eeXiv
+        <Providers>
+          <ToastContainer />
+          <div className={styles.header}>
+            <div className='max-w-[1200px] flex flex-nowrap mx-auto justify-between items-center'>
+              <Link href='/affiliation/1280-eecs'>
+                <img
+                  className='h-[100px] mt-4'
+                  src='/img/logos/eecs-wordmark.png'
+                  alt='EECS'
+                />
               </Link>
-            </h1>
-            <div className='hidden md:inline'>
-              <SearchBar />
-            </div>
-            <div className='md:hidden'>
-              <MobileMenu />
+              <p className={`max-w-[600px] hidden md:inline`}>
+                We gratefully acknowledge support from our volunteer peer
+                reviewers, member institutions, and all{' '}
+                <a
+                  href='https://github.com/couscousdude/eeXiv-2/graphs/contributors'
+                  target='_blank'
+                >
+                  open-source contributors
+                </a>
+                .
+              </p>
             </div>
           </div>
-        </div>
-        <Container>{children}</Container>
-        <footer>
-          <div className={styles.footerContent}>
-            <ul>
-              <li key='about'>
-                <Link href='/about'>About</Link>
-              </li>
-              <li key='help'>
-                <Link href='/help'>Help</Link>
-              </li>
-              <li key='contact'>
-                <Link href='/contact'>Contact</Link>
-              </li>
-              <li key='subscribe'>
-                <Link href='/subscribe'>Subscribe</Link>
-              </li>
-              <li key='copyright'>
-                <Link href='/legal/copyright'>Copyright</Link>
-              </li>
-              <li key='privacy'>
-                <Link href='/legal/privacy'>Privacy Policy</Link>
-              </li>
-              <li key='accessibility'>
-                <Link href='/help/accessibility'>Accessibility</Link>
-              </li>
-              <li key='status'>
-                <Link href='/status'>eeXiv status</Link>
-              </li>
-              <li key='notifications'>
-                <Link href='/status/notifications'>
-                  Get status notifications
+          <div className={`${styles.banner} w-full h-[100px] mb-[50px]`}>
+            <div className='max-w-[1200px] flex justify-between mx-auto items-center pt-3 flex-nowrap'>
+              <h1 className={`${styles.title} ${zillaSlab.className} mx-10`}>
+                <Link href='/' className='no-link-style'>
+                  eeXiv
                 </Link>
-              </li>
-            </ul>
+              </h1>
+              <div className='hidden md:inline'>
+                <SearchBar />
+              </div>
+              <div className='md:hidden'>
+                <MobileMenu />
+              </div>
+            </div>
           </div>
-        </footer>
+          <Container>{children}</Container>
+          <footer>
+            <div className={styles.footerContent}>
+              <ul>
+                <li key='about'>
+                  <Link href='/about'>About</Link>
+                </li>
+                <li key='help'>
+                  <Link href='/help'>Help</Link>
+                </li>
+                <li key='contact'>
+                  <Link href='/contact'>Contact</Link>
+                </li>
+                <li key='subscribe'>
+                  <Link href='/subscribe'>Subscribe</Link>
+                </li>
+                <li key='copyright'>
+                  <Link href='/legal/copyright'>Copyright</Link>
+                </li>
+                <li key='privacy'>
+                  <Link href='/legal/privacy'>Privacy Policy</Link>
+                </li>
+                <li key='accessibility'>
+                  <Link href='/help/accessibility'>Accessibility</Link>
+                </li>
+                <li key='status'>
+                  <Link href='/status'>eeXiv status</Link>
+                </li>
+                <li key='notifications'>
+                  <Link href='/status/notifications'>
+                    Get status notifications
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </footer>
+        </Providers>
       </body>
     </html>
   )

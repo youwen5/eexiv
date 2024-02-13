@@ -1,26 +1,14 @@
 'use client'
 import { useSearchParams } from 'next/navigation'
 import { Zilla_Slab } from 'next/font/google'
-import Link from 'next/link'
 import { Topics, Authors } from '@/app/components/DataDisplay'
 import { Status, ItemBadge } from '@/app/components/Badges'
 import { epoch2datestring } from '../utils/epoch2datestring'
 import searchDocs, { CustomSearchResult } from '@/app/utils/searchDocs'
-import { useEffect } from 'react'
-import { create } from 'zustand'
 import { navigate } from '@/app/actions'
+import { useSuspenseQuery } from '@tanstack/react-query'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500', '700'] })
-
-interface SearchState {
-  results: CustomSearchResult[]
-  setResults: (newResults: CustomSearchResult[]) => void
-}
-const useSearchStore = create<SearchState>((set) => ({
-  results: [],
-  setResults: (newResults: CustomSearchResult[]) =>
-    set({ results: newResults }),
-}))
 
 const SearchResult = ({ result }: { result: CustomSearchResult }) => {
   const { manifest, abstract, id } = result
@@ -66,11 +54,15 @@ const SearchResult = ({ result }: { result: CustomSearchResult }) => {
 export default function Page() {
   const searchParams = useSearchParams()
   const search = searchParams.get('q') as string
-  const searchStore = useSearchStore((state) => state.results)
-  const setSearchStore = useSearchStore((state) => state.setResults)
-  useEffect(() => {
-    setSearchStore(searchDocs(search))
-  }, [search])
+
+  const { data, error } = useSuspenseQuery({
+    queryKey: [search],
+    queryFn: () => {
+      const data = searchDocs(search)
+      return data
+    },
+  })
+  if (error) throw error
 
   return (
     <div className='max-w-4xl mx-auto'>
@@ -80,12 +72,10 @@ export default function Page() {
         {search}
         {`"`}
       </h1>
-      {searchStore.length === 0 ? (
+      {data.length === 0 ? (
         <p className='text-lg px-2'>No results found.</p>
       ) : (
-        searchStore.map((result) => (
-          <SearchResult key={result.id} result={result} />
-        ))
+        data.map((result) => <SearchResult key={result.id} result={result} />)
       )}
     </div>
   )

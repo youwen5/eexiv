@@ -13,13 +13,15 @@ export default function News() {
       <br className='my-4' />
       <ul className='text-slate-50 px-6 list-disc'>
         <li key={1}>
-          eeXiv 1.0 has been released! All basic features like search and
-          document viewing are available.
+          eeXiv 2.0 has been released! The site should feel significantly more
+          responsive. Data cacheing has also been implemented so search results
+          and documents will load instantly the second time.
         </li>
-        <li key={2}>eeXiv is currently under active development!</li>
+        <li key={2}>Mobile support is currently in beta.</li>
         <li key={3}>
-          There may be major updates, breaking changes, or weird bugs. Report
-          bugs, suggest new features, or give us feedback at{' '}
+          eeXiv is currently under active development! There may be major
+          updates, breaking changes, or weird bugs. Report bugs, suggest new
+          features, or give us feedback at{' '}
           <a href='https://github.com/team-1280/eexiv-2/issues' target='_blank'>
             our issue tracker.
           </a>
