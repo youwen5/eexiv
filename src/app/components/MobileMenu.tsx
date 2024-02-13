@@ -32,6 +32,11 @@ export default function MobileMenu() {
     }
   }
 
+  const handleSubmit = () => {
+    setIsOpen(false)
+    document.body.style.overflow = 'auto'
+  }
+
   return (
     <div className='w-20'>
       <button
@@ -42,7 +47,7 @@ export default function MobileMenu() {
       </button>
       <div className={`${isOpen ? '' : styles['menu-hidden']} ${styles.menu}`}>
         <span className={styles['search-bar']}>
-          <SearchBar />
+          <SearchBar onSubmit={handleSubmit} />
         </span>
         <p className='text-slate-600 mx-4 my-4'>
           We gratefully acknowledge support from our volunteer peer reviewers,

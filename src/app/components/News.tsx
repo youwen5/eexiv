@@ -14,7 +14,7 @@ export default function News() {
       <ul className='text-slate-50 px-6 list-disc'>
         <li key={1}>
           eeXiv 2.0 has been released! The site should feel significantly more
-          responsive. Data cacheing has also been implemented so search results
+          responsive. Data caching has also been implemented so search results
           and documents will load instantly the second time.
         </li>
         <li key={2}>Mobile support is currently in beta.</li>

@@ -2,12 +2,15 @@
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
-export default function SearchBar() {
+export default function SearchBar({
+  onSubmit,
+}: Readonly<{ onSubmit?: () => void }>) {
   const [searchInput, setSearchInput] = useState('')
   const router = useRouter()
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     router.push(`/search?q=${encodeURIComponent(searchInput)}`)
+    onSubmit && onSubmit()
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {

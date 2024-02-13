@@ -1,12 +1,11 @@
 'use client'
-import { useSearchParams } from 'next/navigation'
+import { useSearchParams, useRouter } from 'next/navigation'
 import { Zilla_Slab } from 'next/font/google'
 import { Topics, Authors } from '@/app/components/DataDisplay'
 import { Status, ItemBadge } from '@/app/components/Badges'
 import { epoch2datestring } from '../utils/epoch2datestring'
 import searchDocs, { CustomSearchResult } from '@/app/utils/searchDocs'
 import { useSuspenseQuery } from '@tanstack/react-query'
-import { useRouter } from 'next/navigation'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500', '700'] })
 

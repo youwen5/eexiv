@@ -1,3 +1,11 @@
-.container {
-  min-height: calc(100vh - 400px);
+/* @media only screen and (min-width: 48em) {
+  .container {
+    min-height: calc(100vh - 400px);
+  }
 }
+
+@media only screen and (max-width: 48em) {
+  .container {
+    min-height: 400px;
+  }
+} */

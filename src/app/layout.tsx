@@ -71,42 +71,46 @@ export default function RootLayout({
               </div>
             </div>
           </div>
-          <Container>{children}</Container>
-          <footer>
-            <div className={styles.footerContent}>
-              <ul>
-                <li key='about'>
-                  <Link href='/about'>About</Link>
-                </li>
-                <li key='help'>
-                  <Link href='/help'>Help</Link>
-                </li>
-                <li key='contact'>
-                  <Link href='/contact'>Contact</Link>
-                </li>
-                <li key='subscribe'>
-                  <Link href='/subscribe'>Subscribe</Link>
-                </li>
-                <li key='copyright'>
-                  <Link href='/legal/copyright'>Copyright</Link>
-                </li>
-                <li key='privacy'>
-                  <Link href='/legal/privacy'>Privacy Policy</Link>
-                </li>
-                <li key='accessibility'>
-                  <Link href='/help/accessibility'>Accessibility</Link>
-                </li>
-                <li key='status'>
-                  <Link href='/status'>eeXiv status</Link>
-                </li>
-                <li key='notifications'>
-                  <Link href='/status/notifications'>
-                    Get status notifications
-                  </Link>
-                </li>
-              </ul>
+          <div className='flex min-h-[72vh] flex-col'>
+            <div className='flex-grow'>
+              <Container>{children}</Container>
             </div>
-          </footer>
+            <footer className='bottom-0'>
+              <div className={styles.footerContent}>
+                <ul>
+                  <li key='about'>
+                    <Link href='/about'>About</Link>
+                  </li>
+                  <li key='help'>
+                    <Link href='/help'>Help</Link>
+                  </li>
+                  <li key='contact'>
+                    <Link href='/contact'>Contact</Link>
+                  </li>
+                  <li key='subscribe'>
+                    <Link href='/subscribe'>Subscribe</Link>
+                  </li>
+                  <li key='copyright'>
+                    <Link href='/legal/copyright'>Copyright</Link>
+                  </li>
+                  <li key='privacy'>
+                    <Link href='/legal/privacy'>Privacy Policy</Link>
+                  </li>
+                  <li key='accessibility'>
+                    <Link href='/help/accessibility'>Accessibility</Link>
+                  </li>
+                  <li key='status'>
+                    <Link href='/status'>eeXiv status</Link>
+                  </li>
+                  <li key='notifications'>
+                    <Link href='/status/notifications'>
+                      Get status notifications
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </footer>
+          </div>
         </Providers>
       </body>
     </html>
