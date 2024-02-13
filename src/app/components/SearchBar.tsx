@@ -1,32 +1,21 @@
 'use client'
-import { create } from 'zustand'
 import { navigate } from '@/app/actions'
-
-interface SearchBarState {
-  searchInput: string
-  setSearchInput: (newInput: string) => void
-}
-
-const useSearchBarStore = create<SearchBarState>((set) => ({
-  searchInput: '',
-  setSearchInput: (newInput) => set({ searchInput: newInput }),
-}))
+import { useState } from 'react'
 
 export default function SearchBar() {
-  const searchBarStore = useSearchBarStore((state) => state.searchInput)
-  const setSearchBarStore = useSearchBarStore((state) => state.setSearchInput)
+  const [searchInput, setSearchInput] = useState('')
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    navigate(`/search?q=${searchBarStore.split(' ').join('+')}`)
+    navigate(`/search?q=${searchInput.split(' ').join('+')}`)
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchBarStore(e.target.value)
+    setSearchInput(e.target.value)
   }
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      navigate(`/search?q=${searchBarStore.split(' ').join('+')}`)
+      navigate(`/search?q=${encodeURIComponent(searchInput)}`)
     }
   }
 
@@ -38,7 +27,6 @@ export default function SearchBar() {
         name='q'
         placeholder='Search...'
         onChange={handleInputChange}
-        value={searchBarStore}
         onKeyDown={handleKeyPress}
       />
       <button

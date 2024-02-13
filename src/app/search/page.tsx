@@ -53,7 +53,7 @@ const SearchResult = ({ result }: { result: CustomSearchResult }) => {
 
 export default function Page() {
   const searchParams = useSearchParams()
-  const search = searchParams.get('q') as string
+  const search = decodeURIComponent(searchParams.get('q') as string)
 
   const { data, error } = useSuspenseQuery({
     queryKey: [search],
