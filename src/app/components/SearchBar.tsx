@@ -1,12 +1,13 @@
 'use client'
-import { navigate } from '@/app/actions'
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
 export default function SearchBar() {
   const [searchInput, setSearchInput] = useState('')
+  const router = useRouter()
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    navigate(`/search?q=${searchInput.split(' ').join('+')}`)
+    router.push(`/search?q=${encodeURIComponent(searchInput)}`)
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -15,7 +16,7 @@ export default function SearchBar() {
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      navigate(`/search?q=${encodeURIComponent(searchInput)}`)
+      router.push(`/search?q=${encodeURIComponent(searchInput)}`)
     }
   }
 

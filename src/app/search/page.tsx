@@ -5,12 +5,18 @@ import { Topics, Authors } from '@/app/components/DataDisplay'
 import { Status, ItemBadge } from '@/app/components/Badges'
 import { epoch2datestring } from '../utils/epoch2datestring'
 import searchDocs, { CustomSearchResult } from '@/app/utils/searchDocs'
-import { navigate } from '@/app/actions'
 import { useSuspenseQuery } from '@tanstack/react-query'
+import { useRouter } from 'next/navigation'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500', '700'] })
 
-const SearchResult = ({ result }: { result: CustomSearchResult }) => {
+const SearchResult = ({
+  result,
+  redirect,
+}: {
+  result: CustomSearchResult
+  redirect: (input: string) => void
+}) => {
   const { manifest, abstract, id } = result
   const { title, authors, topics, dates, status, type } = manifest
 
@@ -22,7 +28,7 @@ const SearchResult = ({ result }: { result: CustomSearchResult }) => {
       }
       target = target.parentNode as HTMLElement
     }
-    navigate(`/document/view/${id}`)
+    redirect(`/document/view/${id}`)
   }
 
   return (
@@ -52,6 +58,7 @@ const SearchResult = ({ result }: { result: CustomSearchResult }) => {
 }
 
 export default function Page() {
+  const router = useRouter()
   const searchParams = useSearchParams()
   const search = decodeURIComponent(searchParams.get('q') as string)
 
@@ -64,6 +71,10 @@ export default function Page() {
   })
   if (error) throw error
 
+  const handleRedirect = (input: string) => {
+    router.push(input)
+  }
+
   return (
     <div className='max-w-4xl mx-auto'>
       <h1 className='text-xl mb-4 p-2'>
@@ -75,7 +86,13 @@ export default function Page() {
       {data.length === 0 ? (
         <p className='text-lg px-2'>No results found.</p>
       ) : (
-        data.map((result) => <SearchResult key={result.id} result={result} />)
+        data.map((result) => (
+          <SearchResult
+            key={result.id}
+            result={result}
+            redirect={handleRedirect}
+          />
+        ))
       )}
     </div>
   )
