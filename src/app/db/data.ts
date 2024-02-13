@@ -346,22 +346,20 @@ authorName (as a slug): {
   website: website url
 }
 */
-export interface Authors {
-  [key: string]: {
-    name: {
-      first: string
-      last: string
-      nickname?: string
-    }
-    affiliation: string[]
-    image: string
-    nationality: string[]
-    formerAffiliations?: string[]
-    bio?: string
-    website?: string
+export interface Author {
+  name: {
+    first: string
+    last: string
+    nickname?: string
   }
+  affiliation: string[]
+  image: string
+  nationality: string[]
+  formerAffiliations?: string[]
+  bio?: string
+  website?: string
 }
-export const authors: Authors = {
+export const authors: { [key: string]: Author } = {
   shasan: {
     name: {
       first: 'Saim',
