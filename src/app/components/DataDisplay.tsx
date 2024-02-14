@@ -1,8 +1,10 @@
 import { Fragment } from 'react'
 import Link from 'next/link'
-import { reviewer } from '@/app/db/data'
-import { loadAllTopics, loadAllAuthors } from '@/app/db/loaders'
-import { useSuspenseQuery } from '@tanstack/react-query'
+import {
+  reviewer,
+  authors as authorList,
+  topics as topicList,
+} from '@/app/db/data'
 
 export const Code = ({
   code,
@@ -52,18 +54,6 @@ export const Topics = ({
   topics,
   showTitle = true,
 }: Readonly<{ topics: string[]; showTitle?: boolean }>) => {
-  'use client'
-
-  const { data, error } = useSuspenseQuery({
-    queryKey: ['topics_all'],
-    queryFn: () => {
-      const data = loadAllTopics()
-      return data
-    },
-  })
-  if (error) throw error
-  const topicList = data
-
   return (
     <>
       {showTitle ? <span className='font-bold'>Topics: </span> : null}
@@ -82,19 +72,6 @@ export const Topics = ({
 export const Authors = ({
   authors,
 }: Readonly<{ authors: string[]; noLink?: boolean }>) => {
-  'use client'
-
-  const { data, error } = useSuspenseQuery({
-    queryKey: ['authors_all'],
-    queryFn: () => {
-      const data = loadAllAuthors()
-      return data
-    },
-  })
-  if (error) throw error
-
-  const authorList = data
-
   return (
     <>
       {authors.map((a: string, i) => (
@@ -141,7 +118,7 @@ export const Reviewers = ({
     <>
       {showTitle ? <span className='font-bold'>Reviewed by: </span> : null}
       {reviewers.map((r: reviewer, i) => (
-        <Fragment key={i}>
+        <Fragment key={r.first}>
           <ReviewerDisplay r={r} />
           {i !== reviewers.length - 1 && reviewers.length > 2 ? ', ' : null}
           {i === reviewers.length - 2 ? ' and ' : null}
