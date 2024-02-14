@@ -40,8 +40,8 @@ export const ItemBadge = ({
       text = 'Presentation'
       itemStyle = 'badge-presentation'
       break
-    case 'white paper':
-      text = 'White Paper'
+    case 'whitepaper':
+      text = 'Whitepaper'
       itemStyle = 'badge-white-paper'
       break
     case 'datasheet':
