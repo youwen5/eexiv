@@ -55,7 +55,7 @@ const SearchResult = ({
       <p className='mb-2'>
         <Topics topics={topics} showTitle />
       </p>
-      <div className='mb-4'>
+      <div className='mb-4 flex flex-wrap gap-2'>
         <ItemBadge itemName={type} /> <Status statusName={status} />
       </div>
       <h2 className={`${zillaSlab.className} text-2xl`}>Abstract</h2>
