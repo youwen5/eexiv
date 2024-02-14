@@ -47,7 +47,7 @@ export default function RootLayout({
                 We gratefully acknowledge support from our volunteer peer
                 reviewers, member institutions, and all{' '}
                 <a
-                  href='https://github.com/couscousdude/eeXiv-2/graphs/contributors'
+                  href='https://github.com/team-1280/eexiv/graphs/contributors'
                   target='_blank'
                 >
                   open-source contributors
