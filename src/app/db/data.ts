@@ -441,7 +441,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
       'Student@srvhs',
     ],
     image: '/img/profiles/wlin.jpg',
-    nationality: ['twn', 'chn', 'usa'],
+    nationality: ['twn', 'chn', 'jpn', 'usa'],
     formerAffiliations: ['Intern@raid-zero'],
     bio: 'Hi, I am Kaito or Warren. I am a Self-taught programmer and engineer. I go around doing dumb things such as my projects. I have a dream of building a community. I am currently part of many projects.',
     website: 'https://kaitotlex.carrd.co/',
@@ -468,7 +468,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
       'Mentor@team-1280',
     ],
     formerAffiliations: ['Captain@team-1280', 'Student@srvhs'],
-    nationality: ['usa'],
+    nationality: ['irl', 'usa'],
     image: '/img/profiles/edanko.jpg',
   },
   arvenkatesh: {
@@ -767,6 +767,11 @@ export const nationalities: Readonly<{ [key: string]: Nationality }> = {
     name: 'Republic of the Philippines',
     demonym: 'Filipino',
     flag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Flag_of_the_Philippines.svg/2880px-Flag_of_the_Philippines.svg.png',
+  },
+  irl: {
+    name: 'Republic of Ireland',
+    demonym: 'Irish',
+    flag: 'https://upload.wikimedia.org/wikipedia/commons/4/45/Flag_of_Ireland.svg',
   },
   unknown: {
     name: 'Undetermined',

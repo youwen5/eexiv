@@ -1,28 +1,65 @@
 import Link from 'next/link'
-import { documents, authors, affiliations } from './db/data'
+import { documents, authors, affiliations, Author } from './db/data'
 import News from './components/News'
 import RandomDocs from './components/RandomDocs'
 import RecentDocuments from './components/RecentDocuments'
 
+function sortAuthorsByDocumentsPublished(authors: {
+  [key: string]: Author
+}): { id: string; author: Author }[] {
+  // Initialize a map to count documents for each author
+  const authorDocumentCount: { [key: string]: number } = {}
+
+  // Iterate over documents to count the number for each author
+  Object.values(documents).forEach((document) => {
+    document.manifest.authors.forEach((authorId) => {
+      if (authorDocumentCount[authorId]) {
+        authorDocumentCount[authorId] += 1
+      } else {
+        authorDocumentCount[authorId] = 1
+      }
+    })
+  })
+
+  // Convert the authors object into an array of objects including the author ID
+  const authorsWithId = Object.keys(authors).map((id) => ({
+    id,
+    author: authors[id],
+    count: authorDocumentCount[id] || 0, // Include the count for sorting
+  }))
+
+  // Sort authors by their document count in descending order
+  authorsWithId.sort((a, b) => b.count - a.count)
+
+  // Return the sorted array, excluding the count property
+  return authorsWithId.map(({ id, author }) => ({ id, author }))
+}
+
 export default function Home() {
   const AuthorDisplay = () => {
-    return Object.entries(authors).map(([author, data], index) => {
-      let affiliationSlug = data.affiliation[0].split('@')[1]
-      let affiliation = affiliations[affiliationSlug]
-      return (
-        <div key={author}>
-          <Link href={`/author/${author}`}>
-            {data.name.first}
-            {data.name.nickname ? ` "${data.name.nickname}" ` : ' '}
-            {data.name.last}
-          </Link>{' '}
-          of{' '}
-          <Link href={`/affiliation/${affiliationSlug}`}>
-            {affiliation.short}
-          </Link>
-        </div>
-      )
-    })
+    return (
+      <ol className='list-decimal pl-4 space-y-2'>
+        {sortAuthorsByDocumentsPublished(authors).map(({ id, author }) => {
+          let data = author
+
+          let affiliationSlug = data.affiliation[0].split('@')[1]
+          let affiliation = affiliations[affiliationSlug]
+          return (
+            <li key={id}>
+              <Link href={`/author/${id}`}>
+                {data.name.first}
+                {data.name.nickname ? ` "${data.name.nickname}" ` : ' '}
+                {data.name.last}
+              </Link>{' '}
+              of{' '}
+              <Link href={`/affiliation/${affiliationSlug}`}>
+                {affiliation.short}
+              </Link>
+            </li>
+          )
+        })}
+      </ol>
+    )
   }
 
   return (
@@ -45,7 +82,9 @@ export default function Home() {
       <News />
       <div className='grid grid-cols-1 space-y-2 mt-4 basis-full'>
         <br />
-        <div className='font-serif text-xl my-2'>Recently released documents</div>
+        <div className='font-serif text-xl my-2'>
+          Recently released documents
+        </div>
         <RecentDocuments />
         <hr className='mx-auto w-full h-1 border-0 bg-slate-200 my-2 rounded-md' />
         <br />
@@ -56,7 +95,7 @@ export default function Home() {
         <hr className='mx-auto w-full h-1 border-0 bg-slate-200 my-2 rounded-md' />
         <br />
         <div className='font-serif text-xl'>
-          Our esteemed faculty and alumni
+          Our esteemed faculty and alumni (ranked by research output)
         </div>
         <AuthorDisplay />
       </div>
