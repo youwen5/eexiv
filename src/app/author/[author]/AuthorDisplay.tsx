@@ -41,7 +41,7 @@ export default function AuthorDisplay({
               <img
                 src={affiliations[a.split('@')[1]].image}
                 alt={affiliations[a.split('@')[1]].name}
-                className='h-12 mr-2'
+                className='h-12 mr-3 shadow-md shadow-slate-300'
               />
             </Link>
           ))}
@@ -110,7 +110,7 @@ export default function AuthorDisplay({
       <div className='flex items-center'>
         <img
           src={flag}
-          className='w-10 border-2 border-slate-200'
+          className='w-10 shadow-md shadow-slate-300'
           alt={`${demonym} flag`}
         />
         <span className='mx-3 font-semibold'>{demonym}</span>

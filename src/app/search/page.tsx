@@ -41,8 +41,9 @@ const SearchResult = ({
 
   return (
     <div
-      className='border-4 rounded-lg border-gray-300 hover:border-blue-500 p-5 my-4 w-full cursor-pointer'
+      className='border-4 rounded-lg border-gray-300 hover:border-blue-500 p-5 my-4 w-full cursor-pointer shadow-slate-300 shadow-md'
       onClick={handleClick}
+      role='button' // this is a critical DEI concern as we have marked this element as a button with ARIA role, yet we have not supported button accessiblity features
     >
       <h2 className={`${zillaSlab.className} text-3xl`}>{title}</h2>
       <p className='text-slate-500 py-2 text-md mt-2'>

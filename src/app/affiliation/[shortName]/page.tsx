@@ -36,10 +36,10 @@ export default function Page({
   return (
     <div>
       <div className='grid grid-cols-1 max-w-3xl mx-auto'>
-        <div className='mx-auto mb-4 w-[90vw] md:w-auto md:h-[40vw] lg:h-[20vw]'>
+        <div className='mx-auto mb-4 max-w-3xl md:w-auto md:h-[40vw] lg:h-[20vw]'>
           <img
             alt='profile picture'
-            className='rounded-sm mx-auto object-cover w-full h-full'
+            className='rounded-sm mx-auto object-cover w-full h-full shadow-md shadow-slate-400'
             src={image}
           />
         </div>

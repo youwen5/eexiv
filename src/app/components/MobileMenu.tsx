@@ -38,7 +38,9 @@ export default function MobileMenu() {
       >
         <RxHamburgerMenu size={40} />
       </button>
-      <div className={`${isOpen ? '' : styles['menu-hidden']} ${styles.menu}`}>
+      <div
+        className={`${isOpen ? '' : styles['menu-hidden']} ${styles.menu} shadow-md shadow-slate-300`}
+      >
         <span className={styles['search-bar']}>
           <SearchBar onSubmit={handleSubmit} />
         </span>

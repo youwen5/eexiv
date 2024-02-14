@@ -52,7 +52,7 @@ export default function DocumentViewer({ slug }: Readonly<{ slug: string }>) {
       </p>
       <ItemBadge itemName={type as DocumentType} />
       <Status statusName={status} />
-      <span className='inline-block border-gray-200 border-2 rounded px-2 py-1.5 mr-2'>
+      <span className='inline-block border-gray-200 border-2 rounded px-2 py-1.5 mr-2 shadow-sm shadow-slate-300'>
         Revision {latest}
       </span>
       <hr className='my-4' />

@@ -2,10 +2,10 @@ import Link from 'next/link'
 
 export default function News() {
   return (
-    <div className='bg-slate-800 rounded-lg p-6 w-full basis-full md:basis-2/5 my-4 lg:my-0 max-h-[250px] overflow-y-auto'>
-      <span className='text-3xl md:text-4xl text-slate-200'>eeXiv News</span>
+    <div className='bg-slate-800 rounded-lg p-6 w-full basis-full md:basis-2/5 my-4 lg:my-0 max-h-[250px] overflow-y-auto shadow-md shadow-slate-500'>
+      <span className='text-3xl text-slate-200'>eeXiv News</span>
       <br className='my-2' />
-      <span className='text-xl text-slate-400'>
+      <span className='text-lg text-slate-400'>
         Stay up to date with what is happening at eeXiv.
       </span>
       <br className='my-2' />

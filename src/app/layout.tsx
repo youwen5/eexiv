@@ -56,7 +56,9 @@ export default function RootLayout({
               </p>
             </div>
           </div>
-          <div className={`${styles.banner} w-full h-[100px] mb-[50px]`}>
+          <div
+            className={`${styles.banner} w-full h-[100px] mb-[50px] shadow-md shadow-slate-400`}
+          >
             <div className='max-w-[1200px] flex justify-between mx-auto items-center pt-3 flex-nowrap'>
               <h1 className={`${styles.title} ${zillaSlab.className} mx-10`}>
                 <Link href='/' className='no-link-style'>
