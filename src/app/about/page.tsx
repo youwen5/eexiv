@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function Page() {
   return (
     <div className='text-slate-600'>
-      <h1 className='text-3xl text-slate-800 mt-4 mb-1 font-serif'>About Us</h1>
+      <h1 className='text-3xl text-slate-800 mt-4 mb-2 font-serif'>About Us</h1>
       <p>
         eeXiv{' '}
         {`is a project hosted by Team 1280 EECS ("Electrical Engineering and

@@ -1,6 +1,7 @@
 export default function Page() {
   return (
     <div className='content text-slate-800'>
+      <h1 className='text-3xl text-slate-800 mt-4 mb-2 font-serif'>Contact</h1>
       <p>
         You can contact a team representative directly at{' '}
         <a href='mailto:sanramonvalleyrobotics@gmail.com'>
