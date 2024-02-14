@@ -3,6 +3,9 @@ import { Fragment } from 'react'
 import { affiliations, nationalities, authors } from '../../db/data'
 import { Zilla_Slab } from 'next/font/google'
 import { notFound } from 'next/navigation'
+import DocumentCard from '@/app/components/DocumentCard'
+import findDocumentsByAuthor from './findDocumentsByAuthor'
+import { redirect } from 'next/navigation' // for server side
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
@@ -15,6 +18,8 @@ export default function AuthorDisplay({
   }
 
   const { name, affiliation, image, nationality, formerAffiliations } = data
+
+  const authorsDocuments = findDocumentsByAuthor(author)
 
   const MainPosition = () => {
     const mainAffiliationShort = affiliation[0].split('@')[1]
@@ -55,7 +60,7 @@ export default function AuthorDisplay({
     return (
       <>
         <h1 className='text-3xl md:mt-6 mt-4 mb-2 font-serif'>
-          Other Positions:
+          Other Positions
         </h1>
         {affiliation.slice(1).map((a: string, i: number) => {
           const position = a.split('@')[0]
@@ -80,7 +85,7 @@ export default function AuthorDisplay({
     return (
       <>
         <h1 className='text-3xl md:mt-6 mt-4 mb-2 font-serif'>
-          Former Positions:
+          Former Positions
         </h1>
         {formerAffiliations?.map((a: string, i: number) => {
           const position = a.split('@')[0]
@@ -159,7 +164,7 @@ export default function AuthorDisplay({
         <OtherPositions />
         <FormerPositions />
         <h1 className='text-3xl md:my-6 my-4 font-serif'>
-          Ethnicity and Nationality:
+          Ethnicity and Nationality
         </h1>
         <div className='flex gap-2 flex-wrap'>
           {nationality.map((n: string) => (
@@ -169,6 +174,16 @@ export default function AuthorDisplay({
           ))}
         </div>
         <Bio />
+        {authorsDocuments.length > 0 && (
+          <>
+            <h1 className='text-3xl md:my-6 my-4 font-serif'>
+              Published documents
+            </h1>
+            {authorsDocuments.map((d) => (
+              <DocumentCard doc={d.doc} href={`/document/view/${d.slug}`} />
+            ))}
+          </>
+        )}
       </div>
     </div>
   )
