@@ -6,6 +6,7 @@ import { Status, ItemBadge } from '@/app/components/Badges'
 import { epoch2datestring } from '../utils/epoch2datestring'
 import searchDocs, { CustomSearchResult } from '@/app/utils/searchDocs'
 import { useSuspenseQuery } from '@tanstack/react-query'
+import cardEffects from '@/app/styles/cardEffects.module.css'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500', '700'] })
 
@@ -41,7 +42,7 @@ const SearchResult = ({
 
   return (
     <div
-      className='border-4 rounded-lg border-gray-300 hover:border-blue-500 p-5 my-4 w-full cursor-pointer shadow-slate-300 shadow-md'
+      className={`${cardEffects.card} border-4 rounded-lg border-gray-300 hover:border-blue-500 p-5 my-4 w-full cursor-pointer`}
       onClick={handleClick}
       role='button' // this is a critical DEI concern as we have marked this element as a button with ARIA role, yet we have not supported button accessiblity features
     >

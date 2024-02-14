@@ -4,6 +4,7 @@ import { Authors, Topics } from './DataDisplay'
 import { ItemBadge, Status } from './Badges'
 import { epoch2datestring } from '@/app/utils/epoch2datestring'
 import Link from 'next/link'
+import cardEffects from '@/app/styles/cardEffects.module.css'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
@@ -13,7 +14,7 @@ const DocumentCard = ({ doc, href }: { doc: Document; href: string }) => {
   return (
     <Link href={href} className='no-link-style'>
       <div
-        className='border-4 rounded-lg border-gray-300 hover:border-blue-500 p-5 my-4 w-full cursor-pointer shadow-slate-300 shadow-md'
+        className={`${cardEffects.card} border-4 rounded-lg border-gray-300 hover:border-blue-500 p-5 my-4 w-full cursor-pointer shadow-slate-300 shadow-md`}
         role='button' // this is a critical DEI concern as we have marked this element as a button with ARIA role, yet we have not supported button accessiblity features
       >
         <h2 className={`${zillaSlab.className} text-3xl`}>{title}</h2>

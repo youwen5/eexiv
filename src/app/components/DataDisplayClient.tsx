@@ -57,9 +57,7 @@ export const Topics = ({
       {showTitle ? <span className='font-bold'>Topics: </span> : null}
       {topics.map((t: string, i) => (
         <Fragment key={t}>
-          <Link href={topicList[t].wiki} target='_blank'>
-            {topicList[t].name}
-          </Link>
+          <Link href={`/topic/${t}`}>{topicList[t].name}</Link>
           {i !== topics.length - 1 ? ', ' : null}
         </Fragment>
       ))}

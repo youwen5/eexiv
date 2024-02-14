@@ -5,7 +5,6 @@ import { Zilla_Slab } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import DocumentCard from '@/app/components/DocumentCard'
 import findDocumentsByAuthor from './findDocumentsByAuthor'
-import { redirect } from 'next/navigation' // for server side
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
@@ -40,13 +39,13 @@ export default function AuthorDisplay({
             </a>
           </div>
         ) : null}
-        <div className='my-4 max-h-12 flex flex-wrap'>
+        <div className='my-4 max-h-12 flex flex-wrap gap-2'>
           {affiliation.map((a: string) => (
             <Link key={a} href={`/affiliation/${a.split('@')[1]}`}>
               <img
                 src={affiliations[a.split('@')[1]].image}
                 alt={affiliations[a.split('@')[1]].name}
-                className='h-12 mr-3 shadow-md shadow-slate-300'
+                className='h-12 shadow-sm shadow-slate-400 rounded-md'
               />
             </Link>
           ))}

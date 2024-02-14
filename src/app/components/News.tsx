@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Inter, Zilla_Slab } from 'next/font/google'
 
 const zillaSlab = Zilla_Slab({ weight: '600', subsets: ['latin'] })
-const inter = Inter({ weight: '400', subsets: ['latin'] })
+const inter = Inter({ weight: ['400', '500'], subsets: ['latin'] })
 
 export default function News() {
   return (
@@ -12,9 +12,7 @@ export default function News() {
         ' mt-6 bg-slate-800 rounded-lg p-6 w-full basis-full md:basis-2/5 my-4 lg:my-0 max-h-[250px] overflow-y-auto shadow-slate-500 shadow-sm'
       }
     >
-      <div
-        className={zillaSlab.className + ' font-serif text-3xl text-slate-200'}
-      >
+      <div className={zillaSlab.className + ' text-3xl text-slate-200'}>
         eeXiv News
       </div>
       <div className='text-lg text-slate-400 mb-4'>

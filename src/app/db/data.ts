@@ -524,6 +524,16 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     image: '/img/profiles/default.png',
     website: 'https://futureinspireacademy.com',
   },
+  cbordalo: {
+    name: {
+      first: 'Christian',
+      last: 'Bordalo',
+      nickname: 'CB12',
+    },
+    affiliation: ['Wage Slave@primos', 'Student@srvhs'],
+    image: '/img/profiles/cbordalo.jpg',
+    nationality: ['stateless', 'unknown'],
+  },
 }
 
 export interface Affiliation {
@@ -680,7 +690,20 @@ Raid Zero's influence extends beyond the technical achievements in robotics comp
       Future Inspire Academy (FIA) is a non-profit organization that strives to teach students how to apply their coding skills to game development in a fun and efficient way. Our mission is to create a platform to reward members who start their game development journey early. We give members all the resources to learn quickly and reward their efforts with points which can be used to upgrade their game jam prizes. Become a member today and reap all the benefits by joining our Discord Server!
       [linebreak]
       Our organization not only impacts our members from around the world but also our partners as we help promote their business and improve their products. Our new vision has been to help develop companies that would contribute to the future of game development and promote accessibility. Recently, we launched exclusive early access to Rosebud’s game maker platform for all of our members to try. In the future, we plan to host more exclusive events that revolve around our partners. 
-`,
+    `,
+  },
+  primos: {
+    name: `Primo's Pizzeria & Pub`,
+    short: 'Primos',
+    image: '/img/logos/primos.png',
+    description: `
+    Welcoming, family-run restaurant pairs straightforward pizzas, pasta & sandwiches with beers on tap.
+    [linebreak]
+      Service options: Serves happy hour food · Serves vegetarian dishes · Good for watching sports
+      [linebreak]
+      Address: 298 Hartz Ave, Danville, CA 94526
+      [linebreak]
+      Phone: (925) 838-8214`,
   },
 }
 
@@ -734,5 +757,20 @@ export const nationalities: Readonly<{ [key: string]: Nationality }> = {
     name: 'Japan',
     demonym: 'Japanese',
     flag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/1280px-Flag_of_Japan.svg.png',
+  },
+  isr: {
+    name: 'State of Israel',
+    demonym: 'Israeli',
+    flag: 'https://upload.wikimedia.org/wikipedia/commons/5/5c/Israel_flag_300.png?20050629023821',
+  },
+  unknown: {
+    name: 'Undetermined',
+    demonym: 'Undetermined',
+    flag: '/img/flags/unknown.png',
+  },
+  stateless: {
+    name: 'Stateless',
+    demonym: 'Stateless',
+    flag: '/img/flags/stateless.png',
   },
 }

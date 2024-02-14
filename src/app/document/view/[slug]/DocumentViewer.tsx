@@ -36,7 +36,7 @@ export default function DocumentViewer({ slug }: Readonly<{ slug: string }>) {
         className={`
             text-slate-800 text-5xl mb-4
             ${zillaSlab.className}
-            text-wrap
+            text-wrap break-words hyphens-auto
           `}
       >
         {title}

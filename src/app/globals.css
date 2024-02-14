@@ -13,7 +13,7 @@
 }
 
 a {
-  color: #2563eb; /* Tailwind's blue-600 */
+  @apply text-blue-600;
 }
 
 a:hover {

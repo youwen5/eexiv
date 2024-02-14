@@ -52,7 +52,11 @@ const RandomDocs = (): React.ReactNode[] => {
     return (
       <div key={key}>
         <Link href={`/document/view/${key}`}>{title}</Link>, a {typeString}{' '}
-        about {topicsList[topics[0]]['name']} published on {dateString}
+        about{' '}
+        <Link href={`/topic/${topics[0]}`}>
+          {topicsList[topics[0]]['name']}
+        </Link>{' '}
+        published on {dateString}
         .
         <br />
       </div>
