@@ -2,7 +2,7 @@
   @apply overflow-hidden left-[0] top-[235px] z-10 absolute bg-slate-200;
   @apply duration-300;
   height: calc(200px);
-  transition: width 0.5s ease-in-out;
+  transition: height 0.2s ease-in-out;
   width: 100vw;
   right: 0;
 }
@@ -16,5 +16,5 @@
 }
 
 .menu-hidden {
-  width: 0;
+  height: 0;
 }
