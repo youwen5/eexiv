@@ -1,7 +1,8 @@
 .menu {
   @apply overflow-hidden left-[0] top-[235px] z-10 absolute bg-slate-200;
   @apply duration-300;
-  height: calc(200px);
+  height: fit-content;
+  padding-bottom: 10px;
   transition: height 0.2s ease-in-out;
   width: 100vw;
   right: 0;
@@ -17,4 +18,5 @@
 
 .menu-hidden {
   height: 0;
+  padding-bottom: 0;
 }

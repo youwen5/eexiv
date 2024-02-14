@@ -29,7 +29,7 @@ export default function Home() {
     <div className='text-slate-800 flex flex-wrap md:flex-row justify-center'>
       <p className='font-serif text-lg basis-full md:basis-1/2 grow mr-1 text-balance'>
         eeXiv, like arXiv, is a free distribution service and an open-access
-        archive for nearly {Object.keys(documents).length} scholarly articles in
+        archive for over {Object.keys(documents).length} scholarly articles in
         the fields of physics, mathematics, computer science, quantitative
         biology, quantitative finance, statistics, electrical engineering and
         systems science, and economics, but mainly related to the{' '}
@@ -44,18 +44,20 @@ export default function Home() {
       </p>
       <News />
       <div className='grid grid-cols-1 space-y-2 mt-4 basis-full'>
-        <hr className='mx-auto w-full h-1 border-0 bg-slate-200 my-2 rounded-md' />
-        <span className='font-serif text-xl'>Recently released documents</span>
+        <br />
+        <div className='font-serif text-xl my-2'>Recently released documents</div>
         <RecentDocuments />
         <hr className='mx-auto w-full h-1 border-0 bg-slate-200 my-2 rounded-md' />
-        <span className='font-serif text-xl'>
+        <br />
+        <div className='font-serif text-xl my-2'>
           Selected documents in various disciplines
-        </span>
+        </div>
         <RandomDocs />
         <hr className='mx-auto w-full h-1 border-0 bg-slate-200 my-2 rounded-md' />
-        <span className='font-serif text-xl'>
+        <br />
+        <div className='font-serif text-xl'>
           Our esteemed faculty and alumni
-        </span>
+        </div>
         <AuthorDisplay />
       </div>
     </div>
