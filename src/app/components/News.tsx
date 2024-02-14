@@ -31,7 +31,7 @@ export default function News() {
           eeXiv is currently under active development! There may be major
           updates, breaking changes, or weird bugs. Report bugs, suggest new
           features, or give us feedback at{' '}
-          <a href='https://github.com/team-1280/eexiv-2/issues' target='_blank' className='text-blue-300'>
+          <a href='https://github.com/team-1280/eexiv/issues' target='_blank' className='text-blue-300'>
             our issue tracker.
           </a>
         </li>

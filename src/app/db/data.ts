@@ -361,7 +361,7 @@ authorName (as a slug): {
   affiliation: an array of affiliation "slugs". this should correspond to affiliations in the affiliations data.
   The first affiliation will be considered the primary affiliation
 
-  image: image url, can store in public/eexiv-2/img/profiles or link to a web resource
+  image: image url, can store in public/eexiv/img/profiles or link to a web resource
 
   nationality: an array of ISO 3 letter country codes corresponding to your nationalities or ethniciities
 
