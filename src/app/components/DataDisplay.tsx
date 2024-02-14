@@ -6,6 +6,14 @@ import {
   topics as topicList,
 } from '@/app/db/data'
 
+const getRepo = (link: string) => {
+  if (link.includes('github.com')) {
+    const owner = link.split('/')[3]
+    const name = link.split('/')[4]
+    return `git:${owner}/${name}`
+  }
+}
+
 export const Code = ({
   code,
   showTitle = true,
@@ -20,7 +28,7 @@ export const Code = ({
         {code.map((c: string, i) => (
           <Fragment key={c}>
             <Link href={c} target='_blank'>
-              {c}
+              {getRepo(c)}
             </Link>
             {i !== code.length - 1 ? ', ' : null}
           </Fragment>
