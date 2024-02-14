@@ -10,11 +10,13 @@ import {
 } from '@/app/components/DataDisplay'
 import { ItemBadge, Status } from '@/app/components/Badges'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
 export default function DocumentViewer({ slug }: Readonly<{ slug: string }>) {
   const { manifest, abstract, file, citation } = documents[slug]
+  if (!manifest) return notFound()
   const {
     title,
     authors,

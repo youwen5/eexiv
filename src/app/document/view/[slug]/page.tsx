@@ -1,5 +1,4 @@
 import DocumentViewer from './DocumentViewer'
-import ErrorBoundary from '@/app/utils/ErrorBoundary'
 import { documents } from '@/app/db/data'
 
 export function generateStaticParams() {
@@ -10,9 +9,5 @@ export function generateStaticParams() {
 export default function Page({
   params,
 }: Readonly<{ params: { slug: string } }>) {
-  return (
-    <ErrorBoundary>
-      <DocumentViewer slug={params.slug} />
-    </ErrorBoundary>
-  )
+  return <DocumentViewer slug={params.slug} />
 }
