@@ -6,12 +6,23 @@ const inter = Inter({ weight: '400', subsets: ['latin'] })
 
 export default function News() {
   return (
-    <div className={inter.className + ' mt-6 bg-slate-800 rounded-lg p-6 w-full basis-full md:basis-2/5 my-4 lg:my-0 max-h-[250px] overflow-y-auto shadow-md shadow-slate-500'}>
-      <div className={zillaSlab.className + ' font-serif text-3xl text-slate-200'}>eeXiv News</div>
+    <div
+      className={
+        inter.className +
+        ' mt-6 bg-slate-800 rounded-lg p-6 w-full basis-full md:basis-2/5 my-4 lg:my-0 max-h-[250px] overflow-y-auto shadow-slate-500 shadow-sm'
+      }
+    >
+      <div
+        className={zillaSlab.className + ' font-serif text-3xl text-slate-200'}
+      >
+        eeXiv News
+      </div>
       <div className='text-lg text-slate-400 mb-4'>
         Stay up to date with what is happening at eeXiv.
       </div>
-      <div className={zillaSlab.className + ' text-slate-200 text-2xl mb-2'}>Latest news</div>
+      <div className={zillaSlab.className + ' text-slate-200 text-2xl mb-2'}>
+        Latest news
+      </div>
       <ul className='text-slate-50 px-6 list-disc'>
         <li key={1}>
           eeXiv 2.1 has been released! Documents are now statically generated
