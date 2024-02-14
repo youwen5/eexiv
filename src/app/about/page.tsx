@@ -17,10 +17,10 @@ export default function Page() {
         </Link>{' '}
         under the GNU General Public License (GPL).
       </p>
-      <h1 className='text-3xl text-slate-800 mt-6 mb-1 font-serif'>
+      <h2 className='text-2xl text-slate-800 mt-6 mb-1 font-serif'>
         Frequently Asked Questions
-      </h1>
-      <ul className='list-disc'>
+      </h2>
+      <ul className='list-disc ml-4 mt-2'>
         <li key='1'>
           How can I contribute to research or development on eeXiv (or even just
           add my profile to the site)?
