@@ -8,21 +8,20 @@ interface DocumentWithSlug {
   doc: Document
 }
 
-export default function findDocumentsByAuthor(
+export default function findDocumentsByAuthorSorted(
   authorId: string
 ): DocumentWithSlug[] {
-  // Initialize an empty array to store the results
-  const result: DocumentWithSlug[] = []
+  // Filter documents by author
+  const filteredDocuments = Object.entries(documents)
+    .filter(([_, doc]) => doc.manifest.authors.includes(authorId))
+    .map(([slug, doc]) => ({ slug, doc }))
 
-  // Iterate over the documents object entries
-  for (const [slug, doc] of Object.entries(documents)) {
-    // Check if the authorId is present in the document's authors array
-    if (doc.manifest.authors.includes(authorId)) {
-      // If present, push the document along with its slug to the results array
-      result.push({ slug, doc })
-    }
-  }
+  // Sort the filtered documents by the latest date in descending order
+  const sortedDocuments = filteredDocuments.sort((a, b) => {
+    const latestDateA = a.doc.manifest.dates[a.doc.manifest.dates.length - 1]
+    const latestDateB = b.doc.manifest.dates[b.doc.manifest.dates.length - 1]
+    return latestDateB - latestDateA // For descending order
+  })
 
-  // Return the results array
-  return result
+  return sortedDocuments
 }

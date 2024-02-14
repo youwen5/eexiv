@@ -532,7 +532,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     },
     affiliation: ['Wage Slave@primos', 'Student@srvhs'],
     image: '/img/profiles/cbordalo.jpg',
-    nationality: ['stateless', 'unknown'],
+    nationality: ['phl', 'usa'],
   },
 }
 
@@ -762,6 +762,11 @@ export const nationalities: Readonly<{ [key: string]: Nationality }> = {
     name: 'State of Israel',
     demonym: 'Israeli',
     flag: 'https://upload.wikimedia.org/wikipedia/commons/5/5c/Israel_flag_300.png?20050629023821',
+  },
+  phl: {
+    name: 'Republic of the Philippines',
+    demonym: 'Filipino',
+    flag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Flag_of_the_Philippines.svg/2880px-Flag_of_the_Philippines.svg.png',
   },
   unknown: {
     name: 'Undetermined',
