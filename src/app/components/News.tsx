@@ -31,13 +31,13 @@ export default function News() {
           eeXiv is currently under active development! There may be major
           updates, breaking changes, or weird bugs. Report bugs, suggest new
           features, or give us feedback at{' '}
-          <a href='https://github.com/team-1280/eexiv-2/issues' target='_blank'>
+          <a href='https://github.com/team-1280/eexiv-2/issues' target='_blank' className='text-blue-300'>
             our issue tracker.
           </a>
         </li>
         <li key={4}>
           Want to upload your documents or just make yourself a profile on
-          eeXiv? Check our <Link href='/about'>about page</Link> for more
+          eeXiv? Check our <Link href='/about' className='text-blue-300'>about page</Link> for more
           information!
         </li>
       </ul>

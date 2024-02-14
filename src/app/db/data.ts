@@ -6,7 +6,7 @@ documents {
             title: string
             authors: string[]
             date: unix epoch integer[] -> if multiple revisions, put the earlier dates first
-            type: presentation | report | white paper | other
+            type: presentation | report | whitepaper | other
             latest: integer >= 1 -> the latest revision of the document (earliest = 1)
             keywords: string[]
             topics: string[]
@@ -30,7 +30,7 @@ export type FileType = 'pdf' | 'docx' | 'pptx' | 'tar.gz' | 'other'
 export type DocumentType =
   | 'presentation'
   | 'report'
-  | 'white paper'
+  | 'whitepaper'
   | 'dwm'
   | 'datasheet'
   | 'guide'
@@ -223,7 +223,7 @@ export const documents: Readonly<{ [key: string]: Document }> = {
         'programming team',
         'eecs',
         'whitepaper',
-        'white paper',
+        'whitepaper',
         'engineering',
         'design',
         'electrical',
@@ -238,7 +238,7 @@ export const documents: Readonly<{ [key: string]: Document }> = {
         'sensing',
         'collision',
       ],
-      type: 'white paper',
+      type: 'whitepaper',
       topics: ['ai', 'frc', 'eecs'],
       latest: 2,
       status: 'under review',
@@ -282,16 +282,16 @@ On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team 
   },
   'eexiv-white-paper': {
     manifest: {
-      title: 'eeXiv White Paper',
+      title: 'eeXiv Whitepaper',
       authors: ['ywu', 'avenkatesh'],
       topics: ['eecs', 'frc'],
       dates: [1707811359, 1707891311],
-      type: 'white paper',
+      type: 'whitepaper',
       latest: 2,
       status: 'under review',
       keywords: [
         'eexiv',
-        'white paper',
+        'whitepaper',
         'paper repository',
         'arxiv',
         'proposal',

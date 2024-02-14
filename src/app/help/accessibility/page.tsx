@@ -1,6 +1,7 @@
 export default function Page() {
   return (
     <div className='content text-slate-800'>
+      <h1 className='text-3xl text-slate-800 mt-4 mb-2 font-serif'>Accessibility</h1>
       <p>
         If you encounter any accessibility-related issues related to your use of
         our site, it is likely because of our jank code architecture.
@@ -11,7 +12,9 @@ export default function Page() {
         <a href='https://github.com/Team-1280/eeXiv/pull/new'>pull request</a>{' '}
         on GitHub.
       </p>
-      <br />
+      <h2 className='text-2xl text-slate-800 mt-6 mb-1 font-serif'>
+        Supported Hardware
+      </h2>
       <p>
         It has also come to our attention that we may not be able to support
         low-spec devices such as old phones, computers, or other devices with
