@@ -1,4 +1,4 @@
-import { DocumentType } from '@/app/db/data'
+import { DocumentType, documents } from '@/app/db/data'
 import { Zilla_Slab } from 'next/font/google'
 import { epoch2datestring } from '@/app/utils/epoch2datestring'
 import {
@@ -10,21 +10,11 @@ import {
 } from '@/app/components/DataDisplay'
 import { ItemBadge, Status } from '@/app/components/Badges'
 import Link from 'next/link'
-import { useSuspenseQuery } from '@tanstack/react-query'
-import { loadDocument } from '@/app/db/loaders'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
 export default function DocumentViewer({ slug }: Readonly<{ slug: string }>) {
-  const { data, error } = useSuspenseQuery({
-    queryKey: [slug],
-    queryFn: () => {
-      const data = loadDocument(slug)
-      return data
-    },
-  })
-
-  const { manifest, abstract, file, citation } = data
+  const { manifest, abstract, file, citation } = documents[slug]
   const {
     title,
     authors,
@@ -37,8 +27,6 @@ export default function DocumentViewer({ slug }: Readonly<{ slug: string }>) {
     reviewers,
     status,
   } = manifest
-
-  if (error) throw error
 
   return (
     <div className='max-w-4xl lg:max-w-6xl mx-auto'>
