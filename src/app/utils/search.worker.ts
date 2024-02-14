@@ -55,7 +55,7 @@ const miniSearch = new MiniSearch({
       authors: 2,
       abstract: 0.3,
     },
-    fuzzy: 2,
+    fuzzy: 0.2,
     prefix: true,
   },
 })
