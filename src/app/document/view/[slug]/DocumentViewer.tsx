@@ -50,11 +50,13 @@ export default function DocumentViewer({ slug }: Readonly<{ slug: string }>) {
           {epoch2datestring(dates[dates.length - 1])}
         </span>
       </p>
-      <ItemBadge itemName={type as DocumentType} />
-      <Status statusName={status} />
-      <span className='inline-block border-gray-200 border-2 rounded px-2 py-1.5 mr-2 shadow-sm shadow-slate-300'>
-        Revision {latest}
-      </span>
+      <div className='flex flex-wrap gap-2'>
+        <ItemBadge itemName={type as DocumentType} />
+        <Status statusName={status} />
+        <span className='border-gray-200 border-2 rounded px-2 py-1.5 mr-2 shadow-sm shadow-slate-300'>
+          Revision {latest}
+        </span>
+      </div>
       <hr className='my-4' />
       <h4 className='text-2xl mt-5 font-serif font-semibold'>Abstract</h4>
       <p className='my-4 text-xl text-slate-600 font-serif text-balance'>
