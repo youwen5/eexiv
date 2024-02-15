@@ -3,7 +3,7 @@ name: npm run format
 on: [push]
 
 jobs:
-  build:
+  style:
 
     runs-on: ubuntu-latest
 
