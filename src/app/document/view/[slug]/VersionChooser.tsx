@@ -9,16 +9,7 @@ const VersionChooser = ({
 }: Readonly<{ doc: Document; slug: string }>) => {
   const { file } = doc
   const {
-    title,
-    authors,
-    topics,
-    dates,
-    references,
-    code,
-    type,
     latest,
-    reviewers,
-    status,
   } = doc.manifest
 
   const fileEnding = file === 'other' ? '' : `.${file}`

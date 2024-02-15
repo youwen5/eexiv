@@ -9,7 +9,6 @@ import {
   Reviewers,
 } from '@/app/components/DataDisplay'
 import { ItemBadge, Status } from '@/app/components/Badges'
-import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import VersionChooser from './VersionChooser'
 
@@ -17,7 +16,7 @@ const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
 const DocumentViewer = ({ slug }: Readonly<{ slug: string }>) => {
   const doc = documents[slug]
-  const { manifest, abstract, file, citation } = doc
+  const { manifest, abstract, citation } = doc
 
   if (!manifest) return notFound()
   const {
