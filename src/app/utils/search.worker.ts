@@ -1,6 +1,8 @@
 import { documents, authors, affiliations, topics } from '@/app/db/data'
 import MiniSearch from 'minisearch'
 import { CustomSearchResult } from './searchDocs'
+import crypto from 'crypto'
+import hash from './hash'
 
 // converting the documents object into an array that can be index by minisearch
 const docs = Object.entries(documents).map(([key, value]) => ({
@@ -34,6 +36,8 @@ const docs = Object.entries(documents).map(([key, value]) => ({
     )
     .join(' '),
   key: key,
+  citation: value.citation ? value.citation : hash(key),
+  doi: value.doi ? value.doi : undefined,
 }))
 
 const miniSearch = new MiniSearch({
@@ -45,6 +49,8 @@ const miniSearch = new MiniSearch({
     'title',
     'type',
     'affiliations',
+    'citation',
+    'doi',
   ],
   storeFields: ['key', 'abstract', 'manifest'],
   searchOptions: {

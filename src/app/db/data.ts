@@ -26,6 +26,7 @@ export interface Document {
   abstract: string
   file: FileType
   citation?: string
+  doi?: string
 }
 export interface DocumentManifest {
   title: string
@@ -282,6 +283,7 @@ On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team 
     },
     abstract: `In this paper, we present eeXiv, an open-source, open-access project hosted by Team 1280 EECS ("Electrical Engineering and Computer Science"), independent of the department of the same name at UC Berkeley. We aim to rival arXiv as the single largest open-source and open-access research paper repository and as the largest research paper repository on the West Coast, transforming San Ramon Valley High School into a tier-1 research institution. Similar to arXiv, we host electronic preprints and postprints (known as e-prints) approved for posting after a rigorous peer review process. Our repository consists of scientific papers in the fields of mathematics, physics, astronomy, electrical engineering, computer science, quantitative biology, statistics, mathematical finance, and economics, with a focus on papers specific to the FIRST Robotics Competition. eeXiv bypasses the traditional bureaucracy of research publication, which involves lengthy peer review proesses and journal approval, by enabling "libre" and "open" publication, dissemination, and consumption of research artifacts. `,
     file: 'pdf',
+    doi: '10.5281/zenodo.10668656',
   },
 }
 

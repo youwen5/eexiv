@@ -11,6 +11,7 @@ import {
 import { ItemBadge, Status } from '@/app/components/Badges'
 import VersionChooser from './VersionChooser'
 import crypto from 'crypto'
+import generateHash from '@/app/utils/hash'
 import { Suspense } from 'react'
 import { loadDocument } from '@/app/db/loaders'
 import { useSuspenseQuery } from '@tanstack/react-query'
@@ -28,7 +29,7 @@ const DocumentViewer = ({ slug }: Readonly<{ slug: string }>) => {
   if (error) throw error
   let doc = data
 
-  const { manifest, abstract, citation } = doc
+  const { manifest, abstract, citation, doi } = doc
 
   const {
     title,
@@ -44,11 +45,7 @@ const DocumentViewer = ({ slug }: Readonly<{ slug: string }>) => {
   } = manifest
 
   // git style hash
-  const hash = crypto
-    .createHash('sha256')
-    .update(slug)
-    .digest('hex')
-    .substring(0, 7)
+  const hash = generateHash(slug)
 
   return (
     <div className='max-w-4xl lg:max-w-6xl mx-auto'>
@@ -98,6 +95,12 @@ const DocumentViewer = ({ slug }: Readonly<{ slug: string }>) => {
         <span className='font-bold'>Cite as: </span>
         {citation ? <>{citation}</> : <>eeXiv:{hash}</>}
       </p>
+      {doi && (
+  <p className='my-2'>
+    <span className='font-bold'>DOI: </span>
+    {doi}
+  </p>
+)}
       <Suspense
         fallback={
           <div className='max-w-sm animate-pulse flex flex-wrap gap-2'>
