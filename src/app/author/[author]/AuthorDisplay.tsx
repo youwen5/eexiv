@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Fragment } from 'react'
+import { Fragment, Suspense } from 'react'
 import { affiliations, nationalities, authors } from '../../db/data'
 import { Zilla_Slab } from 'next/font/google'
 import { notFound } from 'next/navigation'
@@ -143,7 +143,9 @@ export default function AuthorDisplay({
 
   return (
     <>
-      <KonamiSnowfall nationalityList={nationality} />
+      <Suspense>
+        <KonamiSnowfall nationalityList={nationality} />
+      </Suspense>
       <div className='grid grid-cols-1 md:grid-cols-2 items-center max-w-3xl mx-auto'>
         <div className='aspect-square w-[60vw] md:w-[30vw] lg:w-[20vw] 2xl:w-[15vw] overflow-hidden mx-auto mb-4'>
           <img

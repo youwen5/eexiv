@@ -26,8 +26,7 @@ const VersionChooser = ({
 
   const fileEnding = file === 'other' ? '' : `.${file}`
   const [selectedRevision, setSelectedRevision] = useState<number>(latest) // Initialize the selected revision with the latest revision
-  const notifyCopied = () =>
-    toast('BibTeX copied to clipboard!', { type: 'success' })
+  const notifyCopied = () => toast('BibTeX copied to clipboard!')
 
   const handleClick = () => {
     const bibtex = `@article{
@@ -50,7 +49,7 @@ const VersionChooser = ({
   }
 
   return (
-    <div className='flex flex-wrap gap-2'>
+    <div>
       <Link
         href={`/download/${slug}/file${selectedRevision}${fileEnding}`}
         target='_blank'
@@ -67,11 +66,14 @@ const VersionChooser = ({
           })()}
         </button>
       </Link>
-      <button className='button-alternate' onClick={handleClick}>
+      <button
+        className='ml-2 h-10 px-2.5 bg-slate-300 rounded-md'
+        onClick={handleClick}
+      >
         Export BibTeX
       </button>
       <select
-        className='select-default'
+        className='ml-2 h-10 px-2.5 bg-slate-300 rounded-md'
         value={`v${selectedRevision}`}
         onChange={(e) => {
           setSelectedRevision(parseInt(e.target.value.replace(/\D/g, ''), 10))

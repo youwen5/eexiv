@@ -9,7 +9,6 @@ import {
   Reviewers,
 } from '@/app/components/DataDisplay'
 import { ItemBadge, Status } from '@/app/components/Badges'
-import { notFound } from 'next/navigation'
 import VersionChooser from './VersionChooser'
 import crypto from 'crypto'
 import { Suspense } from 'react'
@@ -28,10 +27,9 @@ const DocumentViewer = ({ slug }: Readonly<{ slug: string }>) => {
   })
   if (error) throw error
   let doc = data
-  // const doc = documents[slug]
+
   const { manifest, abstract, citation } = doc
 
-  // if (!manifest) return notFound()
   const {
     title,
     authors,
