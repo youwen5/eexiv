@@ -20,7 +20,7 @@ export type DocumentStatus =
   | 'under review'
   | 'reviewed'
   | 'published no review'
-  
+
 export interface Document {
   manifest: DocumentManifest
   abstract: string

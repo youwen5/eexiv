@@ -50,14 +50,14 @@ const VersionChooser = ({
         className='ml-2 h-10 px-2.5 bg-slate-300 rounded-md'
         onClick={() => {
           const bibtex = `@article{
-  author={${
-    authors.map((a: string, i) => {
+  author={${authors
+    .map((a: string, i) => {
       const author = authorList[a].name.first + ' ' + authorList[a].name.last
       if (i === 0) return author
       else if (i === authors.length - 1) return ` and ${author}`
       else return `, ${author}`
-    }).join('')
-  }},
+    })
+    .join('')}},
   title={${doc.manifest.title}},
   journal={eeXiv journal},
   year={${date.getFullYear()}},
