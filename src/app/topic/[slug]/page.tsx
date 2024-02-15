@@ -1,6 +1,7 @@
 import { Zilla_Slab } from 'next/font/google'
 import { topics } from '@/app/db/data'
 import { notFound } from 'next/navigation'
+import string2hex from '@/app/utils/string2hex'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
@@ -17,7 +18,10 @@ export default function Page({
   const { name, description, wiki } = topic
 
   return (
-    <div className='flex p-4 lg:p-8 mx-auto bg-slate-200 shadow-slate-300 shadow-sm rounded-md max-w-2xl flex-col gap-4'>
+    <div
+      style={{ backgroundColor: string2hex(description) }}
+      className='flex p-4 lg:p-8 mx-auto bg-slate-200 shadow-slate-300 shadow-sm rounded-md max-w-2xl flex-col gap-4'
+    >
       <h1 className={`${zillaSlab.className} text-5xl`}>{name}</h1>
       <p className='text-slate-700 text-lg'>{description}</p>
       <p>
