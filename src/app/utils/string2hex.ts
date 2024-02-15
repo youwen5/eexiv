@@ -15,7 +15,7 @@ export default function string2hex(str: string): string {
     const minBrightness = 0x80
     const value =
       (((hash >> (i * 8)) & 0xff) % (0xff - minBrightness)) + minBrightness
-    color += ('00' + value.toString(16)).substr(-2)
+    color += ('00' + value.toString(16)).slice(-2)
   }
 
   return color
