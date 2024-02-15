@@ -35,7 +35,7 @@ export default function AuthorDisplay({
     const { website } = data
 
     const images: HTMLImageElement[] = []
-    nationality.forEach(n => {
+    nationality.forEach((n) => {
       const { flag } = nationalities[n]
       const image = new Image()
       image.src = flag
@@ -45,10 +45,10 @@ export default function AuthorDisplay({
     return (
       <>
         <Konami action={handleKonami} />
-        {snowfallActivated &&
+        {snowfallActivated && (
           <Snowfall
             snowflakeCount={500}
-            color="white"
+            color='white'
             images={images}
             radius={[20, 60]}
             style={{
@@ -60,7 +60,7 @@ export default function AuthorDisplay({
               height: `${document.documentElement.scrollHeight}px`,
             }}
           />
-        }
+        )}
         <span>{mainPosition} at </span>
         <Link href={`/affiliation/${mainAffiliationShort}`}>
           {mainAffiliation.name}
