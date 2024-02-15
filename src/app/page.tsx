@@ -77,7 +77,10 @@ export default function Home() {
           FIRST Robotics Competition (FRC)
         </Link>
         . Materials on this site may be published independently through other
-        channels. Read more about us <Link href='/about'>here</Link>.
+        channels. Read more about us <Link href='/about'>here</Link>. eeXiv can
+        be accessed at its primary domain at{' '}
+        <a href='https://eexiv.org'>eexiv.org</a> or at our mirror at{' '}
+        <a href='https://eexiv.vercel.app'>eexiv.vercel.app</a>
       </p>
       <News />
       <div className='grid grid-cols-1 space-y-2 mt-4 basis-full'>

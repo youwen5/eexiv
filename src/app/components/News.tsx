@@ -31,6 +31,7 @@ export default function News() {
           <a
             href='https://www.doi.org/the-foundation/about-us/'
             target='_blank'
+            className='text-blue-300'
           >
             ISO 26324 DOI registry!
           </a>
