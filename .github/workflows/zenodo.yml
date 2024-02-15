@@ -16,9 +16,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run Zenodo uploader
-      - with:
+        env:
           ZENODO: ${{ secrets.ZENODO }
-      - run: |
+        run: |
           cd scripts
           bash run.sh ${{ inputs.name }} ${{ inputs.path }}
           
