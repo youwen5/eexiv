@@ -1,3 +1,4 @@
+name: Upload to Zenodo
 on:
   workflow_dispatch:
     inputs:
