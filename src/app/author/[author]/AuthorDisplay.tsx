@@ -213,7 +213,7 @@ export default function AuthorDisplay({
         <Bio />
         {authorsDocuments.length > 0 && (
           <>
-            <hr className='mx-auto w-full h-1 border-0 bg-slate-200 my-2 rounded-md' />
+            <hr className='mx-auto w-full h-1 border-0 bg-slate-200 my-2 rounded-md mt-8' />
             <h1 className='text-3xl md:my-6 my-4 font-serif'>
               Published documents {`(${authorsDocuments.length})`}
             </h1>
