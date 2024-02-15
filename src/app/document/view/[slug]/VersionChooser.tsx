@@ -18,7 +18,7 @@ const VersionChooser = ({
     },
   })
   if (error) throw error
-  
+
   useEffect(() => {
     console.log(data)
   }, [data])

@@ -12,7 +12,5 @@ onmessage = (e) => {
   let authors = []
   checkIsStringArray(e.data) && (authorIds = e.data as string[])
 
-  authorIds.forEach(id => {
-    
-  })
+  authorIds.forEach((id) => {})
 }
