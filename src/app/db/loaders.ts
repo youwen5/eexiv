@@ -88,7 +88,7 @@ export const loadAllAuthors = (): Promise<{ [key: string]: Author }> => {
   })
 }
 
-export const loadAuthor = (id: string): Promise<Author> => {
+export const loadAuthors = (authorIds: string[]): Promise<Author> => {
   return new Promise((resolve, reject) => {
     if (typeof Worker !== 'undefined') {
       const worker = new Worker(

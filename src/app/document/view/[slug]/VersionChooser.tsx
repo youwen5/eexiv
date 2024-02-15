@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Document } from '@/app/db/data'
 import Link from 'next/link'
 import { loadAllAuthors } from '@/app/db/loaders'
@@ -18,8 +18,10 @@ const VersionChooser = ({
     },
   })
   if (error) throw error
-
-  let authorList = data
+  
+  useEffect(() => {
+    console.log(data)
+  }, [data])
 
   const { file } = doc
   const { authors, latest } = doc.manifest
@@ -52,7 +54,7 @@ const VersionChooser = ({
           const bibtex = `@article{
   author={${authors
     .map((a: string, i) => {
-      const author = authorList[a].name.first + ' ' + authorList[a].name.last
+      const author = data[a].name.first + ' ' + data[a].name.last
       if (i === 0) return author
       else if (i === authors.length - 1) return ` and ${author}`
       else return `, ${author}`
