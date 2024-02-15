@@ -1,11 +1,14 @@
+'use client'
 import Link from 'next/link'
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import { affiliations, nationalities, authors } from '../../db/data'
 import { Zilla_Slab } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import DocumentCard from '@/app/components/DocumentCard'
 import findDocumentsByAuthor from './findDocumentsByAuthor'
 import cardEffects from '@/app/styles/cardEffects.module.css'
+import Konami from 'react-konami-code'
+import Snowfall from 'react-snowfall'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
@@ -17,17 +20,47 @@ export default function AuthorDisplay({
     notFound()
   }
 
+  const [snowfallActivated, setSnowfallActivated] = useState<boolean>(false)
   const { name, affiliation, image, nationality, formerAffiliations } = data
 
   const authorsDocuments = findDocumentsByAuthor(author)
+  const handleKonami = () => {
+    setSnowfallActivated(!snowfallActivated)
+  }
 
   const MainPosition = () => {
     const mainAffiliationShort = affiliation[0].split('@')[1]
     const mainPosition = affiliation[0].split('@')[0]
     const mainAffiliation = affiliations[mainAffiliationShort]
     const { website } = data
+
+    const images: HTMLImageElement[] = []
+    nationality.forEach(n => {
+      const { flag } = nationalities[n]
+      const image = new Image()
+      image.src = flag
+      images.push(image)
+    })
+
     return (
       <>
+        <Konami action={handleKonami} />
+        {snowfallActivated &&
+          <Snowfall
+            snowflakeCount={500}
+            color="white"
+            images={images}
+            radius={[20, 60]}
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              zIndex: -1,
+              pointerEvents: 'none',
+              height: `${document.documentElement.scrollHeight}px`,
+            }}
+          />
+        }
         <span>{mainPosition} at </span>
         <Link href={`/affiliation/${mainAffiliationShort}`}>
           {mainAffiliation.name}
@@ -40,17 +73,17 @@ export default function AuthorDisplay({
             </a>
           </div>
         ) : null}
-        <div className='my-4 max-h-12 flex flex-wrap gap-2'>
+        <div className='my-4 max-h-16 flex flex-wrap gap-2'>
           {affiliation.map((a: string) => (
             <Link
               key={a}
               href={`/affiliation/${a.split('@')[1]}`}
-              className={cardEffects['card-small']}
+              className={`${cardEffects['card-small']} rounded-md`}
             >
               <img
                 src={affiliations[a.split('@')[1]].image}
                 alt={affiliations[a.split('@')[1]].name}
-                className='h-12 rounded-md'
+                className='h-16 rounded-md p-2'
               />
             </Link>
           ))}
@@ -133,8 +166,8 @@ export default function AuthorDisplay({
 
     return (
       <>
-        <h1 className='text-3xl md:mt-6 mt-4 mb-2 font-serif'>Bio:</h1>
-        <p>{bio}</p>
+        <h1 className='text-3xl md:mt-6 mt-4 mb-2 font-serif'>Bio</h1>
+        <p className='mb-2'>{bio}</p>
       </>
     )
   }
@@ -181,9 +214,8 @@ export default function AuthorDisplay({
         {authorsDocuments.length > 0 && (
           <>
             <hr className='mx-auto w-full h-1 border-0 bg-slate-200 my-2 rounded-md' />
-            <br />
             <h1 className='text-3xl md:my-6 my-4 font-serif'>
-              Published documents
+              Published documents {`(${authorsDocuments.length})`}
             </h1>
             {authorsDocuments.map((d) => (
               <Fragment key={d.slug}>
