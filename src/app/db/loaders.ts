@@ -8,13 +8,12 @@ export const loadDocument = (id: string): Promise<Document> => {
         { type: 'module' }
       )
 
-      worker.onmessage = (e: MessageEvent<{ [key: string]: Document }>) => {
+      worker.onmessage = (e: MessageEvent<Document | undefined>) => {
         const data = e.data
-        const doc: Document | undefined = data[id]
-        if (!doc) {
+        if (!data) {
           return reject(new Error('404'))
         } else {
-          resolve(doc)
+          resolve(data)
         }
         worker.terminate()
       }
@@ -24,7 +23,7 @@ export const loadDocument = (id: string): Promise<Document> => {
         worker.terminate()
       }
 
-      worker.postMessage('LOAD')
+      worker.postMessage(id)
     } else {
       reject(
         new Error(
@@ -34,6 +33,9 @@ export const loadDocument = (id: string): Promise<Document> => {
     }
   })
 }
+/**
+ * @deprecated This function doesn't improve efficiency and shouldn't be used
+ */
 export const loadAllDocuments = (): Promise<{ [key: string]: Document }> => {
   return new Promise((resolve, reject) => {
     if (typeof Worker !== 'undefined') {
