@@ -8,9 +8,7 @@ const VersionChooser = ({
   slug,
 }: Readonly<{ doc: Document; slug: string }>) => {
   const { file } = doc
-  const {
-    latest,
-  } = doc.manifest
+  const { latest } = doc.manifest
 
   const fileEnding = file === 'other' ? '' : `.${file}`
   const [selectedRevision, setSelectedRevision] = useState<number>(latest) // Initialize the selected revision with the latest revision
@@ -36,7 +34,9 @@ const VersionChooser = ({
       <select
         className='ml-2 p-2.5 bg-slate-300 rounded-md'
         value={`v${selectedRevision}`}
-        onChange={(e) => { setSelectedRevision(parseInt(e.target.value.replace(/\D/g, ''), 10)) }}
+        onChange={(e) => {
+          setSelectedRevision(parseInt(e.target.value.replace(/\D/g, ''), 10))
+        }}
       >
         {Array.from({ length: latest }, (_, index) => index + 1).map(
           (version) => (
