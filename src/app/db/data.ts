@@ -1,31 +1,3 @@
-/*
-documents db schema
-documents {
-    slug: {
-        manifest: {
-            title: string
-            authors: string[]
-            date: unix epoch integer[] -> if multiple revisions, put the earlier dates first
-            type: presentation | report | whitepaper | other
-            latest: integer >= 1 -> the latest revision of the document (earliest = 1)
-            keywords: string[]
-            topics: string[]
-            references: string[],
-            code: url[]
-        },
-        abstract: string,
-        file: pdf | docx | pptx | targz | other, named file[rev].[ext]
-        (eg. revision 1 = file1.pdf, revision 2 = file2.pdf, etc)
-        the "latest" should be the latest revision
-        citation: a string that can be used to cite the document
-        reviewers: an array of reviewers, following the reviewer format. if you specify a local
-                  profile username, it will link to the author's profile, and take priority over the link
-        status: draft | under review | reviewed | published no review
-          note: published no review should be used for documents where peer review 
-          is not appropriate or unnecessary
-    }
-}
-*/
 export type FileType = 'pdf' | 'docx' | 'pptx' | 'tar.gz' | 'other'
 export type DocumentType =
   | 'presentation'
@@ -42,11 +14,13 @@ export type reviewer = {
   profile?: string
   url?: string
 }
+
 export type DocumentStatus =
   | 'draft'
   | 'under review'
   | 'reviewed'
   | 'published no review'
+  
 export interface Document {
   manifest: DocumentManifest
   abstract: string
