@@ -11,3 +11,7 @@ export function epoch2datestring(epoch: number): string {
 
   return formattedDate
 }
+
+export function epoch2date(epoch: number): Date {
+  return new Date(epoch * 1000)
+}

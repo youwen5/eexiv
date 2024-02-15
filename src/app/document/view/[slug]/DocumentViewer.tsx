@@ -11,6 +11,7 @@ import {
 import { ItemBadge, Status } from '@/app/components/Badges'
 import { notFound } from 'next/navigation'
 import VersionChooser from './VersionChooser'
+import crypto from 'crypto'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
@@ -31,6 +32,13 @@ const DocumentViewer = ({ slug }: Readonly<{ slug: string }>) => {
     reviewers,
     status,
   } = manifest
+
+  // git style hash
+  const hash = crypto
+    .createHash('sha256')
+    .update(slug)
+    .digest('hex')
+    .substring(0, 7)
 
   return (
     <div className='max-w-4xl lg:max-w-6xl mx-auto'>
@@ -78,7 +86,7 @@ const DocumentViewer = ({ slug }: Readonly<{ slug: string }>) => {
       </p>
       <p className='my-2'>
         <span className='font-bold'>Cite as: </span>
-        {citation ? <>{citation}</> : <>eeXiv:{slug}</>}
+        {citation ? <>{citation}</> : <>eeXiv:{hash}</>}
       </p>
       <VersionChooser doc={doc} slug={slug} />
     </div>

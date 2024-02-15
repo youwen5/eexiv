@@ -83,11 +83,7 @@ export const loadAllAuthors = (): Promise<{ [key: string]: Author }> => {
 
       worker.postMessage('LOAD')
     } else {
-      reject(
-        new Error(
-          'Web Workers are not supported in this environment. Please avoid using a prehistoric browser.'
-        )
-      )
+      return
     }
   })
 }
