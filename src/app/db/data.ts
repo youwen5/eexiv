@@ -508,6 +508,15 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     image: '/img/profiles/cbordalo.jpg',
     nationality: ['phl', 'usa'],
   },
+  bgraham: {
+    name: {
+      first: 'Benjamin',
+      last: 'Graham',
+    },
+    affiliation: ['Student@srvhs'],
+    image: '/img/profiles/bgraham.jpg',
+    nationality: ['usa'],
+  },
 }
 
 export interface Affiliation {

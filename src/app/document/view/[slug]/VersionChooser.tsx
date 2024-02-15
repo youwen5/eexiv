@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { loadAuthors } from '@/app/db/loaders'
 import { useSuspenseQuery } from '@tanstack/react-query'
 import { epoch2date } from '@/app/utils/epoch2datestring'
+import { toast } from 'react-toastify'
 
 const VersionChooser = ({
   doc,
@@ -25,6 +26,28 @@ const VersionChooser = ({
 
   const fileEnding = file === 'other' ? '' : `.${file}`
   const [selectedRevision, setSelectedRevision] = useState<number>(latest) // Initialize the selected revision with the latest revision
+  const notifyCopied = () =>
+    toast('BibTeX copied to clipboard!', { type: 'success' })
+
+  const handleClick = () => {
+    const bibtex = `@article{
+  author={${authors
+    .map((a: string, i) => {
+      const author = data[a].name.first + ' ' + data[a].name.last
+      if (i === 0) return author
+      else if (i === authors.length - 1) return ` and ${author}`
+      else return `, ${author}`
+    })
+    .join('')}},
+  title={${doc.manifest.title}},
+  journal={eeXiv journal},
+  year={${date.getFullYear()}},
+  month={${date.toLocaleString('default', { month: 'short' })}},
+  url={${window.location.href}}
+}`
+    navigator.clipboard.writeText(bibtex)
+    notifyCopied()
+  }
 
   return (
     <div>
@@ -46,24 +69,7 @@ const VersionChooser = ({
       </Link>
       <button
         className='ml-2 h-10 px-2.5 bg-slate-300 rounded-md'
-        onClick={() => {
-          const bibtex = `@article{
-  author={${authors
-    .map((a: string, i) => {
-      const author = data[a].name.first + ' ' + data[a].name.last
-      if (i === 0) return author
-      else if (i === authors.length - 1) return ` and ${author}`
-      else return `, ${author}`
-    })
-    .join('')}},
-  title={${doc.manifest.title}},
-  journal={eeXiv journal},
-  year={${date.getFullYear()}},
-  month={${date.toLocaleString('default', { month: 'short' })}},
-  url={${window.location.href}}
-}`
-          navigator.clipboard.writeText(bibtex)
-        }}
+        onClick={handleClick}
       >
         Export BibTeX
       </button>
