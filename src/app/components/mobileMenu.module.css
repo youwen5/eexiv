@@ -1,14 +1,13 @@
 .menu {
-  @apply overflow-hidden left-[0] top-[235px] z-10 absolute bg-slate-200;
-  @apply duration-300;
-  height: calc(200px);
+  @apply overflow-hidden top-[235px] z-10 absolute bg-slate-200;
+  height: 180px;
   transition: height 0.2s ease-in-out;
   width: 100vw;
-  right: 0;
+  left: 0;
 }
 
 .search-bar {
-  @apply w-full flex justify-center z-10 px-4 py-2 bg-slate-300;
+  @apply z-10 mt-2 mx-[2px] sm:m-2;
 }
 
 .search-bar button {
