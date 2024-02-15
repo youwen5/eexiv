@@ -23,10 +23,18 @@ export default function News() {
       </div>
       <ul className='text-slate-50 px-6 list-disc'>
         <li key={1}>
-          eeXiv 2.1 has been released! Documents are now statically generated
-          for instant loading speeds.{' '}
+          eeXiv 2.2 has been released! You can now select document version and
+          export as BibTex.{' '}
         </li>
-        <li key={2}>Mobile support is currently in beta.</li>
+        <li key={2}>
+          We are working on becoming a{' '}
+          <a
+            href='https://www.doi.org/the-foundation/about-us/'
+            target='_blank'
+          >
+            ISO 26324 DOI registry!
+          </a>
+        </li>
         <li key={3}>
           eeXiv is currently under active development! There may be major
           updates, breaking changes, or weird bugs. Report bugs, suggest new

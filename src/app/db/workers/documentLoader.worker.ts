@@ -1,7 +1,5 @@
 import { documents } from '../data'
 
 onmessage = (e) => {
-  if (e.data === 'LOAD') {
-    self.postMessage(documents)
-  }
+  typeof e.data === 'string' && postMessage(documents[e.data])
 }
