@@ -4,6 +4,8 @@ arXiv just got better
 
 ---
 
+eeXiv can be accessed from its main site at <https://eexiv.org> or its mirror, which provides faster download speeds from local CDNs, at <https://eexiv.vercel.app>.
+
 eeXiv (pronounced "EECS-iv"[^1]) is Team 1280's locally-hosted curated research-sharing platform.
 It is maintained by the Team 1280 EECS ("Electrical Engineering and Computer Science") team, which is also the greatest contributor of its research papers.
 However, this repository is open for anyone—in Team 1280, in another FRC team, or as independent hobbyists—to contribute.
