@@ -26,7 +26,9 @@ export default function Page({
       <p className='text-slate-700 text-lg'>{description}</p>
       <p>
         <span className='text-slate-800'>Read more at:</span>{' '}
-        <a href={wiki}>{wiki}</a>
+        <a className='text-wrap hyphens-none' href={wiki}>
+          {wiki}
+        </a>
       </p>
     </div>
   )
