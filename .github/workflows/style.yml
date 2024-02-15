@@ -1,6 +1,6 @@
 name: npm run format
 
-on: [push, manual_dispatch]
+on: [push, workflow_dispatch]
 
 jobs:
   style:
