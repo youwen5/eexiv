@@ -1,7 +1,9 @@
 export default function Page() {
   return (
     <div className='content text-slate-800'>
-      <h1 className='text-3xl text-slate-800 mt-4 mb-2 font-serif'>Accessibility</h1>
+      <h1 className='text-3xl text-slate-800 mt-4 mb-2 font-serif'>
+        Accessibility
+      </h1>
       <p>
         If you encounter any accessibility-related issues related to your use of
         our site, it is likely because of our jank code architecture.
