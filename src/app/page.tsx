@@ -45,7 +45,9 @@ export default function Home() {
       <News />
       <div className='grid grid-cols-1 space-y-2 mt-4 basis-full'>
         <br />
-        <div className='font-serif text-xl my-2'>Recently released documents</div>
+        <div className='font-serif text-xl my-2'>
+          Recently released documents
+        </div>
         <RecentDocuments />
         <hr className='mx-auto w-full h-1 border-0 bg-slate-200 my-2 rounded-md' />
         <br />
