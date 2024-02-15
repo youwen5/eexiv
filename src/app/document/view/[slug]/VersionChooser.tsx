@@ -11,7 +11,7 @@ const VersionChooser = ({
   slug,
 }: Readonly<{ doc: Document; slug: string }>) => {
   const { data, error } = useSuspenseQuery({
-    queryKey: ['authors_all'],
+    queryKey: [doc.manifest.authors.join(' ')],
     queryFn: () => {
       const data = loadAuthors(doc.manifest.authors)
       return data
