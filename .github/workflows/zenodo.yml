@@ -22,5 +22,6 @@ jobs:
         working-directory: scripts
         env:
           ZENODO: ${{ secrets.ZENODO }}
-        run: bash run.sh ${{ inputs.name }} ${{ inputs.path }}
-        
+        run: |
+          npm install
+          bash run.sh ${{ inputs.name }} ${{ inputs.path }}
