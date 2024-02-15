@@ -37,6 +37,7 @@ function sortAuthorsByDocumentsPublished(authors: {
 
 export default function Home() {
   const AuthorDisplay = () => {
+    let i = 0
     return (
       <ol className='list-decimal pl-4 space-y-2'>
         {sortAuthorsByDocumentsPublished(authors).map(({ id, author }) => {
@@ -44,6 +45,9 @@ export default function Home() {
 
           let affiliationSlug = data.affiliation[0].split('@')[1]
           let affiliation = affiliations[affiliationSlug]
+          i++
+
+          if (i > 10) return
           return (
             <li key={id}>
               <Link href={`/author/${id}`}>
