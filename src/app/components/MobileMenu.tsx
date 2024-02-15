@@ -31,19 +31,21 @@ export default function MobileMenu() {
   }
 
   return (
-    <div className='w-20'>
-      <button
-        className='p-2 rounded-xl hover:bg-blue-400'
-        onClick={handleClick}
-      >
-        <RxHamburgerMenu size={40} />
-      </button>
+    <>
+      <div className='w-20'>
+        <button
+          className='p-2 rounded-xl hover:bg-blue-400'
+          onClick={handleClick}
+        >
+          <RxHamburgerMenu size={40} />
+        </button>
+      </div>
       <div
         className={`${isOpen ? '' : styles['menu-hidden']} ${styles.menu} shadow-md shadow-slate-300`}
       >
-        <span className={styles['search-bar']}>
+        <div className={styles['search-bar']}>
           <SearchBar onSubmit={handleSubmit} />
-        </span>
+        </div>
         <p className='text-slate-600 mx-4 my-4'>
           We gratefully acknowledge support from our volunteer peer reviewers,
           member institutions, and all{' '}
@@ -56,6 +58,6 @@ export default function MobileMenu() {
           .
         </p>
       </div>
-    </div>
+    </>
   )
 }
