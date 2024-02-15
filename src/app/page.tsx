@@ -70,10 +70,7 @@ export default function Home() {
         the fields of physics, mathematics, computer science, quantitative
         biology, quantitative finance, statistics, electrical engineering and
         systems science, and economics, but mainly related to the{' '}
-        <Link
-          href='./topic/frc'
-          target='_blank'
-        >
+        <Link href='./topic/frc' target='_blank'>
           FIRST Robotics Competition (FRC)
         </Link>
         . Materials on this site may be published independently through other
