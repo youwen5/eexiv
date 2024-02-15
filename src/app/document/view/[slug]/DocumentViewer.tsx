@@ -1,4 +1,4 @@
-import { documents } from '@/app/db/data'
+'use client'
 import { Zilla_Slab } from 'next/font/google'
 import { epoch2datestring } from '@/app/utils/epoch2datestring'
 import {
@@ -12,16 +12,26 @@ import { ItemBadge, Status } from '@/app/components/Badges'
 import { notFound } from 'next/navigation'
 import VersionChooser from './VersionChooser'
 import crypto from 'crypto'
-import loadingStyles from './loading.module.css'
 import { Suspense } from 'react'
+import { loadDocument } from '@/app/db/loaders'
+import { useSuspenseQuery } from '@tanstack/react-query'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
 const DocumentViewer = ({ slug }: Readonly<{ slug: string }>) => {
-  const doc = documents[slug]
+  const { data, error } = useSuspenseQuery({
+    queryKey: [slug],
+    queryFn: () => {
+      const data = loadDocument(slug)
+      return data
+    },
+  })
+  if (error) throw error
+  let doc = data
+  // const doc = documents[slug]
   const { manifest, abstract, citation } = doc
 
-  if (!manifest) return notFound()
+  // if (!manifest) return notFound()
   const {
     title,
     authors,

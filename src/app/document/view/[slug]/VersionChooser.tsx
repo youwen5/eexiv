@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Document } from '@/app/db/data'
 import Link from 'next/link'
 import { loadAuthors } from '@/app/db/loaders'
@@ -18,10 +18,6 @@ const VersionChooser = ({
     },
   })
   if (error) throw error
-
-  useEffect(() => {
-    console.log(data)
-  }, [data])
 
   const { file } = doc
   const { authors, latest } = doc.manifest

@@ -91,6 +91,7 @@ export const loadAllAuthors = (): Promise<{ [key: string]: Author }> => {
 export const loadAuthors = (
   authorIds: string[]
 ): Promise<{ [key: string]: Author }> => {
+  'use client'
   return new Promise((resolve, reject) => {
     if (typeof Worker !== 'undefined') {
       const worker = new Worker(
