@@ -71,7 +71,7 @@ export default function Home() {
         biology, quantitative finance, statistics, electrical engineering and
         systems science, and economics, but mainly related to the{' '}
         <Link
-          href='https://en.wikipedia.org/wiki/FIRST_Robotics_Competition'
+          href='./topic/frc'
           target='_blank'
         >
           FIRST Robotics Competition (FRC)
