@@ -1,14 +1,12 @@
-'use client'
 import Link from 'next/link'
-import { Fragment, useState } from 'react'
+import { Fragment } from 'react'
 import { affiliations, nationalities, authors } from '../../db/data'
 import { Zilla_Slab } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import DocumentCard from '@/app/components/DocumentCard'
 import findDocumentsByAuthor from './findDocumentsByAuthor'
 import cardEffects from '@/app/styles/cardEffects.module.css'
-import Konami from 'react-konami-code'
-import Snowfall from 'react-snowfall'
+import KonamiSnowfall from './KonamiSnowfall'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
@@ -20,13 +18,9 @@ export default function AuthorDisplay({
     notFound()
   }
 
-  const [snowfallActivated, setSnowfallActivated] = useState<boolean>(false)
   const { name, affiliation, image, nationality, formerAffiliations } = data
 
   const authorsDocuments = findDocumentsByAuthor(author)
-  const handleKonami = () => {
-    setSnowfallActivated(!snowfallActivated)
-  }
 
   const MainPosition = () => {
     const mainAffiliationShort = affiliation[0].split('@')[1]
@@ -34,33 +28,8 @@ export default function AuthorDisplay({
     const mainAffiliation = affiliations[mainAffiliationShort]
     const { website } = data
 
-    const images: HTMLImageElement[] = []
-    nationality.forEach((n) => {
-      const { flag } = nationalities[n]
-      const image = new Image()
-      image.src = flag
-      images.push(image)
-    })
-
     return (
       <>
-        <Konami action={handleKonami} />
-        {snowfallActivated && (
-          <Snowfall
-            snowflakeCount={500}
-            color='white'
-            images={images}
-            radius={[20, 60]}
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              zIndex: -1,
-              pointerEvents: 'none',
-              height: `${document.documentElement.scrollHeight}px`,
-            }}
-          />
-        )}
         <span>{mainPosition} at </span>
         <Link href={`/affiliation/${mainAffiliationShort}`}>
           {mainAffiliation.name}
@@ -173,7 +142,8 @@ export default function AuthorDisplay({
   }
 
   return (
-    <div>
+    <>
+      <KonamiSnowfall nationalityList={nationality} />
       <div className='grid grid-cols-1 md:grid-cols-2 items-center max-w-3xl mx-auto'>
         <div className='aspect-square w-[60vw] md:w-[30vw] lg:w-[20vw] 2xl:w-[15vw] overflow-hidden mx-auto mb-4'>
           <img
@@ -225,6 +195,6 @@ export default function AuthorDisplay({
           </>
         )}
       </div>
-    </div>
+    </>
   )
 }
