@@ -96,11 +96,11 @@ const DocumentViewer = ({ slug }: Readonly<{ slug: string }>) => {
         {citation ? <>{citation}</> : <>eeXiv:{hash}</>}
       </p>
       {doi && (
-  <p className='my-2'>
-    <span className='font-bold'>DOI: </span>
-    {doi}
-  </p>
-)}
+        <p className='my-2'>
+          <span className='font-bold'>DOI: </span>
+          {doi}
+        </p>
+      )}
       <Suspense
         fallback={
           <div className='max-w-sm animate-pulse flex flex-wrap gap-2'>
