@@ -28,10 +28,7 @@ export default function Page() {
             <li>
               You can contribute to our website development or add your
               documents and user account to eeXiv on our{' '}
-              <Link
-                href='https://github.com/team-1280/eexiv'
-                target='_blank'
-              >
+              <Link href='https://github.com/team-1280/eexiv' target='_blank'>
                 GitHub repository
               </Link>
               .

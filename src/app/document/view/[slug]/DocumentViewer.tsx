@@ -1,4 +1,4 @@
-import { DocumentType, documents } from '@/app/db/data'
+'use client'
 import { Zilla_Slab } from 'next/font/google'
 import { epoch2datestring } from '@/app/utils/epoch2datestring'
 import {
@@ -9,14 +9,27 @@ import {
   Reviewers,
 } from '@/app/components/DataDisplay'
 import { ItemBadge, Status } from '@/app/components/Badges'
-import Link from 'next/link'
-import { notFound } from 'next/navigation'
+import VersionChooser from './VersionChooser'
+import crypto from 'crypto'
+import { Suspense } from 'react'
+import { loadDocument } from '@/app/db/loaders'
+import { useSuspenseQuery } from '@tanstack/react-query'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
-export default function DocumentViewer({ slug }: Readonly<{ slug: string }>) {
-  const { manifest, abstract, file, citation } = documents[slug]
-  if (!manifest) return notFound()
+const DocumentViewer = ({ slug }: Readonly<{ slug: string }>) => {
+  const { data, error } = useSuspenseQuery({
+    queryKey: [slug],
+    queryFn: () => {
+      const data = loadDocument(slug)
+      return data
+    },
+  })
+  if (error) throw error
+  let doc = data
+
+  const { manifest, abstract, citation } = doc
+
   const {
     title,
     authors,
@@ -29,6 +42,13 @@ export default function DocumentViewer({ slug }: Readonly<{ slug: string }>) {
     reviewers,
     status,
   } = manifest
+
+  // git style hash
+  const hash = crypto
+    .createHash('sha256')
+    .update(slug)
+    .digest('hex')
+    .substring(0, 7)
 
   return (
     <div className='max-w-4xl lg:max-w-6xl mx-auto'>
@@ -51,7 +71,7 @@ export default function DocumentViewer({ slug }: Readonly<{ slug: string }>) {
         </span>
       </p>
       <div className='flex flex-wrap gap-2'>
-        <ItemBadge itemName={type as DocumentType} />
+        <ItemBadge itemName={type} />
         <Status statusName={status} />
         <span className='border-gray-200 border-2 rounded px-2 py-1.5 mr-2 shadow-sm shadow-slate-300'>
           Revision {latest}
@@ -76,27 +96,21 @@ export default function DocumentViewer({ slug }: Readonly<{ slug: string }>) {
       </p>
       <p className='my-2'>
         <span className='font-bold'>Cite as: </span>
-        {citation ? <>{citation}</> : <>eeXiv:{slug}</>}
+        {citation ? <>{citation}</> : <>eeXiv:{hash}</>}
       </p>
-      <Link
-        href={`/download/${slug}/file${latest}${file === 'other' ? '' : `.${file}`}`}
-        download={`${slug}-rev-${latest}${file === 'other' ? '' : `.${file}`}`}
-        target='_blank'
+      <Suspense
+        fallback={
+          <div className='max-w-sm animate-pulse flex flex-wrap gap-2'>
+            <div className='rounded-sm h-10 bg-gray-300 w-3 flex-grow basis-1 mt-2 mb-2'></div>
+            <div className='rounded-sm h-10 bg-gray-300 w-3 flex-grow basis-1.5 mt-2 mb-2'></div>
+            <div className='rounded-sm h-10 bg-gray-300 w-1 flex-grow basis-1 mt-2 mb-2'></div>
+          </div>
+        }
       >
-        <button className='button-default'>
-          Download{' '}
-          {(() => {
-            switch (file) {
-              case 'other':
-                return <></>
-              case 'tar.gz':
-                return 'Tarball'
-              default:
-                return file.toUpperCase()
-            }
-          })()}
-        </button>
-      </Link>
+        <VersionChooser doc={doc} slug={slug} />
+      </Suspense>
     </div>
   )
 }
+
+export default DocumentViewer

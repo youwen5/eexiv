@@ -36,20 +36,24 @@ export default function Page({
   return (
     <div>
       <div className='grid grid-cols-1 max-w-3xl mx-auto'>
-        <div className='mx-auto mb-4 max-w-3xl md:w-auto md:h-[40vw] lg:h-[20vw]'>
+        <div className='mx-auto mb-4 max-w-3xl md:w-auto md:h-[40vw] lg:h-[20vw] rounded-lg shadow-lg shadow-slate-400'>
           <img
-            alt='profile picture'
-            className='rounded-sm mx-auto object-cover w-full h-full shadow-md shadow-slate-400'
+            alt='profile'
+            className='rounded-lg mx-auto p-8 object-cover w-full h-full'
             src={image}
           />
         </div>
-        <span className={`${zillaSlab.className} font-bold text-4xl text-left`}>
+        <br />
+        <span
+          className={`${zillaSlab.className} font-bold text-4xl text-center`}
+        >
           {name}
         </span>
-        <div className='text-slate-600 text-2xl mt-4'>{short}</div>
+        <div className='text-slate-600 text-2xl mt-4 text-center'>{short}</div>
       </div>
       <div className='max-w-3xl mx-auto grid grid-cols-1'>
         <hr className='mx-auto w-full h-1 border-0 bg-slate-200 my-2 rounded-md' />
+        <br />
         <Description />
       </div>
     </div>

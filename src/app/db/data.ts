@@ -1,31 +1,3 @@
-/*
-documents db schema
-documents {
-    slug: {
-        manifest: {
-            title: string
-            authors: string[]
-            date: unix epoch integer[] -> if multiple revisions, put the earlier dates first
-            type: presentation | report | whitepaper | other
-            latest: integer >= 1 -> the latest revision of the document (earliest = 1)
-            keywords: string[]
-            topics: string[]
-            references: string[],
-            code: url[]
-        },
-        abstract: string,
-        file: pdf | docx | pptx | targz | other, named file[rev].[ext]
-        (eg. revision 1 = file1.pdf, revision 2 = file2.pdf, etc)
-        the "latest" should be the latest revision
-        citation: a string that can be used to cite the document
-        reviewers: an array of reviewers, following the reviewer format. if you specify a local
-                  profile username, it will link to the author's profile, and take priority over the link
-        status: draft | under review | reviewed | published no review
-          note: published no review should be used for documents where peer review 
-          is not appropriate or unnecessary
-    }
-}
-*/
 export type FileType = 'pdf' | 'docx' | 'pptx' | 'tar.gz' | 'other'
 export type DocumentType =
   | 'presentation'
@@ -42,11 +14,13 @@ export type reviewer = {
   profile?: string
   url?: string
 }
+
 export type DocumentStatus =
   | 'draft'
   | 'under review'
   | 'reviewed'
   | 'published no review'
+
 export interface Document {
   manifest: DocumentManifest
   abstract: string
@@ -415,7 +389,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     formerAffiliations: ['Programming Lead@1280-programming'],
     image: '/img/profiles/avenkatesh.png',
     nationality: ['ind', 'eth', 'usa'],
-    bio: 'The king of jank.',
+    bio: 'King of jank. Hacker in JS, TS, R, and Python. Capitalist innovator. EECS creator. eeXiv co-founder.',
     website: 'https://github.com/quantum9Innovation',
   },
   ywu: {
@@ -441,7 +415,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
       'Student@srvhs',
     ],
     image: '/img/profiles/wlin.jpg',
-    nationality: ['twn', 'chn', 'jpn', 'usa'],
+    nationality: ['twn', 'usa'],
     formerAffiliations: ['Intern@raid-zero'],
     bio: 'Hi, I am Kaito or Warren. I am a Self-taught programmer and engineer. I go around doing dumb things such as my projects. I have a dream of building a community. I am currently part of many projects.',
     website: 'https://kaitotlex.carrd.co/',
@@ -534,6 +508,16 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     image: '/img/profiles/cbordalo.jpg',
     nationality: ['phl', 'usa'],
   },
+  bgraham: {
+    name: {
+      first: 'Benjamin',
+      last: 'Graham',
+    },
+    affiliation: ['Student@srvhs'],
+    image: '/img/profiles/bgraham.jpg',
+    bio: 'Unrelated to Ben Garrison. Maintains a Signal profile. Most likely to become President of the United States.',
+    nationality: ['usa'],
+  },
 }
 
 export interface Affiliation {
@@ -545,7 +529,7 @@ export interface Affiliation {
 
 export const affiliations: Readonly<{ [key: string]: Affiliation }> = {
   '1280-mech': {
-    name: "Team 1280, the Ragin' C Biscuits, Mechanical Subteam",
+    name: "Team 1280, the Ragin' C-Biscuits, Mechanical Subteam",
     short: '1280 Mech',
     image: '/img/logos/1280-main.png',
     description: `The mechanical subteam is the backbone of Team 1280, focusing on the physical design, construction, and mechanical integrity of their robots. This subteam is where concepts and designs become tangible, transforming ideas into the moving parts and structural components that give the robots their form and function. The Mechanical subteam's work encompasses a broad range of activities, from drafting initial sketches and CAD modeling to machining parts and assembling complex mechanical systems.
@@ -557,7 +541,7 @@ Collaboration is key within the Mechanical subteam, as its members must coordina
 The Mechanical subteam fosters a culture of creativity, innovation, and excellence, encouraging its members to push the boundaries of what is possible. Through their participation in the FIRST Robotics Competition, students develop not only technical skills in mechanical design and engineering but also soft skills such as teamwork, problem-solving, and project management. With access to advanced tools and guided by mentors from various engineering fields, the Mechanical subteam of Team 1280 is a place where future mechanical engineers are nurtured, ready to make their mark in the world of robotics and beyond.`,
   },
   '1280-eecs': {
-    name: "Team 1280, the Ragin' C Biscuits, Electrical Engineering and Computer Science Subteam",
+    name: "Team 1280, the Ragin' C-Biscuits, Electrical Engineering and Computer Science Subteam",
     short: '1280 EECS',
     image: '/img/logos/eecs-wordmark.png',
     description: `The Team 1280 EECS (Electrical Engineering and Computer Science) subteam is an autonomous organization within Team 1280, specializing in the design, programming, and electrical systems that bring their robots to life. As the nerve center of Team 1280, the EECS subteam combines the disciplines of electrical engineering and computer science to develop sophisticated control systems, autonomous functionalities, and robust electrical infrastructures that enable their robots to perform complex tasks and maneuvers in the competitive arena.
@@ -567,10 +551,10 @@ Team 1280 EECS is composed of highly skilled and passionate students who are kee
 Team 1280 EECS benefits from mentorship by experienced professionals and alumni, access to state-of-the-art tools and technologies, and a culture that encourages creativity, experimentation, and continuous improvement. As a result, the EECS subteam plays a crucial role in driving Team 1280's success in competitions and inspiring the next generation of engineers and computer scientists.`,
   },
   '1280-programming': {
-    name: "Team 1280, the Ragin' C Biscuits, Programming Subteam (now defunct)",
+    name: "Team 1280, the Ragin' C-Biscuits, Programming Subteam (now defunct)",
     short: '1280 Programming',
     image: '/img/logos/1280-main.png',
-    description: `The former programming subteam of Team 1280, it combined with the Team 1280 electrical subteam in a historic merger to form Team 1280 EECS.`,
+    description: `The former programming subteam of Team 1280, which combined with the Team 1280 electrical subteam in a historic merger to form Team 1280 EECS.`,
   },
   'usc-viterbi': {
     name: 'University of Southern California, Viterbi School of Engineering',
@@ -601,7 +585,7 @@ Team 1280 EECS benefits from mentorship by experienced professionals and alumni,
           the wider world.`,
   },
   '1280-business': {
-    name: "Team 1280, the Ragin' C Biscuits, Business Subteam",
+    name: "Team 1280, the Ragin' C-Biscuits, Business Subteam",
     short: '1280 Business',
     image: '/img/logos/1280-main.png',
     description: `The Business subteam of Team 1280 plays a crucial role in ensuring the team's operational success and sustainability. Unlike the engineering-focused subteams, the Business subteam focuses on the financial, organizational, and community aspects of the team's operations. They are responsible for fundraising, sponsorship outreach, budget management, and public relations, ensuring that the team has the necessary resources and support to thrive in their endeavors.
@@ -615,8 +599,8 @@ Through their work, the Business subteam members gain valuable experience in bus
 By bridging the gap between engineering innovation and business acumen, the Business subteam ensures that Team 1280 is not only competitive in robotics challenges but also sustainable and impactful in its mission to inspire and educate future generations in STEM fields.`,
   },
   'raid-zero': {
-    name: 'Team 4253 - Raid Zero',
-    short: 'Raid 0',
+    name: 'Team 4253, Raid Zero',
+    short: 'Raid Zero',
     image: '/img/logos/raid-zero.png',
     description: `Team 4253, Raid Zero, hailing from Taipei American School in Taipei, Taipei Special Municipality, Chinese Taipei, has been a formidable presence in the world of robotics since its rookie year in 2012. As a participant in the international FIRST Robotics Competition, Raid Zero exemplifies innovation, teamwork, and the pursuit of excellence in science, technology, engineering, and mathematics (STEM).
 [linebreak]
@@ -640,7 +624,7 @@ Raid Zero's influence extends beyond the technical achievements in robotics comp
     image: '/img/logos/cal-poly-slo.png',
     description: `California Polytechnic State University, San Luis Obispo (Cal Poly SLO) is renowned for its learn-by-doing philosophy that stands at the core of its engineering education. Founded in 1901, Cal Poly SLO's College of Engineering is recognized as one of the premier engineering schools in the nation, offering a hands-on approach to education that prepares students for the practical challenges they will face in the workforce.
                   [linebreak]
-                  With a wide array of undergraduate and graduate programs, the College of Engineering at Cal Poly SLO covers disciplines such as aerospace, biomedical, civil and environmental, computer science and software engineering, electrical, industrial and manufacturing, and mechanical engineering among others. This diversity ensures that students can find their niche and develop specialized skills in their chosen field.
+                  With a wide array of undergraduate and graduate programs, the College of Engineering at Cal Poly SLO covers disciplines such as aerospace, biomedical, civil and environmental, computer science and software engineering, electrical, industrial and manufacturing, and mechanical engineering, among others. This diversity ensures that students can find their niche and develop specialized skills in their chosen field.
                   [linebreak]
                   Cal Poly SLO prides itself on its state-of-the-art laboratories and facilities, which allow students to engage directly with the material they are learning. This hands-on experience is supplemented by a curriculum that encourages interdisciplinary collaboration, critical thinking, and problem-solving skills, ensuring that graduates are well-equipped to contribute to their fields effectively.
                   [linebreak]
@@ -651,10 +635,10 @@ Raid Zero's influence extends beyond the technical achievements in robotics comp
                   With its blend of rigorous academics, practical experience, and a supportive community, Cal Poly SLO stands out as a leader in engineering education, preparing the next generation of engineers to face global challenges with innovation and expertise.`,
   },
   'team-1280': {
-    name: `Team 1280, the Ragin' C Biscuits`,
+    name: `Team 1280, the Ragin' C-Biscuits`,
     short: 'Team 1280',
     image: '/img/logos/1280-main.png',
-    description: `We are the San Ramon Valley High School Robotics Team (FRC Team 1280) and we have been competing in the FIRST Robotics Challenge for 16 years. With just 6 weeks to design, build, program, and fundraise for a robot, FRC teaches us teamwork, business, engineering, machinery, and computer design. This year’s challenge is “Deep Space” and we are eagerly awaiting the challenge release and season kickoff in January! We are team of 79 students with 1 full time mentor, 2 part time mentors, and 1 staff liason.
+    description: `We are the San Ramon Valley High School Robotics Team (FRC Team 1280) and we have been competing in the FIRST Robotics Challenge for 16 years. With just 6 weeks to design, build, program, and fundraise for a robot, FRC teaches us teamwork, business, engineering, machinery, and computer design. We are a team of over 50 students with 1 full time mentor, 2 part time mentors, and 1 staff liason.
       [linebreak]
       Throughout our FRC career, we have won several regional events and numerous awards including: the Rookie Inspiration Award, both the Radio Shack and Rockwell Automation Innovation in Control Awards, the Imagery Award, the Engineering Excellence Award, and the Creativity Award. While we do focus on the competitive aspect of robotics, we also strive to spread the knowledge of STEM through our outreach programs to those who might not otherwise have access to these opportunities.
       [linebreak]

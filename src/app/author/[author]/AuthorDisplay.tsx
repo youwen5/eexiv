@@ -1,11 +1,12 @@
 import Link from 'next/link'
-import { Fragment } from 'react'
+import { Fragment, Suspense } from 'react'
 import { affiliations, nationalities, authors } from '../../db/data'
 import { Zilla_Slab } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import DocumentCard from '@/app/components/DocumentCard'
 import findDocumentsByAuthor from './findDocumentsByAuthor'
 import cardEffects from '@/app/styles/cardEffects.module.css'
+import KonamiSnowfall from './KonamiSnowfall'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
@@ -26,6 +27,7 @@ export default function AuthorDisplay({
     const mainPosition = affiliation[0].split('@')[0]
     const mainAffiliation = affiliations[mainAffiliationShort]
     const { website } = data
+
     return (
       <>
         <span>{mainPosition} at </span>
@@ -40,17 +42,17 @@ export default function AuthorDisplay({
             </a>
           </div>
         ) : null}
-        <div className='my-4 max-h-12 flex flex-wrap gap-2'>
+        <div className='my-4 max-h-16 flex flex-wrap gap-2'>
           {affiliation.map((a: string) => (
             <Link
               key={a}
               href={`/affiliation/${a.split('@')[1]}`}
-              className={cardEffects['card-small']}
+              className={`${cardEffects['card-small']} rounded-md`}
             >
               <img
                 src={affiliations[a.split('@')[1]].image}
                 alt={affiliations[a.split('@')[1]].name}
-                className='h-12 rounded-md'
+                className='h-16 rounded-md p-2'
               />
             </Link>
           ))}
@@ -133,14 +135,17 @@ export default function AuthorDisplay({
 
     return (
       <>
-        <h1 className='text-3xl md:mt-6 mt-4 mb-2 font-serif'>Bio:</h1>
-        <p>{bio}</p>
+        <h1 className='text-3xl md:mt-6 mt-4 mb-2 font-serif'>Bio</h1>
+        <p className='mb-2'>{bio}</p>
       </>
     )
   }
 
   return (
-    <div>
+    <>
+      <Suspense>
+        <KonamiSnowfall nationalityList={nationality} />
+      </Suspense>
       <div className='grid grid-cols-1 md:grid-cols-2 items-center max-w-3xl mx-auto'>
         <div className='aspect-square w-[60vw] md:w-[30vw] lg:w-[20vw] 2xl:w-[15vw] overflow-hidden mx-auto mb-4'>
           <img
@@ -178,12 +183,11 @@ export default function AuthorDisplay({
           ))}
         </div>
         <Bio />
-        <hr className='mx-auto w-full h-1 border-0 bg-slate-200 my-2 rounded-md' />
-        <br />
         {authorsDocuments.length > 0 && (
           <>
+            <hr className='mx-auto w-full h-1 border-0 bg-slate-200 my-2 rounded-md mt-8' />
             <h1 className='text-3xl md:my-6 my-4 font-serif'>
-              Published documents
+              Published documents {`(${authorsDocuments.length})`}
             </h1>
             {authorsDocuments.map((d) => (
               <Fragment key={d.slug}>
@@ -193,6 +197,6 @@ export default function AuthorDisplay({
           </>
         )}
       </div>
-    </div>
+    </>
   )
 }

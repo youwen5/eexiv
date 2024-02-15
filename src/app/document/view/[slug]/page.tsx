@@ -1,13 +1,13 @@
+'use client'
 import DocumentViewer from './DocumentViewer'
-import { documents } from '@/app/db/data'
-
-export function generateStaticParams() {
-  const docsList = Object.keys(documents)
-  return docsList.map((doc) => ({ doc }))
-}
+import ErrorBoundary from '@/app/utils/ErrorBoundary'
 
 export default function Page({
   params,
 }: Readonly<{ params: { slug: string } }>) {
-  return <DocumentViewer slug={params.slug} />
+  return (
+    <ErrorBoundary>
+      <DocumentViewer slug={params.slug} />
+    </ErrorBoundary>
+  )
 }
