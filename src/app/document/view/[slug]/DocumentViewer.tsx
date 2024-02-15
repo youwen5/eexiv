@@ -1,4 +1,4 @@
-import { DocumentType, documents } from '@/app/db/data'
+import { documents } from '@/app/db/data'
 import { Zilla_Slab } from 'next/font/google'
 import { epoch2datestring } from '@/app/utils/epoch2datestring'
 import {
@@ -11,11 +11,14 @@ import {
 import { ItemBadge, Status } from '@/app/components/Badges'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import VersionChooser from './VersionChooser'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
-export default function DocumentViewer({ slug }: Readonly<{ slug: string }>) {
-  const { manifest, abstract, file, citation } = documents[slug]
+const DocumentViewer = ({ slug }: Readonly<{ slug: string }>) => {
+  const doc = documents[slug]
+  const { manifest, abstract, file, citation } = doc
+
   if (!manifest) return notFound()
   const {
     title,
@@ -51,7 +54,7 @@ export default function DocumentViewer({ slug }: Readonly<{ slug: string }>) {
         </span>
       </p>
       <div className='flex flex-wrap gap-2'>
-        <ItemBadge itemName={type as DocumentType} />
+        <ItemBadge itemName={type} />
         <Status statusName={status} />
         <span className='border-gray-200 border-2 rounded px-2 py-1.5 mr-2 shadow-sm shadow-slate-300'>
           Revision {latest}
@@ -78,25 +81,9 @@ export default function DocumentViewer({ slug }: Readonly<{ slug: string }>) {
         <span className='font-bold'>Cite as: </span>
         {citation ? <>{citation}</> : <>eeXiv:{slug}</>}
       </p>
-      <Link
-        href={`/download/${slug}/file${latest}${file === 'other' ? '' : `.${file}`}`}
-        download={`${slug}-rev-${latest}${file === 'other' ? '' : `.${file}`}`}
-        target='_blank'
-      >
-        <button className='button-default'>
-          Download{' '}
-          {(() => {
-            switch (file) {
-              case 'other':
-                return <></>
-              case 'tar.gz':
-                return 'Tarball'
-              default:
-                return file.toUpperCase()
-            }
-          })()}
-        </button>
-      </Link>
+      <VersionChooser doc={doc} slug={slug} />
     </div>
   )
 }
+
+export default DocumentViewer
