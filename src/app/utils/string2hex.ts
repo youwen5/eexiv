@@ -12,7 +12,7 @@ export default function string2hex(str: string): string {
   for (let i = 0; i < 3; i++) {
     // Ensuring minimum brightness for each component to make text stand out
     // Adjust the minimum brightness as needed (e.g., 0x80 for brighter colors)
-    const minBrightness = 0x80
+    const minBrightness = 0xa0 // Increased min brightness
     const value =
       (((hash >> (i * 8)) & 0xff) % (0xff - minBrightness)) + minBrightness
     color += ('00' + value.toString(16)).slice(-2)
