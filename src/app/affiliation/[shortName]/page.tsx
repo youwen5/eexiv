@@ -44,7 +44,9 @@ export default function Page({
           />
         </div>
         <br />
-        <span className={`${zillaSlab.className} font-bold text-4xl text-center`}>
+        <span
+          className={`${zillaSlab.className} font-bold text-4xl text-center`}
+        >
           {name}
         </span>
         <div className='text-slate-600 text-2xl mt-4 text-center'>{short}</div>
