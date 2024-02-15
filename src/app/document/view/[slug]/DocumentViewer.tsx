@@ -12,6 +12,8 @@ import { ItemBadge, Status } from '@/app/components/Badges'
 import { notFound } from 'next/navigation'
 import VersionChooser from './VersionChooser'
 import crypto from 'crypto'
+import loadingStyles from './loading.module.css'
+import { Suspense } from 'react'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
@@ -88,7 +90,17 @@ const DocumentViewer = ({ slug }: Readonly<{ slug: string }>) => {
         <span className='font-bold'>Cite as: </span>
         {citation ? <>{citation}</> : <>eeXiv:{hash}</>}
       </p>
-      <VersionChooser doc={doc} slug={slug} />
+      <Suspense
+        fallback={
+          <div className='max-w-sm animate-pulse flex flex-wrap gap-2'>
+            <div className='rounded-sm h-10 bg-gray-300 w-3 flex-grow basis-1 mt-2 mb-2'></div>
+            <div className='rounded-sm h-10 bg-gray-300 w-3 flex-grow basis-1.5 mt-2 mb-2'></div>
+            <div className='rounded-sm h-10 bg-gray-300 w-1 flex-grow basis-1 mt-2 mb-2'></div>
+          </div>
+        }
+      >
+        <VersionChooser doc={doc} slug={slug} />
+      </Suspense>
     </div>
   )
 }

@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 import { Document } from '@/app/db/data'
 import Link from 'next/link'
-import { loadAllAuthors } from '@/app/db/loaders'
+import { loadAuthors } from '@/app/db/loaders'
 import { useSuspenseQuery } from '@tanstack/react-query'
 import { epoch2date } from '@/app/utils/epoch2datestring'
 
@@ -13,12 +13,12 @@ const VersionChooser = ({
   const { data, error } = useSuspenseQuery({
     queryKey: ['authors_all'],
     queryFn: () => {
-      const data = loadAllAuthors()
+      const data = loadAuthors(doc.manifest.authors)
       return data
     },
   })
   if (error) throw error
-  
+
   useEffect(() => {
     console.log(data)
   }, [data])

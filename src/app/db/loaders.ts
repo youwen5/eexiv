@@ -88,7 +88,9 @@ export const loadAllAuthors = (): Promise<{ [key: string]: Author }> => {
   })
 }
 
-export const loadAuthors = (authorIds: string[]): Promise<Author> => {
+export const loadAuthors = (
+  authorIds: string[]
+): Promise<{ [key: string]: Author }> => {
   return new Promise((resolve, reject) => {
     if (typeof Worker !== 'undefined') {
       const worker = new Worker(
@@ -97,12 +99,10 @@ export const loadAuthors = (authorIds: string[]): Promise<Author> => {
       )
 
       worker.onmessage = (e: MessageEvent<{ [key: string]: Author }>) => {
-        const data = e.data
-        const author: Author | undefined = data[id]
-        if (!author) {
-          return reject(new Error('404'))
+        if (typeof e.data === 'object' && Object.keys(e.data).length > 0) {
+          resolve(e.data)
         } else {
-          resolve(author)
+          reject(new Error('404'))
         }
         worker.terminate()
       }
@@ -112,7 +112,7 @@ export const loadAuthors = (authorIds: string[]): Promise<Author> => {
         worker.terminate()
       }
 
-      worker.postMessage('LOAD')
+      worker.postMessage(authorIds)
     } else {
       reject(
         new Error(
