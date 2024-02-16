@@ -27,7 +27,8 @@ const VersionChooser = ({
 
   const fileEnding = file === 'other' ? '' : `.${file}`
   const [selectedRevision, setSelectedRevision] = useState<number>(latest) // Initialize the selected revision with the latest revision
-  const notifyCopied = (content: string) => toast.success(`${content} copied to clipboard!`)
+  const notifyCopied = (content: string) =>
+    toast.success(`${content} copied to clipboard!`)
 
   const handleClick = () => {
     const bibtex = `@article{

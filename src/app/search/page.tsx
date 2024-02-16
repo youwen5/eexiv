@@ -74,7 +74,7 @@ export default function Page() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const search = decodeURIComponent(searchParams.get('q') as string)
-  
+
   let invalid = false
 
   if (search.toLowerCase().startsWith('eexiv')) {
@@ -120,7 +120,7 @@ export default function Page() {
         {search}
         {`"`}
       </h1>
-      {(data.length === 0 || invalid) ? (
+      {data.length === 0 || invalid ? (
         <p className='text-lg px-2'>No results found.</p>
       ) : (
         data.map((result) => (

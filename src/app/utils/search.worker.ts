@@ -62,7 +62,7 @@ const serializeDoc = (key: string, value: Document) => ({
     )
     .join(' '),
   key: key,
-  doi: value.doi ? value.doi : undefined
+  doi: value.doi ? value.doi : undefined,
 })
 
 onmessage = (e: MessageEvent<string>) => {
@@ -95,7 +95,9 @@ onmessage = (e: MessageEvent<string>) => {
   }
 
   // converting the documents object into an array that can be index by minisearch
-  const docs = Object.entries(documents).map(([key, value]) => (serializeDoc(key, value)))
+  const docs = Object.entries(documents).map(([key, value]) =>
+    serializeDoc(key, value)
+  )
 
   miniSearch.addAll(docs)
   postMessage(miniSearch.search(e.data) as CustomSearchResult[])
