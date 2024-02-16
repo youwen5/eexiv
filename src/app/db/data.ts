@@ -518,6 +518,17 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     bio: 'Unrelated to Ben Garrison. Maintains a Signal profile. Most likely to become President of the United States.',
     nationality: ['usa'],
   },
+  achawla: {
+    name: {
+      first: 'Ayaan',
+      last: 'Chawla',
+      nickname: 'Chowler',
+    },
+    affiliation: ['Student@srvhs'],
+    image: '/img/profiles/achawla.jpg',
+    nationality: ['ind', 'usa'],
+    website: 'https://www.instagram.com/ayaan_c_07/?hl=en',
+  },
 }
 
 export interface Affiliation {
