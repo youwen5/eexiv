@@ -316,7 +316,7 @@ On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team 
         'invasion of afghanistan',
         'withdrawal from afghanistan',
         'soviet forces',
-        'central asia'
+        'central asia',
       ],
       latest: 1,
     },
@@ -331,8 +331,20 @@ On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team 
   },
   'free-adversarial-robustness': {
     manifest: {
-      title: 'One Less Reason for Filter-Pruning: Gaining Free Adversarial Robustness with Structured Grouped Kernel Pruning',
-      authors: ['zleclaire', 'szhong', 'zyou', 'jzhang', 'szhao', 'zliu', 'dzha', 'vchaudhary', 'sxu', 'xhu'],
+      title:
+        'One Less Reason for Filter-Pruning: Gaining Free Adversarial Robustness with Structured Grouped Kernel Pruning',
+      authors: [
+        'zleclaire',
+        'szhong',
+        'zyou',
+        'jzhang',
+        'szhao',
+        'zliu',
+        'dzha',
+        'vchaudhary',
+        'sxu',
+        'xhu',
+      ],
       type: 'paper',
       topics: ['eecs', 'ai'],
       dates: [1695279600],
@@ -377,7 +389,7 @@ On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team 
     hereby present an one-shot-post-train-data-free GKP method capable of advancing
     SOTA performance on both benign and adversarial scale, while requiring no extra
     (in fact, often less) cost than a standard pruning procedure.`,
-  }
+  },
 }
 
 export interface Topic {
@@ -421,7 +433,7 @@ export const topics: Readonly<{ [key: string]: Topic }> = {
     description:
       'Political science is the study of the politics of human life.',
     wiki: 'https://en.wikipedia.org/wiki/Political_science',
-  }
+  },
 }
 
 /* 
@@ -625,7 +637,10 @@ export const authors: Readonly<{ [key: string]: Author }> = {
       last: 'Level',
     },
     affiliation: ['Technical intern @sandia-labs', 'Undergraduate@ucsb'],
-    formerAffiliations: ['Captain @team-1280', 'Programming lead @1280-programming'],
+    formerAffiliations: [
+      'Captain @team-1280',
+      'Programming lead @1280-programming',
+    ],
     image: '/img/profiles/slevel.jpg',
     bio: 'Actively engaged in the international arms trade; part-time defense contractor and part-time UCSB student working to secure greater rights for defense corporations.',
     nationality: ['usa'],
@@ -657,7 +672,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
       first: 'Zaichuan',
       last: 'You',
     },
-    affiliation: ['Master\'s degree holder @nyu'],
+    affiliation: ["Master's degree holder @nyu"],
     formerAffiliations: ['Undergraduate @cwru'],
     image: '/img/profiles/zyou.jpg',
     nationality: ['chn', 'usa'],
@@ -677,7 +692,10 @@ export const authors: Readonly<{ [key: string]: Author }> = {
       last: 'Zhao',
     },
     affiliation: ['ML research intern @berkeley-eecs'],
-    formerAffiliations: ['Part-time ML research intern @cwru', 'Undergraduate @berkeley-eecs'],
+    formerAffiliations: [
+      'Part-time ML research intern @cwru',
+      'Undergraduate @berkeley-eecs',
+    ],
     image: '/img/profiles/szhao.jpg',
     nationality: ['usa', 'unknown'],
   },
@@ -706,7 +724,10 @@ export const authors: Readonly<{ [key: string]: Author }> = {
       last: 'Chaudhary',
     },
     affiliation: ['CS dept chair @cwru'],
-    formerAffiliations: ['PhD student @ut-austin', 'Undergraduate @iit-kharagpur'],
+    formerAffiliations: [
+      'PhD student @ut-austin',
+      'Undergraduate @iit-kharagpur',
+    ],
     image: '/img/profiles/vchaudhary.jpg',
     nationality: ['ind', 'usa'],
   },
@@ -906,7 +927,7 @@ Raid Zero's influence extends beyond the technical achievements in robotics comp
     description: `University of California, Santa Barbara is a top ranked university in Santa Barbara, California. Established in 1901, it is one of the top 100 universities in California.
     [linebreak]
     Welcome to UC Santa Barbara, where the land meets the sea, where brilliant minds meet each other, and where academic excellence and social engagement unite to spark creativity and discovery.
-    `
+    `,
   },
   'sandia-labs': {
     name: 'Sandia National Laboratories',
@@ -928,7 +949,7 @@ Raid Zero's influence extends beyond the technical achievements in robotics comp
     [linebreak]
     • Career advancement and enrichment opportunities
     [linebreak]
-    • Work-life balance with flexible work schedules, competitive benefits, and convenient on-site amenities`
+    • Work-life balance with flexible work schedules, competitive benefits, and convenient on-site amenities`,
   },
   cwru: {
     name: 'Case Western Reserve University',
@@ -943,7 +964,7 @@ Raid Zero's influence extends beyond the technical achievements in robotics comp
     At Case Western Reserve, we help dreamers become doers. Whether you’re a student with a bright idea or a professor with a breakthrough, we have the programs, people and resources you need to bring it to others. The Larry Sears and Sally Zlotnick Sears think[box], for example, is a 50,000-square-foot innovation center where you can plan, prototype and even 3D-print your product. Plus, it’s home to the Veale Institute for Entrepreneurship—where you'll find the advisors and assistance you need to help you move your concept to market.
     [linebreak]
     When you enroll at Case Western Reserve, you join a network of more than 121,000 graduates across the globe who have gone on to incredible success. Our alumni launch companies, win Nobel Prizes, reform politics, fight for social justice, transform the ways we watch movies, pound pavement and protect computers, and so much more.
-    `
+    `,
   },
   rice: {
     name: 'Rice University',
@@ -972,7 +993,7 @@ Raid Zero's influence extends beyond the technical achievements in robotics comp
     As its resources have increased, Rice has served a flourishing and diverse student population. For fall 2022, degree-seeking undergraduate students totaled 4,480, alongside 4,085 degree-seeking graduate students. At matriculation, Asian Americans composed 29 percent of the Class of 2026. Students identifying as Hispanic or Latino were 17 percent of that group, and Black students made up 8 percent. A growing segment of undergraduate and graduate students at Rice hail from more than 60 countries around the world. Rice has 749 full-time faculty members and 147 part-time faculty members. Already in the midst of a strategic planning process and a $2 billion fundraising campaign, the university will continue to build and evolve, aiming for a bolder future.
     [linebreak]
     Every Rice student is a member of one of our 11 residential colleges and maintains membership throughout their undergraduate years. Spirited communities where students live, dine and interact with peers, faculty, staff and alumni, the resident college system allows students to develop strong relationships and contribute to the betterment of each other’s lives and intellectual achievement. Within our colleges, legacies are born, traditions are celebrated and student spirit thrives.
-    `
+    `,
   },
   nyu: {
     name: 'New York University',
@@ -1001,7 +1022,7 @@ Raid Zero's influence extends beyond the technical achievements in robotics comp
     Thriving beyond borders and across academic disciplines, NYU has emerged as one of the most networked and extensive worldwide platforms for learning, teaching, researching, building knowledge, and inventing new ways to meet humanity’s challenges. Its students, faculty and alumni feed off the stimulating power of swirling intellectual and cultural experiences by mastering academic disciplines, expressing themselves in the arts, and excelling in demanding professions.
     [linebreak]
     New York University’s mission is to be a top quality international center of scholarship, teaching and research. This involves retaining and attracting outstanding faculty who are leaders in their fields, encouraging them to create programs that draw outstanding students, and providing an intellectually rich environment. NYU seeks to take academic and cultural advantage of its location and to embrace diversity among faculty, staff and students to ensure a wide range of perspectives, including international perspectives, in the educational experience.
-    `
+    `,
   },
   'berkeley-eecs': {
     name: 'University of California, Berkeley, Electrical Engineering and Computer Science',
@@ -1020,13 +1041,13 @@ Raid Zero's influence extends beyond the technical achievements in robotics comp
     UC Berkeley led the development of computational complexity theory with the foundational work of Richard Karp who showed the hardness of well-known algorithmic problems, such as finding the minimum cost tour for a traveling salesperson, could be related to NP-completeness—a concept proposed earlier by former Berkeley mathematics professor Stephen A. Cook. The resulting P vs. NP question has since been accepted as one of the ten most important open problems in mathematics, along with such classics as the Riemann Hypothesis. Berkeley computer scientists continue to lead the field of computational complexity, with work such as that on probabilistically checkable proofs and the hardness of approximation problems by Sanjeev Arora and Madhu Sudan in the early 1990s, and on quantum complexity theory by Ethan Bernstein and Umesh Vazirani a few years later. Two Turing Awards (Richard Karp, Manuel Blum) and four ACM Ph.D. Dissertation Awards (Eric Bach, Noam Nisan, Madhu Sudan, and Sanjeev Arora) are just a few of the honors garnered by the research in theoretical computer science at Berkeley.
     [linebreak]
     Berkeley’s AI effort grew largely in the 1980s and 1990s, at a time when problems with this paradigm were becoming evident, and researchers at Berkeley played a major role in developing the new, more probabilistic and learning-oriented AI. This new synthesis brought traditional AI together with control theory, pattern recognition, neural networks, and statistical learning theory. Stuart Russell and Peter Norvig’s bestselling textbook has become the canonical exemplar of this synthesis, and research at Berkeley in fields such as vision, robotics and learning is bringing us ever closer to the dream of truly intelligent machines.
-    `
+    `,
   },
   airbnb: {
     name: 'Airbnb, Inc.',
     short: 'Airbnb',
     image: '/img/logos/airbnb.png',
-    description: `Airbnb was born in 2007 when two Hosts welcomed three guests to their San Francisco home, and has since grown to over 5 million Hosts who have welcomed over 1.5 billion guest arrivals in almost every country across the globe. Every day, Hosts offer unique stays and experiences that make it possible for guests to connect with communities in a more authentic way.`
+    description: `Airbnb was born in 2007 when two Hosts welcomed three guests to their San Francisco home, and has since grown to over 5 million Hosts who have welcomed over 1.5 billion guest arrivals in almost every country across the globe. Every day, Hosts offer unique stays and experiences that make it possible for guests to connect with communities in a more authentic way.`,
   },
   'ut-austin': {
     name: 'University of Texas at Austin',
@@ -1046,7 +1067,7 @@ Raid Zero's influence extends beyond the technical achievements in robotics comp
     [linebreak]
     Spend just a minute on our campus and you'll quickly see how The University of Texas at Austin is an immense and beautiful world all its own. And with our dozens of museums, libraries, centers, institutes and special venues spread across the campus and the city, each with its own unique exhibits and programming, you'll never be bored.
     Imagine a city bursting with an entrepreneurial spirit, a commitment to personal freedom and a passion for unearthing new discoveries. Add a vibrant, internationally renowned music, film and art scene, along with a thriving economy that leads the way in the technology, engineering and health care industries. This is the city we're proud to call home.
-    `
+    `,
   },
   'iit-kharagpur': {
     name: 'Indian Institute of Technology Kharagpur',
@@ -1054,8 +1075,8 @@ Raid Zero's influence extends beyond the technical achievements in robotics comp
     image: '/img/logos/iit-kharagpur.png',
     description: `Indian Institute of Technology Kharagpur (IIT Kharagpur) is a public institute of technology research university established by the Government of India in Kharagpur, West Bengal, India. Established in 1951, the institute is the first of the IITs to be established and is recognised as an Institute of National Importance. In 2019 it was awarded the status of Institute of Eminence by the Government of India. IIT Kharagpur is ranked among the most prestigious academic institutions in India.
     [linebreak]
-    The institute was initially established to train engineers after India attained independence in 1947. However, over the years, the institute's academic capabilities diversified with offerings in management, law, architecture, humanities, etc. IIT Kharagpur has an 8.7-square-kilometre (2,100-acre) campus and has about 22,000 residents.`
-  }
+    The institute was initially established to train engineers after India attained independence in 1947. However, over the years, the institute's academic capabilities diversified with offerings in management, law, architecture, humanities, etc. IIT Kharagpur has an 8.7-square-kilometre (2,100-acre) campus and has about 22,000 residents.`,
+  },
 }
 
 export interface Nationality {
