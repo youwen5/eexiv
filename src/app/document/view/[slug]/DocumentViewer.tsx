@@ -50,7 +50,7 @@ const DocumentViewer = ({ slug }: Readonly<{ slug: string }>) => {
   return (
     <div className='max-w-4xl lg:max-w-6xl mx-auto'>
       <div>
-        <div className='mr-8 mb-4 mt-4 inline'>
+        <div className='mr-8 mb-4 mt-4 hidden md:inline'>
           <QRCode value={citation ?? `eeXiv:${generateHash(slug)}`} />
         </div>
         <h1
