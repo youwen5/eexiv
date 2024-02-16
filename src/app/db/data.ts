@@ -60,7 +60,7 @@ export const documents: Readonly<{ [key: string]: Document }> = {
       ],
       status: 'published no review',
     },
-    doi: '10.5281/zenodo.10668881',
+    doi: '10.5281/zenodo.10668880',
     file: 'pdf',
     abstract:
       'This guide to mechanical engineering covers gears and gear ratios, gear types, gear diagrams and measurements and sprockets and chains. It also introduces a discussion of power in the context of gears and mechanical engineering specific to FRC robotics.',
