@@ -97,13 +97,15 @@ export const documents: Readonly<{ [key: string]: Document }> = {
         'lidar',
       ],
       code: [
+        'https://github.com/Team-1280/programming-dwm',
         'https://github.com/Team-1280/Swerve',
         'https://github.com/Team-1280/Jankboard',
         'https://github.com/Team-1280/identity',
       ],
-      status: 'published no review',
+      status: 'reviewed',
     },
     file: 'pdf',
+    doi: '10.5281/zenodo.10672616',
     abstract:
       'This document outlines the first two weeks of prototyping conducted by the EECS subteam for Team 1280. Action items are presented in a doing/working/moving format to keep track of new developments related to EECS projects.',
   },
