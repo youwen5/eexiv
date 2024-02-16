@@ -35,7 +35,7 @@ export default function News() {
           >
             ISO 26324 DOI registry
           </a>
-          !
+          {'!'}
         </li>
         <li key={3}>
           eeXiv is currently under active development! There may be major
@@ -48,7 +48,7 @@ export default function News() {
           >
             our issue tracker
           </a>
-          .
+          {'.'}
         </li>
         <li key={4}>
           Want to upload your documents or just make yourself a profile on
