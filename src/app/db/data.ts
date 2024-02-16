@@ -45,7 +45,7 @@ export interface DocumentManifest {
 export const documents: Readonly<{ [key: string]: Document }> = {
   'day-5-principles': {
     manifest: {
-      title: 'Day 5 Principles',
+      title: 'Day 5: Principles of Mechanical Engineering',
       authors: ['shasan'],
       topics: ['frc', 'mech'],
       dates: [1707281608],
@@ -60,6 +60,7 @@ export const documents: Readonly<{ [key: string]: Document }> = {
       ],
       status: 'published no review',
     },
+    doi: '10.5281/zenodo.10668881',
     file: 'pdf',
     abstract:
       'This guide to mechanical engineering covers gears and gear ratios, gear types, gear diagrams and measurements and sprockets and chains. It also introduces a discussion of power in the context of gears and mechanical engineering specific to FRC robotics.',
