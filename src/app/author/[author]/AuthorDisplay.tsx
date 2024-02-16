@@ -112,23 +112,6 @@ export default function AuthorDisplay({
     )
   }
 
-  const NationalityDisplay = ({
-    nationality,
-  }: Readonly<{ nationality: string }>) => {
-    const nationalityData = nationalities[nationality]
-    const { demonym, flag } = nationalityData
-    return (
-      <div className='flex items-center'>
-        <img
-          src={flag}
-          className='w-10 shadow-md shadow-slate-300'
-          alt={`${demonym} flag`}
-        />
-        <span className='mx-3 font-semibold'>{demonym}</span>
-      </div>
-    )
-  }
-
   const Bio = () => {
     const { bio } = data
     if (!bio) return null
@@ -172,16 +155,6 @@ export default function AuthorDisplay({
         <hr className='mx-auto w-full h-1 border-0 bg-slate-200 my-2 rounded-md' />
         <OtherPositions />
         <FormerPositions />
-        <h1 className='text-3xl md:my-6 my-4 font-serif'>
-          Ethnicity and Nationality
-        </h1>
-        <div className='flex gap-2 flex-wrap'>
-          {nationality.map((n: string) => (
-            <Fragment key={n}>
-              <NationalityDisplay nationality={n} />
-            </Fragment>
-          ))}
-        </div>
         <Bio />
         {authorsDocuments.length > 0 && (
           <>

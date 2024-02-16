@@ -23,18 +23,19 @@ export default function News() {
       </div>
       <ul className='text-slate-50 px-6 list-disc'>
         <li key={1}>
-          eeXiv 2.2 has been released! You can now select document version and
+          eeXiv has been re-released! You can now select document version and
           export as BibTex.{' '}
         </li>
         <li key={2}>
-          We are working on becoming a{' '}
+          We are working on becoming an{' '}
           <a
             href='https://www.doi.org/the-foundation/about-us/'
             target='_blank'
             className='text-blue-300'
           >
-            ISO 26324 DOI registry!
+            ISO 26324 DOI registry
           </a>
+          !
         </li>
         <li key={3}>
           eeXiv is currently under active development! There may be major
@@ -45,8 +46,9 @@ export default function News() {
             target='_blank'
             className='text-blue-300'
           >
-            our issue tracker.
+            our issue tracker
           </a>
+          .
         </li>
         <li key={4}>
           Want to upload your documents or just make yourself a profile on

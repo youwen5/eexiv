@@ -21,20 +21,21 @@ a:hover {
 }
 
 option {
+  appearance: none;
   @apply font-sans;
   @apply p-4;
 }
 
 .button-default {
-  @apply bg-blue-600 text-slate-100 hover:bg-blue-400 font-semibold rounded py-2 px-4 my-2 shadow-sm shadow-slate-400;
+  @apply bg-blue-600 text-slate-100 hover:bg-blue-400 font-semibold rounded h-12 py-2 px-4 my-2 shadow-sm shadow-slate-400 mr-2;
 }
 
 .button-alternate {
-  @apply bg-slate-100 text-slate-700 hover:bg-blue-100 font-semibold rounded py-2 px-4 my-2 shadow-sm shadow-slate-400;
+  @apply bg-slate-100 text-slate-700 hover:bg-blue-100 font-semibold rounded h-12 py-2 px-4 my-2 shadow-sm shadow-slate-400 mr-2;
 }
 
 .select-default {
-  @apply bg-slate-100 text-slate-700 hover:bg-blue-100 font-semibold rounded py-2 px-4 my-2 shadow-sm shadow-slate-400;
+  @apply bg-slate-100 text-slate-700 hover:bg-blue-100 font-semibold rounded h-12 py-2 px-4 my-2 shadow-sm shadow-slate-400 mr-2;
 }
 
 .badge-base {
@@ -67,6 +68,10 @@ option {
 
 .badge-white-paper {
   @apply badge-base bg-fuchsia-700 border-fuchsia-700;
+}
+
+.badge-paper {
+  @apply badge-base bg-blue-600 border-blue-600;
 }
 
 .badge-datasheet {

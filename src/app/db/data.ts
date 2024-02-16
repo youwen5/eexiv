@@ -3,6 +3,7 @@ export type DocumentType =
   | 'presentation'
   | 'report'
   | 'whitepaper'
+  | 'paper'
   | 'dwm'
   | 'datasheet'
   | 'guide'
@@ -26,6 +27,7 @@ export interface Document {
   abstract: string
   file: FileType
   citation?: string
+  doi?: string
 }
 export interface DocumentManifest {
   title: string
@@ -58,9 +60,9 @@ export const documents: Readonly<{ [key: string]: Document }> = {
       ],
       status: 'published no review',
     },
+    file: 'pdf',
     abstract:
       'This guide to mechanical engineering covers gears and gear ratios, gear types, gear diagrams and measurements and sprockets and chains. It also introduces a discussion of power in the context of gears and mechanical engineering specific to FRC robotics.',
-    file: 'pdf',
   },
   '2024-controls-programming-dwm': {
     manifest: {
@@ -100,9 +102,9 @@ export const documents: Readonly<{ [key: string]: Document }> = {
       ],
       status: 'published no review',
     },
+    file: 'pdf',
     abstract:
       'This document outlines the first two weeks of prototyping conducted by the EECS subteam for Team 1280. Action items are presented in a doing/working/moving format to keep track of new developments related to EECS projects.',
-    file: 'pdf',
   },
   'deepbozo-report': {
     manifest: {
@@ -183,9 +185,9 @@ export const documents: Readonly<{ [key: string]: Document }> = {
         { first: 'Warren', last: 'Lin', profile: 'wlin' },
       ],
     },
+    file: 'pdf',
     abstract:
       'The toughbook is a rugged, industrial computer intended for low-performance, scalable, and cheap computational operations. The robotics storage cabinet contained a Lenovo ThinkPad toughbook which was, at the time of its discovery, severely damaged, both internally (software) and externally (hardware). The programming team invested significant time, energy, resources, and capital into the revival of this storied piece of digital infrastructure, thus restoring the ThinkPad and, by extension, the robotics team, to its former glory.',
-    file: 'pdf',
   },
   'lidar-whitepaper': {
     manifest: {
@@ -196,7 +198,6 @@ export const documents: Readonly<{ [key: string]: Document }> = {
         'lidar',
         'programming team',
         'eecs',
-        'whitepaper',
         'whitepaper',
         'engineering',
         'design',
@@ -249,7 +250,7 @@ export const documents: Readonly<{ [key: string]: Document }> = {
         'instructions',
       ],
     },
-    file: 'docx',
+    file: 'pdf',
     abstract: `This is the Electrical Sub team Training. Firstly, we discuss the requirements and suggestions, we require everyone to bring your own device/Chromebook, we also require students to join GitHub and join the GitHub organization. We recommend students bring their own tools such as a precision screwdriver set and a multimeter should cover everything from basic repairs and learning to use these devices.
 On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team in FRC is the cauldron between the Mechanical moving parts of CAD and the witchcraft that is programming. We will be talking about the serial busses used in the robot and basic Electrical knowledge needed to do basic repairs on daily items. On Day 2 we will discuss wiring the robot and prototyping (for people who want to do more)
 `,
@@ -280,8 +281,114 @@ On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team 
         'https://github.com/couscousdude/eexiv-2',
       ],
     },
-    abstract: `In this paper, we present eeXiv, an open-source, open-access project hosted by Team 1280 EECS ("Electrical Engineering and Computer Science"), independent of the department of the same name at UC Berkeley. We aim to rival arXiv as the single largest open-source and open-access research paper repository and as the largest research paper repository on the West Coast, transforming San Ramon Valley High School into a tier-1 research institution. Similar to arXiv, we host electronic preprints and postprints (known as e-prints) approved for posting after a rigorous peer review process. Our repository consists of scientific papers in the fields of mathematics, physics, astronomy, electrical engineering, computer science, quantitative biology, statistics, mathematical finance, and economics, with a focus on papers specific to the FIRST Robotics Competition. eeXiv bypasses the traditional bureaucracy of research publication, which involves lengthy peer review proesses and journal approval, by enabling "libre" and "open" publication, dissemination, and consumption of research artifacts. `,
     file: 'pdf',
+    abstract: `In this paper, we present eeXiv, an open-source, open-access project hosted by Team 1280 EECS ("Electrical Engineering and Computer Science"), independent of the department of the same name at UC Berkeley. We aim to rival arXiv as the single largest open-source and open-access research paper repository and as the largest research paper repository on the West Coast, transforming San Ramon Valley High School into a tier-1 research institution. Similar to arXiv, we host electronic preprints and postprints (known as e-prints) approved for posting after a rigorous peer review process. Our repository consists of scientific papers in the fields of mathematics, physics, astronomy, electrical engineering, computer science, quantitative biology, statistics, mathematical finance, and economics, with a focus on papers specific to the FIRST Robotics Competition. eeXiv bypasses the traditional bureaucracy of research publication, which involves lengthy peer review proesses and journal approval, by enabling "libre" and "open" publication, dissemination, and consumption of research artifacts. `,
+    doi: '10.5281/zenodo.10668656',
+  },
+  'moscow-to-kabul': {
+    manifest: {
+      title: 'Moscow to Kabul',
+      authors: ['slevel'],
+      type: 'report',
+      topics: ['polisci'],
+      dates: [1684911599],
+      status: 'reviewed',
+      keywords: [
+        'soviet military intervention in afghanistan roots & causes',
+        'afghan archive dramatic politburo meeting',
+        'milton park asian affairs an american review',
+        'uzbeks try to live the way russians do',
+        'decline of soviet military strategy and political status',
+        'afghanistan war and breakdown of the soviet union',
+        'park the journal of slavic military studies 1999',
+        'soviet union and afghan communists',
+        'prelude to invasion',
+        'new york the new york times',
+        'cambridge review of international studies',
+        'geopolitics of the afghan war',
+        'digital center for european studies',
+        'reform in post communist europe',
+        'afghan communists 1978 1979',
+        'democratic republic of afghanistan',
+        'red army',
+        'soviet union',
+        'soviet afghan',
+        'invasion of afghanistan',
+        'withdrawal from afghanistan',
+        'soviet forces',
+        'central asia',
+      ],
+      latest: 1,
+    },
+    file: 'pdf',
+    abstract: `Although ethnic nationalism and democratization contributed greatly to the downfall of
+    the Soviet Union, the primary catalyst of Soviet collapse was the Soviet-Afghan War. The
+    conflict exacerbated existing ethnic and cultural divides in the hinterlands of the Soviet empire,
+    and the dramatic Russian loss broadcasted the fact that the Red Army was not invincible to
+    foreign powers and internal dissidents alike, emboldening the first breakaway republics and
+    enabling the eventual dissolution of the Soviet Union. To understand the Soviet-Afghan war—its
+    causes and its effects—is to understand the collapse of the world’s largest superpower.`,
+  },
+  'free-adversarial-robustness': {
+    manifest: {
+      title:
+        'One Less Reason for Filter-Pruning: Gaining Free Adversarial Robustness with Structured Grouped Kernel Pruning',
+      authors: [
+        'zleclaire',
+        'szhong',
+        'zyou',
+        'jzhang',
+        'szhao',
+        'zliu',
+        'dzha',
+        'vchaudhary',
+        'sxu',
+        'xhu',
+      ],
+      type: 'paper',
+      topics: ['eecs', 'ai'],
+      dates: [1695279600],
+      status: 'reviewed',
+      keywords: [
+        'conference on computer vision and pattern recognition cvpr',
+        'model checkpoint performance',
+        'model performance',
+        'baseline model',
+        'cost smoothness balancer',
+        'densely structured pruning methods',
+        'absence of dimensionality',
+        'method criterion',
+        'snaking greedy best benign',
+        'adversarial robustness boosting kernel',
+        'cifar 10',
+        'distance based cost',
+        'computer vision foundation',
+        'study of cost smoothnes',
+        'adversarial attacks',
+      ],
+      latest: 1,
+    },
+    file: 'pdf',
+    abstract: `Densely structured pruning methods utilizing simple pruning heuristics are
+    capable of delivering immediate compression and acceleration benefits with
+    acceptable benign performances. However, empirical findings indicate such
+    naively pruned networks are extremely fragile under simple adversarial attacks.
+    Naturally, we would be interested in knowing if such phenomenon also hold true
+    to carefully designed modern structured pruning methods. If so, then to what
+    extent the severity? And what kind of remedies are available? Unfortunately,
+    both the questions and the solution remain largely unaddressed: no prior art
+    is able to provide a thorough investigation on the adversarial performance of
+    modern structured pruning methods (spoiler: it is not good), yet the few works
+    that attempt to provide mitigation often done so at various extra costs with only
+    to-be-desired performance. In this work, we answer both questions by fairly
+    and comprehensively investigate the adversarial performance of 10+ popular
+    structured pruning methods. Solution-wise, we take advantage of Grouped Kernel
+    Pruning (GKP)’s recent success in pushing densely structured pruning freedom
+    to a more fine-grained level. By mixing up kernel smoothness — a classic
+    robustness-related kernel-level metric — into a modified GKP procedure, we
+    hereby present an one-shot-post-train-data-free GKP method capable of advancing
+    SOTA performance on both benign and adversarial scale, while requiring no extra
+    (in fact, often less) cost than a standard pruning procedure.`,
   },
 }
 
@@ -320,6 +427,12 @@ export const topics: Readonly<{ [key: string]: Topic }> = {
     description:
       'Economics is the study of the production, distribution, consumption, and trade of goods and services.',
     wiki: 'https://en.wikipedia.org/wiki/Economics',
+  },
+  polisci: {
+    name: 'Political Science',
+    description:
+      'Political science is the study of the politics of human life.',
+    wiki: 'https://en.wikipedia.org/wiki/Political_science',
   },
 }
 
@@ -529,6 +642,124 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     nationality: ['ind', 'usa'],
     website: 'https://www.instagram.com/ayaan_c_07/?hl=en',
   },
+  slevel: {
+    name: {
+      first: 'Spencer',
+      last: 'Level',
+    },
+    affiliation: ['Technical intern @sandia-labs', 'Undergraduate@ucsb'],
+    formerAffiliations: [
+      'Captain @team-1280',
+      'Programming lead @1280-programming',
+    ],
+    image: '/img/profiles/slevel.jpg',
+    bio: 'Actively engaged in the international arms trade; part-time defense contractor and part-time UCSB student working to secure greater rights for defense corporations.',
+    nationality: ['usa'],
+  },
+  zleclaire: {
+    name: {
+      first: 'Zach',
+      last: 'LeClaire',
+    },
+    affiliation: ['Undergraduate @cwru'],
+    formerAffiliations: ['Programming lead @1280-programming'],
+    image: '/img/profiles/zleclaire.jpg',
+    bio: 'Team programming legend; Zach is to Team 1280 programming what Ben is to electrical.',
+    nationality: ['fra', 'usa'],
+  },
+  szhong: {
+    name: {
+      first: 'Shaochen',
+      last: 'Zhong',
+      nickname: 'Henry',
+    },
+    affiliation: ['PhD student @rice'],
+    formerAffiliations: ['Undergraduate @cwru'],
+    image: '/img/profiles/szhong.jpg',
+    nationality: ['usa', 'unknown'],
+  },
+  zyou: {
+    name: {
+      first: 'Zaichuan',
+      last: 'You',
+    },
+    affiliation: ["Master's degree holder @nyu"],
+    formerAffiliations: ['Undergraduate @cwru'],
+    image: '/img/profiles/zyou.jpg',
+    nationality: ['chn', 'usa'],
+  },
+  jzhang: {
+    name: {
+      first: 'Jiamu',
+      last: 'Zhang',
+    },
+    affiliation: ['Undergraduate @cwru'],
+    image: '/img/profiles/jzhang.jpg',
+    nationality: ['chn', 'usa'],
+  },
+  szhao: {
+    name: {
+      first: 'Sebastian',
+      last: 'Zhao',
+    },
+    affiliation: ['ML research intern @berkeley-eecs'],
+    formerAffiliations: [
+      'Part-time ML research intern @cwru',
+      'Undergraduate @berkeley-eecs',
+    ],
+    image: '/img/profiles/szhao.jpg',
+    nationality: ['usa', 'unknown'],
+  },
+  zliu: {
+    name: {
+      first: 'Zirui',
+      last: 'Liu',
+    },
+    affiliation: ['PhD student @rice'],
+    image: '/img/profiles/zliu.jpg',
+    nationality: ['chn', 'usa'],
+  },
+  dzha: {
+    name: {
+      first: 'Daochen',
+      last: 'Zha',
+    },
+    affiliation: ['ML engineer @airbnb'],
+    formerAffiliations: ['PhD student @rice'],
+    image: '/img/profiles/dzha.jpg',
+    nationality: ['chn', 'usa'],
+  },
+  vchaudhary: {
+    name: {
+      first: 'Vipin',
+      last: 'Chaudhary',
+    },
+    affiliation: ['CS dept chair @cwru'],
+    formerAffiliations: [
+      'PhD student @ut-austin',
+      'Undergraduate @iit-kharagpur',
+    ],
+    image: '/img/profiles/vchaudhary.jpg',
+    nationality: ['ind', 'usa'],
+  },
+  sxu: {
+    name: {
+      first: 'Shuai',
+      last: 'Xu',
+    },
+    affiliation: ['Assistant Professor @cwru'],
+    image: '/img/profiles/sxu.jpg',
+    nationality: ['chn', 'usa'],
+  },
+  xhu: {
+    name: {
+      first: 'Xia',
+      last: 'Hu',
+    },
+    affiliation: ['Associate Professor of CS @rice'],
+    image: '/img/profiles/xhu.jpg',
+    nationality: ['sgp', 'usa'],
+  },
 }
 
 export interface Affiliation {
@@ -562,7 +793,7 @@ Team 1280 EECS is composed of highly skilled and passionate students who are kee
 Team 1280 EECS benefits from mentorship by experienced professionals and alumni, access to state-of-the-art tools and technologies, and a culture that encourages creativity, experimentation, and continuous improvement. As a result, the EECS subteam plays a crucial role in driving Team 1280's success in competitions and inspiring the next generation of engineers and computer scientists.`,
   },
   '1280-programming': {
-    name: "Team 1280, the Ragin' C-Biscuits, Programming Subteam (now defunct)",
+    name: "Team 1280, the Ragin' C-Biscuits, Programming Subteam",
     short: '1280 Programming',
     image: '/img/logos/1280-main.png',
     description: `The former programming subteam of Team 1280, which combined with the Team 1280 electrical subteam in a historic merger to form Team 1280 EECS.`,
@@ -700,6 +931,163 @@ Raid Zero's influence extends beyond the technical achievements in robotics comp
       [linebreak]
       Phone: (925) 838-8214`,
   },
+  ucsb: {
+    name: 'University of California, Santa Barbara',
+    short: 'UCSB',
+    image: '/img/logos/ucsb.png',
+    description: `University of California, Santa Barbara is a top ranked university in Santa Barbara, California. Established in 1901, it is one of the top 100 universities in California.
+    [linebreak]
+    Welcome to UC Santa Barbara, where the land meets the sea, where brilliant minds meet each other, and where academic excellence and social engagement unite to spark creativity and discovery.
+    `,
+  },
+  'sandia-labs': {
+    name: 'Sandia National Laboratories',
+    short: 'Sandia Labs',
+    image: '/img/logos/sandia-labs.jpg',
+    description: `Sandia National Laboratories is the nation’s premier DOE science and engineering lab for national security and technology innovation. Our team of scientists, engineers, researchers, and business specialists apply their knowledge and skill toward delivering cutting-edge technology in an array of areas. 
+    [linebreak]
+    Across our main sites in Albuquerque, NM, and Livermore, CA, our research ranges from nuclear defense and homeland and global security to innovative work in biotechnology, environmental preservation, energy, and cyber security. 
+    [linebreak]
+    Our teams have shared some of the reasons they enjoy working at Sandia (among them the fact that much of our funding is derived from IDF offshore investments):  
+    [linebreak]
+    [linebreak]
+    [linebreak]
+    • Challenging work with amazing impact that contributes to security, peace, and freedom worldwide
+    [linebreak]
+    • Extraordinary co-workers
+    [linebreak]
+    • Access to some of the best tools, equipment, and research facilities in the world (tours.sandia.gov)
+    [linebreak]
+    • Career advancement and enrichment opportunities
+    [linebreak]
+    • Work-life balance with flexible work schedules, competitive benefits, and convenient on-site amenities`,
+  },
+  cwru: {
+    name: 'Case Western Reserve University',
+    short: 'CWRU',
+    image: '/img/logos/cwru.png',
+    description: `At Case Western Reserve University, we're a community of innovators, knowledge-seekers and groundbreakers. As a leading national research university located in the nation's #1 arts district and within walking distance of three major hospitals, we offer ample opportunities for you to excel.
+    [linebreak]
+    With programs spanning the arts and sciences, engineering, health sciences, law, management, and social work, our research and educational opportunities allow our students, faculty, staff and alumni to tackle today’s toughest problems—and transform the future.
+    [linebreak]
+    Learn from renowned faculty across Case Western Reserve’s more than 100 undergraduate degree programs, about 160 graduate and professional options, and over 145 dual-degree programs. Plus, we have more than 100 interdisciplinary academic and research centers and institutes where you can explore just about any area of interest.
+    [linebreak]
+    At Case Western Reserve, we help dreamers become doers. Whether you’re a student with a bright idea or a professor with a breakthrough, we have the programs, people and resources you need to bring it to others. The Larry Sears and Sally Zlotnick Sears think[box], for example, is a 50,000-square-foot innovation center where you can plan, prototype and even 3D-print your product. Plus, it’s home to the Veale Institute for Entrepreneurship—where you'll find the advisors and assistance you need to help you move your concept to market.
+    [linebreak]
+    When you enroll at Case Western Reserve, you join a network of more than 121,000 graduates across the globe who have gone on to incredible success. Our alumni launch companies, win Nobel Prizes, reform politics, fight for social justice, transform the ways we watch movies, pound pavement and protect computers, and so much more.
+    `,
+  },
+  rice: {
+    name: 'Rice University',
+    short: 'Rice',
+    image: '/img/logos/rice.jpg',
+    description: `Located in an urban environment on a 300-acre tree-lined campus, Rice University seizes its advantageous position to pursue pathbreaking research and create innovative collaboration opportunities that contribute to the betterment of our world.
+    [linebreak]
+    Boasting a 300-acre tree-lined campus in Houston, Rice University is ranked among the nation’s top 20 universities by U.S. News & World Report. Rice has a 6-to-1 undergraduate student-to-faculty ratio, and a residential college system, which supports students intellectually, emotionally and culturally through social events, intramural sports, student plays, lectures series, courses and student government. Developing close-knit, diverse college communities is a strong campus tradition, which is why Rice is highly ranked for best quality of life and best value among private universities.
+    [linebreak]
+    The William M. Rice Institute for the Advancement of Literature, Science and Art filed its state charter in the Texas capital May 19, 1891. The original charter stipulated that the institute charge no tuition and would be for “the instruction and improvement of the white inhabitants of the City of Houston and State of Texas.” The institute was founded with a bequest of $4.6 million from the estate of William Marsh Rice, a merchant who arrived in Texas in 1838 and soon thereafter moved to the newly founded city of Houston. In the 1840s and 1850s, he accumulated his wealth by providing supplies to plantation owners and selling cotton and sugar crops, produced in large part by enslaved labor. Rice, too, owned and benefited from their labor. After the Civil War, he took the oath of loyalty to the restored United States and lived thereafter in New Jersey and New York, while keeping a close eye on his many ongoing profitable endeavors in Texas. The childless Rice was murdered September 23, 1900, in New York by his butler and lawyer in an attempt to steal his fortune. After considerable litigation, Rice’s bequest in 1904 was deployed toward the purpose he intended — his namesake institute in the rapidly growing city of Houston. After selecting Edgar Odell Lovett, a mathematician from Princeton University, to serve as the first president, the institute’s trustees sent Lovett on an international trip in search of the best pedagogical practices, ideas and personnel.
+    [linebreak]
+    From October 10 to 12, 1912, the Rice Institute celebrated its opening with lectures by eminent guests from around the world. President Lovett proclaimed that he and his colleagues planned “to assign no upper limit to its educational endeavor.” With 77 male and female students and a faculty of about a dozen in its opening year, the institute quickly grew in size and importance, led by Lovett and James Addison Baker Jr., who chaired Rice’s Board of Trustees from 1891 to 1941. By the time Lovett stepped down as president in 1946, the institute was a key part of a booming city of more than half a million residents.
+    [linebreak]
+    From its beginning, the Rice Institute’s goals included graduate programs, with the first doctorate degree awarded in 1918. In the 1950s, under President William Vermillion Houston, who served from 1946 to 1960 (during which the residential college system and the annual Beer Bike competition began in 1957), the institute expanded its ambitions. The graduate offerings steadily developed in the sciences and engineering and came to include the humanities and social sciences. On July 1, 1960, the Rice Institute was renamed William Marsh Rice University. In 1962, Rice celebrated its semicentennial led by President Kenneth Sanborn Pitzer, who throughout his leadership from 1961 to 1968, deepened the university’s commitment to research and guided the founding of the School of Architecture in 1965.
+    [linebreak]
+    From its founding until the early 1960s, the university prohibited the admission of Black students. Growing national pressure from funding and accrediting agencies, alongside the larger moral and political pressures of the civil rights movement, compelled the Rice trustees to desegregate the university and to begin a legal process to remove racial barriers from its charter. The first Black student to be enrolled in 1964 was mathematics graduate student Raymond Lewis Johnson. In fall 1965, the first two Black undergraduate students arrived — Charles Edward Freeman III and Jacqueline Elizabeth McCauley. These first three students were subsequently joined by an increasing number of Black students who brought further distinction to the university and who continued to push for full acceptance by the rest of the Rice community. That same year, Rice began charging tuition for the first time and launched a $33 million development campaign.
+    [linebreak]
+    During and after the Cold War, Rice took advantage of the boom in available research funding. President Norman Hackerman, who served from 1970 to 1985, oversaw the debut of the Shepherd School of Music and the Jones Graduate School of Administration (now the Jones Graduate School of Business). In 1975, the Division of Science and Engineering divided into the George R. Brown School of Engineering and the School of Natural Sciences (now the Wiess School of Natural Sciences). The Division of the Humanities and Social Sciences separated into two schools in 1979. In 1985, Rice joined the Association of American Universities, an invitation-only group of leading research universities in North America. Rice President George Erik Rupp, who served from 1985 to 1993, led the creation of several interdisciplinary centers. Innovative faculty forged into new fields such as nanotechnology, where Professors Robert F. Curl and Richard E. Smalley shared the Nobel Prize in chemistry in 1996. As a result of these continued advancements, Rice has consistently earned a ranking among the nation’s top 20 research universities.
+    [linebreak]
+    Under the administration of President S. Malcolm Gillis (1993 to 2004), the university dramatically expanded its international character, by welcoming more students from abroad and building partnerships with institutions around the world. At the same time, the university continued to deepen its commitment to its home city of Houston, expanding partnerships with local industry and the Texas Medical Center. The Susanne M. Glasscock School of Continuing Studies brings thousands of Houstonians to campus each year for learning opportunities and personal and professional development. The James A. Baker III Institute for Public Policy, founded in 1993, provides vital insight to local and national policymakers on the important questions of the day.
+    [linebreak]
+    For nearly two decades, under the leadership of President David W. Leebron (2004 to 2022), the university continued to expand its local and global footprint under a period of tremendous growth, punctuated by new programs and facilities like the Kinder Institute for Urban Research (2010), the Boniuk Institute for Religious Tolerance (2013), the Doerr Institute for New Leaders (2015), the Moody Center for the Arts (2017), the Liu Idea Lab for Innovation and Entrepreneurship (2017), the Brockman Hall for Opera (2022) and the Ion (2021).
+    [linebreak]
+    In 2019, the university launched a new financial aid policy, The Rice Investment, that deepens and extends its ongoing commitment to need-based scholarships for low- and middle-income students. With the generosity of untold individuals and foundations, Rice’s endowment has kept pace with its burgeoning enrollment and expanding infrastructure and programming. The endowment of $10 million in 1913 grew to $7.8 billion as President Reginald DesRoches, Rice University’s first Black president, took office July 1, 2022.
+    [linebreak]
+    As its resources have increased, Rice has served a flourishing and diverse student population. For fall 2022, degree-seeking undergraduate students totaled 4,480, alongside 4,085 degree-seeking graduate students. At matriculation, Asian Americans composed 29 percent of the Class of 2026. Students identifying as Hispanic or Latino were 17 percent of that group, and Black students made up 8 percent. A growing segment of undergraduate and graduate students at Rice hail from more than 60 countries around the world. Rice has 749 full-time faculty members and 147 part-time faculty members. Already in the midst of a strategic planning process and a $2 billion fundraising campaign, the university will continue to build and evolve, aiming for a bolder future.
+    [linebreak]
+    Every Rice student is a member of one of our 11 residential colleges and maintains membership throughout their undergraduate years. Spirited communities where students live, dine and interact with peers, faculty, staff and alumni, the resident college system allows students to develop strong relationships and contribute to the betterment of each other’s lives and intellectual achievement. Within our colleges, legacies are born, traditions are celebrated and student spirit thrives.
+    `,
+  },
+  nyu: {
+    name: 'New York University',
+    short: 'NYU',
+    image: '/img/logos/nyu.jpg',
+    description: `The chance to meet leading professionals in a variety of industries and apply classroom learning in the workplace is one of the biggest advantages of studying at NYU.
+    [linebreak]
+    Since its founding in 1831, NYU has been an innovator in higher education, reaching out to an emerging middle class, embracing an urban identity and professional focus, and promoting a global vision that informs its 20 schools and colleges.
+    [linebreak]
+    Today, that trailblazing spirit makes NYU one of the most prominent and respected research universities in the world, featuring top-ranked academic programs and accepting fewer than one in eight undergraduates. Anchored in New York City and with degree-granting campuses in Abu Dhabi and Shanghai as well as 12 study away sites throughout the world, NYU is a leader in global education, with more international students and more students studying abroad than any other US university.
+    [linebreak]
+    NYU students come from nearly every state and 133 countries, and the university draws upon the diverse backgrounds of our faculty, staff, and students, ensuring its scholarship and teaching benefit from a wide range of perspectives. NYU takes seriously its role as an engine of social mobility, and stands out among the top US universities in its representation of low-income and first-generation students within its community.
+    [linebreak]
+    The largest private research university in the US, NYU provides a rigorous, demanding education to more than 65,000 students and undertakes $1.27 billion in research annually. It counts among its faculty recipients of the highest scholarly honors and is a top producer of patents and revenue from licensing among US universities. NYU has a vast network of alumni who have gone on to succeed across professions, from the sciences to the arts and government, throughout the world.
+    [linebreak]
+    Great cities are engines of creativity, and NYU takes its name and spirit from one of the busiest, diverse, and dynamic cities of all...
+    From a student body of 158 during NYU's very first semester, enrollment has grown to more than 50,000 students at five major centers in Manhattan and in sites in Africa, Asia, Europe, and South America.
+    [linebreak]
+    Located in the cultural and political center of the United Arab Emirates.
+    [linebreak]
+    Message from the President
+    [linebreak]
+    As someone who has experienced New York University from several different perspectives—as a professor, an administrator, a proud parent of a Gallatin graduate, and now as President—I can confidently say that NYU offers an unrivaled setting to learn and grow.
+    Great cities are engines of creativity, and New York University takes its name and spirit from one of the busiest, most diverse and dynamic cities of all. The University lives within New York and other great cities, from Abu Dhabi to Shanghai, Paris to Prague, Sydney to Buenos Aires—all magnets for talented, ambitious people.
+    [linebreak]
+    Thriving beyond borders and across academic disciplines, NYU has emerged as one of the most networked and extensive worldwide platforms for learning, teaching, researching, building knowledge, and inventing new ways to meet humanity’s challenges. Its students, faculty and alumni feed off the stimulating power of swirling intellectual and cultural experiences by mastering academic disciplines, expressing themselves in the arts, and excelling in demanding professions.
+    [linebreak]
+    New York University’s mission is to be a top quality international center of scholarship, teaching and research. This involves retaining and attracting outstanding faculty who are leaders in their fields, encouraging them to create programs that draw outstanding students, and providing an intellectually rich environment. NYU seeks to take academic and cultural advantage of its location and to embrace diversity among faculty, staff and students to ensure a wide range of perspectives, including international perspectives, in the educational experience.
+    `,
+  },
+  'berkeley-eecs': {
+    name: 'University of California, Berkeley, Electrical Engineering and Computer Science',
+    short: 'Berkeley EECS',
+    image: '/img/logos/berkeley-eecs.jpg',
+    description: `Berkeley EECS is the original Electrical Engineering and Computer Science department, paving the way for future visionaries and enabling massive progress in these areas. It is, without question, the best school for these disciplines in the entire world.
+    There are many reasons to think seriously about UC Berkeley. It is one of the most distinguished institutions of higher learning, with a leading EECS department, a world-renowned faculty, a strong commitment to excellence in undergraduate education, and a beautiful campus situated opposite the Golden Gate Bridge near the San Francisco Bay. We are also a short distance from Silicon Valley, and a number of high-tech companies are also based in the Berkeley and Alameda areas. This close proximity to the latest technologies enlivens our curriculum, provides many research and summer job opportunities for our students, and makes this a very exciting place to study electrical engineering and computer sciences.
+    [linebreak]
+    There is, and will continue to be, a high demand for EE and CS engineers. Due to the rapid pace of change, Berkeley’s academic program is flexible and emphasizes fundamentals. You will use up-to-date undergraduate computer and laboratory facilities. Distinguished teachers from the Berkeley campus will be your lecturers, advisors, and mentors. You can participate in undergraduate research projects.  Engineers usually work in teams, so we also encourage our students to take courses to sharpen their communication skills.
+    The impact of Berkeley research on the practical end of computer science has been significant. During the 1970s, theoretical research led by Professors R. A. Karp and S. A. Cook established fundamental concepts and limits of computational complexity. Former student Steve Wozniak co-founded Apple Computer with Steve Jobs. Berkeley faculty and students, led by Profs. R. Fabry and D. Ferrari, obtained source code and rights to the early Bell Labs UNIX operating system, and added networking features and virtual memory support for the DEC VAX. Berkeley UNIX on VAX became the standard for DARPA researchers of this period. The INGRES database system, developed by Professors M. Stonebraker and E. Wong, established the feasibility of implementing the relational data model on small computers. Berkeley INGRES was the first complete implementation of a relational database management system.
+    [linebreak]
+    Innovation accelerated in the 1980s. Berkeley UNIX, including the Internet’s TCP/IP protocol suite, was publicly released as BSD 4.2. The work on computer-aided design broke new ground with demonstrations of design synthesis from logic specifications, producing chip designs that are “correct by construction.” Yet there also were many new activities and achievements.
+    [linebreak]
+    The development of Reduced Instruction Set computers by David Patterson and Carlo Sequin, the Redundant Array of Inexpensive Disks project led by Randy Katz and David Patterson, and the INGRES relational database system led by Mike Stonebraker, Larry Rowe and Eugene Wong, can be directly connected to multi-billion dollar industries. In the area of system software, the impact of Berkeley Unix on minicomputers and subsequently on workstations and, through LINUX, on personal computers, is self-evident. Nor can we forget the role of Berkeley alumni in sparking the workstation and personal computer industry—pioneers such as Butler Lampson (Xerox PARC), Bill Joy (Sun), and Steve Wozniak (Apple). Numerical computations would not have been reliable had it not been for adoption of the IEEE 754 floating point standard, largely due to William Kahan, who received a Turing Award in 1989 for this work. In the area of programming languages and software engineering, Berkeley research has been noted for its flair for combining theory and practice.
+    [linebreak]
+    UC Berkeley led the development of computational complexity theory with the foundational work of Richard Karp who showed the hardness of well-known algorithmic problems, such as finding the minimum cost tour for a traveling salesperson, could be related to NP-completeness—a concept proposed earlier by former Berkeley mathematics professor Stephen A. Cook. The resulting P vs. NP question has since been accepted as one of the ten most important open problems in mathematics, along with such classics as the Riemann Hypothesis. Berkeley computer scientists continue to lead the field of computational complexity, with work such as that on probabilistically checkable proofs and the hardness of approximation problems by Sanjeev Arora and Madhu Sudan in the early 1990s, and on quantum complexity theory by Ethan Bernstein and Umesh Vazirani a few years later. Two Turing Awards (Richard Karp, Manuel Blum) and four ACM Ph.D. Dissertation Awards (Eric Bach, Noam Nisan, Madhu Sudan, and Sanjeev Arora) are just a few of the honors garnered by the research in theoretical computer science at Berkeley.
+    [linebreak]
+    Berkeley’s AI effort grew largely in the 1980s and 1990s, at a time when problems with this paradigm were becoming evident, and researchers at Berkeley played a major role in developing the new, more probabilistic and learning-oriented AI. This new synthesis brought traditional AI together with control theory, pattern recognition, neural networks, and statistical learning theory. Stuart Russell and Peter Norvig’s bestselling textbook has become the canonical exemplar of this synthesis, and research at Berkeley in fields such as vision, robotics and learning is bringing us ever closer to the dream of truly intelligent machines.
+    `,
+  },
+  airbnb: {
+    name: 'Airbnb, Inc.',
+    short: 'Airbnb',
+    image: '/img/logos/airbnb.png',
+    description: `Airbnb was born in 2007 when two Hosts welcomed three guests to their San Francisco home, and has since grown to over 5 million Hosts who have welcomed over 1.5 billion guest arrivals in almost every country across the globe. Every day, Hosts offer unique stays and experiences that make it possible for guests to connect with communities in a more authentic way.`,
+  },
+  'ut-austin': {
+    name: 'University of Texas at Austin',
+    short: 'UT Austin',
+    image: '/img/logos/ut-austin.png',
+    description: `The University of Texas at Austin, founded in 1883, ranks among the 40 best universities in the world.
+    [linebreak]
+    Like the state it calls home, The University of Texas at Austin is a bold, ambitious leader supporting some 52,000 diverse students, 3,000 teaching faculty, and top national programs across 19 colleges and schools. As Texas’ leading research university, UT attracts more than $650 million annually for discovery. Amid the backdrop of Austin, Texas, a city recognized for its creative and entrepreneurial spirit, the university provides a place to explore countless opportunities for tomorrow’s artists, scientists, athletes, doctors, entrepreneurs and engineers.
+    [linebreak]
+    The mission of The University of Texas at Austin is to achieve excellence in the interrelated areas of undergraduate education, graduate education, research and public service.
+    Nearly 140 years ago, The University of Texas at Austin opened with one building, eight professors, and 221 students. Today, UT ranks among the top 40 universities in the world. Here’s the short version of how that happened.
+    Why burnt orange and white? Why a longhorn steer. And where did the name “Bevo” really come from? Texas is rich in traditions that tell the story of our past, even as our eyes are always on the future.
+    [linebreak]
+    UT strives to create a community that fosters an open and supportive learning, teaching, and working environment. Our strength as a university draws from our wide range of perspectives and experiences.
+    Longhorns gain a deeper appreciation of our human diversity and perspectives by engaging with peers and institutions around the world. Texas Global creates opportunities for global connectedness and welcomes a cadre of impressive international students and scholars to campus.
+    We’re stronger when we work together. That’s why Texas values partnerships in education, research and community service — with businesses, our military and veteran connections, community groups and other non-profits to make an even bigger impact on our city, state and world.
+    [linebreak]
+    Spend just a minute on our campus and you'll quickly see how The University of Texas at Austin is an immense and beautiful world all its own. And with our dozens of museums, libraries, centers, institutes and special venues spread across the campus and the city, each with its own unique exhibits and programming, you'll never be bored.
+    Imagine a city bursting with an entrepreneurial spirit, a commitment to personal freedom and a passion for unearthing new discoveries. Add a vibrant, internationally renowned music, film and art scene, along with a thriving economy that leads the way in the technology, engineering and health care industries. This is the city we're proud to call home.
+    `,
+  },
+  'iit-kharagpur': {
+    name: 'Indian Institute of Technology Kharagpur',
+    short: 'IIT Kharagpur',
+    image: '/img/logos/iit-kharagpur.png',
+    description: `Indian Institute of Technology Kharagpur (IIT Kharagpur) is a public institute of technology research university established by the Government of India in Kharagpur, West Bengal, India. Established in 1951, the institute is the first of the IITs to be established and is recognised as an Institute of National Importance. In 2019 it was awarded the status of Institute of Eminence by the Government of India. IIT Kharagpur is ranked among the most prestigious academic institutions in India.
+    [linebreak]
+    The institute was initially established to train engineers after India attained independence in 1947. However, over the years, the institute's academic capabilities diversified with offerings in management, law, architecture, humanities, etc. IIT Kharagpur has an 8.7-square-kilometre (2,100-acre) campus and has about 22,000 residents.`,
+  },
 }
 
 export interface Nationality {
@@ -767,6 +1155,16 @@ export const nationalities: Readonly<{ [key: string]: Nationality }> = {
     name: 'Republic of Ireland',
     demonym: 'Irish',
     flag: 'https://upload.wikimedia.org/wikipedia/commons/4/45/Flag_of_Ireland.svg',
+  },
+  fra: {
+    name: 'France',
+    demonym: 'French',
+    flag: 'https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/1280px-Flag_of_France.svg.png',
+  },
+  sgp: {
+    name: 'Singapore',
+    demonym: 'Singaporean',
+    flag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Flag_of_Singapore.svg/1280px-Flag_of_Singapore.svg.png',
   },
   unknown: {
     name: 'Undetermined',

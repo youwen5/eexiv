@@ -7,6 +7,9 @@ import { epoch2datestring } from '../utils/epoch2datestring'
 import searchDocs, { CustomSearchResult } from '@/app/utils/searchDocs'
 import { useSuspenseQuery } from '@tanstack/react-query'
 import cardEffects from '@/app/styles/cardEffects.module.css'
+import { toast } from 'react-toastify'
+import { useEffect } from 'react'
+import { hash as fnv } from 'fnv-plus'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500', '700'] })
 
@@ -72,6 +75,30 @@ export default function Page() {
   const searchParams = useSearchParams()
   const search = decodeURIComponent(searchParams.get('q') as string)
 
+  let invalid = false
+
+  if (search.toLowerCase().startsWith('eexiv')) {
+    const id = search.slice(6)
+
+    if (id.length !== 12) {
+      invalid = true
+    } else {
+      const base = id.slice(0, 10)
+      const ending = id.slice(10, 12)
+      const e_ending = fnv(base).str().substring(0, 2)
+
+      if (ending !== e_ending) {
+        invalid = true
+      }
+    }
+  }
+
+  useEffect(() => {
+    if (invalid) {
+      toast.error('Invalid eeXiv identifier')
+    }
+  }, [invalid])
+
   const { data, error } = useSuspenseQuery({
     queryKey: [search],
     queryFn: () => {
@@ -93,7 +120,7 @@ export default function Page() {
         {search}
         {`"`}
       </h1>
-      {data.length === 0 ? (
+      {data.length === 0 || invalid ? (
         <p className='text-lg px-2'>No results found.</p>
       ) : (
         data.map((result) => (

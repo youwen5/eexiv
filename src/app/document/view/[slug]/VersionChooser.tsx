@@ -6,6 +6,7 @@ import { loadAuthors } from '@/app/db/loaders'
 import { useSuspenseQuery } from '@tanstack/react-query'
 import { epoch2date } from '@/app/utils/epoch2datestring'
 import { toast } from 'react-toastify'
+import generateHash from '@/app/utils/hash'
 
 const VersionChooser = ({
   doc,
@@ -26,7 +27,8 @@ const VersionChooser = ({
 
   const fileEnding = file === 'other' ? '' : `.${file}`
   const [selectedRevision, setSelectedRevision] = useState<number>(latest) // Initialize the selected revision with the latest revision
-  const notifyCopied = () => toast('BibTeX copied to clipboard!')
+  const notifyCopied = (content: string) =>
+    toast.success(`${content} copied to clipboard!`)
 
   const handleClick = () => {
     const bibtex = `@article{
@@ -34,7 +36,7 @@ const VersionChooser = ({
     .map((a: string, i) => {
       const author = data[a].name.first + ' ' + data[a].name.last
       if (i === 0) return author
-      else if (i === authors.length - 1) return ` and ${author}`
+      else if (i === authors.length - 1) return `, and ${author}`
       else return `, ${author}`
     })
     .join('')}},
@@ -45,7 +47,13 @@ const VersionChooser = ({
   url={${window.location.href}}
 }`
     navigator.clipboard.writeText(bibtex)
-    notifyCopied()
+    notifyCopied('BibTeX')
+  }
+
+  const handleCopy = () => {
+    const id = doc.citation ? doc.citation : generateHash(slug)
+    navigator.clipboard.writeText(`eeXiv:${id}`)
+    notifyCopied('Citation')
   }
 
   return (
@@ -62,18 +70,24 @@ const VersionChooser = ({
                 return <></>
               case 'tar.gz':
                 return 'Tarball'
+              case 'pdf':
+                return 'PDF'
+              case 'docx':
+                return 'Word'
+              case 'pptx':
+                return 'Powerpoint'
             }
           })()}
         </button>
       </Link>
-      <button
-        className='ml-2 h-10 px-2.5 bg-slate-300 rounded-md'
-        onClick={handleClick}
-      >
+      <button className='button-alternate' onClick={handleClick}>
         Export BibTeX
       </button>
+      <button className='button-alternate' onClick={handleCopy}>
+        Copy citation
+      </button>
       <select
-        className='ml-2 h-10 px-2.5 bg-slate-300 rounded-md'
+        className='select-default'
         value={`v${selectedRevision}`}
         onChange={(e) => {
           setSelectedRevision(parseInt(e.target.value.replace(/\D/g, ''), 10))
@@ -81,7 +95,7 @@ const VersionChooser = ({
       >
         {Array.from({ length: latest }, (_, index) => index + 1).map(
           (version) => (
-            <option key={version} value={`v${version}`} className='p-2.5'>
+            <option key={version} value={`v${version}`}>
               {version == latest ? 'Latest' : `v${version}`}
             </option>
           )

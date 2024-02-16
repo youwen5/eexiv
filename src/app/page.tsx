@@ -37,6 +37,7 @@ function sortAuthorsByDocumentsPublished(authors: {
 
 export default function Home() {
   const AuthorDisplay = () => {
+    let i = 0
     return (
       <ol className='list-decimal pl-4 space-y-2'>
         {sortAuthorsByDocumentsPublished(authors).map(({ id, author }) => {
@@ -44,6 +45,9 @@ export default function Home() {
 
           let affiliationSlug = data.affiliation[0].split('@')[1]
           let affiliation = affiliations[affiliationSlug]
+          i++
+
+          if (i > 10) return
           return (
             <li key={id}>
               <Link href={`/author/${id}`}>
@@ -70,10 +74,7 @@ export default function Home() {
         the fields of physics, mathematics, computer science, quantitative
         biology, quantitative finance, statistics, electrical engineering and
         systems science, and economics, but mainly related to the{' '}
-        <Link
-          href='https://en.wikipedia.org/wiki/FIRST_Robotics_Competition'
-          target='_blank'
-        >
+        <Link href='./topic/frc' target='_blank'>
           FIRST Robotics Competition (FRC)
         </Link>
         . Materials on this site may be published independently through other

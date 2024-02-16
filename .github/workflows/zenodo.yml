@@ -1,0 +1,27 @@
+name: Upload to Zenodo
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Zenodo File Upload Name'
+        required: true
+        type: string
+      path:
+        description: 'Relative file path from scripts directory'
+        required: true
+        type: string
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: Run Zenodo uploader
+        working-directory: scripts
+        env:
+          ZENODO: ${{ secrets.ZENODO }}
+        run: |
+          npm install
+          bash run.sh ${{ inputs.name }} ${{ inputs.path }}
