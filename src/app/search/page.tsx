@@ -112,6 +112,11 @@ export default function Page() {
     router.push(input)
   }
 
+  if (data.length === 1) {
+    // auto redirect if only one result
+    handleRedirect(`/document/view/${data[0].id}`)
+  }
+
   return (
     <div className='max-w-4xl mx-auto'>
       <h1 className='text-xl mb-4 p-2'>
