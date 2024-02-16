@@ -17,7 +17,7 @@ export default function findDocumentsByAuthorSorted(
     .map(([slug, doc]) => ({ slug, doc }))
 
   // Sort the filtered documents by the latest date in descending order
-  const sortedDocuments = filteredDocuments.sort((a, b) => {
+  const sortedDocuments = filteredDocuments.toSorted((a, b) => {
     const latestDateA = a.doc.manifest.dates[a.doc.manifest.dates.length - 1]
     const latestDateB = b.doc.manifest.dates[b.doc.manifest.dates.length - 1]
     return latestDateB - latestDateA // For descending order
