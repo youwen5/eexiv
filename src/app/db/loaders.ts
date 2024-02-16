@@ -31,11 +31,7 @@ export const loadDocument = (id: string): Promise<Document> => {
 
       worker.postMessage(id)
     } else {
-      reject(
-        new Error(
-          'Web Workers are not supported in this environment. Please avoid using a prehistoric browser.'
-        )
-      )
+      return
     }
   })
 }
@@ -62,11 +58,7 @@ export const loadAllDocuments = (): Promise<{ [key: string]: Document }> => {
 
       worker.postMessage('LOAD')
     } else {
-      reject(
-        new Error(
-          'Web Workers are not supported in this environment. Please avoid using a prehistoric browser.'
-        )
-      )
+      return
     }
   })
 }
@@ -123,12 +115,7 @@ export const loadAuthors = (
 
       worker.postMessage(authorIds)
     } else {
-      reject(
-        new Error(
-          `Web Workers are not supported in this environment. Please avoid using a prehistoric browser. 
-          If nothing else seems wrong, this error message is probably showing up due to ghosts in your browser.`
-        )
-      )
+      return
     }
   })
 }
@@ -159,12 +146,7 @@ export const loadAffiliation = (id: string): Promise<Affiliation> => {
 
       worker.postMessage('LOAD')
     } else {
-      reject(
-        new Error(
-          `Web Workers are not supported in this environment. Please avoid using a prehistoric browser. 
-          If nothing else seems wrong, this error message is probably showing up due to ghosts in your browser.`
-        )
-      )
+      return
     }
   })
 }
@@ -191,11 +173,7 @@ export const loadAllAffiliations = (): Promise<{
 
       worker.postMessage('LOAD')
     } else {
-      reject(
-        new Error(
-          'Web Workers are not supported in this environment. Please avoid using a prehistoric browser.'
-        )
-      )
+      return
     }
   })
 }
@@ -226,12 +204,7 @@ export const loadTopic = (id: string): Promise<Topic> => {
 
       worker.postMessage('LOAD')
     } else {
-      reject(
-        new Error(
-          `Web Workers are not supported in this environment. Please avoid using a prehistoric browser. 
-          If nothing else seems wrong, this error message is probably showing up due to ghosts in your browser.`
-        )
-      )
+      return
     }
   })
 }
@@ -258,11 +231,7 @@ export const loadAllTopics = (): Promise<{
 
       worker.postMessage('LOAD')
     } else {
-      reject(
-        new Error(
-          'Web Workers are not supported in this environment. Please avoid using a prehistoric browser.'
-        )
-      )
+      return
     }
   })
 }
@@ -293,12 +262,7 @@ export const loadNationality = (id: string): Promise<Nationality> => {
 
       worker.postMessage('LOAD')
     } else {
-      reject(
-        new Error(
-          `Web Workers are not supported in this environment. Please avoid using a prehistoric browser. 
-          If nothing else seems wrong, this error message is probably showing up due to ghosts in your browser.`
-        )
-      )
+      return
     }
   })
 }
@@ -325,11 +289,7 @@ export const loadAllNationalities = (): Promise<{
 
       worker.postMessage('LOAD')
     } else {
-      reject(
-        new Error(
-          'Web Workers are not supported in this environment. Please avoid using a prehistoric browser.'
-        )
-      )
+      return
     }
   })
 }
