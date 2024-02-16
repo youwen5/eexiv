@@ -50,14 +50,14 @@ const DocumentViewer = ({ slug }: Readonly<{ slug: string }>) => {
   return (
     <div className='max-w-4xl lg:max-w-6xl mx-auto'>
       <div>
-        <div className='float-left mr-8 mb-4 mt-4'>
+        <div className='mr-8 mb-4 mt-4 inline'>
           <QRCode value={citation ?? `eeXiv:${generateHash(slug)}`} />
         </div>
         <h1
           className={`
               text-slate-800 text-5xl mb-4
               ${zillaSlab.className}
-              text-wrap break-words hyphens-auto inline
+              text-wrap break-words hyphens-auto
             `}
         >
           {title}
