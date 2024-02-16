@@ -62,6 +62,12 @@ const VersionChooser = ({
                 return <></>
               case 'tar.gz':
                 return 'Tarball'
+              case 'pdf':
+                return 'PDF'
+              case 'docx':
+                return 'Word'
+              case 'pptx':
+                return 'Powerpoint'
             }
           })()}
         </button>

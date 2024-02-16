@@ -25,6 +25,7 @@ export type DocumentStatus =
 export interface Document {
   manifest: DocumentManifest
   abstract: string
+  file: FileType
   citation?: string
   doi?: string
 }
@@ -59,6 +60,7 @@ export const documents: Readonly<{ [key: string]: Document }> = {
       ],
       status: 'published no review',
     },
+    file: 'pdf',
     abstract:
       'This guide to mechanical engineering covers gears and gear ratios, gear types, gear diagrams and measurements and sprockets and chains. It also introduces a discussion of power in the context of gears and mechanical engineering specific to FRC robotics.',
   },
@@ -100,6 +102,7 @@ export const documents: Readonly<{ [key: string]: Document }> = {
       ],
       status: 'published no review',
     },
+    file: 'pdf',
     abstract:
       'This document outlines the first two weeks of prototyping conducted by the EECS subteam for Team 1280. Action items are presented in a doing/working/moving format to keep track of new developments related to EECS projects.',
   },
@@ -139,6 +142,7 @@ export const documents: Readonly<{ [key: string]: Document }> = {
       status: 'reviewed',
       reviewers: [{ first: 'Youwen', last: 'Wu', profile: 'ywu' }],
     },
+    file: 'pdf',
     abstract:
       'DeepBozo is designed to incorporate various AI-enhanced driver assistance features and autonomous technologies. In order to meet our 1 month deadline for a prototype that’s ready to scrimmage and train with, Team 1280 EECS needs to conduct a thorough analysis of the goals and limitations of DeepBozo and its various subroutines. In this report, we explore the various possible capabilities of DeepBozo and the feasibility of each.',
   },
@@ -181,6 +185,7 @@ export const documents: Readonly<{ [key: string]: Document }> = {
         { first: 'Warren', last: 'Lin', profile: 'wlin' },
       ],
     },
+    file: 'pdf',
     abstract:
       'The toughbook is a rugged, industrial computer intended for low-performance, scalable, and cheap computational operations. The robotics storage cabinet contained a Lenovo ThinkPad toughbook which was, at the time of its discovery, severely damaged, both internally (software) and externally (hardware). The programming team invested significant time, energy, resources, and capital into the revival of this storied piece of digital infrastructure, thus restoring the ThinkPad and, by extension, the robotics team, to its former glory.',
   },
@@ -213,6 +218,7 @@ export const documents: Readonly<{ [key: string]: Document }> = {
       latest: 2,
       status: 'under review',
     },
+    file: 'pdf',
     abstract: `Approximately 1 month ago, the Team 1280 Electrical Engineering and Computer Science 
       Department (henceforth referred to as just EECS), an independent organ of the Team 1280 official
       organization which operates extrajudicially and without congressional oversight, requisitioned a
@@ -244,6 +250,7 @@ export const documents: Readonly<{ [key: string]: Document }> = {
         'instructions',
       ],
     },
+    file: 'pdf',
     abstract: `This is the Electrical Sub team Training. Firstly, we discuss the requirements and suggestions, we require everyone to bring your own device/Chromebook, we also require students to join GitHub and join the GitHub organization. We recommend students bring their own tools such as a precision screwdriver set and a multimeter should cover everything from basic repairs and learning to use these devices.
 On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team in FRC is the cauldron between the Mechanical moving parts of CAD and the witchcraft that is programming. We will be talking about the serial busses used in the robot and basic Electrical knowledge needed to do basic repairs on daily items. On Day 2 we will discuss wiring the robot and prototyping (for people who want to do more)
 `,
@@ -274,6 +281,7 @@ On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team 
         'https://github.com/couscousdude/eexiv-2',
       ],
     },
+    file: 'pdf',
     abstract: `In this paper, we present eeXiv, an open-source, open-access project hosted by Team 1280 EECS ("Electrical Engineering and Computer Science"), independent of the department of the same name at UC Berkeley. We aim to rival arXiv as the single largest open-source and open-access research paper repository and as the largest research paper repository on the West Coast, transforming San Ramon Valley High School into a tier-1 research institution. Similar to arXiv, we host electronic preprints and postprints (known as e-prints) approved for posting after a rigorous peer review process. Our repository consists of scientific papers in the fields of mathematics, physics, astronomy, electrical engineering, computer science, quantitative biology, statistics, mathematical finance, and economics, with a focus on papers specific to the FIRST Robotics Competition. eeXiv bypasses the traditional bureaucracy of research publication, which involves lengthy peer review proesses and journal approval, by enabling "libre" and "open" publication, dissemination, and consumption of research artifacts. `,
     doi: '10.5281/zenodo.10668656',
   },
@@ -312,6 +320,7 @@ On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team 
       ],
       latest: 1,
     },
+    file: 'pdf',
     abstract: `Although ethnic nationalism and democratization contributed greatly to the downfall of
     the Soviet Union, the primary catalyst of Soviet collapse was the Soviet-Afghan War. The
     conflict exacerbated existing ethnic and cultural divides in the hinterlands of the Soviet empire,
@@ -347,6 +356,7 @@ On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team 
       ],
       latest: 1,
     },
+    file: 'pdf',
     abstract: `Densely structured pruning methods utilizing simple pruning heuristics are
     capable of delivering immediate compression and acceleration benefits with
     acceptable benign performances. However, empirical findings indicate such
