@@ -73,13 +73,13 @@ const VersionChooser = ({
         </button>
       </Link>
       <button
-        className='ml-2 h-10 px-2.5 bg-slate-300 rounded-md'
+        className='button-alternate'
         onClick={handleClick}
       >
         Export BibTeX
       </button>
       <select
-        className='ml-2 h-10 px-2.5 bg-slate-300 rounded-md'
+        className='select-default'
         value={`v${selectedRevision}`}
         onChange={(e) => {
           setSelectedRevision(parseInt(e.target.value.replace(/\D/g, ''), 10))
