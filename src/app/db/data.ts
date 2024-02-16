@@ -641,6 +641,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     image: '/img/profiles/achawla.jpg',
     nationality: ['ind', 'usa'],
     website: 'https://www.instagram.com/ayaan_c_07/?hl=en',
+    bio: 'President at Helping Hands club. Business magnate. Visionary.',
   },
   slevel: {
     name: {
