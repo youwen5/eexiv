@@ -6,6 +6,7 @@ import { loadAuthors } from '@/app/db/loaders'
 import { useSuspenseQuery } from '@tanstack/react-query'
 import { epoch2date } from '@/app/utils/epoch2datestring'
 import { toast } from 'react-toastify'
+import generateHash from '@/app/utils/hash'
 
 const VersionChooser = ({
   doc,
@@ -26,7 +27,7 @@ const VersionChooser = ({
 
   const fileEnding = file === 'other' ? '' : `.${file}`
   const [selectedRevision, setSelectedRevision] = useState<number>(latest) // Initialize the selected revision with the latest revision
-  const notifyCopied = () => toast('BibTeX copied to clipboard!')
+  const notifyCopied = (content: string) => toast.success(`${content} copied to clipboard!`)
 
   const handleClick = () => {
     const bibtex = `@article{
@@ -45,7 +46,13 @@ const VersionChooser = ({
   url={${window.location.href}}
 }`
     navigator.clipboard.writeText(bibtex)
-    notifyCopied()
+    notifyCopied('BibTeX')
+  }
+
+  const handleCopy = () => {
+    const id = doc.citation ? doc.citation : generateHash(slug)
+    navigator.clipboard.writeText(`eeXiv:${id}`)
+    notifyCopied('Citation')
   }
 
   return (
@@ -74,6 +81,9 @@ const VersionChooser = ({
       </Link>
       <button className='button-alternate' onClick={handleClick}>
         Export BibTeX
+      </button>
+      <button className='button-alternate' onClick={handleCopy}>
+        Copy citation
       </button>
       <select
         className='select-default'

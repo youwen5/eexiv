@@ -14,6 +14,7 @@ import generateHash from '@/app/utils/hash'
 import { Suspense } from 'react'
 import { loadDocument } from '@/app/db/loaders'
 import { useSuspenseQuery } from '@tanstack/react-query'
+import QRCode from 'qrcode.react'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
@@ -48,15 +49,20 @@ const DocumentViewer = ({ slug }: Readonly<{ slug: string }>) => {
 
   return (
     <div className='max-w-4xl lg:max-w-6xl mx-auto'>
-      <h1
-        className={`
-            text-slate-800 text-5xl mb-4
-            ${zillaSlab.className}
-            text-wrap break-words hyphens-auto
-          `}
-      >
-        {title}
-      </h1>
+      <div>
+        <div className='float-left mr-8 mb-4 mt-4'>
+          <QRCode value={citation ?? `eeXiv:${generateHash(slug)}`} />
+        </div>
+        <h1
+          className={`
+              text-slate-800 text-5xl mb-4
+              ${zillaSlab.className}
+              text-wrap break-words hyphens-auto inline
+            `}
+        >
+          {title}
+        </h1>
+      </div>
       <p className={`text-slate-800 mt-2`}>
         <Authors authors={authors} />
       </p>
