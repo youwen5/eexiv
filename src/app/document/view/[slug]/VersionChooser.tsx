@@ -72,10 +72,7 @@ const VersionChooser = ({
           })()}
         </button>
       </Link>
-      <button
-        className='button-alternate'
-        onClick={handleClick}
-      >
+      <button className='button-alternate' onClick={handleClick}>
         Export BibTeX
       </button>
       <select

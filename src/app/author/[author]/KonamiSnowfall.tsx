@@ -50,7 +50,7 @@ export default function KonamiSnowfall({
       <Konami action={handleKonami} />
       {snowfallActivated && (
         <div>
-          <div className="nationalities-list">
+          <div className='nationalities-list'>
             {nationalityList.map((n: string) => (
               <Fragment key={n}>
                 <NationalityDisplay nationality={n} />
