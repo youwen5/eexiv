@@ -34,8 +34,7 @@ export default function News() {
             className='text-blue-300'
           >
             ISO 26324 DOI registry
-          </a>
-          !
+          </a>!
         </li>
         <li key={3}>
           eeXiv is currently under active development! There may be major
@@ -47,8 +46,7 @@ export default function News() {
             className='text-blue-300'
           >
             our issue tracker
-          </a>
-          .
+          </a>.
         </li>
         <li key={4}>
           Want to upload your documents or just make yourself a profile on
