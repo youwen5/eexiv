@@ -28,9 +28,7 @@ export default function Page({
       <>
         {description.split('[linebreak]').map((d, i) => (
           <>
-            <div className='text-lg sm:text-md font-serif'>
-              {d}
-            </div>
+            <div className='text-lg sm:text-md font-serif'>{d}</div>
             <br className='m-1' />
           </>
         ))}
@@ -62,18 +60,18 @@ export default function Page({
         <Description />
       </div>
       {affiliationDocuments.length > 0 && (
-          <>
-            <hr className='mx-auto w-full h-1 border-0 bg-slate-200 my-2 rounded-md mt-8' />
-            <h1 className='text-3xl md:my-6 my-4 font-serif'>
-              Related documents {`(${affiliationDocuments.length})`}
-            </h1>
-              {affiliationDocuments.map((d) => (
-                <Fragment key={d.slug}>
-                  <DocumentCard doc={d.doc} href={`/document/view/${d.slug}`} />
-                </Fragment>
-              ))}
-          </>
-        )}
+        <>
+          <hr className='mx-auto w-full h-1 border-0 bg-slate-200 my-2 rounded-md mt-8' />
+          <h1 className='text-3xl md:my-6 my-4 font-serif'>
+            Related documents {`(${affiliationDocuments.length})`}
+          </h1>
+          {affiliationDocuments.map((d) => (
+            <Fragment key={d.slug}>
+              <DocumentCard doc={d.doc} href={`/document/view/${d.slug}`} />
+            </Fragment>
+          ))}
+        </>
+      )}
     </div>
   )
 }

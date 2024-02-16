@@ -8,16 +8,17 @@ interface DocumentWithSlug {
   doc: Document
 }
 
-const findDocumentsByAuthor = (
-  authorId: string
-): DocumentWithSlug[] => {
+const findDocumentsByAuthor = (authorId: string): DocumentWithSlug[] => {
   // Filter documents by author
   return Object.entries(documents)
     .filter(([_, doc]) => doc.manifest.authors.includes(authorId))
     .map(([slug, doc]) => ({ slug, doc }))
 }
 
-const checkAffiliation = (affiliationStr: string[], affiliationShort: string) => {
+const checkAffiliation = (
+  affiliationStr: string[],
+  affiliationShort: string
+) => {
   for (const affiliation of affiliationStr) {
     if (affiliation.split('@')[1] === affiliationShort) {
       return true
@@ -33,11 +34,9 @@ export default function findDocumentsByAffiliationSorted(
   const results: DocumentWithSlug[] = []
   for (const [key, value] of Object.entries(authors)) {
     if (
-      checkAffiliation(value.affiliation, affiliationShort)
-      || (
-        value.formerAffiliations
-        && checkAffiliation(value.formerAffiliations, affiliationShort)
-      )
+      checkAffiliation(value.affiliation, affiliationShort) ||
+      (value.formerAffiliations &&
+        checkAffiliation(value.formerAffiliations, affiliationShort))
     ) {
       // Check if document is already in results
       const additions = findDocumentsByAuthor(key)
