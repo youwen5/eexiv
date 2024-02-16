@@ -77,7 +77,7 @@ export default function Page() {
 
   let invalid = false
 
-  if (search.toLowerCase().startsWith('eexiv')) {
+  if (search.toLowerCase().startsWith('eexiv:')) {
     const id = search.slice(6)
 
     if (id.length !== 12) {

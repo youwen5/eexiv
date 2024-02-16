@@ -7,6 +7,7 @@ import { useSuspenseQuery } from '@tanstack/react-query'
 import { epoch2date } from '@/app/utils/epoch2datestring'
 import { toast } from 'react-toastify'
 import generateHash from '@/app/utils/hash'
+import QRCode from 'qrcode.react'
 
 const VersionChooser = ({
   doc,
@@ -51,9 +52,17 @@ const VersionChooser = ({
   }
 
   const handleCopy = () => {
-    const id = doc.citation ? doc.citation : generateHash(slug)
+    const id = doc.citation ? doc.citation.slice(6) : generateHash(slug)
     navigator.clipboard.writeText(`eeXiv:${id}`)
     notifyCopied('Citation')
+    toast.info((
+      <div className='p-4'>
+        <QRCode value={doc.citation ?? `eeXiv:${generateHash(slug)}`} />
+      </div>
+      ), {
+        autoClose: false,
+        closeOnClick: true,
+      })
   }
 
   return (
