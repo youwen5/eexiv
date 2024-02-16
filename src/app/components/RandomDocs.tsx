@@ -35,6 +35,9 @@ const RandomDocs = (): React.ReactNode[] => {
       case 'whitepaper':
         typeString = 'whitepaper'
         break
+      case 'paper':
+        typeString = 'paper'
+        break
       case 'datasheet':
         typeString = 'datasheet'
         break

@@ -69,6 +69,10 @@ option {
   @apply badge-base bg-fuchsia-700 border-fuchsia-700;
 }
 
+.badge-paper {
+  @apply badge-base bg-blue-600 border-blue-600;
+}
+
 .badge-datasheet {
   @apply badge-base bg-amber-600 border-amber-600;
 }

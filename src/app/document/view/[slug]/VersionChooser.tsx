@@ -34,7 +34,7 @@ const VersionChooser = ({
     .map((a: string, i) => {
       const author = data[a].name.first + ' ' + data[a].name.last
       if (i === 0) return author
-      else if (i === authors.length - 1) return ` and ${author}`
+      else if (i === authors.length - 1) return `, and ${author}`
       else return `, ${author}`
     })
     .join('')}},
