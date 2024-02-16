@@ -55,14 +55,15 @@ const VersionChooser = ({
     const id = doc.citation ? doc.citation.slice(6) : generateHash(slug)
     navigator.clipboard.writeText(`eeXiv:${id}`)
     notifyCopied('Citation')
-    toast.info((
+    toast.info(
       <div className='p-4'>
         <QRCode value={doc.citation ?? `eeXiv:${generateHash(slug)}`} />
-      </div>
-      ), {
+      </div>,
+      {
         autoClose: false,
         closeOnClick: true,
-      })
+      }
+    )
   }
 
   return (
