@@ -84,7 +84,7 @@ const VersionChooser = ({
       >
         {Array.from({ length: latest }, (_, index) => index + 1).map(
           (version) => (
-            <option key={version} value={`v${version}`} className='p-2.5'>
+            <option key={version} value={`v${version}`}>
               {version == latest ? 'Latest' : `v${version}`}
             </option>
           )

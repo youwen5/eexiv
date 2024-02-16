@@ -10,7 +10,6 @@ import {
 } from '@/app/components/DataDisplay'
 import { ItemBadge, Status } from '@/app/components/Badges'
 import VersionChooser from './VersionChooser'
-import crypto from 'crypto'
 import generateHash from '@/app/utils/hash'
 import { Suspense } from 'react'
 import { loadDocument } from '@/app/db/loaders'
