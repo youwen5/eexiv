@@ -9,7 +9,7 @@ import MobileMenu from './components/MobileMenu'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Providers from './providers'
-import Image from "next/legacy/image"
+import Image from 'next/legacy/image'
 
 /* The default font is Inter. If you want to use Zilla Slab (or any other Google Font, 
   which are pre-provided by Next.js in the 'next/font/google' module), you need to 

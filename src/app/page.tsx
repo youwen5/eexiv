@@ -1,5 +1,11 @@
 import Link from 'next/link'
-import { documents, authors, affiliations, Author, Affiliation } from './db/data'
+import {
+  documents,
+  authors,
+  affiliations,
+  Author,
+  Affiliation,
+} from './db/data'
 import News from './components/News'
 import RandomDocs from './components/RandomDocs'
 import RecentDocuments from './components/RecentDocuments'
@@ -42,24 +48,26 @@ interface AuthorDisplayProps {
 const AuthorDisplay = ({ authors, affiliations }: AuthorDisplayProps) => {
   return (
     <ol className='list-decimal pl-4 space-y-2'>
-      {sortAuthorsByDocumentsPublished(authors).slice(0, 10).map(({ id, author }) => {
-        let data = author
-        let affiliationSlug = data.affiliation[0].split('@')[1]
-        let affiliation = affiliations[affiliationSlug]
-        return (
-          <li key={id}>
-            <Link href={`/author/${id}`}>
-              {data.name.first}
-              {data.name.nickname ? ` "${data.name.nickname}" ` : ' '}
-              {data.name.last}
-            </Link>{' '}
-            of{' '}
-            <Link href={`/affiliation/${affiliationSlug}`}>
-              {affiliation.short}
-            </Link>
-          </li>
-        )
-      })}
+      {sortAuthorsByDocumentsPublished(authors)
+        .slice(0, 10)
+        .map(({ id, author }) => {
+          let data = author
+          let affiliationSlug = data.affiliation[0].split('@')[1]
+          let affiliation = affiliations[affiliationSlug]
+          return (
+            <li key={id}>
+              <Link href={`/author/${id}`}>
+                {data.name.first}
+                {data.name.nickname ? ` "${data.name.nickname}" ` : ' '}
+                {data.name.last}
+              </Link>{' '}
+              of{' '}
+              <Link href={`/affiliation/${affiliationSlug}`}>
+                {affiliation.short}
+              </Link>
+            </li>
+          )
+        })}
     </ol>
   )
 }

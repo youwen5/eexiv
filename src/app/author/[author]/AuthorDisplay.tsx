@@ -11,9 +11,7 @@ import Image from 'next/image'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
-const MainAuthorPosition = ({
-  author
-}: { author: Author }) => {
+const MainAuthorPosition = ({ author }: { author: Author }) => {
   const { name, affiliation, website } = author
 
   const mainAffiliationShort = affiliation[0].split('@')[1]
@@ -55,17 +53,13 @@ const MainAuthorPosition = ({
   )
 }
 
-const OtherAuthorPositions = ({
-  author
-}: { author: Author }) => {
+const OtherAuthorPositions = ({ author }: { author: Author }) => {
   const { affiliation } = author
 
   if (affiliation.length === 1) return
   return (
     <>
-      <h1 className='text-3xl md:mt-6 mt-4 mb-2 font-serif'>
-        Other Positions
-      </h1>
+      <h1 className='text-3xl md:mt-6 mt-4 mb-2 font-serif'>Other Positions</h1>
       {affiliation.slice(1).map((a: string, i: number) => {
         const position = a.split('@')[0]
         const affiliation = affiliations[a.split('@')[1]].name
@@ -84,9 +78,7 @@ const OtherAuthorPositions = ({
   )
 }
 
-const FormerAuthorPositions = ({
-  author
-}: { author: Author }) => {
+const FormerAuthorPositions = ({ author }: { author: Author }) => {
   const { formerAffiliations } = author
 
   if (!formerAffiliations) return null
@@ -114,9 +106,7 @@ const FormerAuthorPositions = ({
   )
 }
 
-const AuthorBio = ({
-  author
-}: { author: Author }) => {
+const AuthorBio = ({ author }: { author: Author }) => {
   const { bio } = author
   if (!bio) return null
 

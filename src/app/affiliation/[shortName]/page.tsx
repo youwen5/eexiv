@@ -13,9 +13,7 @@ export function generateStaticParams() {
   return affiliationsList.map((shortName) => ({ shortName }))
 }
 
-const Description = ({
-  description
-}: Readonly<{ description: string }>) => {
+const Description = ({ description }: Readonly<{ description: string }>) => {
   return (
     <>
       {description.split('[linebreak]').map((d, i) => (

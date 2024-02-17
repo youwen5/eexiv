@@ -112,7 +112,7 @@ const VersionChooser = ({
         )}
       </select>
     </div>
-  );
+  )
 }
 
 export default VersionChooser
