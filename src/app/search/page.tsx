@@ -32,7 +32,7 @@ const SearchResult = ({
   this click handling logic simply checks to see if the element clicked is a nested link
   and fires a redirect if not, to avoid overriding links in the children
   */
-  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     let target = event.target as HTMLElement
     while (target != null) {
       if (target.nodeName === 'A') {
@@ -44,10 +44,10 @@ const SearchResult = ({
   }
 
   return (
-    <div
-      className={`${cardEffects['card-large']} border-4 rounded-lg border-gray-300 hover:border-blue-500 p-5 my-4 w-full cursor-pointer`}
+    <button
+      className={`${cardEffects['card-large']} border-4 rounded-lg border-gray-300 hover:border-blue-500 p-5 my-4 w-full cursor-pointer text-left`}
       onClick={handleClick}
-      role='button' // this is a critical DEI concern as we have marked this element as a button with ARIA role, yet we have not supported button accessiblity features
+      type='button'
     >
       <h2 className={`${zillaSlab.className} text-3xl`}>{title}</h2>
       <p className='text-slate-500 py-2 text-md mt-2'>
@@ -66,7 +66,7 @@ const SearchResult = ({
       <p className='py-2 text-md text-slate-700 font-serif text-lg text-balance'>
         {abstract.substring(0, 500) + (abstract.length > 500 ? '...' : '')}
       </p>
-    </div>
+    </button>
   )
 }
 

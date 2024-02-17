@@ -1,3 +1,4 @@
+// Youwen brainrot
 export default function string2hex(str: string): string {
   // Hash function to convert string to a number
   let hash = 0

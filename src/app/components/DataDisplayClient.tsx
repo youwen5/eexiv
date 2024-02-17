@@ -1,4 +1,4 @@
-// these variants of the data display compnents are designed for client side components
+// these variants of the data display components are designed for client side components
 // and fetch data asynchronously
 import { loadAllTopics, loadAllAuthors } from '@/app/db/loaders'
 import { useSuspenseQuery } from '@tanstack/react-query'

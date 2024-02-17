@@ -23,7 +23,7 @@ const checkIsStringArray = (data: unknown): data is string[] => {
 
 onmessage = (e) => {
   let authorIds: string[] = []
-  checkIsStringArray(e.data) && (authorIds = e.data as string[])
+  checkIsStringArray(e.data) && (authorIds = e.data)
   let results = getAuthorsById(authorIds)
 
   postMessage(results)

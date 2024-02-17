@@ -366,7 +366,7 @@ On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team 
         'cifar 10',
         'distance based cost',
         'computer vision foundation',
-        'study of cost smoothnes',
+        'study of cost smoothness',
         'adversarial attacks',
       ],
       latest: 1,
@@ -416,7 +416,7 @@ export const topics: Readonly<{ [key: string]: Topic }> = {
   eecs: {
     name: 'Electrical Engineering and Computer Science',
     description:
-      'Electrical engineering and computer science are fields that combine engineering, science, and computing. The acronym EECS is derived from ther world-renowned electrical engineering and computer science program at the University of California, Berkeley.',
+      'Electrical engineering and computer science are fields that combine engineering, science, and computing. The acronym EECS is derived from their world-renowned electrical engineering and computer science program at the University of California, Berkeley.',
     wiki: 'https://en.wikipedia.org/wiki/Computer_science_and_engineering',
   },
   ai: {
@@ -453,7 +453,7 @@ authorName (as a slug): {
 
   image: image url, can store in public/eexiv/img/profiles or link to a web resource
 
-  nationality: an array of ISO 3 letter country codes corresponding to your nationalities or ethniciities
+  nationality: an array of ISO 3 letter country codes corresponding to your nationalities
 
   formerAffiliations: an array of former affiliation "slugs." they should also correspond to affiliations 
   in the affiliations data
@@ -543,7 +543,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     },
     affiliation: ['Vision Researcher@1280-eecs', 'Student@srvhs'],
     image: '/img/profiles/gostler.jpg',
-    nationality: ['usa'],
+    nationality: ['fra', 'usa'],
     website: 'https://github.com/gavinostler',
     bio: `I'm Gavin, a high school student from the Bay Area. I am a fullstack developer and love making random things to fill my day. I'm interested in creating useful tools and software in the future.`,
   },
@@ -884,7 +884,7 @@ Raid Zero's influence extends beyond the technical achievements in robotics comp
     name: `Team 1280, the Ragin' C-Biscuits`,
     short: 'Team 1280',
     image: '/img/logos/1280-main.png',
-    description: `We are the San Ramon Valley High School Robotics Team (FRC Team 1280) and we have been competing in the FIRST Robotics Challenge for 16 years. With just 6 weeks to design, build, program, and fundraise for a robot, FRC teaches us teamwork, business, engineering, machinery, and computer design. We are a team of over 50 students with 1 full time mentor, 2 part time mentors, and 1 staff liason.
+    description: `We are the San Ramon Valley High School Robotics Team (FRC Team 1280) and we have been competing in the FIRST Robotics Challenge for 16 years. With just 6 weeks to design, build, program, and fundraise for a robot, FRC teaches us teamwork, business, engineering, machinery, and computer design. We are a team of over 50 students with 1 full time mentor, 2 part time mentors, and 1 staff liaison.
       [linebreak]
       Throughout our FRC career, we have won several regional events and numerous awards including: the Rookie Inspiration Award, both the Radio Shack and Rockwell Automation Innovation in Control Awards, the Imagery Award, the Engineering Excellence Award, and the Creativity Award. While we do focus on the competitive aspect of robotics, we also strive to spread the knowledge of STEM through our outreach programs to those who might not otherwise have access to these opportunities.
       [linebreak]

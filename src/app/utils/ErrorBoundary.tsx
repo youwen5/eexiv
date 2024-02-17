@@ -1,18 +1,30 @@
 import React from 'react'
 import { notFound } from 'next/navigation'
 
-export default class ErrorBoundary extends React.Component {
-  constructor(props) {
+interface ErrorBoundaryProps {
+  children: React.ReactNode
+}
+
+interface ErrorBoundaryState {
+  hasError: boolean
+  error: Error | null
+}
+
+export default class ErrorBoundary extends React.Component<
+  ErrorBoundaryProps,
+  ErrorBoundaryState
+> {
+  constructor(props: ErrorBoundaryProps) {
     super(props)
     this.state = { hasError: false, error: null }
   }
 
-  static getDerivedStateFromError(error) {
+  static getDerivedStateFromError(error: Error): ErrorBoundaryState {
     // Update state so the next render will show the fallback UI.
     return { hasError: true, error }
   }
 
-  componentDidCatch(error, errorInfo) {
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo): void {
     // You can also log the error to an error reporting service
     console.error('Error caught by Error Boundary:', error, errorInfo)
   }
@@ -20,7 +32,7 @@ export default class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       // You can render any custom fallback UI
-      if (this.state.error.message === '404') notFound()
+      if (this.state.error?.message === '404') notFound()
       return <h1>Something went wrong.</h1>
     }
 

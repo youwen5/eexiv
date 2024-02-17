@@ -9,6 +9,7 @@ import MobileMenu from './components/MobileMenu'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Providers from './providers'
+import Image from "next/legacy/image"
 
 /* The default font is Inter. If you want to use Zilla Slab (or any other Google Font, 
   which are pre-provided by Next.js in the 'next/font/google' module), you need to 
@@ -37,8 +38,11 @@ export default function RootLayout({
           <div className={styles.header}>
             <div className='max-w-[1200px] flex flex-nowrap mx-auto justify-between items-center'>
               <Link href='/affiliation/1280-eecs'>
-                <img
-                  className='h-[100px] mt-4'
+                <Image
+                  className='mt-4'
+                  layout='intrinsic'
+                  width={244}
+                  height={100}
                   src='/img/logos/eecs-wordmark.png'
                   alt='EECS'
                 />
@@ -52,7 +56,7 @@ export default function RootLayout({
                 >
                   open-source contributors
                 </a>
-                .
+                {'.'}
               </p>
             </div>
           </div>

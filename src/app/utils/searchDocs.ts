@@ -30,12 +30,7 @@ export default function searchDocs(
 
       worker.postMessage(query)
     } else {
-      reject(
-        new Error(
-          `Web Workers are not supported in this environment. Please avoid using a prehistoric browser. 
-          If nothing else seems wrong, this error message is probably showing up due to ghosts in your browser.`
-        )
-      )
+      return
     }
   })
 }

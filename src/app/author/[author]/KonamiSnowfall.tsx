@@ -1,9 +1,28 @@
 'use client'
 import Konami from 'react-konami-code'
 import { Snowfall } from 'react-snowfall'
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { nationalities } from '@/app/db/data'
-import { Fragment } from 'react'
+import NextImage from 'next/image'
+
+const NationalityDisplay = ({
+  nationality,
+}: Readonly<{ nationality: string }>) => {
+  const nationalityData = nationalities[nationality]
+  const { demonym, flag } = nationalityData
+  return (
+    <div className='flex items-center'>
+      <NextImage
+        src={flag}
+        width={100}
+        height={100}
+        className='w-10 shadow-md shadow-slate-300'
+        alt={`${demonym} flag`}
+      />
+      <span className='mx-3 font-semibold'>{demonym}</span>
+    </div>
+  )
+}
 
 export default function KonamiSnowfall({
   nationalityList,
@@ -27,23 +46,6 @@ export default function KonamiSnowfall({
     })
     setImages(imagesTemp)
   }, [nationalityList])
-
-  const NationalityDisplay = ({
-    nationality,
-  }: Readonly<{ nationality: string }>) => {
-    const nationalityData = nationalities[nationality]
-    const { demonym, flag } = nationalityData
-    return (
-      <div className='flex items-center'>
-        <img
-          src={flag}
-          className='w-10 shadow-md shadow-slate-300'
-          alt={`${demonym} flag`}
-        />
-        <span className='mx-3 font-semibold'>{demonym}</span>
-      </div>
-    )
-  }
 
   return (
     <>

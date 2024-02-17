@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { documents, authors, affiliations, Author } from './db/data'
+import { documents, authors, affiliations, Author, Affiliation } from './db/data'
 import News from './components/News'
 import RandomDocs from './components/RandomDocs'
 import RecentDocuments from './components/RecentDocuments'
@@ -35,37 +35,36 @@ function sortAuthorsByDocumentsPublished(authors: {
   return authorsWithId.map(({ id, author }) => ({ id, author }))
 }
 
+interface AuthorDisplayProps {
+  authors: { [key: string]: Author }
+  affiliations: { [key: string]: Affiliation }
+}
+const AuthorDisplay = ({ authors, affiliations }: AuthorDisplayProps) => {
+  return (
+    <ol className='list-decimal pl-4 space-y-2'>
+      {sortAuthorsByDocumentsPublished(authors).slice(0, 10).map(({ id, author }) => {
+        let data = author
+        let affiliationSlug = data.affiliation[0].split('@')[1]
+        let affiliation = affiliations[affiliationSlug]
+        return (
+          <li key={id}>
+            <Link href={`/author/${id}`}>
+              {data.name.first}
+              {data.name.nickname ? ` "${data.name.nickname}" ` : ' '}
+              {data.name.last}
+            </Link>{' '}
+            of{' '}
+            <Link href={`/affiliation/${affiliationSlug}`}>
+              {affiliation.short}
+            </Link>
+          </li>
+        )
+      })}
+    </ol>
+  )
+}
+
 export default function Home() {
-  const AuthorDisplay = () => {
-    let i = 0
-    return (
-      <ol className='list-decimal pl-4 space-y-2'>
-        {sortAuthorsByDocumentsPublished(authors).map(({ id, author }) => {
-          let data = author
-
-          let affiliationSlug = data.affiliation[0].split('@')[1]
-          let affiliation = affiliations[affiliationSlug]
-          i++
-
-          if (i > 10) return
-          return (
-            <li key={id}>
-              <Link href={`/author/${id}`}>
-                {data.name.first}
-                {data.name.nickname ? ` "${data.name.nickname}" ` : ' '}
-                {data.name.last}
-              </Link>{' '}
-              of{' '}
-              <Link href={`/affiliation/${affiliationSlug}`}>
-                {affiliation.short}
-              </Link>
-            </li>
-          )
-        })}
-      </ol>
-    )
-  }
-
   return (
     <div className='text-slate-800 flex flex-wrap md:flex-row justify-center'>
       <p className='font-serif text-lg basis-full md:basis-1/2 grow mr-1 text-balance'>
@@ -101,7 +100,7 @@ export default function Home() {
         <div className='font-serif text-xl'>
           Our esteemed faculty and alumni (ranked by research output)
         </div>
-        <AuthorDisplay />
+        <AuthorDisplay authors={authors} affiliations={affiliations} />
       </div>
     </div>
   )

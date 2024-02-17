@@ -1,4 +1,3 @@
-import styles from './container.module.css'
 /**
  * Renders a container component with the specified width, containing the provided children.
  *
@@ -9,7 +8,7 @@ export default function Container({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <div className={`${styles.container} pb-10 px-5 max-w-[1200px] mx-auto`}>
+    <div className={`pb-10 px-5 max-w-[1200px] mx-auto`}>
       {children}
     </div>
   )
