@@ -4,12 +4,26 @@ import { Zilla_Slab } from 'next/font/google'
 import findDocumentsByAffiliation from './findDocumentsByAffiliation'
 import { Fragment } from 'react'
 import DocumentCard from '@/app/components/DocumentCard'
+import Image from 'next/image'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
 export function generateStaticParams() {
   const affiliationsList = Object.keys(affiliations)
   return affiliationsList.map((shortName) => ({ shortName }))
+}
+
+const Description = ({ description }: Readonly<{ description: string }>) => {
+  return (
+    <>
+      {description.split('[linebreak]').map((d, i) => (
+        <>
+          <div className='text-lg sm:text-md font-serif'>{d}</div>
+          <br className='m-1' />
+        </>
+      ))}
+    </>
+  )
 }
 
 export default function Page({
@@ -23,25 +37,14 @@ export default function Page({
 
   const affiliationDocuments = findDocumentsByAffiliation(shortName)
 
-  const Description = () => {
-    return (
-      <>
-        {description.split('[linebreak]').map((d, i) => (
-          <>
-            <div className='text-lg sm:text-md font-serif'>{d}</div>
-            <br className='m-1' />
-          </>
-        ))}
-      </>
-    )
-  }
-
   return (
     <div>
       <div className='grid grid-cols-1 max-w-3xl mx-auto'>
         <div className='mx-auto mb-4 max-w-3xl md:w-auto md:h-[40vw] lg:h-[20vw] rounded-lg shadow-lg shadow-slate-400'>
-          <img
+          <Image
             alt='profile'
+            width={1000}
+            height={1000}
             className='rounded-lg mx-auto p-8 object-cover w-full h-full'
             src={image}
           />
@@ -57,7 +60,7 @@ export default function Page({
       <div className='max-w-3xl mx-auto grid grid-cols-1'>
         <hr className='mx-auto w-full h-1 border-0 bg-slate-200 my-2 rounded-md' />
         <br />
-        <Description />
+        <Description description={description} />
       </div>
       {affiliationDocuments.length > 0 && (
         <>

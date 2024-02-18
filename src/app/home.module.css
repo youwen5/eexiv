@@ -1,4 +1,4 @@
-/* stylesheet for the eexiv UI and the base layout (search, logo, header, footer) */
+/* stylesheet for the eeXiv UI and the base layout (search, logo, header, footer) */
 
 .header {
   width: 100%;
@@ -35,7 +35,6 @@
 
 .footerContent {
   width: 100%;
-  height: 150px;
   padding: 10px;
   background-color: #c4840c;
   color: white;

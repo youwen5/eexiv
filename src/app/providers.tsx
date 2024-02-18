@@ -1,10 +1,14 @@
 'use client'
 
-import { useState } from 'react'
+import { useMemo } from 'react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
-export default function Providers({ children }) {
-  const [queryClient] = useState(
+type ProvidersProps = {
+  children: React.ReactNode
+}
+
+export default function Providers({ children }: Readonly<ProvidersProps>) {
+  const queryClient = useMemo(
     () =>
       new QueryClient({
         defaultOptions: {
@@ -12,7 +16,8 @@ export default function Providers({ children }) {
             staleTime: 60 * 1000,
           },
         },
-      })
+      }),
+    []
   )
   return (
     <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>

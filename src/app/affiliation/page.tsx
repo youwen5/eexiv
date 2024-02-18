@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { Zilla_Slab } from 'next/font/google'
 import getAffiliations from './getAffiliations'
 import { Fragment } from 'react'
+import Image from 'next/image'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
@@ -24,8 +25,10 @@ const AffiliationCard = ({
     <div className='m-4'>
       <div className='grid grid-cols-1 max-w-3xl mx-auto'>
         <div className='mx-auto mb-4 max-w-3xl md:w-auto md:h-[40vw] lg:h-[20vw] rounded-lg shadow-lg shadow-slate-400'>
-          <img
+          <Image
             alt='profile'
+            width={1000}
+            height={1000}
             className='rounded-lg mx-auto p-8 object-cover w-full h-full'
             src={image}
           />

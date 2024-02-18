@@ -55,7 +55,7 @@ export default function MobileMenu() {
           >
             open-source contributors
           </a>
-          .
+          {'.'}
         </p>
       </div>
     </>

@@ -93,32 +93,33 @@ export const Authors = ({
   )
 }
 
+const ReviewerDisplay = ({ r }: Readonly<{ r: reviewer }>) => {
+  if (r.profile) {
+    return (
+      <Link href={`/author/${r.profile}`} target='_blank'>
+        {r.first} {r.last}
+      </Link>
+    )
+  }
+  if (r.url) {
+    return (
+      <a href={r.url} target='_blank'>
+        {r.first} {r.last}
+      </a>
+    )
+  }
+  return (
+    <span>
+      {r.first} {r.last}
+    </span>
+  )
+}
+
 export const Reviewers = ({
   reviewers,
   showTitle = true,
 }: Readonly<{ reviewers: reviewer[] | undefined; showTitle?: boolean }>) => {
   if (!reviewers) return null
-  const ReviewerDisplay = ({ r }: Readonly<{ r: reviewer }>) => {
-    if (r.profile) {
-      return (
-        <Link href={`/author/${r.profile}`} target='_blank'>
-          {r.first} {r.last}
-        </Link>
-      )
-    }
-    if (r.url) {
-      return (
-        <a href={r.url} target='_blank'>
-          {r.first} {r.last}
-        </a>
-      )
-    }
-    return (
-      <span>
-        {r.first} {r.last}
-      </span>
-    )
-  }
 
   return (
     <>
