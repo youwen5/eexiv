@@ -1,10 +1,10 @@
-import { authors, affiliations } from '@/app/db/data'
-import { notFound } from 'next/navigation'
+import { affiliations, authors } from '@/app/db/data'
+import cardEffects from '@/app/styles/cardEffects.module.css'
 import { Zilla_Slab } from 'next/font/google'
-import { Fragment } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import cardEffects from '@/app/styles/cardEffects.module.css'
+import { notFound } from 'next/navigation'
+import { Fragment } from 'react'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
