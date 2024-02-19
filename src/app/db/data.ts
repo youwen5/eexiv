@@ -436,13 +436,13 @@ export const topics: Readonly<{ [key: string]: Topic }> = {
   econ: {
     name: 'Economics',
     description:
-      'Economics is the study of the production, distribution, consumption, and trade of goods and services.',
+      'Economics is the study of the production, distribution, consumption, and trade of goods and services. Economics is classified as a social science, but it is inherently related to mathematical and political disciplines as well.',
     wiki: 'https://en.wikipedia.org/wiki/Economics',
   },
   polisci: {
     name: 'Political Science',
     description:
-      'Political science is the study of the politics of human life.',
+      'Political science is the study of politics. It is a broad field, encompassing all aspects of government, politics, and international relations.',
     wiki: 'https://en.wikipedia.org/wiki/Political_science',
   },
 }
@@ -494,6 +494,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     formerAffiliations: ['Lead Mechanical Engineer@1280-mech', 'Student@srvhs'],
     image: '/img/profiles/shasan.jpg',
     nationality: ['pak', 'usa'],
+    website: 'https://www.linkedin.com/in/saimhasan/'
   },
   mbohsali: {
     name: {
@@ -501,7 +502,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
       last: 'Bohsali',
     },
     affiliation: ['Lead Programming Engineer@1280-eecs', 'Student@srvhs'],
-    image: '/img/profiles/default.png',
+    image: '/img/profiles/mbohsali.jpg',
     nationality: ['lbn', 'usa'],
   },
   avenkatesh: {
@@ -562,7 +563,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     },
     affiliation: [
       'Undergraduate in Mechanical Engineering@cal-poly-slo',
-      'Member@cal-poly-space-systems',
+      'Member@cpss',
       'Mentor@team-1280',
     ],
     formerAffiliations: ['Captain@team-1280', 'Student@srvhs'],
@@ -586,7 +587,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     },
     affiliation: ['Captain@team-1280', 'Student@srvhs'],
     nationality: ['usa'],
-    image: '/img/profiles/default.png',
+    image: '/img/profiles/mfletcher.jpg',
   },
   vkorneev: {
     name: {
@@ -594,19 +595,22 @@ export const authors: Readonly<{ [key: string]: Author }> = {
       last: 'Korneev',
       nickname: 'Vlad',
     },
-    affiliation: ['Undergraduate@gonzaga-university'],
+    affiliation: ['Undergraduate@gu'],
     formerAffiliations: ['Business Lead@1280-business'],
     nationality: ['rus'],
     image: '/img/profiles/vkorneev.jpg',
+    website: 'https://www.linkedin.com/in/vladislav-korneev-0573a71b1/',
+    bio: `Highly suspect. Responsible for our close relationship with the international military-industrial complex. Tactical genius. Geopolitical strategist. Business tycoon.`
   },
   nluo: {
     name: {
       first: 'Nicholas',
       last: 'Luo',
     },
-    affiliation: ['Principal Software Engineer@1280-eecs', 'Student@srvhs'],
+    affiliation: ['Software Engineer@1280-eecs', 'Student@srvhs'],
     nationality: ['chn', 'usa'],
     image: '/img/profiles/nluo.png',
+    website: 'https://github.com/Nluo923'
   },
   jchan: {
     name: {
@@ -619,8 +623,9 @@ export const authors: Readonly<{ [key: string]: Author }> = {
       'Student@srvhs',
     ],
     nationality: ['jpn', 'chn', 'usa'],
-    image: '/img/profiles/default.png',
+    image: '/img/profiles/jchan.jpg',
     website: 'https://futureinspireacademy.com',
+    bio: 'Programming is great... Three years Unity game development C#, Html, Css, Js, Java, Go, C++, Python, Dart, Json, Xml, Binary'
   },
   cbordalo: {
     name: {
@@ -629,8 +634,8 @@ export const authors: Readonly<{ [key: string]: Author }> = {
       nickname: 'CB12',
     },
     affiliation: ['Wage Slave@primos', 'Student@srvhs'],
-    image: '/img/profiles/cbordalo.jpg',
     nationality: ['phl', 'usa'],
+    image: '/img/profiles/cbordalo.jpg',
   },
   bgraham: {
     name: {
@@ -639,8 +644,9 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     },
     affiliation: ['Student@srvhs'],
     image: '/img/profiles/bgraham.jpg',
-    bio: 'Unrelated to Ben Garrison. Maintains a Signal profile. Most likely to become President of the United States.',
     nationality: ['usa'],
+    website: 'https://www.linkedin.com/in/benjamin-graham-967a1b26b',
+    bio: 'Unrelated to Ben Garrison. Maintains a Signal profile. Most likely to become President of the United States.',
   },
   achawla: {
     name: {
@@ -652,7 +658,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     image: '/img/profiles/achawla.jpg',
     nationality: ['ind', 'usa'],
     website: 'https://www.instagram.com/ayaan_c_07/?hl=en',
-    bio: 'President at Helping Hands club. Business magnate. Visionary.',
+    bio: 'President of the Helping Hands Club. EC farmer. Business magnate. Visionary.',
   },
   slevel: {
     name: {
@@ -665,8 +671,9 @@ export const authors: Readonly<{ [key: string]: Author }> = {
       'Programming lead @1280-programming',
     ],
     image: '/img/profiles/slevel.jpg',
-    bio: 'Actively engaged in the international arms trade; part-time defense contractor and part-time UCSB student working to secure greater rights for defense corporations.',
     nationality: ['usa'],
+    website: 'https://www.linkedin.com/in/spencer-level/',
+    bio: 'Actively engaged in the international arms trade; part-time defense contractor and part-time UCSB student working to secure greater rights for defense corporations.',
   },
   zleclaire: {
     name: {
@@ -676,6 +683,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     affiliation: ['Undergraduate @cwru'],
     formerAffiliations: ['Programming lead @1280-programming'],
     image: '/img/profiles/zleclaire.jpg',
+    website: 'https://www.linkedin.com/in/zachary-leclaire-18b69b162/',
     bio: 'Team programming legend; Zach is to Team 1280 programming what Ben is to electrical.',
     nationality: ['fra', 'usa'],
   },
@@ -689,6 +697,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     formerAffiliations: ['Undergraduate @cwru'],
     image: '/img/profiles/szhong.jpg',
     nationality: ['usa', 'unknown'],
+    website: 'https://www.linkedin.com/in/shaochen-henry-zhong-96a941249/',
   },
   zyou: {
     name: {
@@ -699,6 +708,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     formerAffiliations: ['Undergraduate @cwru'],
     image: '/img/profiles/zyou.jpg',
     nationality: ['chn', 'usa'],
+    website: 'https://www.linkedin.com/in/zaichuanyou/'
   },
   jzhang: {
     name: {
@@ -708,6 +718,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     affiliation: ['Undergraduate @cwru'],
     image: '/img/profiles/jzhang.jpg',
     nationality: ['chn', 'usa'],
+    website: 'https://www.linkedin.com/in/jiamu-zhang-morris/'
   },
   szhao: {
     name: {
@@ -721,6 +732,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     ],
     image: '/img/profiles/szhao.jpg',
     nationality: ['usa', 'unknown'],
+    website: 'https://www.linkedin.com/in/sebbyzhao/'
   },
   zliu: {
     name: {
@@ -730,6 +742,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     affiliation: ['PhD student @rice'],
     image: '/img/profiles/zliu.jpg',
     nationality: ['chn', 'usa'],
+    website: 'https://scholar.google.com/citations?user=0i1w_egAAAAJ&hl=zh-CN'
   },
   dzha: {
     name: {
@@ -740,6 +753,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     formerAffiliations: ['PhD student @rice'],
     image: '/img/profiles/dzha.jpg',
     nationality: ['chn', 'usa'],
+    website: 'https://www.linkedin.com/in/daochen-zha/'
   },
   vchaudhary: {
     name: {
@@ -753,6 +767,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     ],
     image: '/img/profiles/vchaudhary.jpg',
     nationality: ['ind', 'usa'],
+    website: 'https://engineering.case.edu/about/school-directory/vipin-chaudhary'
   },
   sxu: {
     name: {
@@ -762,16 +777,29 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     affiliation: ['Assistant Professor @cwru'],
     image: '/img/profiles/sxu.jpg',
     nationality: ['chn', 'usa'],
+    website: 'https://engineering.case.edu/about/school-directory/shuai-xu'
   },
   xhu: {
     name: {
       first: 'Xia',
       last: 'Hu',
+      nickname: 'Ben'
     },
-    affiliation: ['Associate Professor of CS @rice'],
+    affiliation: ['Associate Professor of CS@rice'],
     image: '/img/profiles/xhu.jpg',
     nationality: ['sgp', 'usa'],
+    website: 'https://cs.rice.edu/~xh37/index.html'
   },
+  rgawde: {
+    name: {
+      first: 'Rohan',
+      last: 'Gawde',
+    },
+    affiliation: ['CAD Lead@1280-mech'],
+    image: '/img/profiles/rgawde.jpg',
+    nationality: ['ind', 'usa'],
+    bio: `I am Rohan, a Mechanical Engineering student from India. I am passionate about designing and developing robots. I love to learn new things. I am currently a CAD Lead at Team 1280.`,
+  }
 }
 
 export interface Affiliation {
@@ -898,13 +926,13 @@ Raid Zero's influence extends beyond the technical achievements in robotics comp
       [linebreak]
       We have impacted over 21,000 K-12 students alone through our assemblies and workshops.`,
   },
-  'cal-poly-space-systems': {
-    name: `Cal Poly Space Systems`,
+  cpss: {
+    name: `California Polytechnic University, San Luis Obispo, Space Systems`,
     short: 'CPSS',
     image: '/img/logos/cal-poly-space-systems.jpg',
     description: `Cal Poly Space Systems (CPSS) is a dynamic club originally conceived as an Aerospace Engineering club, CPSS now welcomes students and volunteers from all majors, colleges and backgrounds. As our projects grow more complex and sophisticated, we continue to expand our pool of resources in order to design, build, launch and test to our limits. CPSS embraces Cal Poly’s “Learn by Doing” philosophy, and offers hands-on training in all areas of rocketry design including propulsion, structures, controls, and electronics. Members become familiar with how rockets work, how to build them, and use that knowledge to create more advanced club projects. `,
   },
-  'gonzaga-university': {
+  gu: {
     name: 'Gonzaga University',
     short: 'GU',
     image: '/img/logos/gonzaga-university.jpg',
