@@ -8,11 +8,6 @@ import cardEffects from '@/app/styles/cardEffects.module.css'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
-export function generateStaticParams() {
-  const authorsList = Object.keys(authors)
-  return authorsList.map((shortName) => ({ shortName }))
-}
-
 const AuthorCard = ({
   params,
 }: Readonly<{ params: { shortName: string } }>) => {
