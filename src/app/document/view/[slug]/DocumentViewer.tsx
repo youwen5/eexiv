@@ -1,19 +1,19 @@
 'use client'
-import { Zilla_Slab } from 'next/font/google'
-import { epoch2datestring } from '@/app/utils/epoch2datestring'
+import { ItemBadge, Status } from '@/app/components/Badges'
 import {
+  Authors,
   Code,
   References,
-  Topics,
-  Authors,
   Reviewers,
+  Topics,
 } from '@/app/components/DataDisplay'
-import { ItemBadge, Status } from '@/app/components/Badges'
-import VersionChooser from './VersionChooser'
-import generateHash from '@/app/utils/hash'
-import { Suspense } from 'react'
 import { loadDocument } from '@/app/db/loaders'
+import { epoch2datestring } from '@/app/utils/epoch2datestring'
+import generateHash from '@/app/utils/hash'
 import { useSuspenseQuery } from '@tanstack/react-query'
+import { Zilla_Slab } from 'next/font/google'
+import { Suspense } from 'react'
+import VersionChooser from './VersionChooser'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 

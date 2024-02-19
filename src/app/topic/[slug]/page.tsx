@@ -1,7 +1,7 @@
-import { Zilla_Slab } from 'next/font/google'
 import { topics } from '@/app/db/data'
-import { notFound } from 'next/navigation'
 import string2hex from '@/app/utils/string2hex'
+import { Zilla_Slab } from 'next/font/google'
+import { notFound } from 'next/navigation'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 

@@ -1,13 +1,13 @@
+import DocumentCard from '@/app/components/DocumentCard'
+import cardEffects from '@/app/styles/cardEffects.module.css'
+import { Zilla_Slab } from 'next/font/google'
+import Image from 'next/image'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import { Fragment, Suspense } from 'react'
 import { Author, affiliations, authors } from '../../db/data'
-import { Zilla_Slab } from 'next/font/google'
-import { notFound } from 'next/navigation'
-import DocumentCard from '@/app/components/DocumentCard'
-import findDocumentsByAuthor from './findDocumentsByAuthor'
-import cardEffects from '@/app/styles/cardEffects.module.css'
 import KonamiSnowfall from './KonamiSnowfall'
-import Image from 'next/image'
+import findDocumentsByAuthor from './findDocumentsByAuthor'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 

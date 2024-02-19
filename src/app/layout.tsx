@@ -1,15 +1,15 @@
 import type { Metadata } from 'next'
 import { Inter, Zilla_Slab } from 'next/font/google'
-import './globals.css'
-import styles from './home.module.css'
+import Image from 'next/legacy/image'
 import Link from 'next/link'
-import SearchBar from './components/SearchBar'
-import Container from './container/Container'
-import MobileMenu from './components/MobileMenu'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import MobileMenu from './components/MobileMenu'
+import SearchBar from './components/SearchBar'
+import Container from './container/Container'
+import './globals.css'
+import styles from './home.module.css'
 import Providers from './providers'
-import Image from 'next/legacy/image'
 
 /* The default font is Inter. If you want to use Zilla Slab (or any other Google Font, 
   which are pre-provided by Next.js in the 'next/font/google' module), you need to 

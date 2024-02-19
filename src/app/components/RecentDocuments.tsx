@@ -1,5 +1,5 @@
+import { Document, documents, topics as topicsList } from '@/app/db/data'
 import { epoch2datestring } from '@/app/utils/epoch2datestring'
-import { documents, topics as topicsList, Document } from '@/app/db/data'
 import Link from 'next/link'
 
 function getThreeMostRecentDocuments(

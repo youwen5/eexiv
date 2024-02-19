@@ -1,13 +1,13 @@
 'use client'
-import { useState } from 'react'
 import { Document } from '@/app/db/data'
-import Link from 'next/link'
 import { loadAuthors } from '@/app/db/loaders'
-import { useSuspenseQuery } from '@tanstack/react-query'
 import { epoch2date } from '@/app/utils/epoch2datestring'
-import { toast } from 'react-toastify'
 import generateHash from '@/app/utils/hash'
+import { useSuspenseQuery } from '@tanstack/react-query'
+import Link from 'next/link'
 import QRCode from 'qrcode.react'
+import { useState } from 'react'
+import { toast } from 'react-toastify'
 
 const VersionChooser = ({
   doc,

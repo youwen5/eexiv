@@ -1,8 +1,8 @@
 'use client'
-import { RxHamburgerMenu } from 'react-icons/rx'
-import styles from './mobileMenu.module.css'
-import { create } from 'zustand'
 import SearchBar from '@/app/components/SearchBar'
+import { RxHamburgerMenu } from 'react-icons/rx'
+import { create } from 'zustand'
+import styles from './mobileMenu.module.css'
 
 interface MobileMenuState {
   isOpen: boolean

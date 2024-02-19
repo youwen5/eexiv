@@ -1,10 +1,10 @@
 import { Document } from '@/app/db/data'
-import { Zilla_Slab } from 'next/font/google'
-import { Authors, Topics } from './DataDisplay'
-import { ItemBadge, Status } from './Badges'
-import { epoch2datestring } from '@/app/utils/epoch2datestring'
-import Link from 'next/link'
 import cardEffects from '@/app/styles/cardEffects.module.css'
+import { epoch2datestring } from '@/app/utils/epoch2datestring'
+import { Zilla_Slab } from 'next/font/google'
+import Link from 'next/link'
+import { ItemBadge, Status } from './Badges'
+import { Authors, Topics } from './DataDisplay'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 

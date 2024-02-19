@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import { Inter, Zilla_Slab } from 'next/font/google'
+import Link from 'next/link'
 
 const zillaSlab = Zilla_Slab({ weight: '600', subsets: ['latin'] })
 const inter = Inter({ weight: ['400', '500'], subsets: ['latin'] })

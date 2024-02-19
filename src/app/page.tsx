@@ -1,14 +1,14 @@
 import Link from 'next/link'
-import {
-  documents,
-  authors,
-  affiliations,
-  Author,
-  Affiliation,
-} from './db/data'
 import News from './components/News'
 import RandomDocs from './components/RandomDocs'
 import RecentDocuments from './components/RecentDocuments'
+import {
+  Affiliation,
+  Author,
+  affiliations,
+  authors,
+  documents,
+} from './db/data'
 
 function sortAuthorsByDocumentsPublished(authors: {
   [key: string]: Author

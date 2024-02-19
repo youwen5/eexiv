@@ -1,5 +1,5 @@
-import AuthorDisplay from './AuthorDisplay'
 import { authors } from '@/app/db/data'
+import AuthorDisplay from './AuthorDisplay'
 
 export function generateStaticParams() {
   const authorsList = Object.keys(authors)

@@ -1,9 +1,9 @@
-import { documents, authors, affiliations, topics } from '@/app/db/data'
-import MiniSearch from 'minisearch'
-import { CustomSearchResult } from './searchDocs'
-import hash from './hash'
+import { affiliations, authors, documents, topics } from '@/app/db/data'
 import { hash as fnv } from 'fnv-plus'
+import MiniSearch from 'minisearch'
 import { Document } from '../db/data'
+import hash from './hash'
+import { CustomSearchResult } from './searchDocs'
 
 const miniSearch = new MiniSearch({
   fields: [

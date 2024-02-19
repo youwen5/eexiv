@@ -1,6 +1,6 @@
 'use client'
-import DocumentViewer from './DocumentViewer'
 import ErrorBoundary from '@/app/utils/ErrorBoundary'
+import DocumentViewer from './DocumentViewer'
 
 export default function Page({
   params,

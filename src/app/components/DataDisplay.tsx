@@ -1,10 +1,10 @@
-import { Fragment } from 'react'
-import Link from 'next/link'
 import {
-  reviewer,
   authors as authorList,
+  reviewer,
   topics as topicList,
 } from '@/app/db/data'
+import Link from 'next/link'
+import { Fragment } from 'react'
 
 const getRepo = (link: string) => {
   if (link.includes('github.com')) {

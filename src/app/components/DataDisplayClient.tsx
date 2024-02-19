@@ -1,9 +1,9 @@
 // these variants of the data display components are designed for client side components
 // and fetch data asynchronously
-import { loadAllTopics, loadAllAuthors } from '@/app/db/loaders'
+import { loadAllAuthors, loadAllTopics } from '@/app/db/loaders'
 import { useSuspenseQuery } from '@tanstack/react-query'
-import { Fragment } from 'react'
 import Link from 'next/link'
+import { Fragment } from 'react'
 
 export const Authors = ({
   authors,

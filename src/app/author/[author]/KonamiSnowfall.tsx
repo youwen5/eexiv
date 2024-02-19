@@ -1,9 +1,9 @@
 'use client'
-import Konami from 'react-konami-code'
-import { Snowfall } from 'react-snowfall'
-import { Fragment, useEffect, useState } from 'react'
 import { nationalities } from '@/app/db/data'
 import NextImage from 'next/image'
+import { Fragment, useEffect, useState } from 'react'
+import Konami from 'react-konami-code'
+import { Snowfall } from 'react-snowfall'
 
 const NationalityDisplay = ({
   nationality,
