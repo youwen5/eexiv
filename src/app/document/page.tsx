@@ -19,19 +19,30 @@ const DocumentCardWrapper = ({
   return <DocumentCard doc={doc} href={href} />
 }
 
+const getDocumentDate = (id: string) => {
+  const dates = documents[id].manifest.dates
+  return dates[dates.length - 1]
+}
+
 const Page = () => {
+  const sortedDocuments = Object.entries(documents).sort((a, b) => {
+    const docTimestampA = getDocumentDate(a[0])
+    const docTimestampB = getDocumentDate(b[0])
+    return docTimestampB - docTimestampA
+  })
+
   return (
     <div className='p-6'>
       <h1 className={`${zillaSlab.className} text-6xl text-center mb-10`}>
         Documents
       </h1>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-        {Object.keys(documents).map((documentShortName) => {
+        {sortedDocuments.map((entry) => {
           return (
-            <Fragment key={documentShortName}>
+            <Fragment key={entry[0]}>
               <DocumentCardWrapper
-                key={documentShortName}
-                params={{ shortName: documentShortName }}
+                key={entry[0]}
+                params={{ shortName: entry[0] }}
               />
             </Fragment>
           )
