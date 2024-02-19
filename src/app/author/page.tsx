@@ -1,4 +1,4 @@
-import { affiliations, authors } from '@/app/db/data'
+import { affiliations, authors, documents } from '@/app/db/data'
 import cardEffects from '@/app/styles/cardEffects.module.css'
 import { Zilla_Slab } from 'next/font/google'
 import Image from 'next/image'
@@ -53,20 +53,32 @@ const AuthorCard = ({
   )
 }
 
+const getNumberOfDocumentsByAuthor = (authorId: string) => {
+  // Filter documents by author
+  const filteredDocuments = Object.entries(documents)
+    .filter(([_, doc]) => doc.manifest.authors.includes(authorId))
+    .map(([slug, doc]) => ({ slug, doc }))
+
+  return filteredDocuments.length
+}
+
 const Page = () => {
+  const sortedAuthors = Object.entries(authors).sort((a, b) => {
+    const numDocsA = getNumberOfDocumentsByAuthor(a[0])
+    const numDocsB = getNumberOfDocumentsByAuthor(b[0])
+    return numDocsB - numDocsA
+  })
+
   return (
     <div className='p-6'>
       <h1 className={`${zillaSlab.className} text-6xl text-center mb-10`}>
         Authors
       </h1>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-        {Object.keys(authors).map((authorShortName) => {
+        {sortedAuthors.map((entry) => {
           return (
-            <Fragment key={authorShortName}>
-              <AuthorCard
-                key={authorShortName}
-                params={{ shortName: authorShortName }}
-              />
+            <Fragment key={entry[0]}>
+              <AuthorCard key={entry[0]} params={{ shortName: entry[0] }} />
             </Fragment>
           )
         })}
