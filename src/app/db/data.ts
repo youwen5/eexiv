@@ -69,6 +69,7 @@ export const documents: Readonly<{ [key: string]: Document }> = {
     manifest: {
       title: '2024 Controls/Programming DWM',
       authors: ['mbohsali', 'avenkatesh', 'ywu'],
+      reviewers: [{ first: 'Matthew', last: 'Fletcher', profile: 'mfletcher' }],
       topics: ['eecs', 'frc'],
       dates: [1706080618],
       type: 'dwm',
@@ -146,6 +147,7 @@ export const documents: Readonly<{ [key: string]: Document }> = {
       reviewers: [{ first: 'Youwen', last: 'Wu', profile: 'ywu' }],
     },
     file: 'pdf',
+    doi: '10.5281/zenodo.10677128',
     abstract:
       'DeepBozo is designed to incorporate various AI-enhanced driver assistance features and autonomous technologies. In order to meet our 1 month deadline for a prototype that’s ready to scrimmage and train with, Team 1280 EECS needs to conduct a thorough analysis of the goals and limitations of DeepBozo and its various subroutines. In this report, we explore the various possible capabilities of DeepBozo and the feasibility of each.',
   },
@@ -189,6 +191,7 @@ export const documents: Readonly<{ [key: string]: Document }> = {
       ],
     },
     file: 'pdf',
+    doi: '10.5281/zenodo.10677150',
     abstract:
       'The toughbook is a rugged, industrial computer intended for low-performance, scalable, and cheap computational operations. The robotics storage cabinet contained a Lenovo ThinkPad toughbook which was, at the time of its discovery, severely damaged, both internally (software) and externally (hardware). The programming team invested significant time, energy, resources, and capital into the revival of this storied piece of digital infrastructure, thus restoring the ThinkPad and, by extension, the robotics team, to its former glory.',
   },
@@ -222,6 +225,7 @@ export const documents: Readonly<{ [key: string]: Document }> = {
       status: 'under review',
     },
     file: 'pdf',
+    doi: '10.5281/zenodo.10677158',
     abstract: `Approximately 1 month ago, the Team 1280 Electrical Engineering and Computer Science 
       Department (henceforth referred to as just EECS), an independent organ of the Team 1280 official
       organization which operates extrajudicially and without congressional oversight, requisitioned a
@@ -253,9 +257,10 @@ export const documents: Readonly<{ [key: string]: Document }> = {
         'instructions',
       ],
     },
-    file: 'pdf',
+    file: 'docx',
+    doi: '10.5281/zenodo.10677178',
     abstract: `This is the Electrical Sub team Training. Firstly, we discuss the requirements and suggestions, we require everyone to bring your own device/Chromebook, we also require students to join GitHub and join the GitHub organization. We recommend students bring their own tools such as a precision screwdriver set and a multimeter should cover everything from basic repairs and learning to use these devices.
-On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team in FRC is the cauldron between the Mechanical moving parts of CAD and the witchcraft that is programming. We will be talking about the serial busses used in the robot and basic Electrical knowledge needed to do basic repairs on daily items. On Day 2 we will discuss wiring the robot and prototyping (for people who want to do more)
+On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team in FRC is the cauldron between the Mechanical moving parts of CAD and the witchcraft that is programming. We will be talking about the serial busses used in the robot and basic Electrical knowledge needed to do basic repairs on daily items. On Day 2 we will discuss wiring the robot and prototyping (for people who want to do more).
 `,
   },
   'eexiv-white-paper': {
@@ -266,7 +271,7 @@ On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team 
       dates: [1707811359, 1707891311],
       type: 'whitepaper',
       latest: 2,
-      status: 'reviewed',
+      status: 'published no review',
       keywords: [
         'eexiv',
         'whitepaper',
@@ -295,7 +300,7 @@ On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team 
       type: 'report',
       topics: ['polisci'],
       dates: [1684911599],
-      status: 'reviewed',
+      status: 'published no review',
       keywords: [
         'soviet military intervention in afghanistan roots & causes',
         'afghan archive dramatic politburo meeting',
@@ -324,6 +329,7 @@ On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team 
       latest: 1,
     },
     file: 'pdf',
+    doi: '10.5281/zenodo.10677190',
     abstract: `Although ethnic nationalism and democratization contributed greatly to the downfall of
     the Soviet Union, the primary catalyst of Soviet collapse was the Soviet-Afghan War. The
     conflict exacerbated existing ethnic and cultural divides in the hinterlands of the Soviet empire,
@@ -351,6 +357,7 @@ On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team 
       type: 'paper',
       topics: ['eecs', 'ai'],
       dates: [1695279600],
+      reviewers: [{ first: 'NeurIPS 2023 Conference', last: 'Area Chair' }],
       status: 'reviewed',
       keywords: [
         'conference on computer vision and pattern recognition cvpr',
@@ -372,6 +379,7 @@ On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team 
       latest: 1,
     },
     file: 'pdf',
+    doi: '10.5281/zenodo.10677218',
     abstract: `Densely structured pruning methods utilizing simple pruning heuristics are
     capable of delivering immediate compression and acceleration benefits with
     acceptable benign performances. However, empirical findings indicate such
