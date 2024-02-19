@@ -88,7 +88,14 @@ export default function Home() {
         channels. Read more about us <Link href='/about'>here</Link>. eeXiv can
         be accessed from its primary domain at{' '}
         <a href='https://eexiv.org'>eexiv.org</a> or at our mirror at{' '}
-        <a href='https://eexiv.vercel.app'>eexiv.vercel.app</a>.
+        <a href='https://eexiv.vercel.app'>eexiv.vercel.app</a>. If this is your
+        first time here, check out the following pages in the eeXiv knowledge
+        base:
+        <ul className='list-disc pl-4 mt-4'>
+          <li>
+            <Link href='/affiliation/'>Author affiliations</Link>
+          </li>
+        </ul>
       </p>
       <News />
       <div className='grid grid-cols-1 space-y-2 mt-4 basis-full'>

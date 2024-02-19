@@ -1,16 +1,13 @@
 import { affiliations } from '@/app/db/data'
+import cardEffects from '@/app/styles/cardEffects.module.css'
 import { Zilla_Slab } from 'next/font/google'
 import Image from 'next/image'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Fragment } from 'react'
 import getAffiliations from './getAffiliations'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
-
-export function generateStaticParams() {
-  const affiliationsList = Object.keys(affiliations)
-  return affiliationsList.map((shortName) => ({ shortName }))
-}
 
 const AffiliationCard = ({
   params,
@@ -22,9 +19,12 @@ const AffiliationCard = ({
   }
 
   return (
-    <div className='m-4'>
+    <Link
+      className={`${cardEffects['card-large']} border-4 rounded-lg border-gray-300 hover:border-blue-500 p-5 my-4 w-full cursor-pointer shadow-slate-300 shadow-md text-left m-4 no-link-style pb-8`}
+      href={`/affiliation/${shortName}`}
+    >
       <div className='grid grid-cols-1 max-w-3xl mx-auto'>
-        <div className='mx-auto mb-4 max-w-3xl md:w-auto md:h-[40vw] lg:h-[20vw] rounded-lg shadow-lg shadow-slate-400'>
+        <div className='mx-auto mb-4 max-w-3xl md:w-auto md:h-[40vw] lg:h-[20vw] rounded-lg'>
           <Image
             alt='profile'
             width={1000}
@@ -41,7 +41,7 @@ const AffiliationCard = ({
         </span>
         <div className='text-slate-600 text-2xl mt-4 text-center'>{name}</div>
       </div>
-    </div>
+    </Link>
   )
 }
 
