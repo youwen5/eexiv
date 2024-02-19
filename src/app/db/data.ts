@@ -494,7 +494,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     formerAffiliations: ['Lead Mechanical Engineer@1280-mech', 'Student@srvhs'],
     image: '/img/profiles/shasan.jpg',
     nationality: ['pak', 'usa'],
-    website: 'https://www.linkedin.com/in/saimhasan/'
+    website: 'https://www.linkedin.com/in/saimhasan/',
   },
   mbohsali: {
     name: {
@@ -600,7 +600,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     nationality: ['rus'],
     image: '/img/profiles/vkorneev.jpg',
     website: 'https://www.linkedin.com/in/vladislav-korneev-0573a71b1/',
-    bio: `Highly suspect. Responsible for our close relationship with the international military-industrial complex. Tactical genius. Geopolitical strategist. Business tycoon.`
+    bio: `Highly suspect. Responsible for our close relationship with the international military-industrial complex. Tactical genius. Geopolitical strategist. Business tycoon.`,
   },
   nluo: {
     name: {
@@ -610,7 +610,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     affiliation: ['Software Engineer@1280-eecs', 'Student@srvhs'],
     nationality: ['chn', 'usa'],
     image: '/img/profiles/nluo.png',
-    website: 'https://github.com/Nluo923'
+    website: 'https://github.com/Nluo923',
   },
   jchan: {
     name: {
@@ -625,7 +625,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     nationality: ['jpn', 'chn', 'usa'],
     image: '/img/profiles/jchan.jpg',
     website: 'https://futureinspireacademy.com',
-    bio: 'Programming is great... Three years Unity game development C#, Html, Css, Js, Java, Go, C++, Python, Dart, Json, Xml, Binary'
+    bio: 'Programming is great... Three years Unity game development C#, Html, Css, Js, Java, Go, C++, Python, Dart, Json, Xml, Binary',
   },
   cbordalo: {
     name: {
@@ -708,7 +708,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     formerAffiliations: ['Undergraduate @cwru'],
     image: '/img/profiles/zyou.jpg',
     nationality: ['chn', 'usa'],
-    website: 'https://www.linkedin.com/in/zaichuanyou/'
+    website: 'https://www.linkedin.com/in/zaichuanyou/',
   },
   jzhang: {
     name: {
@@ -718,7 +718,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     affiliation: ['Undergraduate @cwru'],
     image: '/img/profiles/jzhang.jpg',
     nationality: ['chn', 'usa'],
-    website: 'https://www.linkedin.com/in/jiamu-zhang-morris/'
+    website: 'https://www.linkedin.com/in/jiamu-zhang-morris/',
   },
   szhao: {
     name: {
@@ -732,7 +732,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     ],
     image: '/img/profiles/szhao.jpg',
     nationality: ['usa', 'unknown'],
-    website: 'https://www.linkedin.com/in/sebbyzhao/'
+    website: 'https://www.linkedin.com/in/sebbyzhao/',
   },
   zliu: {
     name: {
@@ -742,7 +742,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     affiliation: ['PhD student @rice'],
     image: '/img/profiles/zliu.jpg',
     nationality: ['chn', 'usa'],
-    website: 'https://scholar.google.com/citations?user=0i1w_egAAAAJ&hl=zh-CN'
+    website: 'https://scholar.google.com/citations?user=0i1w_egAAAAJ&hl=zh-CN',
   },
   dzha: {
     name: {
@@ -753,7 +753,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     formerAffiliations: ['PhD student @rice'],
     image: '/img/profiles/dzha.jpg',
     nationality: ['chn', 'usa'],
-    website: 'https://www.linkedin.com/in/daochen-zha/'
+    website: 'https://www.linkedin.com/in/daochen-zha/',
   },
   vchaudhary: {
     name: {
@@ -767,7 +767,8 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     ],
     image: '/img/profiles/vchaudhary.jpg',
     nationality: ['ind', 'usa'],
-    website: 'https://engineering.case.edu/about/school-directory/vipin-chaudhary'
+    website:
+      'https://engineering.case.edu/about/school-directory/vipin-chaudhary',
   },
   sxu: {
     name: {
@@ -777,18 +778,18 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     affiliation: ['Assistant Professor @cwru'],
     image: '/img/profiles/sxu.jpg',
     nationality: ['chn', 'usa'],
-    website: 'https://engineering.case.edu/about/school-directory/shuai-xu'
+    website: 'https://engineering.case.edu/about/school-directory/shuai-xu',
   },
   xhu: {
     name: {
       first: 'Xia',
       last: 'Hu',
-      nickname: 'Ben'
+      nickname: 'Ben',
     },
     affiliation: ['Associate Professor of CS@rice'],
     image: '/img/profiles/xhu.jpg',
     nationality: ['sgp', 'usa'],
-    website: 'https://cs.rice.edu/~xh37/index.html'
+    website: 'https://cs.rice.edu/~xh37/index.html',
   },
   rgawde: {
     name: {
@@ -799,7 +800,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     image: '/img/profiles/rgawde.jpg',
     nationality: ['ind', 'usa'],
     bio: `I am Rohan, a Mechanical Engineering student from India. I am passionate about designing and developing robots. I love to learn new things. I am currently a CAD Lead at Team 1280.`,
-  }
+  },
 }
 
 export interface Affiliation {
