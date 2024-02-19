@@ -1,4 +1,4 @@
-import { Document, Author, Affiliation, Topic, Nationality } from './data'
+import { Affiliation, Author, Document, Nationality, Topic } from './data'
 
 /**
  * Loads a document with the given ID using a web worker if available, and returns a promise that resolves with the document.

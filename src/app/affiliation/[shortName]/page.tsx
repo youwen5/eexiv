@@ -1,10 +1,10 @@
-import { affiliations } from '@/app/db/data'
-import { notFound } from 'next/navigation'
-import { Zilla_Slab } from 'next/font/google'
-import findDocumentsByAffiliation from './findDocumentsByAffiliation'
-import { Fragment } from 'react'
 import DocumentCard from '@/app/components/DocumentCard'
+import { affiliations } from '@/app/db/data'
+import { Zilla_Slab } from 'next/font/google'
 import Image from 'next/image'
+import { notFound } from 'next/navigation'
+import { Fragment } from 'react'
+import findDocumentsByAffiliation from './findDocumentsByAffiliation'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 

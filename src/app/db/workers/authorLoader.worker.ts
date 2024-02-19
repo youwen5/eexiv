@@ -1,4 +1,4 @@
-import { authors, Author } from '../data'
+import { Author, authors } from '../data'
 
 export function getAuthorsById(authorIds: string[]): { [key: string]: Author } {
   const result: { [key: string]: Author } = {}
