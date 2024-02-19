@@ -90,16 +90,18 @@ const DocumentViewer = ({ slug }: Readonly<{ slug: string }>) => {
       <p className='my-2'>
         <Reviewers reviewers={reviewers} />
       </p>
+      {doi && (
+        <p className='my-2'>
+          <span className='font-bold'>DOI: </span>
+          <a href={`https://doi.org/${doi}`} target='_blank'>
+            {doi}
+          </a>
+        </p>
+      )}
       <p className='my-2'>
         <span className='font-bold'>Cite as: </span>
         {citation ? <>{citation}</> : <>eeXiv:{hash}</>}
       </p>
-      {doi && (
-        <p className='my-2'>
-          <span className='font-bold'>DOI: </span>
-          {doi}
-        </p>
-      )}
       <Suspense
         fallback={
           <div className='max-w-sm animate-pulse flex flex-wrap gap-2'>
