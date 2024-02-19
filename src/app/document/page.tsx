@@ -16,9 +16,7 @@ const DocumentCardWrapper = ({
     notFound()
   }
 
-  return (
-    <DocumentCard doc={doc} href={href} />
-  )
+  return <DocumentCard doc={doc} href={href} />
 }
 
 const Page = () => {
