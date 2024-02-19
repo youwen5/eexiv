@@ -95,6 +95,15 @@ export default function Home() {
           <li>
             <Link href='/affiliation/'>Author affiliations</Link>
           </li>
+          <li>
+            <Link href='/author/'>Published authors</Link>
+          </li>
+          <li>
+            <Link href='/document/'>Latest documents</Link>
+          </li>
+          <li>
+            <Link href='/topic/'>Document topics</Link>
+          </li>
         </ul>
       </p>
       <News />
