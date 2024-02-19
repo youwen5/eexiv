@@ -25,9 +25,7 @@ const checkAffiliation = (
   return false
 }
 
-const getNumberOfDocumentsByAffiliation = (
-  affiliationShort: string
-) => {
+const getNumberOfDocumentsByAffiliation = (affiliationShort: string) => {
   // Find authors with the given affiliation
   const results: DocumentWithSlug[] = []
   for (const [key, value] of Object.entries(authors)) {
@@ -69,9 +67,7 @@ export default function getAffiliations(): string[] {
       affiliations[i]
     )
   }
-  affiliations.sort(
-    (a, b) => affiliationDocs[b] - affiliationDocs[a]
-  )
+  affiliations.sort((a, b) => affiliationDocs[b] - affiliationDocs[a])
 
   return affiliations
 }
