@@ -1,7 +1,5 @@
 import { Document, authors, documents } from '@/app/db/data'
 
-// Assuming the types Document, DocumentStatus, and reviewer are defined as provided in your question
-
 // Interface for the return output
 interface DocumentWithSlug {
   slug: string
