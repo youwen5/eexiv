@@ -21,6 +21,7 @@ eeXiv borrows from a pioneer in digital open access, arXiv.org, and hosts the mo
 [^1]: Whichever idiot decided "arXiv" should be pronounced like "archive" can cope; eeXiv is not changing its name or pronunciation.
 
 ---
+
 <!-- Copilot -->
 <table>
     <img alt="GitHub Copilot" align="left" src="https://raw.githubusercontent.com/KatsuteDev/kdevbot/main/assets/copilot-dark.png#gh-dark-mode-only" width="50">
@@ -58,4 +59,3 @@ The dummies guide to maintaining a Next.js project:
   - **Footnote**: why don't I have to use the utilities in [`db/loaders.ts`](./src/app/db/loaders.ts) to asynchronously load the data in server side components?
     - Next.js will automatically pre-render all server side components into static HTML, which means there will be no performance impact (and in fact performance gain at build time)
       to loading the entire objects into memory.
-
