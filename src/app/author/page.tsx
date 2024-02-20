@@ -70,7 +70,7 @@ const Page = () => {
   })
 
   return (
-    <div className='p-6'>
+    <div className='p-0 md:p-6'>
       <h1 className={`${zillaSlab.className} text-6xl text-center mb-10`}>
         Authors
       </h1>
