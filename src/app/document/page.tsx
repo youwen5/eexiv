@@ -1,12 +1,12 @@
 import { documents } from '@/app/db/data'
+import cardEffects from '@/app/styles/cardEffects.module.css'
 import { Zilla_Slab } from 'next/font/google'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Fragment } from 'react'
-import Link from 'next/link'
-import cardEffects from '@/app/styles/cardEffects.module.css'
+import { ItemBadge, Status } from '../components/Badges'
 import { Authors, Topics } from '../components/DataDisplay'
 import { epoch2datestring } from '../utils/epoch2datestring'
-import { ItemBadge, Status } from '../components/Badges'
 
 const zillaSlab = Zilla_Slab({ subsets: ['latin'], weight: ['500'] })
 
