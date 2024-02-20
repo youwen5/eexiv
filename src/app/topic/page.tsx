@@ -52,7 +52,7 @@ const Page = () => {
       <h1 className={`${zillaSlab.className} text-6xl text-center mb-10`}>
         Topics
       </h1>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mr-8'>
         {sortedTopics.map((entry) => {
           return (
             <Fragment key={entry[0]}>
