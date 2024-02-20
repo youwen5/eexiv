@@ -75,7 +75,7 @@ const AuthorDisplay = ({ authors, affiliations }: AuthorDisplayProps) => {
 export default function Home() {
   return (
     <div className='text-slate-800 flex flex-wrap md:flex-row justify-center'>
-      <p className='font-serif text-lg basis-full md:basis-1/2 grow mr-1 text-balance'>
+      <p className='font-serif text-lg basis-full md:basis-1/2 grow mr-6 text-balance'>
         eeXiv, like arXiv, is a free distribution service and an open-access
         archive for over {Object.keys(documents).length} scholarly articles in
         the fields of physics, mathematics, computer science, quantitative

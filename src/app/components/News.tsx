@@ -9,7 +9,7 @@ export default function News() {
     <div
       className={
         inter.className +
-        ' mt-6 bg-slate-800 rounded-lg p-6 w-full basis-full md:basis-2/5 my-4 lg:my-0 max-h-[250px] overflow-y-auto shadow-slate-500 shadow-sm'
+        ' mt-6 bg-slate-800 rounded-lg p-6 w-full basis-full md:basis-2/5 my-4 lg:my-0 max-h-[350px] overflow-y-auto shadow-slate-500 shadow-sm'
       }
     >
       <div className={zillaSlab.className + ' text-3xl text-slate-200'}>
