@@ -1,4 +1,5 @@
 import { execSync } from 'child_process'
+import shellescape from 'shell-escape'
 
 const TOKEN = process.env.ZENODO
 const filename = process.argv[2]
@@ -6,6 +7,8 @@ const path = process.argv[3]
 
 const run = (cmd: string): string | Buffer => {
   try {
+    // sanitize user input before running to prevent arbitrary code execution
+    cmd = shellescape(cmd.split(' '))
     const output = execSync(cmd, { stdio: 'pipe' })
     return output
   } catch (error) {

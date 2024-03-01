@@ -1,0 +1,31 @@
+plugins:
+  duplication:
+    enabled: true
+  eslint:
+    enabled: true
+  fixme:
+    enabled: true
+  git-legal:
+    enabled: true
+  markdownlint:
+    enabled: true
+  sass-lint:
+    enabled: true
+  shellcheck:
+    enabled: true
+    checks:
+      SC2086:
+        enabled: false
+  scss-lint:
+    enabled: true
+  tslint:
+    enabled: true
+  vint:
+    enabled: true
+exclude_patterns:
+  - "db/"
+  - "**/data.*"
+  - "dist/"
+  - "**/node_modules/"
+  - "**/spec/"
+  - "**/vendor/"
