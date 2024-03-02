@@ -268,9 +268,9 @@ On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team 
       title: 'eeXiv Whitepaper',
       authors: ['avenkatesh', 'ywu'],
       topics: ['eecs', 'frc'],
-      dates: [1707811359, 1707891311],
+      dates: [1707811359, 1707891311, 1709406373],
       type: 'whitepaper',
-      latest: 2,
+      latest: 3,
       status: 'published no review',
       keywords: [
         'eexiv',
