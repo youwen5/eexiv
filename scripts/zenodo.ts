@@ -9,6 +9,7 @@ const run = (cmd: string): string | Buffer => {
   try {
     // sanitize user input before running to prevent arbitrary code execution
     cmd = shellescape(cmd.split(' '))
+    // deepcode ignore IndirectCommandInjection: fixed in #36
     const output = execSync(cmd, { stdio: 'pipe' })
     return output
   } catch (error) {
