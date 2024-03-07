@@ -7,9 +7,19 @@ import Link from 'next/link'
 import { Fragment } from 'react'
 
 const getRepo = (link: string) => {
-  if (link.includes('github.com')) {
-    const owner = link.split('/')[3]
-    const name = link.split('/')[4]
+  let host
+
+  try {
+    host = new URL(link).host
+  } catch (error) {
+    console.error('Invalid URL:', link)
+    return
+  }
+
+  if (host === 'github.com') {
+    const parts = link.split('/')
+    const owner = parts[3]
+    const name = parts[4]
     return `git:${owner}/${name}`
   }
 }
