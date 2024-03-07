@@ -103,7 +103,7 @@ const ReviewerDisplay = ({ r }: Readonly<{ r: reviewer }>) => {
   }
   if (r.url) {
     return (
-      <a href={r.url} target='_blank'>
+      <a href={r.url} target='_blank' rel='noopener noreferrer'>
         {r.first} {r.last}
       </a>
     )

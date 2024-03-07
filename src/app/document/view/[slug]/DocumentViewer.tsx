@@ -93,7 +93,11 @@ const DocumentViewer = ({ slug }: Readonly<{ slug: string }>) => {
       {doi && (
         <p className='my-2'>
           <span className='font-bold'>DOI: </span>
-          <a href={`https://doi.org/${doi}`} target='_blank'>
+          <a
+            href={`https://doi.org/${doi}`}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             {doi}
           </a>
         </p>

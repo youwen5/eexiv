@@ -27,7 +27,7 @@ const MainAuthorPosition = ({ author }: { author: Author }) => {
       {website ? (
         <div className='mt-2'>
           Visit {name.nickname ? name.nickname : name.first} at:{' '}
-          <a href={website} target='_blank'>
+          <a href={website} target='_blank' rel='noopener noreferrer'>
             {website}
           </a>
         </div>
