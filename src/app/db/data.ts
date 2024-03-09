@@ -412,6 +412,32 @@ On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team 
     SOTA performance on both benign and adversarial scale, while requiring no extra
     (in fact, often less) cost than a standard pruning procedure.`,
   },
+  'pendulum-lab': {
+    manifest: {
+      title: 'Pendulum Lab Report',
+      latest: 1,
+      authors: ['ywu', 'cbordalo', 'ckrueger', 'mfaber'],
+      status: 'draft',
+      dates: [1709946213],
+      topics: ['physics'],
+      type: 'paper',
+      keywords: [
+        'pendulum',
+        'pendulum lab',
+        'physics',
+        'quantum mechanics',
+        'AP physics',
+        'budhabhatti',
+        'lab report',
+        'lab',
+      ],
+    },
+    file: 'pdf',
+    abstract: `The motion of a simple pendulum and the acceleration due to local gravity are connected, and we
+can express its period 𝑇 in terms of its length ℓ and gravity 𝑔 through a simple formula. This also means that if we can determine 𝑇 and ℓ, we can then calculate a value for 𝑔. In this
+paper, we will show how to calculate an experimental value of 𝑔 for Earth’s gravity using a simple
+pendulum.`,
+  },
 }
 
 export interface Topic {
@@ -455,6 +481,12 @@ export const topics: Readonly<{ [key: string]: Topic }> = {
     description:
       'Political science is the study of politics. It is a broad field, encompassing all aspects of government, politics, and international relations.',
     wiki: 'https://en.wikipedia.org/wiki/Political_science',
+  },
+  physics: {
+    name: 'Physics',
+    description:
+      'Physics is the natural science that studies matter, its fundamental constituents, motion, and the effects of energy and forces on it.',
+    wiki: 'https://en.wikipedia.org/wiki/Physics',
   },
 }
 
@@ -811,6 +843,25 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     image: '/img/profiles/rgawde.jpg',
     nationality: ['ind', 'usa'],
     bio: `I am Rohan, a Mechanical Engineering student from India. I am passionate about designing and developing robots. I love to learn new things. I am currently a CAD Lead at Team 1280.`,
+  },
+  ckrueger: {
+    name: {
+      first: 'Charles',
+      last: 'Krueger',
+      nickname: 'Charlie',
+    },
+    affiliation: ['Student@srvhs'],
+    image: '/img/profiles/default.png',
+    nationality: ['usa', 'sgp'],
+  },
+  mfaber: {
+    name: {
+      first: 'Matthieu',
+      last: 'Fayet-Faber',
+    },
+    affiliation: ['Student@srvhs'],
+    image: '/img/profiles/default.png',
+    nationality: ['usa', 'fra'],
   },
 }
 
