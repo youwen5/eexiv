@@ -304,114 +304,6 @@ On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team 
     research publication, which involves lengthy peer review processes and journal approval, by
     enabling "libre" and "open" publication, dissemination, and consumption of research artifacts.`,
   },
-  'moscow-to-kabul': {
-    manifest: {
-      title: 'Moscow to Kabul',
-      authors: ['slevel'],
-      type: 'report',
-      topics: ['polisci'],
-      dates: [1684911599],
-      status: 'published no review',
-      keywords: [
-        'soviet military intervention in afghanistan roots & causes',
-        'afghan archive dramatic politburo meeting',
-        'milton park asian affairs an american review',
-        'uzbeks try to live the way russians do',
-        'decline of soviet military strategy and political status',
-        'afghanistan war and breakdown of the soviet union',
-        'park the journal of slavic military studies 1999',
-        'soviet union and afghan communists',
-        'prelude to invasion',
-        'new york the new york times',
-        'cambridge review of international studies',
-        'geopolitics of the afghan war',
-        'digital center for european studies',
-        'reform in post communist europe',
-        'afghan communists 1978 1979',
-        'democratic republic of afghanistan',
-        'red army',
-        'soviet union',
-        'soviet afghan',
-        'invasion of afghanistan',
-        'withdrawal from afghanistan',
-        'soviet forces',
-        'central asia',
-      ],
-      latest: 1,
-    },
-    file: 'pdf',
-    doi: '10.5281/zenodo.10677190',
-    abstract: `Although ethnic nationalism and democratization contributed greatly to the downfall of
-    the Soviet Union, the primary catalyst of Soviet collapse was the Soviet-Afghan War. The
-    conflict exacerbated existing ethnic and cultural divides in the hinterlands of the Soviet empire,
-    and the dramatic Russian loss broadcasted the fact that the Red Army was not invincible to
-    foreign powers and internal dissidents alike, emboldening the first breakaway republics and
-    enabling the eventual dissolution of the Soviet Union. To understand the Soviet-Afghan war—its
-    causes and its effects—is to understand the collapse of the world’s largest superpower.`,
-  },
-  'free-adversarial-robustness': {
-    manifest: {
-      title:
-        'One Less Reason for Filter-Pruning: Gaining Free Adversarial Robustness with Structured Grouped Kernel Pruning',
-      authors: [
-        'zleclaire',
-        'szhong',
-        'zyou',
-        'jzhang',
-        'szhao',
-        'zliu',
-        'dzha',
-        'vchaudhary',
-        'sxu',
-        'xhu',
-      ],
-      type: 'paper',
-      topics: ['eecs', 'ai'],
-      dates: [1695279600],
-      reviewers: [{ first: 'NeurIPS 2023 Conference', last: 'Area Chair' }],
-      status: 'reviewed',
-      keywords: [
-        'conference on computer vision and pattern recognition cvpr',
-        'model checkpoint performance',
-        'model performance',
-        'baseline model',
-        'cost smoothness balancer',
-        'densely structured pruning methods',
-        'absence of dimensionality',
-        'method criterion',
-        'snaking greedy best benign',
-        'adversarial robustness boosting kernel',
-        'cifar 10',
-        'distance based cost',
-        'computer vision foundation',
-        'study of cost smoothness',
-        'adversarial attacks',
-      ],
-      latest: 1,
-    },
-    file: 'pdf',
-    doi: '10.5281/zenodo.10677218',
-    abstract: `Densely structured pruning methods utilizing simple pruning heuristics are
-    capable of delivering immediate compression and acceleration benefits with
-    acceptable benign performances. However, empirical findings indicate such
-    naively pruned networks are extremely fragile under simple adversarial attacks.
-    Naturally, we would be interested in knowing if such phenomenon also hold true
-    to carefully designed modern structured pruning methods. If so, then to what
-    extent the severity? And what kind of remedies are available? Unfortunately,
-    both the questions and the solution remain largely unaddressed: no prior art
-    is able to provide a thorough investigation on the adversarial performance of
-    modern structured pruning methods (spoiler: it is not good), yet the few works
-    that attempt to provide mitigation often done so at various extra costs with only
-    to-be-desired performance. In this work, we answer both questions by fairly
-    and comprehensively investigate the adversarial performance of 10+ popular
-    structured pruning methods. Solution-wise, we take advantage of Grouped Kernel
-    Pruning (GKP)’s recent success in pushing densely structured pruning freedom
-    to a more fine-grained level. By mixing up kernel smoothness — a classic
-    robustness-related kernel-level metric — into a modified GKP procedure, we
-    hereby present an one-shot-post-train-data-free GKP method capable of advancing
-    SOTA performance on both benign and adversarial scale, while requiring no extra
-    (in fact, often less) cost than a standard pruning procedure.`,
-  },
   'pendulum-lab': {
     manifest: {
       title: 'Pendulum Lab Report',
@@ -539,15 +431,6 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     nationality: ['pak', 'usa'],
     website: 'https://www.linkedin.com/in/saimhasan/',
   },
-  mbohsali: {
-    name: {
-      first: 'Majd',
-      last: 'Bohsali',
-    },
-    affiliation: ['Lead Programming Engineer@1280-eecs', 'Student@srvhs'],
-    image: '/img/profiles/mbohsali.jpg',
-    nationality: ['lbn', 'usa'],
-  },
   avenkatesh: {
     name: {
       first: 'Ananth',
@@ -588,31 +471,6 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     bio: 'Hi, I am Kaito or Warren. I am a Self-taught programmer and engineer. I go around doing dumb things such as my projects. I have a dream of building a community. I am currently part of many projects.',
     website: 'https://kaitotlex.carrd.co/',
   },
-  gostler: {
-    name: {
-      first: 'Gavin',
-      last: 'Ostler',
-    },
-    affiliation: ['Vision Researcher@1280-eecs', 'Student@srvhs'],
-    image: '/img/profiles/gostler.jpg',
-    nationality: ['fra', 'usa'],
-    website: 'https://github.com/gavinostler',
-    bio: `I'm Gavin, a high school student from the Bay Area. I am a fullstack developer and love making random things to fill my day. I'm interested in creating useful tools and software in the future.`,
-  },
-  edanko: {
-    name: {
-      first: 'Elliot',
-      last: 'Danko',
-    },
-    affiliation: [
-      'Undergraduate in Mechanical Engineering@cal-poly-slo',
-      'Member@cpss',
-      'Mentor@team-1280',
-    ],
-    formerAffiliations: ['Captain@team-1280', 'Student@srvhs'],
-    nationality: ['irl', 'usa'],
-    image: '/img/profiles/edanko.jpg',
-  },
   arvenkatesh: {
     name: {
       first: 'Arvind',
@@ -622,15 +480,6 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     nationality: ['ind', 'eth', 'usa'],
     image: '/img/profiles/arvenkatesh.png',
     website: 'https://github.com/Quantalabs',
-  },
-  mfletcher: {
-    name: {
-      first: 'Matthew',
-      last: 'Fletcher',
-    },
-    affiliation: ['Captain@team-1280', 'Student@srvhs'],
-    nationality: ['usa'],
-    image: '/img/profiles/mfletcher.jpg',
   },
   vkorneev: {
     name: {
@@ -670,170 +519,6 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     website: 'https://futureinspireacademy.com',
     bio: 'Programming is great... Three years Unity game development C#, Html, Css, Js, Java, Go, C++, Python, Dart, Json, Xml, Binary',
   },
-  cbordalo: {
-    name: {
-      first: 'Christian',
-      last: 'Bordalo',
-      nickname: 'CB12',
-    },
-    affiliation: ['Wage Slave@primos', 'Student@srvhs'],
-    nationality: ['phl', 'usa'],
-    image: '/img/profiles/cbordalo.jpg',
-  },
-  bgraham: {
-    name: {
-      first: 'Benjamin',
-      last: 'Graham',
-    },
-    affiliation: ['Student@srvhs'],
-    image: '/img/profiles/bgraham.jpg',
-    nationality: ['usa'],
-    website: 'https://www.linkedin.com/in/benjamin-graham-967a1b26b',
-    bio: 'Unrelated to Ben Garrison. Maintains a Signal profile. Most likely to become President of the United States.',
-  },
-  achawla: {
-    name: {
-      first: 'Ayaan',
-      last: 'Chawla',
-      nickname: 'Chowler',
-    },
-    affiliation: ['Student@srvhs'],
-    image: '/img/profiles/achawla.jpg',
-    nationality: ['ind', 'usa'],
-    website: 'https://www.instagram.com/ayaan_c_07/?hl=en',
-    bio: 'President of the Helping Hands Club. EC farmer. Business magnate. Visionary.',
-  },
-  slevel: {
-    name: {
-      first: 'Spencer',
-      last: 'Level',
-    },
-    affiliation: ['Technical intern @sandia-labs', 'Undergraduate@ucsb'],
-    formerAffiliations: [
-      'Captain @team-1280',
-      'Programming lead @1280-programming',
-    ],
-    image: '/img/profiles/slevel.jpg',
-    nationality: ['usa'],
-    website: 'https://www.linkedin.com/in/spencer-level/',
-    bio: 'Actively engaged in the international arms trade; part-time defense contractor and part-time UCSB student working to secure greater rights for defense corporations.',
-  },
-  zleclaire: {
-    name: {
-      first: 'Zach',
-      last: 'LeClaire',
-    },
-    affiliation: ['Undergraduate @cwru'],
-    formerAffiliations: ['Programming lead @1280-programming'],
-    image: '/img/profiles/zleclaire.jpg',
-    website: 'https://www.linkedin.com/in/zachary-leclaire-18b69b162/',
-    bio: 'Team programming legend; Zach is to Team 1280 programming what Ben is to electrical.',
-    nationality: ['fra', 'usa'],
-  },
-  szhong: {
-    name: {
-      first: 'Shaochen',
-      last: 'Zhong',
-      nickname: 'Henry',
-    },
-    affiliation: ['PhD student @rice'],
-    formerAffiliations: ['Undergraduate @cwru'],
-    image: '/img/profiles/szhong.jpg',
-    nationality: ['usa', 'unknown'],
-    website: 'https://www.linkedin.com/in/shaochen-henry-zhong-96a941249/',
-  },
-  zyou: {
-    name: {
-      first: 'Zaichuan',
-      last: 'You',
-    },
-    affiliation: ["Master's degree holder @nyu"],
-    formerAffiliations: ['Undergraduate @cwru'],
-    image: '/img/profiles/zyou.jpg',
-    nationality: ['chn', 'usa'],
-    website: 'https://www.linkedin.com/in/zaichuanyou/',
-  },
-  jzhang: {
-    name: {
-      first: 'Jiamu',
-      last: 'Zhang',
-    },
-    affiliation: ['Undergraduate @cwru'],
-    image: '/img/profiles/jzhang.jpg',
-    nationality: ['chn', 'usa'],
-    website: 'https://www.linkedin.com/in/jiamu-zhang-morris/',
-  },
-  szhao: {
-    name: {
-      first: 'Sebastian',
-      last: 'Zhao',
-    },
-    affiliation: ['ML research intern @berkeley-eecs'],
-    formerAffiliations: [
-      'Part-time ML research intern @cwru',
-      'Undergraduate @berkeley-eecs',
-    ],
-    image: '/img/profiles/szhao.jpg',
-    nationality: ['usa', 'unknown'],
-    website: 'https://www.linkedin.com/in/sebbyzhao/',
-  },
-  zliu: {
-    name: {
-      first: 'Zirui',
-      last: 'Liu',
-    },
-    affiliation: ['PhD student @rice'],
-    image: '/img/profiles/zliu.jpg',
-    nationality: ['chn', 'usa'],
-    website: 'https://scholar.google.com/citations?user=0i1w_egAAAAJ&hl=zh-CN',
-  },
-  dzha: {
-    name: {
-      first: 'Daochen',
-      last: 'Zha',
-    },
-    affiliation: ['ML engineer @airbnb'],
-    formerAffiliations: ['PhD student @rice'],
-    image: '/img/profiles/dzha.jpg',
-    nationality: ['chn', 'usa'],
-    website: 'https://www.linkedin.com/in/daochen-zha/',
-  },
-  vchaudhary: {
-    name: {
-      first: 'Vipin',
-      last: 'Chaudhary',
-    },
-    affiliation: ['CS dept chair @cwru'],
-    formerAffiliations: [
-      'PhD student @ut-austin',
-      'Undergraduate @iit-kharagpur',
-    ],
-    image: '/img/profiles/vchaudhary.jpg',
-    nationality: ['ind', 'usa'],
-    website:
-      'https://engineering.case.edu/about/school-directory/vipin-chaudhary',
-  },
-  sxu: {
-    name: {
-      first: 'Shuai',
-      last: 'Xu',
-    },
-    affiliation: ['Assistant Professor @cwru'],
-    image: '/img/profiles/sxu.jpg',
-    nationality: ['chn', 'usa'],
-    website: 'https://engineering.case.edu/about/school-directory/shuai-xu',
-  },
-  xhu: {
-    name: {
-      first: 'Xia',
-      last: 'Hu',
-      nickname: 'Ben',
-    },
-    affiliation: ['Associate Professor of CS@rice'],
-    image: '/img/profiles/xhu.jpg',
-    nationality: ['sgp', 'usa'],
-    website: 'https://cs.rice.edu/~xh37/index.html',
-  },
   rgawde: {
     name: {
       first: 'Rohan',
@@ -843,25 +528,6 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     image: '/img/profiles/rgawde.jpg',
     nationality: ['ind', 'usa'],
     bio: `I am Rohan, a Mechanical Engineering student from India. I am passionate about designing and developing robots. I love to learn new things. I am currently a CAD Lead at Team 1280.`,
-  },
-  ckrueger: {
-    name: {
-      first: 'Charles',
-      last: 'Krueger',
-      nickname: 'Charlie',
-    },
-    affiliation: ['Student@srvhs'],
-    image: '/img/profiles/default.png',
-    nationality: ['usa', 'sgp'],
-  },
-  mfaber: {
-    name: {
-      first: 'Matthieu',
-      last: 'Fayet-Faber',
-    },
-    affiliation: ['Student@srvhs'],
-    image: '/img/profiles/default.png',
-    nationality: ['usa', 'fra'],
   },
 }
 
@@ -1020,19 +686,6 @@ Raid Zero's influence extends beyond the technical achievements in robotics comp
       [linebreak]
       Our organization not only impacts our members from around the world but also our partners as we help promote their business and improve their products. Our new vision has been to help develop companies that would contribute to the future of game development and promote accessibility. Recently, we launched exclusive early access to Rosebud’s game maker platform for all of our members to try. In the future, we plan to host more exclusive events that revolve around our partners. 
     `,
-  },
-  primos: {
-    name: `Primo's Pizzeria & Pub`,
-    short: 'Primos',
-    image: '/img/logos/primos.png',
-    description: `
-    Welcoming, family-run restaurant pairs straightforward pizzas, pasta & sandwiches with beers on tap.
-    [linebreak]
-      Service options: Serves happy hour food · Serves vegetarian dishes · Good for watching sports
-      [linebreak]
-      Address: 298 Hartz Ave, Danville, CA 94526
-      [linebreak]
-      Phone: (925) 838-8214`,
   },
   ucsb: {
     name: 'University of California, Santa Barbara',
