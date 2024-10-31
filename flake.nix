@@ -1,5 +1,5 @@
 {
-  description = "Description for the project";
+  description = "a free distribution service and an open-access archive";
 
   inputs = {
     devenv-root = {
@@ -64,12 +64,10 @@
             ];
 
             # https://devenv.sh/reference/options/
-            packages =
-              [ config.packages.default ]
-              ++ (with pkgs; [
-                prettierd
-                tailwindcss-language-server
-              ]);
+            packages = with pkgs; [
+              prettierd
+              tailwindcss-language-server
+            ];
 
             processes = {
               dev.exec = "npm run dev";
