@@ -226,15 +226,7 @@ export const documents: Readonly<{ [key: string]: Document }> = {
     },
     file: 'pdf',
     doi: '10.5281/zenodo.10677158',
-    abstract: `Approximately 1 month ago, the Team 1280 Electrical Engineering and Computer Science 
-      Department (henceforth referred to as just EECS), an independent organ of the Team 1280 official
-      organization which operates extrajudicially and without congressional oversight, requisitioned a
-      LiDAR capable of generating a 3-D depth map of the area ahead in order to supplement and
-      enhance the BozoVision subroutine with additional sensory input. However, a SNAFU (or deliberately 
-      malicious incompetence) led to the acquisition of a 1-D LiDAR sensor manufactured by
-      garmin. This LiDAR acts as a glorified uss rangefinder, and has a resolution of just 1cm. This
-      LiDAR, out of the box, would not have been able to support anything approximating a depth
-      map that met EECS’s stringent specifications and standards. `,
+    abstract: `Approximately 1 month ago, the Team 1280 Electrical Engineering and Computer Science Department (henceforth referred to as just EECS), an independent organ of the Team 1280 official organization which operates extrajudicially and without congressional oversight, requisitioned a LiDAR capable of generating a 3-D depth map of the area ahead in order to supplement and enhance the BozoVision subroutine with additional sensory input. However, a SNAFU (or deliberately malicious incompetence) led to the acquisition of a 1-D LiDAR sensor manufactured by garmin. This LiDAR acts as a glorified uss rangefinder, and has a resolution of just 1cm. This LiDAR, out of the box, would not have been able to support anything approximating a depth map that met EECS’s stringent specifications and standards. `,
   },
   '2023-ee-training': {
     manifest: {
@@ -291,18 +283,7 @@ On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team 
     },
     file: 'pdf',
     doi: '10.5281/zenodo.10668656',
-    abstract: `In this paper, we present eeXiv, an open-source, open-access project hosted by Team
-    1280 EECS ("Electrical Engineering and Computer Science"), independent of the department of
-    the same name at UC Berkeley. We aim to rival arXiv as the single largest open-source and
-    open-access research paper repository and as the largest research paper repository on the West
-    Coast, transforming San Ramon Valley High School into a tier-1 research institution. Similar to
-    arXiv, we host electronic preprints and postprints (known as e-prints) approved for posting
-    after a rigorous peer review process. Our repository consists of scientific papers in the
-    fields of mathematics, physics, astronomy, electrical engineering, computer science,
-    quantitative biology, statistics, mathematical finance, and economics, with a focus on papers
-    specific to the FIRST Robotics Competition. eeXiv bypasses the traditional bureaucracy of
-    research publication, which involves lengthy peer review processes and journal approval, by
-    enabling "libre" and "open" publication, dissemination, and consumption of research artifacts.`,
+    abstract: `In this paper, we present eeXiv, an open-source, open-access project hosted by Team 1280 EECS ("Electrical Engineering and Computer Science"), independent of the department of the same name at UC Berkeley. We aim to rival arXiv as the single largest open-source and open-access research paper repository and as the largest research paper repository on the West Coast, transforming San Ramon Valley High School into a tier-1 research institution. Similar to arXiv, we host electronic preprints and postprints (known as e-prints) approved for posting after a rigorous peer review process. Our repository consists of scientific papers in the fields of mathematics, physics, astronomy, electrical engineering, computer science, quantitative biology, statistics, mathematical finance, and economics, with a focus on papers specific to the FIRST Robotics Competition. eeXiv bypasses the traditional bureaucracy of research publication, which involves lengthy peer review processes and journal approval, by enabling "libre" and "open" publication, dissemination, and consumption of research artifacts.`,
   },
   'moscow-to-kabul': {
     manifest: {
@@ -341,13 +322,7 @@ On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team 
     },
     file: 'pdf',
     doi: '10.5281/zenodo.10677190',
-    abstract: `Although ethnic nationalism and democratization contributed greatly to the downfall of
-    the Soviet Union, the primary catalyst of Soviet collapse was the Soviet-Afghan War. The
-    conflict exacerbated existing ethnic and cultural divides in the hinterlands of the Soviet empire,
-    and the dramatic Russian loss broadcasted the fact that the Red Army was not invincible to
-    foreign powers and internal dissidents alike, emboldening the first breakaway republics and
-    enabling the eventual dissolution of the Soviet Union. To understand the Soviet-Afghan war—its
-    causes and its effects—is to understand the collapse of the world’s largest superpower.`,
+    abstract: `Although ethnic nationalism and democratization contributed greatly to the downfall of the Soviet Union, the primary catalyst of Soviet collapse was the Soviet-Afghan War. The conflict exacerbated existing ethnic and cultural divides in the hinterlands of the Soviet empire, and the dramatic Russian loss broadcasted the fact that the Red Army was not invincible to foreign powers and internal dissidents alike, emboldening the first breakaway republics and enabling the eventual dissolution of the Soviet Union. To understand the Soviet-Afghan war—its causes and its effects—is to understand the collapse of the world’s largest superpower.`,
   },
   'free-adversarial-robustness': {
     manifest: {
@@ -391,26 +366,7 @@ On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team 
     },
     file: 'pdf',
     doi: '10.5281/zenodo.10677218',
-    abstract: `Densely structured pruning methods utilizing simple pruning heuristics are
-    capable of delivering immediate compression and acceleration benefits with
-    acceptable benign performances. However, empirical findings indicate such
-    naively pruned networks are extremely fragile under simple adversarial attacks.
-    Naturally, we would be interested in knowing if such phenomenon also hold true
-    to carefully designed modern structured pruning methods. If so, then to what
-    extent the severity? And what kind of remedies are available? Unfortunately,
-    both the questions and the solution remain largely unaddressed: no prior art
-    is able to provide a thorough investigation on the adversarial performance of
-    modern structured pruning methods (spoiler: it is not good), yet the few works
-    that attempt to provide mitigation often done so at various extra costs with only
-    to-be-desired performance. In this work, we answer both questions by fairly
-    and comprehensively investigate the adversarial performance of 10+ popular
-    structured pruning methods. Solution-wise, we take advantage of Grouped Kernel
-    Pruning (GKP)’s recent success in pushing densely structured pruning freedom
-    to a more fine-grained level. By mixing up kernel smoothness — a classic
-    robustness-related kernel-level metric — into a modified GKP procedure, we
-    hereby present an one-shot-post-train-data-free GKP method capable of advancing
-    SOTA performance on both benign and adversarial scale, while requiring no extra
-    (in fact, often less) cost than a standard pruning procedure.`,
+    abstract: `Densely structured pruning methods utilizing simple pruning heuristics are capable of delivering immediate compression and acceleration benefits with acceptable benign performances. However, empirical findings indicate such naively pruned networks are extremely fragile under simple adversarial attacks. Naturally, we would be interested in knowing if such phenomenon also hold true to carefully designed modern structured pruning methods. If so, then to what extent the severity? And what kind of remedies are available? Unfortunately, both the questions and the solution remain largely unaddressed: no prior art is able to provide a thorough investigation on the adversarial performance of modern structured pruning methods (spoiler: it is not good), yet the few works that attempt to provide mitigation often done so at various extra costs with only to-be-desired performance. In this work, we answer both questions by fairly and comprehensively investigate the adversarial performance of 10+ popular structured pruning methods. Solution-wise, we take advantage of Grouped Kernel Pruning (GKP)’s recent success in pushing densely structured pruning freedom to a more fine-grained level. By mixing up kernel smoothness — a classic robustness-related kernel-level metric — into a modified GKP procedure, we hereby present an one-shot-post-train-data-free GKP method capable of advancing SOTA performance on both benign and adversarial scale, while requiring no extra (in fact, often less) cost than a standard pruning procedure.`,
   },
   'pendulum-lab': {
     manifest: {
@@ -456,9 +412,7 @@ pendulum.`,
     },
     file: 'pdf',
     abstract: `
-      Addresses the Argument for Betting on God, otherwise known as Pascal's
-        Wager through a rational and mathematically rigorous viewpoint.
-        Addresses key arguments based on cardinality and probability.
+      Addresses the Argument for Betting on God, otherwise known as Pascal's Wager through a rational and mathematically rigorous viewpoint. Addresses key arguments based on cardinality and probability.
     `,
   },
 }
@@ -477,11 +431,7 @@ export const topics: Readonly<{ [key: string]: Topic }> = {
   },
   phil: {
     name: 'Philosophy',
-    description: `Philosophy ('love of wisdom' in Ancient Greek) is a
-    systematic study of general and fundamental questions concerning topics
-    like existence, reason, knowledge, value, mind, and language. It is a
-    rational and critical inquiry that reflects on its own methods and
-    assumptions. `,
+    description: `Philosophy ('love of wisdom' in Ancient Greek) is a systematic study of general and fundamental questions concerning topics like existence, reason, knowledge, value, mind, and language. It is a rational and critical inquiry that reflects on its own methods and assumptions. `,
     wiki: 'https://en.wikipedia.org/wiki/Philosophy',
   },
   mech: {
@@ -1029,31 +979,9 @@ Raid Zero's influence extends beyond the technical achievements in robotics comp
     name: `Massachusetts Institute of Technology`,
     short: 'MIT',
     image: '/img/logos/mit.svg',
-    description: `The Massachusetts Institute of Technology is a private
-    research university in Cambridge, Massachusetts, United States. Established
-    in 1861, MIT has played a significant role in the development of many areas
-    of modern technology and science.
+    description: `The Massachusetts Institute of Technology is a private research university in Cambridge, Massachusetts, United States. Established in 1861, MIT has played a significant role in the development of many areas of modern technology and science. [linebreak] Founded in response to the increasing industrialization of the United States, MIT adopted a European polytechnic university model and stressed laboratory instruction in applied science and engineering. MIT is one of three private land-grant universities in the United States, the others being Cornell University and Tuskegee University. The institute has an urban campus that extends more than a mile (1.6 km) alongside the Charles River, and operates off-campus facilities including the MIT Lincoln Laboratory, the Bates Center, and the Haystack Observatory, as well as affiliated laboratories such as the Broad and Whitehead Institutes.
     [linebreak]
-    Founded in response to the increasing industrialization of the United
-    States, MIT adopted a European polytechnic university model and stressed
-    laboratory instruction in applied science and engineering. MIT is one of
-    three private land-grant universities in the United States, the others
-    being Cornell University and Tuskegee University. The institute has an
-    urban campus that extends more than a mile (1.6 km) alongside the Charles
-    River, and operates off-campus facilities including the MIT Lincoln
-    Laboratory, the Bates Center, and the Haystack Observatory, as well as
-    affiliated laboratories such as the Broad and Whitehead Institutes.
-    [linebreak]
-    As of October 2023, 101 Nobel laureates, 26 Turing Award winners, and 8
-    Fields Medalists have been affiliated with MIT as alumni, faculty members,
-    or researchers. In addition, 58 National Medal of Science recipients,
-    29 National Medals of Technology and Innovation recipients, 50 MacArthur
-    Fellows,83 Marshall Scholars, 41 astronauts, 16 Chief
-    Scientists of the US Air Force, and 1 foreign head of state have been
-    affiliated with MIT. The institute also has a strong entrepreneurial
-    culture and MIT alumni have founded or co-founded many notable
-    companies. MIT is a member of the Association of American
-    Universities.
+    As of October 2023, 101 Nobel laureates, 26 Turing Award winners, and 8 Fields Medalists have been affiliated with MIT as alumni, faculty members, or researchers. In addition, 58 National Medal of Science recipients, 29 National Medals of Technology and Innovation recipients, 50 MacArthur Fellows,83 Marshall Scholars, 41 astronauts, 16 Chief Scientists of the US Air Force, and 1 foreign head of state have been affiliated with MIT. The institute also has a strong entrepreneurial culture and MIT alumni have founded or co-founded many notable companies. MIT is a member of the Association of American Universities.
     [linebreak]
     Description taken from Wikipedia under a Creative Commons Attribution-ShareAlike 4.0 License.
       `,
@@ -1108,32 +1036,11 @@ Raid Zero's influence extends beyond the technical achievements in robotics comp
     short: 'UCSB',
     image: '/img/logos/ucsb.png',
     description: `
-    The University of California, Santa Barbara (UC Santa Barbara or UCSB) is a
-    public land-grant research university in Santa Barbara County, California,
-    United States.[11] Tracing its roots back to 1891 as an independent teachers'
-    college, UCSB joined the University of California system in 1944. It is the
-    third-oldest undergraduate campus in the system, after UC Berkeley and UCLA.
+    The University of California, Santa Barbara (UC Santa Barbara or UCSB) is a public land-grant research university in Santa Barbara County, California, United States.[11] Tracing its roots back to 1891 as an independent teachers' college, UCSB joined the University of California system in 1944. It is the third-oldest undergraduate campus in the system, after UC Berkeley and UCLA.
     [linebreak]
-      UCSB's campus sits on the oceanfront site of a converted WWII-era Marine
-    Corps air station.[12] UCSB is organized into three undergraduate colleges
-    (Letters and Science, Engineering, Creative Studies) and two graduate schools
-    (Education and Environmental Science & Management), offering more than 200
-    degrees and programs. It is classified among "R1: Doctoral Universities – Very
-    high research activity" and is regarded as a Public Ivy.[13] The university has
-    12 national research centers and institutes,[14] including the Kavli Institute
-    for Theoretical Physics and NSF Quantum Foundry.[15] According to the National
-      Science Foundation, UC Santa Barbara spent $238 million on research and
-    development in fiscal year 2018, ranking it 100th in the nation.[16] UCSB was
-    the No. 3 host on the ARPAnet and was elected to the Association of American
-    Universities in 1995.
+      UCSB's campus sits on the oceanfront site of a converted WWII-era Marine Corps air station.[12] UCSB is organized into three undergraduate colleges (Letters and Science, Engineering, Creative Studies) and two graduate schools (Education and Environmental Science & Management), offering more than 200 degrees and programs. It is classified among "R1: Doctoral Universities – Very high research activity" and is regarded as a Public Ivy.[13] The university has 12 national research centers and institutes,[14] including the Kavli Institute for Theoretical Physics and NSF Quantum Foundry.[15] According to the National Science Foundation, UC Santa Barbara spent $238 million on research and development in fiscal year 2018, ranking it 100th in the nation.[16] UCSB was the No. 3 host on the ARPAnet and was elected to the Association of American Universities in 1995.
     [linebreak]
-      UCSB alumni, faculty, and researchers have included 14 Nobel Prize laureates,
-    founders of notable companies, 1 Fields Medalist, 39 members of the National
-    Academy of Sciences, 29 members of the National Academy of Engineering, and 49
-    members of the American Academy of Arts and Sciences.[17] The faculty also
-    includes two Academy and Emmy Award winners and recipients of a Millennium
-    Technology Prize, an IEEE Medal of Honor, a National Medal of Technology and
-    Innovation and a Breakthrough Prize in Fundamental Physics.
+      UCSB alumni, faculty, and researchers have included 14 Nobel Prize laureates, founders of notable companies, 1 Fields Medalist, 39 members of the National Academy of Sciences, 29 members of the National Academy of Engineering, and 49 members of the American Academy of Arts and Sciences.[17] The faculty also includes two Academy and Emmy Award winners and recipients of a Millennium Technology Prize, an IEEE Medal of Honor, a National Medal of Technology and Innovation and a Breakthrough Prize in Fundamental Physics.
     [linebreak]
     Description taken from Wikipedia under a Creative Commons Attribution-ShareAlike 4.0 License.
     `,
