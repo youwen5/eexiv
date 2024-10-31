@@ -20,8 +20,10 @@ const getRepo = (link: string) => {
     const parts = link.split('/')
     const owner = parts[3]
     const name = parts[4]
-    return `git:${owner}/${name}`
+    return `github:${owner}/${name}`
   }
+
+  return link
 }
 
 export const Code = ({
