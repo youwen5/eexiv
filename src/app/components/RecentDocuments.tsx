@@ -70,7 +70,10 @@ const RecentDocuments = (): React.ReactNode[] => {
         <Link href={`/topic/${topics[0]}`}>
           {topicsList[topics[0]]['name']}
         </Link>{' '}
-        published on {dateString}
+        {documents[key].manifest.status === 'under review'
+          ? 'released'
+          : 'published'}{' '}
+        on {dateString}
         .
         <br />
       </div>

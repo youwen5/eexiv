@@ -22,7 +22,7 @@ const RandomDocs = (): React.ReactNode[] => {
 
   // Iterate over each of the selected keys
   return selectedKeys.map((key, index) => {
-    const { title, dates, type, topics } = documents[key].manifest
+    const { title, dates, type, topics, status } = documents[key].manifest
     let dateString = epoch2datestring(dates[dates.length - 1])
     let typeString = ''
     switch (type) {
@@ -50,6 +50,10 @@ const RandomDocs = (): React.ReactNode[] => {
       case 'other':
         typeString = 'document'
         break
+
+        if (status === 'under review' || status === 'draft') {
+          typeString = `preprint ${typeString}`
+        }
     }
 
     return (
@@ -59,7 +63,10 @@ const RandomDocs = (): React.ReactNode[] => {
         <Link href={`/topic/${topics[0]}`}>
           {topicsList[topics[0]]['name']}
         </Link>{' '}
-        published on {dateString}
+        {documents[key].manifest.status === 'under review'
+          ? 'released'
+          : 'published'}{' '}
+        on {dateString}
         .
         <br />
       </div>
