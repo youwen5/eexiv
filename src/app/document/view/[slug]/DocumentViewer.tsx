@@ -1,5 +1,5 @@
 'use client'
-import { ItemBadge, Status } from '@/app/components/Badges'
+import { ItemBadge, PreprintBadge, Status } from '@/app/components/Badges'
 import {
   Authors,
   Code,
@@ -69,6 +69,7 @@ const DocumentViewer = ({ slug }: Readonly<{ slug: string }>) => {
       <div className='flex flex-wrap gap-2'>
         <ItemBadge itemName={type} />
         <Status statusName={status} />
+        {status === 'under review' ? <PreprintBadge /> : null}
         <span className='border-gray-200 border-2 rounded px-2 py-1.5 mr-2 shadow-sm shadow-slate-300'>
           Revision {latest}
         </span>

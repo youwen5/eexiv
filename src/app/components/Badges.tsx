@@ -67,3 +67,7 @@ export const ItemBadge = ({
   }
   return <span className={itemStyle}>{text}</span>
 }
+
+export const PreprintBadge = () => {
+  return <span className='badge-other'>Preprint</span>
+}

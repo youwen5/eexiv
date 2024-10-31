@@ -4,7 +4,7 @@ import { Zilla_Slab } from 'next/font/google'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Fragment } from 'react'
-import { ItemBadge, Status } from '../components/Badges'
+import { ItemBadge, PreprintBadge, Status } from '../components/Badges'
 import { Authors, Topics } from '../components/DataDisplay'
 import { epoch2datestring } from '../utils/epoch2datestring'
 
@@ -39,6 +39,7 @@ const DocumentCardWrapper = ({
         </p>
         <div className='mb-4 flex flex-wrap gap-2'>
           <ItemBadge itemName={type} /> <Status statusName={status} />
+          {status === 'under review' ? <PreprintBadge /> : null}
         </div>
         <h2 className={`${zillaSlab.className} text-2xl`}>Abstract</h2>
         <p className='py-2 text-md text-slate-700 font-serif text-lg text-balance'>
