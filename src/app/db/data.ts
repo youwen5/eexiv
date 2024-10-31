@@ -565,11 +565,12 @@ export const authors: Readonly<{ [key: string]: Author }> = {
       first: 'Youwen',
       last: 'Wu',
     },
-    affiliation: ['Artificial Intelligence Lead@1280-eecs'],
+    affiliation: ['Undergraduate student@ucsb'],
+    formerAffiliations: ['Artificial Intelligence Lead@1280-eecs'],
     image: '/img/profiles/ywu.webp',
     nationality: ['chn'],
     bio: 'The kingpin of jank. Never before has so much jank been so distilled in one place.',
-    website: 'https://github.com/couscousdude',
+    website: 'https://youwen.dev',
   },
   wlin: {
     name: {
