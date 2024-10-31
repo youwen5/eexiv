@@ -1102,6 +1102,8 @@ Raid Zero's influence extends beyond the technical achievements in robotics comp
     includes two Academy and Emmy Award winners and recipients of a Millennium
     Technology Prize, an IEEE Medal of Honor, a National Medal of Technology and
     Innovation and a Breakthrough Prize in Fundamental Physics.
+    [linebreak]
+    Description taken from Wikipedia under a Creative Commons Attribution-ShareAlike 4.0 License.
     `,
   },
   'sandia-labs': {
