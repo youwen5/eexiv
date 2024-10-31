@@ -604,7 +604,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     formerAffiliations: ['Artificial Intelligence Lead@1280-eecs'],
     image: '/img/profiles/ywu.webp',
     nationality: ['chn'],
-    bio: 'The kingpin of jank. Never before has so much jank been so distilled in one place.',
+    bio: 'Hacker. Visionary. eeXiv co-founder. NixOS enthusiast. Neovim evangelist. Haskell priest.',
     website: 'https://youwen.dev',
   },
   wlin: {
