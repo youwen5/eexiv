@@ -438,6 +438,29 @@ can express its period 𝑇 in terms of its length ℓ and gravity 𝑔 through 
 paper, we will show how to calculate an experimental value of 𝑔 for Earth’s gravity using a simple
 pendulum.`,
   },
+  'on-the-argument-for-betting-on-god': {
+    manifest: {
+      title:
+        'The Argument for Betting on God and the Possibility of Infinite Suffering',
+      authors: ['ywu'],
+      reviewers: [],
+      topics: ['phil'],
+      dates: [1730417089],
+      type: 'paper',
+      latest: 1,
+      keywords: ['philosophy', 'god', 'ontology', `pascal's wager`],
+      code: [
+        'https://code.youwen.dev/youwen5/alexandria/src/branch/main/2024/documents/by-course/phil-1/paper-1',
+      ],
+      status: 'under review',
+    },
+    file: 'pdf',
+    abstract: `
+      Addresses the Argument for Betting on God, otherwise known as Pascal's
+        Wager through a rational and mathematically rigorous viewpoint.
+        Addresses key arguments based on cardinality and probability.
+    `,
+  },
 }
 
 export interface Topic {
@@ -451,6 +474,15 @@ export const topics: Readonly<{ [key: string]: Topic }> = {
     description:
       'FRC is an international robotics competition that was founded by FIRST in 1983 and is currently one of the largest professional robotics competitions in the world.',
     wiki: 'https://en.wikipedia.org/wiki/FIRST_Robotics_Competition',
+  },
+  phil: {
+    name: 'Philosophy',
+    description: `Philosophy ('love of wisdom' in Ancient Greek) is a
+    systematic study of general and fundamental questions concerning topics
+    like existence, reason, knowledge, value, mind, and language. It is a
+    rational and critical inquiry that reflects on its own methods and
+    assumptions. `,
+    wiki: 'https://en.wikipedia.org/wiki/Philosophy',
   },
   mech: {
     name: 'Mechanical Engineering',
