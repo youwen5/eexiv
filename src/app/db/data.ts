@@ -1075,9 +1075,33 @@ Raid Zero's influence extends beyond the technical achievements in robotics comp
     name: 'University of California, Santa Barbara',
     short: 'UCSB',
     image: '/img/logos/ucsb.png',
-    description: `University of California, Santa Barbara is a top ranked university in Santa Barbara, California. Established in 1901, it is one of the top 100 universities in California.
+    description: `
+    The University of California, Santa Barbara (UC Santa Barbara or UCSB) is a
+    public land-grant research university in Santa Barbara County, California,
+    United States.[11] Tracing its roots back to 1891 as an independent teachers'
+    college, UCSB joined the University of California system in 1944. It is the
+    third-oldest undergraduate campus in the system, after UC Berkeley and UCLA.
     [linebreak]
-    Welcome to UC Santa Barbara, where the land meets the sea, where brilliant minds meet each other, and where academic excellence and social engagement unite to spark creativity and discovery.
+      UCSB's campus sits on the oceanfront site of a converted WWII-era Marine
+    Corps air station.[12] UCSB is organized into three undergraduate colleges
+    (Letters and Science, Engineering, Creative Studies) and two graduate schools
+    (Education and Environmental Science & Management), offering more than 200
+    degrees and programs. It is classified among "R1: Doctoral Universities – Very
+    high research activity" and is regarded as a Public Ivy.[13] The university has
+    12 national research centers and institutes,[14] including the Kavli Institute
+    for Theoretical Physics and NSF Quantum Foundry.[15] According to the National
+      Science Foundation, UC Santa Barbara spent $238 million on research and
+    development in fiscal year 2018, ranking it 100th in the nation.[16] UCSB was
+    the No. 3 host on the ARPAnet and was elected to the Association of American
+    Universities in 1995.
+    [linebreak]
+      UCSB alumni, faculty, and researchers have included 14 Nobel Prize laureates,
+    founders of notable companies, 1 Fields Medalist, 39 members of the National
+    Academy of Sciences, 29 members of the National Academy of Engineering, and 49
+    members of the American Academy of Arts and Sciences.[17] The faculty also
+    includes two Academy and Emmy Award winners and recipients of a Millennium
+    Technology Prize, an IEEE Medal of Honor, a National Medal of Technology and
+    Innovation and a Breakthrough Prize in Fundamental Physics.
     `,
   },
   'sandia-labs': {
