@@ -553,8 +553,11 @@ export const authors: Readonly<{ [key: string]: Author }> = {
       first: 'Ananth',
       last: 'Venkatesh',
     },
-    affiliation: ['Lead Controls Engineer@1280-eecs'],
-    formerAffiliations: ['Programming Lead@1280-programming'],
+    affiliation: ['Undergraduate student@mit'],
+    formerAffiliations: [
+      'Programming Lead@1280-programming',
+      'Lead Controls Engineer@1280-eecs',
+    ],
     image: '/img/profiles/avenkatesh.png',
     nationality: ['ind', 'eth', 'usa'],
     bio: 'King of jank. Hacker in JS, TS, R, and Python. Capitalist innovator. EECS creator. eeXiv co-founder.',
@@ -989,6 +992,39 @@ Raid Zero's influence extends beyond the technical achievements in robotics comp
       Throughout our FRC career, we have won several regional events and numerous awards including: the Rookie Inspiration Award, both the Radio Shack and Rockwell Automation Innovation in Control Awards, the Imagery Award, the Engineering Excellence Award, and the Creativity Award. While we do focus on the competitive aspect of robotics, we also strive to spread the knowledge of STEM through our outreach programs to those who might not otherwise have access to these opportunities.
       [linebreak]
       We have impacted over 21,000 K-12 students alone through our assemblies and workshops.`,
+  },
+  mit: {
+    name: `Massachusetts Institute of Technology`,
+    short: 'MIT',
+    image: '/img/logos/mit.svg',
+    description: `The Massachusetts Institute of Technology is a private
+    research university in Cambridge, Massachusetts, United States. Established
+    in 1861, MIT has played a significant role in the development of many areas
+    of modern technology and science.
+    [linebreak]
+    Founded in response to the increasing industrialization of the United
+    States, MIT adopted a European polytechnic university model and stressed
+    laboratory instruction in applied science and engineering. MIT is one of
+    three private land-grant universities in the United States, the others
+    being Cornell University and Tuskegee University. The institute has an
+    urban campus that extends more than a mile (1.6 km) alongside the Charles
+    River, and operates off-campus facilities including the MIT Lincoln
+    Laboratory, the Bates Center, and the Haystack Observatory, as well as
+    affiliated laboratories such as the Broad and Whitehead Institutes.
+    [linebreak]
+    As of October 2023, 101 Nobel laureates, 26 Turing Award winners, and 8
+    Fields Medalists have been affiliated with MIT as alumni, faculty members,
+    or researchers. In addition, 58 National Medal of Science recipients,
+    29 National Medals of Technology and Innovation recipients, 50 MacArthur
+    Fellows,83 Marshall Scholars, 41 astronauts, 16 Chief
+    Scientists of the US Air Force, and 1 foreign head of state have been
+    affiliated with MIT. The institute also has a strong entrepreneurial
+    culture and MIT alumni have founded or co-founded many notable
+    companies. MIT is a member of the Association of American
+    Universities.
+    [linebreak]
+    Description taken from Wikipedia under a Creative Commons Attribution-ShareAlike 4.0 License.
+      `,
   },
   cpss: {
     name: `California Polytechnic University, San Luis Obispo, Space Systems`,
