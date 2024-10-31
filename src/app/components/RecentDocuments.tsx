@@ -29,7 +29,7 @@ const RecentDocuments = (): React.ReactNode[] => {
 
   // Iterate over each of the selected keys
   return keys.map((key) => {
-    const { title, dates, type, topics } = documents[key].manifest
+    const { title, dates, type, topics, status } = documents[key].manifest
     let dateString = epoch2datestring(dates[dates.length - 1])
     let typeString = ''
     switch (type) {
@@ -57,6 +57,10 @@ const RecentDocuments = (): React.ReactNode[] => {
       case 'other':
         typeString = 'document'
         break
+    }
+
+    if (status === 'under review' || status === 'draft') {
+      typeString = `preprint ${typeString}`
     }
 
     return (

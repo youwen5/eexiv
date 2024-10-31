@@ -443,7 +443,7 @@ pendulum.`,
       title:
         'The Argument for Betting on God and the Possibility of Infinite Suffering',
       authors: ['ywu'],
-      reviewers: [],
+      //reviewers: [],
       topics: ['phil'],
       dates: [1730417089],
       type: 'paper',
