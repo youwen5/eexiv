@@ -11,8 +11,8 @@ export default function Page() {
         <Link href='https://eecs.berkeley.edu'>UC Berkeley</Link>. We aim to
         rival arXiv as the single largest open-source and open-access research
         paper repository. eeXiv is{' '}
-        <Link href='https://github.com/Team-1280/eeXiv'>open-source</Link> and{' '}
-        <Link href='https://github.com/Team-1280/eeXiv/blob/main/LICENSE'>
+        <Link href='https://github.com/youwen5/eeXiv'>open-source</Link> and{' '}
+        <Link href='https://github.com/youwen5/eeXiv/blob/main/LICENSE'>
           licensed
         </Link>{' '}
         under the GNU General Public License (GPL).
@@ -28,7 +28,7 @@ export default function Page() {
             <li>
               You can contribute to our website development or add your
               documents and user account to eeXiv on our{' '}
-              <Link href='https://github.com/team-1280/eexiv' target='_blank'>
+              <Link href='https://github.com/youwen5/eexiv' target='_blank'>
                 GitHub repository
               </Link>
               .

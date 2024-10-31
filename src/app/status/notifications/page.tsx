@@ -11,7 +11,7 @@ export default function Page() {
         lists in eeXiv. Check <Link href='/status'>status</Link> frequently for
         updates. The best way to stay connected with the status of the eeXiv
         project is to watch it on{' '}
-        <a href='https://github.com/Team-1280/eeXiv'>GitHub</a>.
+        <a href='https://github.com/youwen5/eeXiv'>GitHub</a>.
       </p>
     </div>
   )

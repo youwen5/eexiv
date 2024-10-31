@@ -25,7 +25,7 @@ export default function News() {
         <li key={5}>
           eeXiv v2 has been released! See the{' '}
           <a
-            href='https://github.com/Team-1280/eeXiv/releases/tag/2.0'
+            href='https://github.com/youwen5/eeXiv/releases/tag/2.0'
             className='text-blue-300'
           >
             GitHub release
@@ -52,7 +52,7 @@ export default function News() {
           updates, breaking changes, or weird bugs. Report bugs, suggest new
           features, or give us feedback at{' '}
           <a
-            href='https://github.com/team-1280/eexiv/issues'
+            href='https://github.com/youwen5/eexiv/issues'
             target='_blank'
             className='text-blue-300'
           >

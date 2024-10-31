@@ -11,8 +11,8 @@ export default function Page() {
         even if some of them may be pressing Diversity, Equity, and Inclusion
         (DEI) concerns. We recommend you add any accessibility fixes yourself by
         submitting a{' '}
-        <a href='https://github.com/Team-1280/eeXiv/pull/new'>pull request</a>{' '}
-        on GitHub.
+        <a href='https://github.com/youwen5/eeXiv/pull/new'>pull request</a> on
+        GitHub.
       </p>
       <h2 className='text-2xl text-slate-800 mt-6 mb-1 font-serif'>
         Supported Hardware
@@ -25,8 +25,8 @@ export default function Page() {
         memory via JavaScript. As a result, the site may be slow or unusable on
         low-spec devices and it can only get worse. If you would like to remedy
         this issue, we again recommend you open a{' '}
-        <a href='https://github.com/Team-1280/eeXiv/pull/new'>pull request</a>{' '}
-        and port our in memory database to an actual remote database.
+        <a href='https://github.com/youwen5/eeXiv/pull/new'>pull request</a> and
+        port our in memory database to an actual remote database.
       </p>
     </div>
   )

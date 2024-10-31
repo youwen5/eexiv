@@ -276,9 +276,9 @@ On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team 
         'stipends',
       ],
       code: [
-        'https://github.com/team-1280/eexiv',
-        'https://github.com/team-1280/eexiv-2',
-        'https://github.com/couscousdude/eexiv-2',
+        'https://github.com/youwen5/eexiv',
+        //'https://github.com/youwen5/eexiv-2',
+        //'https://github.com/couscousdude/eexiv-2',
       ],
     },
     file: 'pdf',
