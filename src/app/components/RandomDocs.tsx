@@ -50,10 +50,10 @@ const RandomDocs = (): React.ReactNode[] => {
       case 'other':
         typeString = 'document'
         break
+    }
 
-        if (status === 'under review' || status === 'draft') {
-          typeString = `preprint ${typeString}`
-        }
+    if (status === 'under review' || status === 'draft') {
+      typeString = `preprint ${typeString}`
     }
 
     return (
