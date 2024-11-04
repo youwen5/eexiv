@@ -6,6 +6,7 @@ arXiv just got better
 <!--[![Maintainability](https://api.codeclimate.com/v1/badges/6168d30014bffba95918/maintainability)](https://codeclimate.com/github/Team-1280/eeXiv/maintainability)-->
 
 ![Tor](https://img.shields.io/badge/Tor-7D4698?style=for-the-badge&logo=Tor-Browser&logoColor=white)
+
 <!--![Vivaldi](https://img.shields.io/badge/Vivaldi-EF3939?style=for-the-badge&logo=Vivaldi&logoColor=white)-->
 
 ![Written by human, not AI](./badges/no-ai.png)
