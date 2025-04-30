@@ -43,6 +43,21 @@ export interface DocumentManifest {
   reviewers?: reviewer[]
 }
 export const documents: Readonly<{ [key: string]: Document }> = {
+  'arcturus-rnd': {
+    manifest: {
+      title: 'Proposal for an Arcturus Research and Development Subteam',
+      authors: ['avenkatesh'],
+      status: 'draft',
+      topics: ['robotics', 'eecs'],
+      dates: [1745995728],
+      type: 'whitepaper',
+      latest: 1,
+      keywords: ['arcturus', 'robotics', 'research', 'mit', 'proposal'],
+    },
+    file: 'pdf',
+    abstract:
+      'Arcturus has always been at the frontier of research and development efforts among MIT’s build teams, pursuing ideas and projects that have at times seemed unlikely to bear fruit. Our approach has emphasized rapid prototyping and careful analysis of both well tested and novel methods. In this whitepaper, we propose the establishment of a research and development subteam to pursue what we see as the highest priority long-term goals, including many topics in theoretical computer science, applied mathematics, and related subjects. Many of our proposals may seem at present unreasonable at best and, in most cases, nearly impossible. We expect that, given the scope and fundamental restructuring necessary to achieve these goals, a separate subteam devoted to research and development is needed. We outline further reasons and major benefits of this approach in the following sections.',
+  },
   opencompute: {
     manifest: {
       title:
@@ -445,6 +460,12 @@ export const topics: Readonly<{ [key: string]: Topic }> = {
     description:
       'FRC is an international robotics competition that was founded by FIRST in 1983 and is currently one of the largest professional robotics competitions in the world.',
     wiki: 'https://en.wikipedia.org/wiki/FIRST_Robotics_Competition',
+  },
+  robotics: {
+    name: 'Robotics',
+    description:
+      'Robotics is the interdisciplinary study and practice of the design, construction, operation, and use of robots.[1] ',
+    wiki: 'https://en.wikipedia.org/wiki/Robotics',
   },
   phil: {
     name: 'Philosophy',
