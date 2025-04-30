@@ -22,6 +22,14 @@ export default function News() {
         Latest news
       </div>
       <ul className='text-slate-50 px-6 list-disc'>
+        <li key={3}>
+          eeXiv is no longer under the stewardship of Team 1280 on account of
+          its maintainers departing the team. Please contact the new{' '}
+          <a href='https://web.youwen.dev/impressum' className='text-blue-300'>
+            webmaster
+          </a>{' '}
+          if you have any questions.
+        </li>
         <li key={5}>
           eeXiv v2 has been released! See the{' '}
           <a
@@ -35,17 +43,6 @@ export default function News() {
         <li key={4}>
           eeXiv has been re-released! You can now select document version and
           export as BibTeX.{' '}
-        </li>
-        <li key={3}>
-          We are working on becoming an{' '}
-          <a
-            href='https://www.doi.org/the-foundation/about-us/'
-            target='_blank'
-            className='text-blue-300'
-          >
-            ISO 26324 DOI registry
-          </a>
-          {'!'}
         </li>
         <li key={2}>
           eeXiv is currently under active development! There may be major
