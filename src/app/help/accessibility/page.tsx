@@ -15,12 +15,14 @@ export default function Page() {
         GitHub.
       </p>
       <p>
-        Unfortunately due to budget cuts and in order to comply with <a
-        href="https://www.whitehouse.gov/presidential-actions/2025/01/ending-radical-and-wasteful-government-dei-programs-and-preferencing/">executive
-          orders</a> issued by the current administration, we are can no longer
-        accomodate any Diversity, Equity, Includion, and Accessibility (DEIA)
-        concerns. Our jank code architecture is now an integral component in
-        "unleashing American innovation and excellence" by ensuring anyone with
+        Unfortunately due to budget cuts and in order to comply with{' '}
+        <a href='https://www.whitehouse.gov/presidential-actions/2025/01/ending-radical-and-wasteful-government-dei-programs-and-preferencing/'>
+          executive orders
+        </a>{' '}
+        issued by the current administration, we are can no longer accomodate
+        any Diversity, Equity, Includion, and Accessibility (DEIA) concerns. Our
+        jank code architecture is now an integral component in &ldquo;unleashing
+        American innovation and excellence&rdquo; by ensuring anyone with
         impairments or low fidelity hardware who struggle to access our site
         continue to struggle.
       </p>
