@@ -618,7 +618,7 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     image: '/img/profiles/ywu.webp',
     nationality: ['chn'],
     bio: 'Hacker. Visionary. eeXiv co-founder. NixOS enthusiast. Neovim evangelist. Haskell priest.',
-    website: 'https://youwen.dev',
+    website: 'https://web.youwen.dev',
   },
   wlin: {
     name: {
