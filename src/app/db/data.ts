@@ -58,6 +58,21 @@ export const documents: Readonly<{ [key: string]: Document }> = {
     abstract:
       'Arcturus has always been at the frontier of research and development efforts among MIT’s build teams, pursuing ideas and projects that have at times seemed unlikely to bear fruit. Our approach has emphasized rapid prototyping and careful analysis of both well tested and novel methods. In this whitepaper, we propose the establishment of a research and development subteam to pursue what we see as the highest priority long-term goals, including many topics in theoretical computer science, applied mathematics, and related subjects. Many of our proposals may seem at present unreasonable at best and, in most cases, nearly impossible. We expect that, given the scope and fundamental restructuring necessary to achieve these goals, a separate subteam devoted to research and development is needed. We outline further reasons and major benefits of this approach in the following sections.',
   },
+  'arcturus-tdr1': {
+    manifest: {
+      title: 'Next Steps for Reproducible Testing and Deployment',
+      authors: ['avenkatesh'],
+      status: 'published no review',
+      topics: ['robotics', 'eecs'],
+      dates: [1745995727],
+      type: 'presentation',
+      latest: 1,
+      keywords: ['arcturus', 'robotics', 'reproducible', 'nixos', 'nix'],
+    },
+    file: 'pdf',
+    abstract:
+      'An assorted collection of reports presented during Arcturus Autonomy design reviews',
+  },
   opencompute: {
     manifest: {
       title:
