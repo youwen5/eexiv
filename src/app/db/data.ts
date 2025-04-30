@@ -43,6 +43,23 @@ export interface DocumentManifest {
   reviewers?: reviewer[]
 }
 export const documents: Readonly<{ [key: string]: Document }> = {
+  opencompute: {
+    manifest: {
+      title:
+        'Proposal for the Establishment of the OpenCompute Laboratory at MIT',
+      authors: ['avenkatesh', 'adonegan'],
+      topics: ['eecs'],
+      dates: [1745995729],
+      type: 'whitepaper',
+      latest: 1,
+      keywords: ['opencompute', 'risc', 'processor', 'operating', 'system'],
+      status: 'published no review',
+      reviewers: [{ first: 'Youwen', last: 'Wu', profile: 'ywu' }],
+    },
+    file: 'pdf',
+    abstract:
+      'The RISC-V architecture, originally designed to satisfy research requirements at the University of California, Berkeley, has enabled the development of fully open-source computing systems. This breakthrough, while critical for the establishment of a fully free computing environment, has not led to the development of many consumer electronics. Doing so would require the development of custom chips, input/output systems, and related firmware and drivers for a fully free and open-source operating system. In this whitepaper, we outline a laboratory with the aim of developing, from start to finish, a prototype of a fully open-source, provably secure, and fully (and possibly purely) functional high-performance computing environment. We also present a sampling of potential related research directions, touching on subjects as diverse as hardware security, homotopy type theory, and compositional design.',
+  },
   'day-5-principles': {
     manifest: {
       title: 'Day 5: Principles of Mechanical Engineering',
@@ -520,6 +537,16 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     image: '/img/profiles/shasan.jpg',
     nationality: ['pak', 'usa'],
     website: 'https://www.linkedin.com/in/saimhasan/',
+  },
+  adonegan: {
+    name: {
+      first: 'Anthony',
+      last: 'Donegan',
+    },
+    affiliation: ['Undergraduate@mit'],
+    image: '/img/profiles/default.png',
+    nationality: ['usa'],
+    website: 'https://www.linkedin.com/in/anthonydoneganfromboise/',
   },
   mbohsali: {
     name: {
