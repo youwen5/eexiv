@@ -87,9 +87,9 @@ export default function Home() {
         . Materials on this site may be published independently through other
         channels. Read more about us <Link href='/about'>here</Link>. eeXiv can
         be accessed from its primary domain at{' '}
-        <a href='https://eexiv.solipsism.social'>eexiv.solipsism.social</a> or
-        at our mirror at <a href='https://eexiv.vercel.app'>eexiv.vercel.app</a>
-        . If this is your first time here, check out the following pages in the
+        <a href='https://eexiv.functor.systems'>eexiv.functor.systems</a> or at
+        our mirror at <a href='https://eexiv.vercel.app'>eexiv.vercel.app</a>.
+        If this is your first time here, check out the following pages in the
         eeXiv knowledge base:
         <ul className='list-disc pl-4 mt-4'>
           <li>
