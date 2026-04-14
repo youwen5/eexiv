@@ -332,45 +332,6 @@ On Day 1 we will discuss the ins and outs of the robot. The Electrical Sub team 
     doi: '10.5281/zenodo.10668656',
     abstract: `In this paper, we present eeXiv, an open-source, open-access project hosted by Team 1280 EECS ("Electrical Engineering and Computer Science"), independent of the department of the same name at UC Berkeley. We aim to rival arXiv as the single largest open-source and open-access research paper repository and as the largest research paper repository on the West Coast, transforming San Ramon Valley High School into a tier-1 research institution. Similar to arXiv, we host electronic preprints and postprints (known as e-prints) approved for posting after a rigorous peer review process. Our repository consists of scientific papers in the fields of mathematics, physics, astronomy, electrical engineering, computer science, quantitative biology, statistics, mathematical finance, and economics, with a focus on papers specific to the FIRST Robotics Competition. eeXiv bypasses the traditional bureaucracy of research publication, which involves lengthy peer review processes and journal approval, by enabling "libre" and "open" publication, dissemination, and consumption of research artifacts.`,
   },
-  'moscow-to-kabul': {
-    manifest: {
-      title: 'Moscow to Kabul',
-      authors: ['slevel'],
-      type: 'report',
-      topics: ['polisci'],
-      dates: [1684911599],
-      status: 'published no review',
-      keywords: [
-        'soviet military intervention in afghanistan roots & causes',
-        'afghan archive dramatic politburo meeting',
-        'milton park asian affairs an american review',
-        'uzbeks try to live the way russians do',
-        'decline of soviet military strategy and political status',
-        'afghanistan war and breakdown of the soviet union',
-        'park the journal of slavic military studies 1999',
-        'soviet union and afghan communists',
-        'prelude to invasion',
-        'new york the new york times',
-        'cambridge review of international studies',
-        'geopolitics of the afghan war',
-        'digital center for european studies',
-        'reform in post communist europe',
-        'afghan communists 1978 1979',
-        'democratic republic of afghanistan',
-        'red army',
-        'soviet union',
-        'soviet afghan',
-        'invasion of afghanistan',
-        'withdrawal from afghanistan',
-        'soviet forces',
-        'central asia',
-      ],
-      latest: 1,
-    },
-    file: 'pdf',
-    doi: '10.5281/zenodo.10677190',
-    abstract: `Although ethnic nationalism and democratization contributed greatly to the downfall of the Soviet Union, the primary catalyst of Soviet collapse was the Soviet-Afghan War. The conflict exacerbated existing ethnic and cultural divides in the hinterlands of the Soviet empire, and the dramatic Russian loss broadcasted the fact that the Red Army was not invincible to foreign powers and internal dissidents alike, emboldening the first breakaway republics and enabling the eventual dissolution of the Soviet Union. To understand the Soviet-Afghan war—its causes and its effects—is to understand the collapse of the world’s largest superpower.`,
-  },
   'free-adversarial-robustness': {
     manifest: {
       title:
@@ -751,21 +712,6 @@ export const authors: Readonly<{ [key: string]: Author }> = {
     nationality: ['ind', 'usa'],
     website: 'https://www.instagram.com/ayaan_c_07/?hl=en',
     bio: 'President of the Helping Hands Club. EC farmer. Business magnate. Visionary.',
-  },
-  slevel: {
-    name: {
-      first: 'Spencer',
-      last: 'Level',
-    },
-    affiliation: ['Technical intern @sandia-labs', 'Undergraduate@ucsb'],
-    formerAffiliations: [
-      'Captain @team-1280',
-      'Programming lead @1280-programming',
-    ],
-    image: '/img/profiles/slevel.jpg',
-    nationality: ['usa'],
-    website: 'https://www.linkedin.com/in/spencer-level/',
-    bio: 'Actively engaged in the international arms trade; part-time defense contractor and part-time UCSB student working to secure greater rights for defense corporations.',
   },
   zleclaire: {
     name: {
